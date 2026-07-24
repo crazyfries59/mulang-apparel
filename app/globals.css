@@ -51,6 +51,19 @@ body {
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 9px; }
 
+/* ─── Component classes ───
+   Must live in @layer components, otherwise these unlayered rules outrank
+   Tailwind's layered utilities (e.g. `hidden`, `lg:inline-flex`) regardless
+   of class order in the JSX — see the reset comment above for the same issue. */
+/* Tailwind v4 doesn't auto-generate font-syne; register it as a real utility so the
+   many existing `font-syne` usages resolve to the display font (Playfair) instead of
+   falling back to Inter. Single source of truth: --font-display. */
+@utility font-syne {
+  font-family: var(--font-display);
+}
+
+@layer components {
+
 /* ─── Typography ─── */
 .display {
   font-family: var(--font-display);
@@ -82,13 +95,6 @@ body {
   font-weight: 700;
   letter-spacing: -0.015em;
   line-height: 1.02;
-}
-
-/* Tailwind v4 doesn't auto-generate font-syne; register it as a real utility so the
-   many existing `font-syne` usages resolve to the display font (Playfair) instead of
-   falling back to Inter. Single source of truth: --font-display. */
-@utility font-syne {
-  font-family: var(--font-display);
 }
 
 .label {
@@ -203,6 +209,8 @@ body {
   background: var(--gradient);
   display: inline-block;
 }
+
+} /* end @layer components */
 
 /* ─── Noise overlay (for premium texture) ─── */
 body::before {

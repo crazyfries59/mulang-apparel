@@ -17,7 +17,7 @@ const catHref = (slug: string) => (slug === "all" ? "/products" : `/products?cat
 export default function ProductsView() {
   const searchParams = useSearchParams();
   const activeCat = searchParams.get("cat") ?? "all";
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState(searchParams.get("q") ?? "");
 
   const counts = useMemo(() => {
     const map: Record<string, number> = {};

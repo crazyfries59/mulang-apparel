@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback, type FormEvent } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { CATEGORIES } from "@/app/products/data";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Search, MessageCircle, ChevronDown, ArrowRight } from "lucide-react";
@@ -60,8 +60,10 @@ export default function Navbar() {
   const [mobileOpen, setMobile]   = useState(false);
   const [activeDropdown, setActive] = useState<string | null>(null);
   const [searchOpen, setSearch]   = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
   const [activeProductCat, setProductCat] = useState("t-shirts");
   const pathname                  = usePathname();
+  const router                    = useRouter();
   const navRef                    = useRef<HTMLElement>(null);
   const timerRef                  = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [prevPathname, setPrevPathname] = useState(pathname);
@@ -91,6 +93,13 @@ export default function Navbar() {
   const keepOpen = useCallback(() => {
     if (timerRef.current) clearTimeout(timerRef.current);
   }, []);
+
+  const submitSearch = useCallback((e: FormEvent) => {
+    e.preventDefault();
+    const q = searchQuery.trim();
+    setSearch(false);
+    router.push(q ? `/products?q=${encodeURIComponent(q)}` : "/products");
+  }, [searchQuery, router]);
 
   // active category for the Products mega-menu featured image
   const activeGroup = CATEGORIES.find(c => c.slug === activeProductCat) ?? CATEGORIES[0];
@@ -291,7 +300,7 @@ export default function Navbar() {
           {/* ── Right Controls ── */}
           <div className="flex items-center gap-2 flex-shrink-0">
             <button onClick={() => setSearch(!searchOpen)} aria-label="Search"
-              className="hidden lg:flex w-8 h-8 items-center justify-center rounded-full border border-white/10 text-white/40 hover:text-white hover:border-white/25 transition-colors">
+              className="flex w-8 h-8 items-center justify-center rounded-full border border-white/10 text-white/40 hover:text-white hover:border-white/25 transition-colors">
               <Search size={13} />
             </button>
             <a href="https://wa.me/8615986213212" target="_blank" rel="noopener noreferrer"
@@ -315,10 +324,11 @@ export default function Navbar() {
               initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }}
               className="absolute top-full left-0 right-0 bg-black/95 backdrop-blur-2xl border-b border-white/5 overflow-hidden"
             >
-              <div className="max-w-2xl mx-auto px-6 py-4">
-                <input autoFocus placeholder="Search products, fabrics, services..."
+              <form onSubmit={submitSearch} className="max-w-2xl mx-auto px-6 py-4">
+                <input autoFocus value={searchQuery} onChange={e => setSearchQuery(e.target.value)}
+                  placeholder="Search products, fabrics, services..."
                   className="w-full bg-transparent text-white text-lg placeholder:text-white/25 outline-none border-b border-white/10 pb-2 focus:border-violet-500/60 transition-colors" />
-              </div>
+              </form>
             </motion.div>
           )}
         </AnimatePresence>
