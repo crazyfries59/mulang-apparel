@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import nodemailer from "nodemailer";
 
 const TO_EMAIL = "maxlinzhe@gmail.com";
 const MAX_LEN = 5000;
@@ -28,9 +29,10 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Input too long" }, { status: 400 });
   }
 
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
-    console.error("[contact] RESEND_API_KEY is not set — inquiry lost:", { name, email });
+  const gmailUser = process.env.GMAIL_USER;
+  const gmailPass = process.env.GMAIL_APP_PASSWORD;
+  if (!gmailUser || !gmailPass) {
+    console.error("[contact] GMAIL_USER / GMAIL_APP_PASSWORD not set — inquiry lost:", { name, email });
     return NextResponse.json({ error: "Email service not configured" }, { status: 500 });
   }
 
@@ -57,28 +59,20 @@ export async function POST(req: NextRequest) {
   `;
 
   try {
-    const res = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        from: "Mulang Apparel Inquiries <onboarding@resend.dev>",
-        to: TO_EMAIL,
-        reply_to: email,
-        subject: `New inquiry from ${name}${company ? ` (${company})` : ""}`,
-        html,
-      }),
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: { user: gmailUser, pass: gmailPass },
     });
 
-    if (!res.ok) {
-      const errBody = await res.text();
-      console.error("[contact] Resend API error:", res.status, errBody);
-      return NextResponse.json({ error: "Failed to send email" }, { status: 502 });
-    }
+    await transporter.sendMail({
+      from: `Mulang Apparel Inquiries <${gmailUser}>`,
+      to: TO_EMAIL,
+      replyTo: email,
+      subject: `New inquiry from ${name}${company ? ` (${company})` : ""}`,
+      html,
+    });
   } catch (err) {
-    console.error("[contact] Failed to reach Resend:", err);
+    console.error("[contact] Failed to send via Gmail:", err);
     return NextResponse.json({ error: "Failed to send email" }, { status: 502 });
   }
 
