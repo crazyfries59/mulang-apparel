@@ -11,6 +11,7 @@ export default function ContactPage() {
   });
   const [loading, setLoading]   = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
     setForm(p => ({ ...p, [e.target.name]: e.target.value }));
@@ -18,9 +19,20 @@ export default function ContactPage() {
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    await new Promise(r => setTimeout(r, 1800));
-    setLoading(false);
-    setSubmitted(true);
+    setError(null);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error("request failed");
+      setSubmitted(true);
+    } catch {
+      setError("Something went wrong sending your message — please try WhatsApp instead, or email sales@lin6666.top directly.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -174,6 +186,12 @@ export default function ContactPage() {
                       placeholder="Describe your project: fabric weight, colors, printing techniques, timeline, brand references..."
                       className="w-full bg-white/3 border border-white/8 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-violet-500/50 transition-colors resize-none" />
                   </div>
+
+                  {error && (
+                    <p className="text-center text-red-400 text-xs bg-red-500/10 border border-red-500/20 rounded-xl py-2.5 px-4">
+                      {error}
+                    </p>
+                  )}
 
                   <button type="submit" disabled={loading}
                     className="w-full btn-gradient justify-center py-4 rounded-xl disabled:opacity-60">

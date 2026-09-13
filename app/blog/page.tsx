@@ -3,6 +3,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import AnimatedSection from "@/components/AnimatedSection";
 import { ArrowRight, Clock, Tag } from "lucide-react";
+import { POSTS } from "./posts";
 
 export const metadata: Metadata = {
   title: "Blog — Streetwear Manufacturing Insights",
@@ -10,69 +11,6 @@ export const metadata: Metadata = {
 };
 
 const CATS = ["All", "Manufacturing", "Brand Startup", "Custom Apparel", "OEM & ODM", "Industry News"];
-
-const POSTS = [
-  {
-    slug: "how-to-start-streetwear-brand",
-    title: "How To Start A Streetwear Brand From Scratch in 2025",
-    excerpt: "A complete guide covering everything from brand identity and design to finding the right manufacturer and launching your first drop.",
-    cat: "Brand Startup",
-    read: "8 min read",
-    date: "Dec 15, 2024",
-    img: "https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=800&q=80",
-    featured: true,
-  },
-  {
-    slug: "oem-vs-odm-clothing",
-    title: "OEM vs ODM Clothing Manufacturing: Which Is Right For Your Brand?",
-    excerpt: "Understanding the difference between OEM and ODM services will save you time, money, and headaches when sourcing your first collection.",
-    cat: "OEM & ODM",
-    read: "6 min read",
-    date: "Dec 8, 2024",
-    img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80",
-    featured: false,
-  },
-  {
-    slug: "minimum-order-quantity-guide",
-    title: "MOQ Explained: What Minimum Order Quantities Mean For Your Brand",
-    excerpt: "Breaking down MOQ requirements, negotiation strategies, and how to start small without compromising on quality or profit margins.",
-    cat: "Manufacturing",
-    read: "5 min read",
-    date: "Nov 28, 2024",
-    img: "https://images.unsplash.com/photo-1565084888279-aca607ecce0c?w=800&q=80",
-    featured: false,
-  },
-  {
-    slug: "fabric-guide-streetwear",
-    title: "The Ultimate Fabric Guide For Streetwear Brands: GSM, Composition & More",
-    excerpt: "From 220GSM tees to 450GSM hoodies—everything you need to know about fabric weight, composition, and finishing for premium streetwear.",
-    cat: "Custom Apparel",
-    read: "10 min read",
-    date: "Nov 20, 2024",
-    img: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=800&q=80",
-    featured: false,
-  },
-  {
-    slug: "private-label-clothing-guide",
-    title: "Private Label Clothing: How To Build Your Brand Identity Through Manufacturing",
-    excerpt: "Labels, hang tags, packaging, and brand storytelling—how to use private label services to create a cohesive, premium brand experience.",
-    cat: "Brand Startup",
-    read: "7 min read",
-    date: "Nov 10, 2024",
-    img: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80",
-    featured: false,
-  },
-  {
-    slug: "china-clothing-manufacturer-tips",
-    title: "10 Things To Know Before Working With A Chinese Clothing Manufacturer",
-    excerpt: "Red flags to avoid, questions to ask, and best practices for establishing a reliable, long-term relationship with your manufacturing partner.",
-    cat: "Manufacturing",
-    read: "9 min read",
-    date: "Oct 30, 2024",
-    img: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&q=80",
-    featured: false,
-  },
-];
 
 export default function BlogPage() {
   const featured = POSTS[0];
@@ -136,11 +74,16 @@ export default function BlogPage() {
       <section className="section pt-4 px-6">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {rest.map((post, i) => (
-              <AnimatedSection key={post.slug} delay={i * 0.08}>
-                <Link href={`/blog/${post.slug}`} className="group glass-card overflow-hidden flex flex-col h-full">
+            {rest.map((post, i) => {
+              const cardBody = (
+                <>
                   <div className="relative aspect-[16/10] img-zoom">
                     <Image src={post.img} alt={post.title} fill className="object-cover" sizes="33vw" />
+                    {!post.published && (
+                      <span className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur text-white/70 text-[0.6rem] tracking-widest uppercase font-semibold">
+                        Coming Soon
+                      </span>
+                    )}
                   </div>
                   <div className="p-6 flex flex-col flex-1">
                     <div className="flex items-center gap-2 mb-3">
@@ -158,14 +101,31 @@ export default function BlogPage() {
                     <p className="text-white/35 text-xs leading-relaxed mb-4 line-clamp-2">{post.excerpt}</p>
                     <div className="flex items-center justify-between text-xs text-white/25 pt-4 border-t border-white/6">
                       <span>{post.date}</span>
-                      <span className="text-violet-400/60 group-hover:text-violet-400 transition-colors flex items-center gap-1">
-                        Read <ArrowRight size={10} />
-                      </span>
+                      {post.published ? (
+                        <span className="text-violet-400/60 group-hover:text-violet-400 transition-colors flex items-center gap-1">
+                          Read <ArrowRight size={10} />
+                        </span>
+                      ) : (
+                        <span className="text-white/20">Coming soon</span>
+                      )}
                     </div>
                   </div>
-                </Link>
-              </AnimatedSection>
-            ))}
+                </>
+              );
+              return (
+                <AnimatedSection key={post.slug} delay={i * 0.08}>
+                  {post.published ? (
+                    <Link href={`/blog/${post.slug}`} className="group glass-card overflow-hidden flex flex-col h-full">
+                      {cardBody}
+                    </Link>
+                  ) : (
+                    <div className="group glass-card overflow-hidden flex flex-col h-full opacity-60">
+                      {cardBody}
+                    </div>
+                  )}
+                </AnimatedSection>
+              );
+            })}
           </div>
         </div>
       </section>

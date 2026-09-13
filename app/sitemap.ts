@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { PRODUCTS } from "./products/data";
+import { POSTS } from "./blog/posts";
 
 const SITE_URL = "https://lin6666.top";
 
@@ -35,5 +36,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
-  return [...staticEntries, ...productEntries];
+  const blogEntries: MetadataRoute.Sitemap = POSTS.filter((p) => p.published).map((p) => ({
+    url: `${SITE_URL}/blog/${p.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+
+  return [...staticEntries, ...productEntries, ...blogEntries];
 }
