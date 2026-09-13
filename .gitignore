@@ -42,3 +42,10 @@ next-env.d.ts
 
 # claude code local settings
 .claude/settings.local.json
+
+# product photos — thousands of files, several GB; repopulate with
+# scripts/migrate-product-images.mjs instead of committing them
+/public/products/*/
+migrate.log
+migrate-err.log
+migrate-image-failures.json

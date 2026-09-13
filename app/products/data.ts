@@ -2,7 +2,9 @@
    Mulang Apparel — catalog cloned 1:1 from Hongyu Apparel.
    Categories + products mirror hongyuapparel.com exactly.
    Product data lives in ./hongyu-products.json (241 products).
-   Images: Hongyu Apparel (authorized).
+   Images: mirrored into public/products/<category>/<slug>/ by
+   scripts/migrate-product-images.mjs so the site no longer depends on a
+   third-party server for its own product photos.
    ───────────────────────────────────────────────────────────────── */
 
 import raw from "./hongyu-products.json";
@@ -10,10 +12,9 @@ import raw from "./hongyu-products.json";
 export const slugify = (s: string) =>
   s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
-const UPLOAD = "https://www.hongyuapparel.com/wp-content/uploads/";
-// Percent-encode non-ASCII path chars (e.g. Chinese "主图") so next/image / HTTP headers stay valid.
-const enc = (u: string) => u.replace(/[^\x00-\x7F]/g, c => encodeURIComponent(c));
-const fullUrl = (p: string) => enc(p.startsWith("http") ? p : UPLOAD + p);
+// Matches the naming scheme scripts/migrate-product-images.mjs downloads into.
+const localImg = (top: string, slug: string, kind: "img" | "detail", i: number) =>
+  `/products/${top}/${slug}/${kind}-${i + 1}.jpg`;
 
 /* ── Category taxonomy (identical to Hongyu) ────────────────────── */
 export type Category = {
@@ -122,7 +123,7 @@ const leadFor = (top: string) =>
   ["hoodies", "denim", "outdoor-clothing", "dresses"].includes(top) ? "21 days" : "14 days";
 
 export const PRODUCTS: Product[] = (raw.products as RawProduct[]).map(p => {
-  const imgs = (p.imgs.length ? p.imgs : []).map(fullUrl);
+  const imgs = (p.imgs.length ? p.imgs : []).map((_, i) => localImg(p.top, p.slug, "img", i));
   const name = debrand(p.name.replace(/^#?\s*/, "").trim());
   const intro = cleanIntro((p.intro ?? {}) as Intro);
   // prefer the real Material / Weight from the scraped intro when present
@@ -150,7 +151,7 @@ export const PRODUCTS: Product[] = (raw.products as RawProduct[]).map(p => {
     gallery: imgs.length ? imgs : [imgs[0] || ""],
     slug: p.slug,
     intro,
-    details: (p.details ?? []).map(fullUrl),
+    details: (p.details ?? []).map((_, i) => localImg(p.top, p.slug, "detail", i)),
   };
 });
 
