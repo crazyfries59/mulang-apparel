@@ -4,24 +4,14 @@
 # the repo (git pull origin main).
 #
 # Usage:
-#   TECHPACK_FONT=/opt/fonts/NotoSansSC-Regular.otf ./deploy.sh
+#   ./deploy.sh
 #
-# TECHPACK_FONT must point at a properly-licensed CJK font file you've
-# placed on this server yourself (e.g. Google Noto Sans SC, SIL OFL
-# license, free to self-host) -- see DEPLOY.md section 3 for why this
-# repo doesn't ship one.
+# No font setup needed -- assets/fonts/NotoSansSC-Variable.ttf ships in the
+# repo (SIL Open Font License, see assets/fonts/OFL.txt) and is used
+# automatically. Set TECHPACK_FONT only if you want to override it with a
+# different font.
 
 set -euo pipefail
-
-if [ -z "${TECHPACK_FONT:-}" ]; then
-  echo "ERROR: set TECHPACK_FONT to a CJK font file path first, e.g.:"
-  echo "  TECHPACK_FONT=/opt/fonts/NotoSansSC-Regular.otf ./deploy.sh"
-  exit 1
-fi
-if [ ! -f "$TECHPACK_FONT" ]; then
-  echo "ERROR: TECHPACK_FONT points at a file that doesn't exist: $TECHPACK_FONT"
-  exit 1
-fi
 
 echo "==> Node version: $(node -v)"
 
@@ -37,11 +27,6 @@ fi
 
 echo "==> Installing dependencies..."
 npm install
-
-echo "==> Writing TECHPACK_FONT into .env.production..."
-grep -v '^TECHPACK_FONT=' .env.production 2>/dev/null > .env.production.tmp || true
-echo "TECHPACK_FONT=$TECHPACK_FONT" >> .env.production.tmp
-mv .env.production.tmp .env.production
 
 echo "==> Building..."
 npm run build

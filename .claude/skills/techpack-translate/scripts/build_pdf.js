@@ -18,7 +18,11 @@ const pdfjsLib = require('pdfjs-dist/legacy/build/pdf.js');
 const { PDFDocument } = require('pdf-lib');
 const { mergeRuns, sampleColor } = require('./lib.js');
 
-const FONT_PATH = process.env.TECHPACK_FONT || 'C:\\Windows\\Fonts\\msyh.ttc';
+// Same bundled Noto Sans SC the web tool uses (assets/fonts at the repo root,
+// SIL Open Font License -- see assets/fonts/OFL.txt) so this works on any
+// machine without depending on a specific OS having a CJK font installed.
+const BUNDLED_FONT = path.join(__dirname, '..', '..', '..', '..', 'assets', 'fonts', 'NotoSansSC-Variable.ttf');
+const FONT_PATH = process.env.TECHPACK_FONT || (fs.existsSync(BUNDLED_FONT) ? BUNDLED_FONT : 'C:\\Windows\\Fonts\\msyh.ttc');
 const FONT_FAMILY = 'TechPackZH';
 registerFont(FONT_PATH, { family: FONT_FAMILY });
 

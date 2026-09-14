@@ -1,6 +1,8 @@
 # 部署到自己的服务器
 
-这份文档针对 `/tools/techpack-translate`(技术包中文翻译工具)这个功能。整个网站是普通 Next.js 项目,可以照常部署;这里只额外记录这个功能需要注意的地方(依赖原生模块 `canvas`、需要中文字体)。
+这份文档针对 `/tools/techpack-translate`(技术包中文翻译工具)这个功能。整个网站是普通 Next.js 项目,可以照常部署;这里只额外记录这个功能需要注意的地方(依赖原生模块 `canvas`)。中文字体已经打包进仓库了(`assets/fonts/`,开源许可),不需要额外准备。
+
+最快的方式是在服务器上跑 `./deploy.sh`(见本文档步骤 1、2、5、6,`deploy.sh` 把步骤 3、4 都自动做了)。
 
 ## 1. 环境要求
 
@@ -21,17 +23,9 @@ cd mulang-apparel
 npm install
 ```
 
-## 3. 中文字体(必须)
+## 3. 中文字体(已内置,通常不用管)
 
-服务器上通常没有装中文字体,而仓库里也没有带字体文件——Windows 自带的微软雅黑等字体是微软的版权字体,不能打包进代码仓库分发。需要自己准备一份**开源许可**的中文字体,推荐 Google 的 **Noto Sans SC**(SIL Open Font License,可免费商用,自行下载官方文件)。
-
-把字体文件放到服务器上任意路径,例如 `/opt/fonts/NotoSansSC-Regular.otf`,然后设置环境变量(写进 `.env.production` 或系统环境变量都可以):
-
-```
-TECHPACK_FONT=/opt/fonts/NotoSansSC-Regular.otf
-```
-
-如果没设置这个变量,代码会依次尝试几个常见的系统字体路径(见 `lib/techpack.js` 里的 `DEFAULT_FONT_CANDIDATES`),服务器上大概率都找不到,届时翻译功能会直接报错提示"找不到中文字体"——不会生成错别字或空白,请放心。
+`assets/fonts/NotoSansSC-Variable.ttf` 已经在仓库里(Google Noto Sans SC,SIL Open Font License,免费可商用,许可证文件见同目录 `OFL.txt`),代码默认会用这个字体,服务器上不需要再另外装。只有想换成别的字体时才需要设置 `TECHPACK_FONT` 环境变量指向你自己的字体文件。
 
 ## 4. 构建 + 常驻运行
 
