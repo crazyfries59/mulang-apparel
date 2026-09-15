@@ -19,6 +19,7 @@
     "pdfjs-dist": "^3.11.174",
     "react": "19.2.4",
     "react-dom": "19.2.4",
+    "sharp": "^0.35.4",
     "swiper": "^12.2.0"
   },
   "devDependencies": {
