@@ -43,9 +43,14 @@ next-env.d.ts
 # claude code local settings
 .claude/settings.local.json
 
-# product photos — thousands of files, several GB; repopulate with
-# scripts/migrate-product-images.mjs instead of committing them
-/public/products/*/
+# Product photos ARE committed — they're resized and compressed at import time
+# (scripts/migrate-product-images.mjs), which keeps them small enough to ship
+# with the repo and lets the host serve them straight off its CDN.
 migrate.log
 migrate-err.log
 migrate-image-failures.json
+shrink.log
+shrink-details.mjs
+
+# stray tool download, not part of the project
+/archive-*/

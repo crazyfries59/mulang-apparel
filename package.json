@@ -10,13 +10,10 @@
   },
   "dependencies": {
     "@headlessui/react": "^2.2.10",
-    "canvas": "^3.2.3",
     "framer-motion": "^12.40.0",
     "lucide-react": "^1.17.0",
     "next": "16.2.7",
     "nodemailer": "^10.0.9",
-    "pdf-lib": "^1.17.1",
-    "pdfjs-dist": "^3.11.174",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "sharp": "^0.35.4",

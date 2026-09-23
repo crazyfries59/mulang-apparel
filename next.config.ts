@@ -1,13 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // canvas (native binary) + pdfjs-dist's legacy build do their own dynamic
-  // requires and must run as real Node.js modules, not be webpack-bundled.
-  serverExternalPackages: ["canvas", "pdfjs-dist", "pdf-lib"],
   images: {
-    // Use unoptimized so images are passed directly to the browser
-    // without server-side fetching — avoids network issues in restricted environments.
-    // In production, remove this line to re-enable optimization.
+    // Product photos are pre-resized and compressed at import time by
+    // scripts/migrate-product-images.mjs, so there's nothing left for the
+    // optimizer to do — skipping it avoids paying for per-request processing.
     unoptimized: true,
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com" },
