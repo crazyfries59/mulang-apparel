@@ -6,9 +6,11 @@ import AnimatedSection from "@/components/AnimatedSection";
 import { ArrowRight, Clock, Tag } from "lucide-react";
 import { POSTS } from "../posts";
 import ChinaManufacturerTipsContent from "./ChinaManufacturerTipsContent";
+import MinimumOrderQuantityContent from "./MinimumOrderQuantityContent";
 
 const CONTENT_BY_SLUG: Record<string, React.ComponentType> = {
   "china-clothing-manufacturer-tips": ChinaManufacturerTipsContent,
+  "minimum-order-quantity-guide": MinimumOrderQuantityContent,
 };
 
 export function generateStaticParams() {

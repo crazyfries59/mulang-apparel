@@ -13,6 +13,17 @@ export type Post = {
 
 export const POSTS: Post[] = [
   {
+    slug: "minimum-order-quantity-guide",
+    title: "MOQ Explained: What Minimum Order Quantities Mean for Your Brand",
+    excerpt: "Learn what clothing MOQ covers, why quantities change by fabric and customization, and what to include when requesting a quote from a manufacturer.",
+    cat: "Manufacturing",
+    read: "7 min read",
+    date: "Oct 7, 2026",
+    img: "/products/y2k-fashion/bx8105-rib-260gsm-stretch-crop-y2k-baby-tee/img-1.jpg",
+    featured: true,
+    published: true,
+  },
+  {
     slug: "china-clothing-manufacturer-tips",
     title: "10 Things To Know Before Working With A Chinese Clothing Manufacturer",
     excerpt: "Red flags to avoid, questions to ask, and best practices for establishing a reliable, long-term relationship with your manufacturing partner.",
@@ -42,17 +53,6 @@ export const POSTS: Post[] = [
     read: "6 min read",
     date: "Dec 8, 2024",
     img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80",
-    featured: false,
-    published: false,
-  },
-  {
-    slug: "minimum-order-quantity-guide",
-    title: "MOQ Explained: What Minimum Order Quantities Mean For Your Brand",
-    excerpt: "Breaking down MOQ requirements, negotiation strategies, and how to start small without compromising on quality or profit margins.",
-    cat: "Manufacturing",
-    read: "5 min read",
-    date: "Nov 28, 2024",
-    img: "https://images.unsplash.com/photo-1565084888279-aca607ecce0c?w=800&q=80",
     featured: false,
     published: false,
   },
