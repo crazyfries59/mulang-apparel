@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Products — T-Shirts, Hoodies, Denim & More",
   description:
     "Browse 240+ ready-to-customize styles across T-Shirts, Hoodies, Denim, Dresses and more. Low MOQ from 50 pieces, OEM & ODM available.",
+  alternates: { canonical: "/products" },
 };
 
 export default function ProductsPage() {

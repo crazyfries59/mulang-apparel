@@ -8,13 +8,15 @@ import { POSTS } from "./posts";
 export const metadata: Metadata = {
   title: "Blog — Streetwear Manufacturing Insights",
   description: "Expert guides on custom clothing manufacturing, starting a streetwear brand, OEM/ODM sourcing, and scaling your apparel business.",
+  alternates: { canonical: "/blog" },
 };
 
 const CATS = ["All", "Manufacturing", "Brand Startup", "Custom Apparel", "OEM & ODM", "Industry News"];
 
 export default function BlogPage() {
-  const featured = POSTS[0];
-  const rest     = POSTS.slice(1);
+  const publishedPosts = POSTS.filter((post) => post.published);
+  const featured = publishedPosts[0];
+  const rest = publishedPosts.slice(1);
 
   return (
     <>

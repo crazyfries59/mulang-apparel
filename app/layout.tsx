@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
+import { SITE_URL } from "@/lib/site";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -21,7 +22,6 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-const SITE_URL = "https://lin6666.top";
 const OG_IMAGE = "https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=1200&q=85";
 
 export const metadata: Metadata = {

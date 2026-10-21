@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Lookbook — 2024 Streetwear Collection",
   description:
     "Explore Mulang Apparel's visual lookbook — premium streetwear photography showcasing our manufacturing quality and design capabilities.",
+  alternates: { canonical: "/lookbook" },
 };
 
 export default function LookbookPage() {

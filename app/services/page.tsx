@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Services — Prototyping, Sampling, Production & More",
   description:
     "Full-service clothing manufacturing: prototypes in 7-12 days, unlimited sample revisions, OEM/ODM production, private labels, global shipping, and product photography.",
+  alternates: { canonical: "/services" },
 };
 
 export default function ServicesPage() {

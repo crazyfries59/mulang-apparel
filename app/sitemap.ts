@@ -1,8 +1,7 @@
 import type { MetadataRoute } from "next";
 import { PRODUCTS } from "./products/data";
 import { POSTS } from "./blog/posts";
-
-const SITE_URL = "https://lin6666.top";
+import { SITE_URL } from "@/lib/site";
 
 const STATIC_ROUTES = [
   { path: "", priority: 1, changeFrequency: "weekly" as const },

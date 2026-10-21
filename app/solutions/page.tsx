@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Solutions — Cut & Sew, Private Label & Blank Wholesale",
   description:
     "Manufacturing solutions for every brand stage: cut & sew customization, logo branding, blank wholesale, private label, and low-MOQ startup programs.",
+  alternates: { canonical: "/solutions" },
 };
 
 export default function SolutionsPage() {
