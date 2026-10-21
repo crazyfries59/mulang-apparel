@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { PRODUCTS } from "./products/data";
 import { POSTS } from "./blog/posts";
 import { SITE_URL } from "@/lib/site";
+import { getCmsPosts } from "@/lib/content/sanity";
 
 const STATIC_ROUTES = [
   { path: "", priority: 1, changeFrequency: "weekly" as const },
@@ -18,7 +19,7 @@ const STATIC_ROUTES = [
   { path: "/contact", priority: 0.7, changeFrequency: "yearly" as const },
 ];
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
 
   const staticEntries: MetadataRoute.Sitemap = STATIC_ROUTES.map(({ path, priority, changeFrequency }) => ({
@@ -35,7 +36,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
-  const blogEntries: MetadataRoute.Sitemap = POSTS.filter((p) => p.published).map((p) => ({
+  const cmsPosts = await getCmsPosts();
+  const publishedPosts = [
+    ...(cmsPosts ?? []).map((post) => ({ slug: post.slug, published: true })),
+    ...POSTS.filter((post) => post.published && !cmsPosts?.some((cmsPost) => cmsPost.slug === post.slug)),
+  ];
+  const blogEntries: MetadataRoute.Sitemap = publishedPosts.map((p) => ({
     url: `${SITE_URL}/blog/${p.slug}`,
     lastModified: now,
     changeFrequency: "monthly",

@@ -9,6 +9,7 @@ export type Post = {
   featured: boolean;
   /** Only published posts get a real /blog/[slug] page; others show as "Coming Soon". */
   published: boolean;
+  body?: unknown[];
 };
 
 export const POSTS: Post[] = [
