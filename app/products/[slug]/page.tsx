@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { findProduct } from "../data";
 import ProductDetailClient from "./ProductDetailClient";
 
@@ -7,7 +8,7 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const { slug } = await params;
   const p = findProduct(slug);
-  if (!p) return { title: "Product Not Found" };
+  if (!p) notFound();
 
   const description = `${p.name} — ${p.fabric}, ${p.gsm}. MOQ ${p.moq}, ${p.lead} lead time. Custom OEM/ODM manufacturing from Mulang Apparel.`;
   return {
@@ -25,6 +26,8 @@ export async function generateMetadata(
 export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const p = findProduct(slug);
+
+  if (!p) notFound();
 
   const productJsonLd = p
     ? {

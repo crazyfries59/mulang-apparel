@@ -3,11 +3,17 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import AnimatedSection from "@/components/AnimatedSection";
 import { MessageCircle, Mail, MapPin, CheckCircle, Send } from "lucide-react";
+import Link from "next/link";
+import { CONTACT_LIMITS } from "@/lib/contact-validation";
 
-export default function ContactPage() {
+export default function ContactPage({ initialProduct }: {
+  initialProduct?: { name: string; slug: string };
+}) {
   const [form, setForm] = useState({
     name: "", company: "", email: "", whatsapp: "",
-    productType: "", quantity: "", message: "",
+    productType: "", quantity: "", message: initialProduct
+      ? `I'm interested in ${initialProduct.name}.\nProduct: ${initialProduct.slug}\n\nCustomization details: `
+      : "",
   });
   const [loading, setLoading]   = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -133,6 +139,12 @@ export default function ContactPage() {
                 </motion.div>
               ) : (
                 <form onSubmit={onSubmit} className="glass-card p-8 space-y-5">
+                  {initialProduct && (
+                    <div className="rounded-xl border border-violet-400/25 bg-violet-500/5 p-4 text-sm">
+                      <p className="text-white/45 text-xs mb-1">Your product reference is included below</p>
+                      <Link href={`/products/${initialProduct.slug}`} className="text-violet-300 hover:text-white underline underline-offset-4">{initialProduct.name}</Link>
+                    </div>
+                  )}
                   <div className="pb-2 border-b border-white/6">
                     <p className="label">Request A Quote</p>
                   </div>
@@ -141,8 +153,8 @@ export default function ContactPage() {
                   <div className="grid grid-cols-2 gap-4">
                     {[["name","Name *","Your name","text",true], ["company","Company","Brand name","text",false]].map(([n,l,ph,t,req]) => (
                       <div key={n as string}>
-                        <label className="block text-[0.6rem] tracking-widest uppercase text-white/30 mb-1.5">{l as string}</label>
-                        <input type={t as string} name={n as string} required={!!req}
+                        <label htmlFor={n as string} className="block text-[0.6rem] tracking-widest uppercase text-white/30 mb-1.5">{l as string}</label>
+                        <input id={n as string} type={t as string} name={n as string} required={!!req} maxLength={CONTACT_LIMITS[n as keyof typeof CONTACT_LIMITS]}
                           value={form[n as keyof typeof form]} onChange={onChange} placeholder={ph as string}
                           className="w-full bg-white/3 border border-white/8 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-violet-500/50 transition-colors" />
                       </div>
@@ -153,8 +165,8 @@ export default function ContactPage() {
                   <div className="grid grid-cols-2 gap-4">
                     {[["email","Email *","your@email.com","email",true], ["whatsapp","WhatsApp","+1 234 567 890","text",false]].map(([n,l,ph,t,req]) => (
                       <div key={n as string}>
-                        <label className="block text-[0.6rem] tracking-widest uppercase text-white/30 mb-1.5">{l as string}</label>
-                        <input type={t as string} name={n as string} required={!!req}
+                        <label htmlFor={n as string} className="block text-[0.6rem] tracking-widest uppercase text-white/30 mb-1.5">{l as string}</label>
+                        <input id={n as string} type={t as string} name={n as string} required={!!req} maxLength={CONTACT_LIMITS[n as keyof typeof CONTACT_LIMITS]}
                           value={form[n as keyof typeof form]} onChange={onChange} placeholder={ph as string}
                           className="w-full bg-white/3 border border-white/8 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-violet-500/50 transition-colors" />
                       </div>
@@ -164,8 +176,8 @@ export default function ContactPage() {
                   {/* Row 3 */}
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-[0.6rem] tracking-widest uppercase text-white/30 mb-1.5">Product Type</label>
-                      <select name="productType" value={form.productType} onChange={onChange}
+                      <label htmlFor="productType" className="block text-[0.6rem] tracking-widest uppercase text-white/30 mb-1.5">Product Type</label>
+                      <select id="productType" name="productType" value={form.productType} onChange={onChange}
                         className="w-full bg-white/3 border border-white/8 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-violet-500/50 transition-colors">
                         <option value="" className="bg-[#111]">Select type...</option>
                         {["Oversized T-Shirts","Hoodies","Tracksuits","Jackets","Cargo Pants","Custom Sets","Other"].map(o =>
@@ -173,16 +185,16 @@ export default function ContactPage() {
                       </select>
                     </div>
                     <div>
-                      <label className="block text-[0.6rem] tracking-widest uppercase text-white/30 mb-1.5">Quantity</label>
-                      <input type="text" name="quantity" value={form.quantity} onChange={onChange} placeholder="e.g. 200 pcs"
+                      <label htmlFor="quantity" className="block text-[0.6rem] tracking-widest uppercase text-white/30 mb-1.5">Quantity</label>
+                      <input id="quantity" type="text" name="quantity" maxLength={CONTACT_LIMITS.quantity} value={form.quantity} onChange={onChange} placeholder="e.g. 200 pcs"
                         className="w-full bg-white/3 border border-white/8 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-violet-500/50 transition-colors" />
                     </div>
                   </div>
 
                   {/* Message */}
                   <div>
-                    <label className="block text-[0.6rem] tracking-widest uppercase text-white/30 mb-1.5">Project Details *</label>
-                    <textarea name="message" required rows={4} value={form.message} onChange={onChange}
+                    <label htmlFor="message" className="block text-[0.6rem] tracking-widest uppercase text-white/30 mb-1.5">Project Details *</label>
+                    <textarea id="message" name="message" maxLength={CONTACT_LIMITS.message} required rows={4} value={form.message} onChange={onChange}
                       placeholder="Describe your project: fabric weight, colors, printing techniques, timeline, brand references..."
                       className="w-full bg-white/3 border border-white/8 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-violet-500/50 transition-colors resize-none" />
                   </div>

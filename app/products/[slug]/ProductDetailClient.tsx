@@ -204,10 +204,10 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
-              <Link href="/contact" className="flex-1 flex items-center justify-center gap-2 py-3.5 bg-gradient-to-r from-violet-600 to-pink-500 text-white text-[0.67rem] font-bold tracking-wider uppercase rounded-full hover:shadow-[0_0_30px_rgba(139,92,246,0.5)] transition-shadow">
+                <Link href={`/contact?product=${encodeURIComponent(p.slug)}`} className="flex-1 flex items-center justify-center gap-2 py-3.5 bg-gradient-to-r from-violet-600 to-pink-500 text-white text-[0.67rem] font-bold tracking-wider uppercase rounded-full hover:shadow-[0_0_30px_rgba(139,92,246,0.5)] transition-shadow">
                 <Send size={14} /> Inquiry Now
               </Link>
-              <Link href="/contact" className="flex-1 flex items-center justify-center gap-2 py-3.5 bg-white/8 border border-white/12 text-white text-[0.67rem] font-bold tracking-wider uppercase rounded-full hover:bg-white/14 transition-colors">
+                <Link href={`/contact?product=${encodeURIComponent(p.slug)}`} className="flex-1 flex items-center justify-center gap-2 py-3.5 bg-white/8 border border-white/12 text-white text-[0.67rem] font-bold tracking-wider uppercase rounded-full hover:bg-white/14 transition-colors">
                 <FileText size={14} /> Request Sample
               </Link>
               <a href={`https://wa.me/8615986213212?text=${encodeURIComponent(`Hi! I'm interested in ${p.name} (${p.id}). Can you send more details?`)}`}

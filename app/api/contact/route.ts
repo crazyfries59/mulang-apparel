@@ -1,38 +1,30 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { parseContactData } from "@/lib/contact-validation";
 
 const TO_EMAIL = "maxlinzhe@gmail.com";
-const MAX_LEN = 5000;
 
 const escapeHtml = (s: string) =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
-const isValidEmail = (s: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s);
-
 export async function POST(req: NextRequest) {
-  let data: Record<string, string>;
+  let body: unknown;
   try {
-    data = await req.json();
+    body = await req.json();
   } catch {
     return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
   }
 
+  const data = parseContactData(body);
+  if (!data) {
+    return NextResponse.json({ error: "Please check your name, email, message, and field lengths." }, { status: 400 });
+  }
   const { name, company, email, whatsapp, productType, quantity, message } = data;
-
-  if (!name?.trim() || !email?.trim() || !message?.trim()) {
-    return NextResponse.json({ error: "Name, email, and message are required" }, { status: 400 });
-  }
-  if (!isValidEmail(email.trim())) {
-    return NextResponse.json({ error: "Invalid email address" }, { status: 400 });
-  }
-  if (message.length > MAX_LEN || name.length > 200) {
-    return NextResponse.json({ error: "Input too long" }, { status: 400 });
-  }
 
   const gmailUser = process.env.GMAIL_USER;
   const gmailPass = process.env.GMAIL_APP_PASSWORD;
   if (!gmailUser || !gmailPass) {
-    console.error("[contact] GMAIL_USER / GMAIL_APP_PASSWORD not set — inquiry lost:", { name, email });
+    console.error("[contact] Email service is not configured.");
     return NextResponse.json({ error: "Email service not configured" }, { status: 500 });
   }
 
