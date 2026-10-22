@@ -1,0 +1,23 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"SEO-GEO Opportunity",
+  "type":"object",
+  "required":["id","problem","evidence","asset","action","business_impact","search_opportunity","geo_opportunity","confidence","effort","risk","priority"],
+  "properties":{
+    "id":{"type":"string"},
+    "problem":{"type":"string"},
+    "evidence":{"type":"array"},
+    "asset":{"type":"string"},
+    "action":{"type":"string"},
+    "expected_outcome":{"type":"string"},
+    "business_impact":{"type":"number","minimum":0,"maximum":10},
+    "search_opportunity":{"type":"number","minimum":0,"maximum":10},
+    "geo_opportunity":{"type":"number","minimum":0,"maximum":10},
+    "confidence":{"type":"number","minimum":0,"maximum":1},
+    "effort":{"type":"number","minimum":1},
+    "risk":{"type":"string"},
+    "dependencies":{"type":"array"},
+    "priority":{"enum":["P0","P1","P2","P3"]},
+    "approval_required":{"type":"boolean"}
+  }
+}

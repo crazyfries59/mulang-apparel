@@ -1,0 +1,27 @@
+{
+  "name": "seo-geo-autopilot",
+  "version": "1.0.0-mulang.1",
+  "upstream_version": "1.0.0",
+  "entrypoint": "SKILL.md",
+  "default_mode": "audit",
+  "publication_policy": "review_before_publish",
+  "files": [
+    "README.md",
+    "SKILL.md",
+    "adapters/tool-contracts.md",
+    "agents/openai.yaml",
+    "config.example.json",
+    "config.project.json",
+    "prompts/content-agent.md",
+    "prompts/geo-agent.md",
+    "prompts/orchestrator.md",
+    "prompts/qa-agent.md",
+    "prompts/seo-agent.md",
+    "references/mulang.md",
+    "references/workflow.md",
+    "schemas/geo-observation.schema.json",
+    "schemas/opportunity.schema.json",
+    "schemas/project-state.schema.json",
+    "templates/run-report.md"
+  ]
+}

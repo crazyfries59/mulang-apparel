@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mulang SEO/GEO"
+  short_description: "Audit Mulang SEO/GEO and prepare evidence-based changes"
+  default_prompt: "使用 $seo-geo-autopilot 审计木朗官网，读取项目配置并保存中文报告到 Obsidian。"

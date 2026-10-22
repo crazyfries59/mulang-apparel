@@ -1,0 +1,31 @@
+{
+  "mode": "audit",
+  "publication_policy": "review_before_publish",
+  "market": "US",
+  "language": "en",
+  "max_crawl_pages": 50,
+  "approval": {
+    "publish": true,
+    "destructive_changes": true,
+    "url_migrations": true
+  },
+  "capabilities": {
+    "web_search": true,
+    "site_crawl": true,
+    "serp_research": true,
+    "keyword_research": true,
+    "ai_query": false,
+    "analytics_read": false,
+    "search_console_read": false,
+    "cms_read": true,
+    "cms_write": false,
+    "file_store": true
+  },
+  "capability_limits": {
+    "site_crawl": "Manual bounded page reads; no installed crawler; live reachability unverified",
+    "serp_research": "Observed search results only; no geo/device rank tracker",
+    "keyword_research": "Qualitative topics only; no volume/CPC/difficulty data",
+    "cms_read": "Local source/schema only; authenticated CMS content access unverified",
+    "file_store": "Filesystem sandbox permissions still apply"
+  }
+}

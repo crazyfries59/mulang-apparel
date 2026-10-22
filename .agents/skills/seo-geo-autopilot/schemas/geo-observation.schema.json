@@ -1,0 +1,21 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"GEO Observation",
+  "type":"object",
+  "required":["prompt","engine","timestamp","brand_mentioned","competitors"],
+  "properties":{
+    "prompt":{"type":"string"},
+    "engine":{"type":"string"},
+    "model":{"type":["string","null"]},
+    "timestamp":{"type":"string"},
+    "market":{"type":["string","null"]},
+    "language":{"type":["string","null"]},
+    "brand_mentioned":{"type":"boolean"},
+    "brand_position":{"type":["integer","null"]},
+    "competitors":{"type":"array"},
+    "claims_about_brand":{"type":"array"},
+    "citations":{"type":"array"},
+    "raw_answer_ref":{"type":["string","null"]},
+    "limitations":{"type":"array"}
+  }
+}

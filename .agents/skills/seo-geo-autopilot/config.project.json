@@ -1,0 +1,45 @@
+{
+  "project_id": "mulang-apparel",
+  "domain": "https://www.lin6666.top",
+  "mode": "audit",
+  "publication_policy": "review_before_publish",
+  "market": "US",
+  "secondary_markets": ["AU", "CH", "CA", "GB", "NZ"],
+  "language": "en",
+  "report_language": "zh-CN",
+  "brand": "Mulang Apparel",
+  "goal": "Qualified B2B apparel manufacturing inquiries",
+  "max_crawl_pages": 50,
+  "respect_robots": true,
+  "geo_prompt_counts": {"category": 3, "comparison": 2, "use_case": 3, "trust": 2},
+  "approval": {"publish": true, "destructive_changes": true, "url_migrations": true},
+  "capabilities": {
+    "web_search": true,
+    "site_crawl": true,
+    "serp_research": true,
+    "keyword_research": true,
+    "ai_query": false,
+    "analytics_read": false,
+    "search_console_read": false,
+    "cms_read": true,
+    "cms_write": false,
+    "file_store": true
+  },
+  "capability_limits": {
+    "site_crawl": "Manual bounded page reads; no installed crawler; live reachability unverified",
+    "serp_research": "Observed search results only; no geo/device rank tracker",
+    "keyword_research": "Qualitative topics only; no volume/CPC/difficulty data",
+    "cms_read": "Local source/schema only; authenticated CMS content access unverified",
+    "file_store": "Filesystem sandbox permissions still apply"
+  },
+  "paths": {
+    "code_root": "C:/B/u盘文件/mulang-apparel",
+    "obsidian_project": "C:/A/obsidian本地仓库/项目/Mulang服装外贸",
+    "reports": "C:/A/obsidian本地仓库/项目/Mulang服装外贸/SEO-GEO",
+    "state": "C:/A/obsidian本地仓库/项目/Mulang服装外贸/SEO-GEO/project-state.json"
+  },
+  "commercial_paths": ["/", "/products", "/services", "/solutions", "/manufacturing", "/fabrics", "/contact"],
+  "seed_topics": ["private label clothing manufacturer", "custom streetwear manufacturer", "OEM ODM apparel manufacturing", "custom hoodie manufacturing", "clothing minimum order quantity"],
+  "scheduler": {"enabled": false},
+  "credentials_stored": false
+}

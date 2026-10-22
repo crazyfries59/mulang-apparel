@@ -1,0 +1,27 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"SEO-GEO-AUTOPILOT Project State",
+  "type":"object",
+  "required":["project_id","domain","mode","updated_at","site_profile","opportunities","action_queue"],
+  "properties":{
+    "project_id":{"type":"string"},
+    "domain":{"type":"string"},
+    "mode":{"enum":["audit","plan","optimize","autopilot"]},
+    "updated_at":{"type":"string"},
+    "site_profile":{"type":"object"},
+    "crawl":{"type":"object"},
+    "technical_audit":{"type":"array"},
+    "keyword_universe":{"type":"array"},
+    "serp_observations":{"type":"array"},
+    "competitors":{"type":"array"},
+    "prompt_matrix":{"type":"array"},
+    "geo_observations":{"type":"array"},
+    "citation_sources":{"type":"array"},
+    "content_inventory":{"type":"array"},
+    "opportunities":{"type":"array"},
+    "action_queue":{"type":"array"},
+    "execution_log":{"type":"array"},
+    "measurement_baseline":{"type":"object"},
+    "open_questions":{"type":"array"}
+  }
+}
