@@ -24,11 +24,12 @@
 | serp_research | 搜索结果仅作观察，不能视为指定地区、设备的精确排名 |
 | keyword_research | 从真实服务与搜索结果提取主题；搜索量、CPC、难度未知 |
 | ai_query | 未接入；不得把当前代理回答或普通网页搜索当成外部引擎样本 |
-| analytics_read / search_console_read | 未接入；有用户授权导出或可用连接器后才启用 |
+| analytics_read | 未接入 |
+| search_console_read | 已验证浏览器内域名资源 lin6666.top；可手动读取报告，未接入 API/OAuth；每次重新检查登录状态 |
 | cms_read | 当前通过本地源码和用户提供导出读取结构；后台数据库和线上 CMS 内容尚未验证 |
 | cms_write | 未接入自动写入；先输出文件草稿/本地补丁；未来接入时逐项记录目标、变更、验证和回滚 |
 | file_store | 本地文件工具；报告归 Obsidian，技能入口留在代码仓库 |
 
-本次线上首页、robots、sitemap 读取失败；本地 HTTP 重试报 SSL 连接失败。没有完成线上爬取、收录检查或 GEO 测量。
+首次安装时线上读取失败；后续已通过正式站点 HTTP 验证和 Search Console 浏览器报告核查。站点地图已成功处理，发现 255 个网址；索引报告更新于 2026-10-16，2 个已收录、9 个未收录，不代表当前全站总数。未完成整站爬取或 GEO 测量；最新证据以 Obsidian 项目状态和报告为准。
 
 Google 的 AI 搜索功能仍以基础 SEO、可抓取内容、可靠信息为基础，没有必需的特殊 AI 文件或专用 schema；这不保证任何引擎收录或引用。参考：https://developers.google.com/search/docs/appearance/ai-features 。
