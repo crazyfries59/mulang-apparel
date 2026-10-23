@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { PRODUCTS } from "./products/data";
 import { POSTS } from "./blog/posts";
 import { SITE_URL } from "@/lib/site";
-import { getCmsPosts } from "@/lib/content/sanity";
+import { getCmsPosts } from "@/lib/content";
 
 const STATIC_ROUTES = [
   { path: "", priority: 1, changeFrequency: "weekly" as const },
@@ -18,6 +18,8 @@ const STATIC_ROUTES = [
   { path: "/blog", priority: 0.7, changeFrequency: "weekly" as const },
   { path: "/contact", priority: 0.7, changeFrequency: "yearly" as const },
 ];
+
+export const dynamic = "force-dynamic";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();

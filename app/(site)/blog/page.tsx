@@ -4,13 +4,15 @@ import type { Metadata } from "next";
 import AnimatedSection from "@/components/AnimatedSection";
 import { ArrowRight, Clock, Tag } from "lucide-react";
 import { POSTS } from "./posts";
-import { getCmsPosts } from "@/lib/content/sanity";
+import { getCmsPosts } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Blog — Streetwear Manufacturing Insights",
   description: "Expert guides on custom clothing manufacturing, starting a streetwear brand, OEM/ODM sourcing, and scaling your apparel business.",
   alternates: { canonical: "/blog" },
 };
+
+export const dynamic = "force-dynamic";
 
 const CATS = ["All", "Manufacturing", "Brand Startup", "Custom Apparel", "OEM & ODM", "Industry News"];
 
@@ -21,8 +23,8 @@ export default async function BlogPage() {
     title: post.title,
     excerpt: post.excerpt,
     cat: post.category,
-    read: post.readTime,
-    date: new Date(post.publishedAt).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" }),
+    read: `${post.readMinutes} min read`,
+    date: post.publishedAt ? new Date(post.publishedAt).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" }) : "",
     img: post.image || "/products/y2k-fashion/bx8105-rib-260gsm-stretch-crop-y2k-baby-tee/img-1.jpg",
     featured: post.featured,
     published: true,

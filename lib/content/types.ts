@@ -5,10 +5,9 @@ export type CmsPost = {
   seoTitle?: string;
   seoDescription?: string;
   category: string;
-  readTime: string;
-  publishedAt: string;
-  readMinutes?: number;
+  readMinutes: number;
+  publishedAt?: string;
   image: string;
   featured: boolean;
-  body: unknown[];
+  body: unknown;
 };

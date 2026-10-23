@@ -7,16 +7,22 @@ import { ArrowRight, Clock, Tag } from "lucide-react";
 import { POSTS } from "../posts";
 import ChinaManufacturerTipsContent from "./ChinaManufacturerTipsContent";
 import MinimumOrderQuantityContent from "./MinimumOrderQuantityContent";
-import { PortableText } from "@portabletext/react";
-import { getCmsPost } from "@/lib/content/sanity";
+import { RichText } from "@payloadcms/richtext-lexical/react";
+import { getCmsPost, getCmsPosts } from "@/lib/content";
 
 const CONTENT_BY_SLUG: Record<string, React.ComponentType> = {
   "china-clothing-manufacturer-tips": ChinaManufacturerTipsContent,
   "minimum-order-quantity-guide": MinimumOrderQuantityContent,
 };
 
-export function generateStaticParams() {
-  return POSTS.filter((p) => p.published).map((p) => ({ slug: p.slug }));
+export const dynamic = "force-dynamic";
+
+export async function generateStaticParams() {
+  const cmsPosts = await getCmsPosts();
+  return [
+    ...POSTS.filter((p) => p.published).map((p) => ({ slug: p.slug })),
+    ...cmsPosts.filter((p) => !POSTS.some((local) => local.slug === p.slug)).map((p) => ({ slug: p.slug })),
+  ];
 }
 
 export async function generateMetadata(
@@ -50,10 +56,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   if (!post) notFound();
 
   const Content = "body" in post ? null : CONTENT_BY_SLUG[slug];
+  const isCmsPost = "readMinutes" in post;
   const category = "category" in post ? post.category : post.cat;
-  const readTime = "readTime" in post ? post.readTime : post.read;
-  const publishedDate = "publishedAt" in post
-    ? new Date(post.publishedAt).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" })
+  const readTime = isCmsPost ? `${post.readMinutes} min read` : post.read;
+  const publishedDate = isCmsPost
+    ? post.publishedAt ? new Date(post.publishedAt).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" }) : ""
     : post.date;
   const image = "image" in post && post.image ? post.image : "img" in post ? post.img : "/products/y2k-fashion/bx8105-rib-260gsm-stretch-crop-y2k-baby-tee/img-1.jpg";
 
@@ -65,7 +72,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     image,
     author: { "@type": "Organization", name: "Mulang Apparel" },
     publisher: { "@type": "Organization", name: "Mulang Apparel" },
-    datePublished: "publishedAt" in post ? post.publishedAt : post.date,
+    datePublished: isCmsPost ? post.publishedAt : post.date,
     mainEntityOfPage: `https://www.lin6666.top/blog/${post.slug}`,
   };
 
@@ -73,7 +80,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd).replace(/</g, "\\u003c") }}
       />
 
       {/* Header */}
@@ -112,7 +119,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <section className="px-6 pb-10">
         <div className="container max-w-3xl">
           <AnimatedSection>
-            {"body" in post && post.body ? <PortableText value={post.body as never} /> : Content && <Content />}
+            {isCmsPost && post.body ? <div className="prose prose-invert max-w-none prose-headings:font-syne prose-headings:text-white prose-p:text-white/65 prose-p:leading-8 prose-li:text-white/65"><RichText data={post.body as never} /></div> : Content && <Content />}
           </AnimatedSection>
         </div>
       </section>

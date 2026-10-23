@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
+import { withPayload } from "@payloadcms/next/withPayload";
 
 const nextConfig: NextConfig = {
+  outputFileTracingIncludes: { "/*": ["./config/supabase/prod-ca-2021.crt"] },
   images: {
     // Product photos are pre-resized and compressed at import time by
     // scripts/migrate-product-images.mjs, so there's nothing left for the
@@ -8,9 +10,8 @@ const nextConfig: NextConfig = {
     unoptimized: true,
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com" },
-      { protocol: "https", hostname: "cdn.sanity.io" },
     ],
   },
 };
 
-export default nextConfig;
+export default withPayload(nextConfig);

@@ -1,23 +1,37 @@
-# Blog CMS
+# Mulang 文章后台（Payload）
 
-The site uses a replaceable content adapter in `lib/content/`. Sanity is the first provider; the blog pages and sitemap consume the normalized adapter rather than Sanity documents directly.
+网站与管理后台运行在同一个 Next.js 项目中。后台入口是 `/admin`，旧入口 `/studio` 会跳转到后台。博客正文由 `lib/content/` 读取 Payload，并保留代码中已有文章作为补充。
 
-## First-time setup
+## 编辑与发布
 
-1. Create a Sanity account and project at https://www.sanity.io/manage.
-2. Create a dataset named `production` (or choose another dataset name).
-3. Add these public environment variables to the Vercel project and to local `.env.local` when developing:
-   - `NEXT_PUBLIC_SANITY_PROJECT_ID`
-   - `NEXT_PUBLIC_SANITY_DATASET`
-4. Redeploy. The Studio is available at `/studio` and uses Sanity sign-in. No Sanity write token is stored in the website.
-5. Add `www.lin6666.top` as an allowed origin in the Sanity project's API/CORS settings if the Studio requests it.
+使用原有后台账号登录后，编辑文章并保存草稿。点击发布才会更新公开版本；已发布文章的新草稿不会替换读者正在看的正文或 SEO 字段。首次发布未填写日期时自动补当前时间，未来日期的文章在到期前不出现在公开页面、列表或 sitemap。
 
-## Publishing an article
+后台目前管理文章标题、slug、摘要、分类、阅读时长、已有图片路径、富文本、发布时间、精选及 SEO 字段。新增图片上传和找回密码邮件尚未配置；不要把控制台邮件当成已送达邮件。
 
-In Studio, create a Blog post and fill in title, URL slug, excerpt, category, cover image, body, reading time, and SEO fields. Set `Publish date` to the current time to publish immediately, or a future time to schedule. Leave it empty to keep the document out of the public site. Publishing a document makes it appear in the blog index and sitemap; pages revalidate within five minutes.
+## 数据库与权限
 
-Existing local articles remain available as fallback until a CMS article with the same slug is published. Keep existing slugs unchanged when migrating so public URLs and search signals are preserved.
+- 授权目标是 `crazyfries59's Org` 下的 `mulang-apparel-cms`，项目 ref `mqgieansdrkbxfihwlki`，地区 `us-east-1`。Supabase 插件连接的是另一个账号，不能用于该项目的迁移或写入。
+- Postgres 使用独立的 `payload` schema。连接池最多 2 个连接，关闭自动推表，TLS 验证 Supabase 公共 CA。公共证书位于 `config/supabase/prod-ca-2021.crt`，随服务函数打包。
+- 已执行初始表结构、认证安全字段与私有访问三条迁移。全部 10 张表启用 RLS，拒绝 `PUBLIC`、`anon` 和 `authenticated` 访问。Payload 通过自己的登录与集合访问规则处理网站请求。
+- 应用运行用户 `mulang_cms_preview` 只获得 CMS 所需的数据权限，没有建表、清表、创建角色或修改迁移记录的权限。新增数据表的后续迁移需要同时补充 RLS 与运行角色授权。
+- 原 SQLite 的 1 个账号、1 篇文章、6 个版本已导入正确云库。保留原账号的密码哈希，不复制会话或重置令牌。原先标为已发布却没有日期的内容按草稿导入，避免未经审阅自动公开；本地数据库和备份保留。
 
-## Extending or replacing the CMS
+## 配置与部署边界
 
-Keep provider-specific queries in `lib/content/sanity.ts`, map provider output to `lib/content/types.ts`, and keep the route components provider-agnostic. A replacement provider should implement the same list/single-post functions. Export or migrate article content before removing a provider.
+本轮只部署 Vercel **Preview**，供检查后台和网站；不修改 Production 环境、正式域名或主分支。Preview 后台发布内容只会更新连接此库的预览应用；正式网站仍需单独审阅和部署 CMS 代码后才会使用后台内容。
+
+Preview 仅配置 `DATABASE_URL`（受限运行角色）和随机 `PAYLOAD_SECRET`，不配置 `DATABASE_MIGRATION_URL`。密钥只保存在 Git 忽略的本机环境文件与受保护的 Vercel 设置中，不进入 Git、聊天或项目笔记。CORS/CSRF 仅允许配置的精确 origin，包括 Vercel 当前部署及分支 origin，不使用通配符。
+
+本地启动会优先读取 `.env.local`；当前文件已经指向云库，编辑前应明确目标。需要隔离测试时显式使用独立 SQLite 文件和测试 secret。Vercel 禁止回退到 SQLite，生产构建缺少 `PAYLOAD_SECRET` 会拒绝运行。
+
+## 维护入口
+
+- `npm run db:migrate`：从 `DATABASE_MIGRATION_URL` 读取迁移连接，校验授权项目后运行 `migrations/postgres/`；不要用应用角色迁移。
+- `scripts/setup-cms-connection.mjs`：仅监听本机回环地址的密码配置页。已有配置成功时无需再次运行，也不需要重建 Supabase 项目。
+- `scripts/import-local-cms.mjs`：只读原 SQLite，目标已有账号或文章时拒绝导入；不会覆盖已有云内容。
+- `scripts/provision-cms-runtime.mjs`：准备当前 Preview 的受限运行角色，验证 TLS、权限及数据后保存本机运行连接；不在构建中运行。
+- `npm run test:content`：发布规则及询盘字段测试。
+- `node --test tests/cms-setup.integration.mjs`：配置页的离线安全回归，不使用真实密码或数据库。
+- `node tests/cms-cloud.integration.mjs --base-url http://127.0.0.1:3012`：显式运行真实云库及 HTTP 发布回归；仅创建随机 QA 数据，结束后按本次 ID 清理，不发送询盘。
+
+上线验证应覆盖真实登录、匿名访问拒绝、草稿与未来日期隐藏、已发布版本与后续草稿隔离、正文与 SEO、sitemap 以及测试数据清理。迁移成功或旧文章的代码回退成功，都不能单独证明 CMS 已接入。

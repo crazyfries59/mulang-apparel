@@ -6,20 +6,27 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "generate:importmap": "payload --disable-transpile generate:importmap",
+    "generate:types": "payload --disable-transpile generate:types",
+    "db:migrate": "node scripts/migrate-cms.mjs",
+    "test:content": "node --test --test-isolation=none tests/content-publication.test.ts tests/contact-validation.test.ts"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.10",
-    "@portabletext/react": "^8.0.1",
+    "@payloadcms/db-postgres": "3.91.0",
+    "@payloadcms/db-sqlite": "3.91.0",
+    "@payloadcms/next": "3.91.0",
+    "@payloadcms/richtext-lexical": "3.91.0",
     "framer-motion": "^12.40.0",
+    "graphql": "^16.11.0",
     "lucide-react": "^1.17.0",
-    "next": "16.2.7",
-    "next-sanity": "^13.3.4",
+    "next": "16.4.2",
     "nodemailer": "^10.0.9",
+    "payload": "3.91.0",
     "react": "19.2.4",
     "react-dom": "19.2.4",
-    "sanity": "^5.29.0",
-    "sharp": "^0.35.4",
+    "sharp": "0.35.5",
     "swiper": "^12.2.0"
   },
   "devDependencies": {
@@ -28,8 +35,13 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.2.7",
+    "eslint-config-next": "16.4.2",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "overrides": {
+    "@payloadcms/next@3.91.0": {
+      "sass": "1.79.0"
+    }
   }
 }

@@ -4,7 +4,7 @@ import { useState, useEffect, useRef, useCallback, type FormEvent } from "react"
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
-import { CATEGORIES } from "@/app/products/data";
+import { CATEGORIES } from "@/app/(site)/products/data";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Search, MessageCircle, ChevronDown, ArrowRight } from "lucide-react";
 
