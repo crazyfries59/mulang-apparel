@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ContactClient from "./ContactClient";
-import { findProduct } from "../products/data";
+import { getPublicProduct } from "@/lib/content/products";
 
 export const metadata: Metadata = {
   title: "Contact Us — Get A Free Quote",
@@ -13,7 +13,7 @@ export default async function ContactPage({ searchParams }: {
   searchParams: Promise<{ product?: string | string[] }>;
 }) {
   const { product: slug } = await searchParams;
-  const product = typeof slug === "string" ? findProduct(slug) : undefined;
+  const product = typeof slug === "string" ? await getPublicProduct(slug) : undefined;
   return <ContactClient key={product?.slug ?? "general"} initialProduct={product ? {
     name: product.name, slug: product.slug,
   } : undefined} />;

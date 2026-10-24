@@ -1,18 +1,18 @@
-# Mulang 文章后台（Payload）
+# Mulang 内容后台（Payload）
 
-网站与管理后台运行在同一个 Next.js 项目中。后台入口是 `/admin`，旧入口 `/studio` 会跳转到后台。博客正文由 `lib/content/` 读取 Payload，并保留代码中已有文章作为补充。
+网站与管理后台运行在同一个 Next.js 项目中。后台入口是 `/admin`，旧入口 `/studio` 会跳转到后台。博客正文由 `lib/content/` 读取 Payload，并保留代码中已有文章作为补充。产品目录也接入同一 CMS：产品列表、详情、产品询盘预选、sitemap 和首页分类代表图均读取已发布产品；未发布/删除产品不会从旧静态目录重新露出。
 
 ## 编辑与发布
 
 使用原有后台账号登录后，编辑文章并保存草稿。点击发布才会更新公开版本；已发布文章的新草稿不会替换读者正在看的正文或 SEO 字段。首次发布未填写日期时自动补当前时间，未来日期的文章在到期前不出现在公开页面、列表或 sitemap。
 
-后台目前管理文章标题、slug、摘要、分类、阅读时长、已有图片路径、富文本、发布时间、精选及 SEO 字段。新增图片上传和找回密码邮件尚未配置；不要把控制台邮件当成已送达邮件。
+后台目前管理文章标题、slug、摘要、分类、阅读时长、已有图片路径、富文本、发布时间、精选及 SEO 字段；产品管理产品名称、SKU、slug、分类、图片路径与图集、简介、规格展示、列表顺序、发布时间及 SEO。图片仍使用网站仓库中的路径或公开 URL，并非上传到 CMS；修改文件名/路径前先确认仓库中图片存在。新增图片上传和找回密码邮件尚未配置；不要把控制台邮件当成已送达邮件。
 
 ## 数据库与权限
 
 - 授权目标是 `crazyfries59's Org` 下的 `mulang-apparel-cms`，项目 ref `mqgieansdrkbxfihwlki`，地区 `us-east-1`。Supabase 插件连接的是另一个账号，不能用于该项目的迁移或写入。
 - Postgres 使用独立的 `payload` schema。连接池最多 2 个连接，关闭自动推表，TLS 验证 Supabase 公共 CA。公共证书位于 `config/supabase/prod-ca-2021.crt`，随服务函数打包。
-- 已执行初始表结构、认证安全字段与私有访问三条迁移。全部 10 张表启用 RLS，拒绝 `PUBLIC`、`anon` 和 `authenticated` 访问。Payload 通过自己的登录与集合访问规则处理网站请求。
+- 已执行的数据库迁移须以当前 Preview 部署状态为准。产品目录新增的迁移会为产品、图集、细节图及版本表启用 RLS，拒绝 `PUBLIC`、`anon` 和 `authenticated` 的产品表/序列访问，并只为已有的受限 CMS 角色授予所需数据权限。
 - 应用运行用户 `mulang_cms_preview` 只获得 CMS 所需的数据权限，没有建表、清表、创建角色或修改迁移记录的权限。新增数据表的后续迁移需要同时补充 RLS 与运行角色授权。
 - 原 SQLite 的 1 个账号、1 篇文章、6 个版本已导入正确云库。保留原账号的密码哈希，不复制会话或重置令牌。原先标为已发布却没有日期的内容按草稿导入，避免未经审阅自动公开；本地数据库和备份保留。
 
@@ -33,6 +33,7 @@ Preview 仅配置 `DATABASE_URL`（受限运行角色）和随机 `PAYLOAD_SECRE
 - `scripts/import-local-cms.mjs`：只读原 SQLite，目标已有账号或文章时拒绝导入；不会覆盖已有云内容。
 - `scripts/provision-cms-runtime.mjs`：准备当前 Preview 的受限运行角色，验证 TLS、权限及数据后保存本机运行连接；不在构建中运行。
 - `npm run test:content`：发布规则及询盘字段测试。
+- `npm run cms:import-products`：将代码目录中的 241 个当前产品以已发布状态导入 Preview；脚本校验固定项目 ref、拒绝未知 slug 和目标产品覆盖，并在结束时核对公开产品数量。不得将环境切换到 Production。
 - `node --test tests/cms-setup.integration.mjs`：配置页的离线安全回归，不使用真实密码或数据库。
 - `node tests/cms-cloud.integration.mjs --base-url http://127.0.0.1:3012`：显式运行真实云库及 HTTP 发布回归；仅创建随机 QA 数据，结束后按本次 ID 清理，不发送询盘。
 

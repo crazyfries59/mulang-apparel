@@ -6,6 +6,7 @@ import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { zh } from "@payloadcms/translations/languages/zh";
 import { buildConfig } from "payload";
 import { Posts } from "./collections/Posts.ts";
+import { Products } from "./collections/Products.ts";
 import { Users } from "./collections/Users.ts";
 import { postgresOptions } from "./lib/database/postgres-options.mjs";
 import { payloadPg } from "./lib/database/payload-pg.mjs";
@@ -42,7 +43,7 @@ export default buildConfig({
     user: Users.slug,
     importMap: { baseDir: dirname },
   },
-  collections: [Users, Posts],
+  collections: [Users, Posts, Products],
   editor: lexicalEditor({}),
   db: isPostgres ? postgresAdapter({
     pg: payloadPg,

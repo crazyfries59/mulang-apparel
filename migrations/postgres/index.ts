@@ -1,6 +1,7 @@
-import * as migration_20261022_160341_initial_payload from './20261022_160341_initial_payload.ts';
-import * as migration_20261022_173021_payload_auth_security from './20261022_173021_payload_auth_security.ts';
-import * as migration_20261023_082701_private_payload_access from './20261023_082701_private_payload_access.ts';
+import * as migration_20261022_160341_initial_payload from './20261022_160341_initial_payload';
+import * as migration_20261022_173021_payload_auth_security from './20261022_173021_payload_auth_security';
+import * as migration_20261023_082701_private_payload_access from './20261023_082701_private_payload_access';
+import * as migration_20261024_115512_product_catalog from './20261024_115512_product_catalog';
 
 export const migrations = [
   {
@@ -16,6 +17,11 @@ export const migrations = [
   {
     up: migration_20261023_082701_private_payload_access.up,
     down: migration_20261023_082701_private_payload_access.down,
-    name: '20261023_082701_private_payload_access'
+    name: '20261023_082701_private_payload_access',
+  },
+  {
+    up: migration_20261024_115512_product_catalog.up,
+    down: migration_20261024_115512_product_catalog.down,
+    name: '20261024_115512_product_catalog'
   },
 ];

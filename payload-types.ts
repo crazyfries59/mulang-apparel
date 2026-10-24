@@ -69,6 +69,7 @@ export interface Config {
   collections: {
     users: User;
     posts: Post;
+    products: Product;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -78,6 +79,7 @@ export interface Config {
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
     posts: PostsSelect<false> | PostsSelect<true>;
+    products: ProductsSelect<false> | ProductsSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -194,6 +196,103 @@ export interface Post {
   _status?: ('draft' | 'published') | null;
 }
 /**
+ * 管理官网产品目录。保存草稿不会改变公开页面；点击发布后网站自动同步。
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "products".
+ */
+export interface Product {
+  id: number;
+  name: string;
+  /**
+   * 公开网址的一部分；留空时按产品名称生成，例如 oversized-cotton-t-shirt。
+   */
+  slug: string;
+  productCode?: string | null;
+  category:
+    | 'kids-wear'
+    | 'shirt'
+    | 't-shirts'
+    | 'outdoor-clothing'
+    | 'pants'
+    | 'hoodies'
+    | 'denim'
+    | 'y2k-fashion'
+    | 'sleepwear'
+    | 'sweater'
+    | 'jersey'
+    | 'dresses'
+    | 'swimwear'
+    | 'accessories';
+  subcategory?:
+    | (
+        | ''
+        | 'oversized-t-shirt'
+        | 'vintage-wash-t-shirt'
+        | 'polo'
+        | 'vest'
+        | 'long-sleeve'
+        | 'basic-fit-t-shirt'
+        | 'shorts'
+        | 'fleece-hoodie'
+        | 'terry-hoodie'
+        | 'sweatshirt'
+        | 'zip-up-hoodie'
+      )
+    | null;
+  /**
+   * 当前使用仓库里的产品图片路径（例如 /products/.../img-1.jpg），或填写可公开访问的图片 URL。此处不是文件上传。
+   */
+  coverImage: string;
+  gallery?:
+    | {
+        image: string;
+        id?: string | null;
+      }[]
+    | null;
+  details?:
+    | {
+        image: string;
+        id?: string | null;
+      }[]
+    | null;
+  description?: string | null;
+  fabric?: string | null;
+  gsm?: string | null;
+  /**
+   * 沿用当前网站显示格式，例如 $6.99；不代表最终报价。
+   */
+  price?: string | null;
+  moq?: string | null;
+  leadTime?: string | null;
+  /**
+   * 可留空；当前支持 Best Seller、New 等文字。
+   */
+  badge?: string | null;
+  sizes?: string | null;
+  intro?: {
+    feature?: string | null;
+    sizeInfo?: string | null;
+    material?: string | null;
+    weight?: string | null;
+    blank?: string | null;
+    logoCustomization?: string | null;
+    clothingCustomization?: string | null;
+  };
+  seo?: {
+    title?: string | null;
+    description?: string | null;
+  };
+  sortOrder?: number | null;
+  /**
+   * 点击发布时留空会自动填当前时间；设为未来时间则到时才出现在网站。
+   */
+  publishedAt?: string | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
@@ -224,6 +323,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'posts';
         value: number | Post;
+      } | null)
+    | ({
+        relationTo: 'products';
+        value: number | Product;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -311,6 +414,60 @@ export interface PostsSelect<T extends boolean = true> {
         title?: T;
         description?: T;
       };
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "products_select".
+ */
+export interface ProductsSelect<T extends boolean = true> {
+  name?: T;
+  slug?: T;
+  productCode?: T;
+  category?: T;
+  subcategory?: T;
+  coverImage?: T;
+  gallery?:
+    | T
+    | {
+        image?: T;
+        id?: T;
+      };
+  details?:
+    | T
+    | {
+        image?: T;
+        id?: T;
+      };
+  description?: T;
+  fabric?: T;
+  gsm?: T;
+  price?: T;
+  moq?: T;
+  leadTime?: T;
+  badge?: T;
+  sizes?: T;
+  intro?:
+    | T
+    | {
+        feature?: T;
+        sizeInfo?: T;
+        material?: T;
+        weight?: T;
+        blank?: T;
+        logoCustomization?: T;
+        clothingCustomization?: T;
+      };
+  seo?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+      };
+  sortOrder?: T;
+  publishedAt?: T;
   updatedAt?: T;
   createdAt?: T;
   _status?: T;

@@ -9,6 +9,15 @@ export function publishedPostWhere(now = new Date()): Where {
   };
 }
 
+export function publishedProductWhere(now = new Date()): Where {
+  return {
+    and: [
+      { _status: { equals: "published" } },
+      { publishedAt: { less_than_equal: now.toISOString() } },
+    ],
+  };
+}
+
 type Publication = { _status?: "draft" | "published" | null; publishedAt?: string | null };
 
 export function withPublicationDate<T extends Publication>(

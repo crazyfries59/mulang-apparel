@@ -1,6 +1,6 @@
 "use client";
 
-import { use, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -9,7 +9,7 @@ import {
   Ruler, Droplets, Sun, Wind, Wand2, Tag, Printer, Sparkles, Scissors, Shirt,
   Layers,
 } from "lucide-react";
-import { findProduct, catLabel, PRODUCTS } from "../data";
+import { catLabel, type Product } from "../data";
 
 const badgeBg = (b: string) =>
   b === "Best Seller" ? "bg-red-500" : b === "New" ? "bg-violet-500" : "bg-emerald-500";
@@ -79,26 +79,16 @@ function buildSizeChart(sizes: string[], bottom: boolean) {
   };
 }
 
-export default function ProductDetailPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = use(params);
-  const p = findProduct(slug);
+export default function ProductDetailPage({ product: p, relatedProducts }: {
+  product: Product;
+  relatedProducts: Product[];
+}) {
   const [active, setActive] = useState(0);
 
-  if (!p) {
-    return (
-      <section className="min-h-[70vh] flex flex-col items-center justify-center px-6 text-center">
-        <p className="font-display-serif text-white text-3xl mb-3">Product not found</p>
-        <p className="text-white/40 text-sm mb-6">This item may have been moved or renamed.</p>
-        <Link href="/products" className="btn-gradient">Back to Products</Link>
-      </section>
-    );
-  }
-
-  const gallery = p.gallery?.length ? p.gallery : [p.img];
+  const gallery = p.gallery?.length ? p.gallery : p.img ? [p.img] : [];
   const sizes = parseSizes(p.sizes);
   const intro = p.intro ?? {};
   const details = p.details ?? [];
-  const related = PRODUCTS.filter(r => r.cat === p.cat && r.slug !== p.slug).slice(0, 4);
   const cleanedSizes = cleanSizes(sizes);
   const chart = cleanedSizes.length ? buildSizeChart(cleanedSizes, isBottom(p.cat, p.sub)) : null;
 
@@ -390,11 +380,11 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
         </div>
 
         {/* ── Related ── */}
-        {related.length > 0 && (
+        {relatedProducts.length > 0 && (
           <div className="mt-16">
             <p className="label mb-6">More in {catLabel(p.cat)}</p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-              {related.map(r => (
+              {relatedProducts.map(r => (
                 <Link key={r.slug} href={`/products/${r.slug}`} className="group block">
                   <div className="relative aspect-[3/4] rounded-xl overflow-hidden bg-[#141414] mb-3">
                     <Image src={r.img} alt={r.name} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="25vw" />

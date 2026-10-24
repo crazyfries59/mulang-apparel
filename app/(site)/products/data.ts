@@ -7,7 +7,7 @@
    third-party server for its own product photos.
    ───────────────────────────────────────────────────────────────── */
 
-import raw from "./hongyu-products.json";
+import raw from "./hongyu-products.json" with { type: "json" };
 
 export const slugify = (s: string) =>
   s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
@@ -74,6 +74,8 @@ export type Product = {
   fabric: string; badge: string; img: string; desc: string;
   sizes?: string; gallery: string[]; slug: string; intro: Intro;
   details: string[];
+  seoTitle?: string;
+  seoDescription?: string;
 };
 
 type RawProduct = {

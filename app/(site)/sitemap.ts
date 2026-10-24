@@ -1,8 +1,8 @@
 import type { MetadataRoute } from "next";
-import { PRODUCTS } from "./products/data";
 import { POSTS } from "./blog/posts";
 import { SITE_URL } from "@/lib/site";
 import { getCmsPosts } from "@/lib/content";
+import { getPublicProducts } from "@/lib/content/products";
 
 const STATIC_ROUTES = [
   { path: "", priority: 1, changeFrequency: "weekly" as const },
@@ -31,7 +31,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority,
   }));
 
-  const productEntries: MetadataRoute.Sitemap = PRODUCTS.map((p) => ({
+  const products = await getPublicProducts();
+  const productEntries: MetadataRoute.Sitemap = products.map((p) => ({
     url: `${SITE_URL}/products/${p.slug}`,
     lastModified: now,
     changeFrequency: "monthly",

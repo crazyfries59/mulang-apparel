@@ -7,14 +7,14 @@ import AnimatedSection from "@/components/AnimatedSection";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Search } from "lucide-react";
-import { CATEGORIES, PRODUCTS, countFor } from "./data";
+import { CATEGORIES, type Product } from "./data";
 
 const badgeColor = (b: string) =>
   b === "Best Seller" ? "bg-red-500" : b === "New" ? "bg-violet-500" : "bg-emerald-500";
 
 const catHref = (slug: string) => (slug === "all" ? "/products" : `/products?cat=${slug}`);
 
-export default function ProductsView() {
+export default function ProductsView({ products }: { products: Product[] }) {
   const searchParams = useSearchParams();
   const activeCat = searchParams.get("cat") ?? "all";
   const [search, setSearch] = useState(searchParams.get("q") ?? "");
@@ -22,21 +22,23 @@ export default function ProductsView() {
   const counts = useMemo(() => {
     const map: Record<string, number> = {};
     for (const c of CATEGORIES) {
-      map[c.slug] = countFor(c.slug);
-      for (const s of c.subs ?? []) map[s.slug] = countFor(s.slug);
+      map[c.slug] = products.filter((product) => product.cat === c.slug || product.sub === c.slug).length;
+      for (const s of c.subs ?? []) {
+        map[s.slug] = products.filter((product) => product.cat === s.slug || product.sub === s.slug).length;
+      }
     }
     return map;
-  }, []);
+  }, [products]);
 
   const filtered = useMemo(() => {
     let list = activeCat === "all"
-      ? PRODUCTS
-      : PRODUCTS.filter(p => p.cat === activeCat || p.sub === activeCat);
+      ? products
+      : products.filter(p => p.cat === activeCat || p.sub === activeCat);
     const q = search.trim().toLowerCase();
     if (q) list = list.filter(p =>
       p.name.toLowerCase().includes(q) || p.cat.toLowerCase().includes(q) || p.fabric.toLowerCase().includes(q));
     return list;
-  }, [activeCat, search]);
+  }, [activeCat, products, search]);
 
   const catRow = (slug: string, label: string, n: number) => {
     const active = activeCat === slug;
@@ -75,7 +77,7 @@ export default function ProductsView() {
           <aside className="hidden lg:block w-56 flex-shrink-0">
             <div className="sticky top-28 max-h-[calc(100vh-8rem)] overflow-y-auto pr-1">
               <p className="label mb-4">Categories</p>
-              {catRow("all", "All Products", PRODUCTS.length)}
+              {catRow("all", "All Products", products.length)}
               <div className="h-px bg-white/8 my-2" />
               {CATEGORIES.map(c => {
                 const subActive = c.subs?.some(s => s.slug === activeCat);
