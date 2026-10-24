@@ -8,6 +8,7 @@ import { buildConfig } from "payload";
 import { Posts } from "./collections/Posts.ts";
 import { Users } from "./collections/Users.ts";
 import { postgresOptions } from "./lib/database/postgres-options.mjs";
+import { payloadPg } from "./lib/database/payload-pg.mjs";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -44,6 +45,7 @@ export default buildConfig({
   collections: [Users, Posts],
   editor: lexicalEditor({}),
   db: isPostgres ? postgresAdapter({
+    pg: payloadPg,
     pool: postgresOptions(sqliteUrl),
     schemaName: "payload",
     push: false,

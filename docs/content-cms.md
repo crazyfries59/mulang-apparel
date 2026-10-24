@@ -26,6 +26,8 @@ Preview 仅配置 `DATABASE_URL`（受限运行角色）和随机 `PAYLOAD_SECRE
 
 ## 维护入口
 
+- 安装时的 `postinstall` 会核对固定的 Payload 3.91.0 版本及源码 SHA256，只补回上游初始化探针缺少的 `result.release()`，避免小连接池在事务及文档锁检查时耗尽。补丁脚本为 `scripts/apply-payload-postgres-fix.mjs`；未知版本或源码会拒绝安装，升级 Payload 前应复核并移除已被上游修复的补丁。[上游修复来源](https://github.com/payloadcms/payload/blob/main/packages/db-postgres/src/connect.ts)。
+- `lib/database/payload-pg.mjs` 只为原生池增加不含错误详情的 idle 断链日志，不覆盖连接借还、事务、锁或 RLS。`node --test --test-isolation=none tests/payload-postgres-probe.test.mjs` 验证初始化/重连归还、事务独占、错误处理、排空与补丁幂等。
 - `npm run db:migrate`：从 `DATABASE_MIGRATION_URL` 读取迁移连接，校验授权项目后运行 `migrations/postgres/`；不要用应用角色迁移。
 - `scripts/setup-cms-connection.mjs`：仅监听本机回环地址的密码配置页。已有配置成功时无需再次运行，也不需要重建 Supabase 项目。
 - `scripts/import-local-cms.mjs`：只读原 SQLite，目标已有账号或文章时拒绝导入；不会覆盖已有云内容。
