@@ -67,19 +67,37 @@ export interface Config {
   };
   blocks: {};
   collections: {
-    users: User;
-    posts: Post;
     products: Product;
+    posts: Post;
+    'sales-scripts': SalesScript;
+    knowledge: Knowledge;
+    customers: Customer;
+    inquiries: Inquiry;
+    orders: Order;
+    'follow-ups': FollowUp;
+    users: User;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
   };
-  collectionsJoins: {};
+  collectionsJoins: {
+    customers: {
+      inquiries: 'inquiries';
+      orders: 'orders';
+      followUps: 'follow-ups';
+    };
+  };
   collectionsSelect: {
-    users: UsersSelect<false> | UsersSelect<true>;
-    posts: PostsSelect<false> | PostsSelect<true>;
     products: ProductsSelect<false> | ProductsSelect<true>;
+    posts: PostsSelect<false> | PostsSelect<true>;
+    'sales-scripts': SalesScriptsSelect<false> | SalesScriptsSelect<true>;
+    knowledge: KnowledgeSelect<false> | KnowledgeSelect<true>;
+    customers: CustomersSelect<false> | CustomersSelect<true>;
+    inquiries: InquiriesSelect<false> | InquiriesSelect<true>;
+    orders: OrdersSelect<false> | OrdersSelect<true>;
+    'follow-ups': FollowUpsSelect<false> | FollowUpsSelect<true>;
+    users: UsersSelect<false> | UsersSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -118,82 +136,6 @@ export interface UserAuthOperations {
     email: string;
     password: string;
   };
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "users".
- */
-export interface User {
-  id: number;
-  name?: string | null;
-  updatedAt: string;
-  createdAt: string;
-  email: string;
-  resetPasswordToken?: string | null;
-  resetPasswordExpiration?: string | null;
-  salt?: string | null;
-  hash?: string | null;
-  resetPasswordRequestedAt?: string | null;
-  loginAttempts?: number | null;
-  lockUntil?: string | null;
-  sessions?:
-    | {
-        id: string;
-        createdAt?: string | null;
-        expiresAt: string;
-      }[]
-    | null;
-  password?: string | null;
-  collection: 'users';
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "posts".
- */
-export interface Post {
-  id: number;
-  title: string;
-  /**
-   * 公开 URL，例如 custom-hoodie-manufacturing
-   */
-  slug: string;
-  /**
-   * 列表页摘要和默认 SEO 描述
-   */
-  excerpt: string;
-  category: 'Manufacturing' | 'Brand Startup' | 'Custom Apparel' | 'OEM & ODM' | 'Industry News';
-  readMinutes: number;
-  /**
-   * 先使用网站图片路径；后续可接入 Media 图片库
-   */
-  coverImage: string;
-  body: {
-    root: {
-      type: string;
-      children: {
-        type: any;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  };
-  /**
-   * 点击发布时留空会自动使用当前时间；未来时间的文章到时才公开。草稿请用“保存草稿”。
-   */
-  publishedAt?: string | null;
-  featured?: boolean | null;
-  seo?: {
-    title?: string | null;
-    description?: string | null;
-  };
-  updatedAt: string;
-  createdAt: string;
-  _status?: ('draft' | 'published') | null;
 }
 /**
  * 管理官网产品目录。保存草稿不会改变公开页面；点击发布后网站自动同步。
@@ -294,6 +236,251 @@ export interface Product {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "posts".
+ */
+export interface Post {
+  id: number;
+  title: string;
+  /**
+   * 公开 URL，例如 custom-hoodie-manufacturing
+   */
+  slug: string;
+  /**
+   * 列表页摘要和默认 SEO 描述
+   */
+  excerpt: string;
+  category: 'Manufacturing' | 'Brand Startup' | 'Custom Apparel' | 'OEM & ODM' | 'Industry News';
+  readMinutes: number;
+  /**
+   * 先使用网站图片路径；后续可接入 Media 图片库
+   */
+  coverImage: string;
+  body: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  /**
+   * 点击发布时留空会自动使用当前时间；未来时间的文章到时才公开。草稿请用“保存草稿”。
+   */
+  publishedAt?: string | null;
+  featured?: boolean | null;
+  seo?: {
+    title?: string | null;
+    description?: string | null;
+  };
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * 开发信、询盘回复、跟进、转化大货等常用话术，同事可直接复制使用。
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "sales-scripts".
+ */
+export interface SalesScript {
+  id: number;
+  title: string;
+  content: string;
+  usage?: string | null;
+  category: 'outreach' | 'inquiry-reply' | 'quote' | 'no-reply' | 'sample' | 'bulk' | 'review' | 'other';
+  language?: ('en' | 'zh') | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * 面料、工艺、尺码、辅料、物流、报价规则等内部资料，供同事查阅。
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "knowledge".
+ */
+export interface Knowledge {
+  id: number;
+  title: string;
+  summary?: string | null;
+  body?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  category: 'fabric' | 'craft' | 'size' | 'trims' | 'shipping' | 'pricing' | 'process' | 'other';
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * 客户台账：联系方式、销售阶段、负责人和下次跟进时间。询盘、订单和跟进记录会显示在客户详情底部。
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "customers".
+ */
+export interface Customer {
+  id: number;
+  name: string;
+  contactName?: string | null;
+  country?: string | null;
+  email?: string | null;
+  whatsapp?: string | null;
+  website?: string | null;
+  /**
+   * 例如 卫衣、T 恤、腰带
+   */
+  productFocus?: string | null;
+  cooperation?: ('blank' | 'logo' | 'cut-sew')[] | null;
+  /**
+   * 需求要点、付款习惯、注意事项等。报价、MOQ 等以实际确认为准。
+   */
+  notes?: string | null;
+  /**
+   * 电脑上存放该客户设计稿、发票、水单的文件夹路径，只作记录，不上传文件。
+   */
+  localFolder?: string | null;
+  stage: 'new' | 'contacted' | 'interested' | 'quoted' | 'sampling' | 'won' | 'lost';
+  source?: ('website' | 'email' | 'whatsapp' | 'referral' | 'platform' | 'other') | null;
+  /**
+   * 新建时默认是创建人。
+   */
+  owner?: (number | null) | User;
+  nextFollowUpAt?: string | null;
+  inquiries?: {
+    docs?: (number | Inquiry)[];
+    hasNextPage?: boolean;
+    totalDocs?: number;
+  };
+  orders?: {
+    docs?: (number | Order)[];
+    hasNextPage?: boolean;
+    totalDocs?: number;
+  };
+  followUps?: {
+    docs?: (number | FollowUp)[];
+    hasNextPage?: boolean;
+    totalDocs?: number;
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * 管理员可以新建同事账号、分配角色和删除记录；业务员可以查看和编辑所有客户、询盘与订单。
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "users".
+ */
+export interface User {
+  id: number;
+  name?: string | null;
+  role: 'admin' | 'sales';
+  updatedAt: string;
+  createdAt: string;
+  email: string;
+  resetPasswordToken?: string | null;
+  resetPasswordExpiration?: string | null;
+  salt?: string | null;
+  hash?: string | null;
+  resetPasswordRequestedAt?: string | null;
+  loginAttempts?: number | null;
+  lockUntil?: string | null;
+  sessions?:
+    | {
+        id: string;
+        createdAt?: string | null;
+        expiresAt: string;
+      }[]
+    | null;
+  password?: string | null;
+  collection: 'users';
+}
+/**
+ * 官网联系表单提交会自动出现在这里，也可以手动登记邮件或 WhatsApp 来的询盘。状态改为「已转客户」会自动建客户。
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "inquiries".
+ */
+export interface Inquiry {
+  id: number;
+  name: string;
+  company?: string | null;
+  email?: string | null;
+  whatsapp?: string | null;
+  country?: string | null;
+  productType?: string | null;
+  quantity?: string | null;
+  message: string;
+  reply?: string | null;
+  status: 'new' | 'replied' | 'converted' | 'invalid';
+  source?: ('website' | 'email' | 'whatsapp' | 'referral' | 'platform' | 'other') | null;
+  receivedAt: string;
+  customer?: (number | null) | Customer;
+  owner?: (number | null) | User;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * 样品和大货进度：阶段、数量、交期和快递单号。金额与数量按实际确认填写。
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "orders".
+ */
+export interface Order {
+  id: number;
+  title: string;
+  customer: number | Customer;
+  quantity?: number | null;
+  amount?: number | null;
+  currency?: ('USD' | 'EUR' | 'GBP' | 'AUD' | 'CAD' | 'CHF' | 'CNY') | null;
+  carrier?: string | null;
+  trackingNumber?: string | null;
+  notes?: string | null;
+  type: 'sample' | 'bulk';
+  stage: 'quoting' | 'sampling' | 'confirmed' | 'production' | 'shipped' | 'done' | 'cancelled';
+  dueDate?: string | null;
+  shippedAt?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * 每次和客户沟通记一条。填写「下次跟进」会同步到客户的跟进日期，概览页会提醒。
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "follow-ups".
+ */
+export interface FollowUp {
+  id: number;
+  customer: number | Customer;
+  /**
+   * 一句话，例如「发了第二轮样品报价」
+   */
+  summary: string;
+  content?: string | null;
+  date: string;
+  channel?: ('whatsapp' | 'email' | 'wechat' | 'call' | 'meeting' | 'other') | null;
+  nextFollowUpAt?: string | null;
+  author?: (number | null) | User;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
 export interface PayloadKv {
@@ -317,16 +504,40 @@ export interface PayloadLockedDocument {
   id: number;
   document?:
     | ({
-        relationTo: 'users';
-        value: number | User;
+        relationTo: 'products';
+        value: number | Product;
       } | null)
     | ({
         relationTo: 'posts';
         value: number | Post;
       } | null)
     | ({
-        relationTo: 'products';
-        value: number | Product;
+        relationTo: 'sales-scripts';
+        value: number | SalesScript;
+      } | null)
+    | ({
+        relationTo: 'knowledge';
+        value: number | Knowledge;
+      } | null)
+    | ({
+        relationTo: 'customers';
+        value: number | Customer;
+      } | null)
+    | ({
+        relationTo: 'inquiries';
+        value: number | Inquiry;
+      } | null)
+    | ({
+        relationTo: 'orders';
+        value: number | Order;
+      } | null)
+    | ({
+        relationTo: 'follow-ups';
+        value: number | FollowUp;
+      } | null)
+    | ({
+        relationTo: 'users';
+        value: number | User;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -369,54 +580,6 @@ export interface PayloadMigration {
   batch?: number | null;
   updatedAt: string;
   createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "users_select".
- */
-export interface UsersSelect<T extends boolean = true> {
-  name?: T;
-  updatedAt?: T;
-  createdAt?: T;
-  email?: T;
-  resetPasswordToken?: T;
-  resetPasswordExpiration?: T;
-  salt?: T;
-  hash?: T;
-  resetPasswordRequestedAt?: T;
-  loginAttempts?: T;
-  lockUntil?: T;
-  sessions?:
-    | T
-    | {
-        id?: T;
-        createdAt?: T;
-        expiresAt?: T;
-      };
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "posts_select".
- */
-export interface PostsSelect<T extends boolean = true> {
-  title?: T;
-  slug?: T;
-  excerpt?: T;
-  category?: T;
-  readMinutes?: T;
-  coverImage?: T;
-  body?: T;
-  publishedAt?: T;
-  featured?: T;
-  seo?:
-    | T
-    | {
-        title?: T;
-        description?: T;
-      };
-  updatedAt?: T;
-  createdAt?: T;
-  _status?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -471,6 +634,162 @@ export interface ProductsSelect<T extends boolean = true> {
   updatedAt?: T;
   createdAt?: T;
   _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "posts_select".
+ */
+export interface PostsSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  excerpt?: T;
+  category?: T;
+  readMinutes?: T;
+  coverImage?: T;
+  body?: T;
+  publishedAt?: T;
+  featured?: T;
+  seo?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "sales-scripts_select".
+ */
+export interface SalesScriptsSelect<T extends boolean = true> {
+  title?: T;
+  content?: T;
+  usage?: T;
+  category?: T;
+  language?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "knowledge_select".
+ */
+export interface KnowledgeSelect<T extends boolean = true> {
+  title?: T;
+  summary?: T;
+  body?: T;
+  category?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "customers_select".
+ */
+export interface CustomersSelect<T extends boolean = true> {
+  name?: T;
+  contactName?: T;
+  country?: T;
+  email?: T;
+  whatsapp?: T;
+  website?: T;
+  productFocus?: T;
+  cooperation?: T;
+  notes?: T;
+  localFolder?: T;
+  stage?: T;
+  source?: T;
+  owner?: T;
+  nextFollowUpAt?: T;
+  inquiries?: T;
+  orders?: T;
+  followUps?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "inquiries_select".
+ */
+export interface InquiriesSelect<T extends boolean = true> {
+  name?: T;
+  company?: T;
+  email?: T;
+  whatsapp?: T;
+  country?: T;
+  productType?: T;
+  quantity?: T;
+  message?: T;
+  reply?: T;
+  status?: T;
+  source?: T;
+  receivedAt?: T;
+  customer?: T;
+  owner?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "orders_select".
+ */
+export interface OrdersSelect<T extends boolean = true> {
+  title?: T;
+  customer?: T;
+  quantity?: T;
+  amount?: T;
+  currency?: T;
+  carrier?: T;
+  trackingNumber?: T;
+  notes?: T;
+  type?: T;
+  stage?: T;
+  dueDate?: T;
+  shippedAt?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "follow-ups_select".
+ */
+export interface FollowUpsSelect<T extends boolean = true> {
+  customer?: T;
+  summary?: T;
+  content?: T;
+  date?: T;
+  channel?: T;
+  nextFollowUpAt?: T;
+  author?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "users_select".
+ */
+export interface UsersSelect<T extends boolean = true> {
+  name?: T;
+  role?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  email?: T;
+  resetPasswordToken?: T;
+  resetPasswordExpiration?: T;
+  salt?: T;
+  hash?: T;
+  resetPasswordRequestedAt?: T;
+  loginAttempts?: T;
+  lockUntil?: T;
+  sessions?:
+    | T
+    | {
+        id?: T;
+        createdAt?: T;
+        expiresAt?: T;
+      };
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

@@ -1,1 +1,347 @@
-/* Reserved for CMS-specific visual overrides. */
+/* Mulang admin look: dark sidebar plus the overview and sales-board pages.
+   Colours come from Payload's theme variables so light and dark mode both work. */
+
+:root {
+  --mx-accent: #2f5bea;
+  --mx-radius: 12px;
+}
+
+/* ---------- Sidebar ---------- */
+.nav {
+  background: #141416;
+  border-right: 1px solid #222226;
+}
+.nav,
+.nav a,
+.nav .nav-group__toggle,
+.nav .nav__link-label {
+  color: #d8d8dc;
+}
+.nav .nav-group__toggle {
+  color: #85858c;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}
+.nav .nav__link {
+  border-radius: 8px;
+  padding: 7px 12px;
+  margin: 1px 0;
+}
+.nav .nav__link:hover,
+.nav a.nav__link:focus-visible {
+  background: #232328;
+  color: #fff;
+}
+.nav .nav__link.active,
+.nav .nav__link--active,
+.nav div.nav__link {
+  background: var(--mx-accent);
+  color: #fff;
+}
+.nav .nav__link-indicator {
+  display: none;
+}
+.nav svg {
+  color: #b5b5bb;
+}
+
+.mx-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 18px;
+}
+.mx-nav__link {
+  display: block;
+  padding: 9px 12px;
+  border-radius: 8px;
+  color: #e6e6ea;
+  text-decoration: none;
+  font-weight: 600;
+}
+.mx-nav__link:hover {
+  background: #232328;
+}
+.mx-nav__link--active {
+  background: var(--mx-accent);
+  color: #fff;
+}
+
+/* ---------- Shared page pieces ---------- */
+.mx-dash,
+.mx-board {
+  padding: 32px var(--gutter-h, 40px) 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.mx-dash__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+}
+.mx-dash__head h1 {
+  margin: 0 0 4px;
+  font-size: 28px;
+}
+.mx-dash__head p {
+  margin: 0;
+  color: var(--theme-elevation-500);
+}
+.mx-dash__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.mx-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--theme-elevation-150);
+  background: var(--theme-elevation-0);
+  color: var(--theme-text);
+  text-decoration: none;
+  font-weight: 500;
+}
+.mx-btn:hover {
+  border-color: var(--theme-elevation-300);
+}
+.mx-btn--primary {
+  background: var(--mx-accent);
+  border-color: var(--mx-accent);
+  color: #fff;
+}
+.mx-search {
+  min-width: 220px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--theme-elevation-150);
+  background: var(--theme-elevation-0);
+  color: var(--theme-text);
+}
+
+.mx-card {
+  background: var(--theme-elevation-0);
+  border: 1px solid var(--theme-elevation-100);
+  border-radius: var(--mx-radius);
+  padding: 18px 20px;
+  color: var(--theme-text);
+  text-decoration: none;
+}
+.mx-card__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+.mx-card__title h2 {
+  margin: 0;
+  font-size: 15px;
+}
+.mx-card__title a {
+  font-size: 13px;
+  color: var(--mx-accent);
+  text-decoration: none;
+}
+.mx-empty {
+  color: var(--theme-elevation-500);
+  margin: 12px 0 4px;
+}
+
+.mx-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 14px;
+}
+.mx-stat span {
+  display: block;
+  color: var(--theme-elevation-500);
+  font-size: 13px;
+}
+.mx-stat strong {
+  display: block;
+  font-size: 32px;
+  line-height: 1.2;
+  margin-top: 10px;
+}
+.mx-stat:hover {
+  border-color: var(--theme-elevation-250);
+}
+
+.mx-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr);
+  gap: 16px;
+}
+.mx-grid--even {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+@media (max-width: 900px) {
+  .mx-grid,
+  .mx-grid--even {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mx-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  border-top: 1px solid var(--theme-elevation-100);
+  color: var(--theme-text);
+  text-decoration: none;
+}
+.mx-row:first-of-type {
+  border-top: 0;
+}
+.mx-row strong {
+  display: block;
+}
+.mx-row span {
+  font-size: 13px;
+  color: var(--theme-elevation-500);
+}
+.mx-row__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  white-space: nowrap;
+}
+.mx-row:hover strong {
+  color: var(--mx-accent);
+}
+.mx-overdue {
+  color: #d23b3b !important;
+  font-weight: 600;
+}
+.mx-error {
+  margin: 0;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #fdecec;
+  color: #a12828;
+}
+
+/* Status pills — one colour per stage, readable on light and dark backgrounds. */
+.mx-pill {
+  display: inline-block;
+  font-style: normal;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: var(--theme-elevation-100);
+  color: var(--theme-elevation-800);
+}
+.mx-pill--new { background: #e6eeff; color: #2448c4; }
+.mx-pill--contacted { background: #fff1e0; color: #b25f00; }
+.mx-pill--interested { background: #f1e8ff; color: #6b32c8; }
+.mx-pill--quoted { background: #e8f4ff; color: #0f6aa8; }
+.mx-pill--sampling { background: #fff8d6; color: #8a6d00; }
+.mx-pill--won,
+.mx-pill--converted { background: #e3f6e8; color: #1d7a3a; }
+.mx-pill--lost,
+.mx-pill--invalid { background: #efefef; color: #666; }
+.mx-pill--replied { background: #fff1e0; color: #b25f00; }
+
+.mx-stage {
+  display: grid;
+  grid-template-columns: 72px 1fr 28px;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 0;
+}
+.mx-stage b {
+  text-align: right;
+}
+.mx-stage__bar {
+  height: 6px;
+  background: var(--theme-elevation-100);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.mx-stage__bar i {
+  display: block;
+  height: 100%;
+  background: var(--mx-accent);
+  border-radius: 3px;
+}
+
+/* ---------- Sales board ---------- */
+.mx-board__cols {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(220px, 1fr);
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+.mx-col {
+  background: var(--theme-elevation-50);
+  border: 1px dashed transparent;
+  border-radius: var(--mx-radius);
+  padding: 10px;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.mx-col--over {
+  border-color: var(--mx-accent);
+  background: var(--theme-elevation-100);
+}
+.mx-col__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 4px 6px;
+}
+.mx-kcard {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  background: var(--theme-elevation-0);
+  border: 1px solid var(--theme-elevation-100);
+  border-radius: 10px;
+  padding: 10px 12px;
+  color: var(--theme-text);
+  text-decoration: none;
+  cursor: grab;
+}
+.mx-kcard:hover {
+  border-color: var(--mx-accent);
+}
+.mx-kcard > a {
+  font-weight: 600;
+  color: var(--theme-text);
+  text-decoration: none;
+}
+.mx-kcard > a:hover {
+  color: var(--mx-accent);
+}
+.mx-kcard select {
+  margin-top: 6px;
+  padding: 3px 6px;
+  font-size: 12px;
+  border-radius: 6px;
+  border: 1px solid var(--theme-elevation-150);
+  background: var(--theme-elevation-0);
+  color: var(--theme-text);
+}
+.mx-kcard span,
+.mx-kcard small {
+  font-size: 12px;
+  color: var(--theme-elevation-500);
+}
+.mx-kcard small {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+.mx-kcard small i {
+  font-style: normal;
+}

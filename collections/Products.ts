@@ -44,7 +44,7 @@ export const Products: CollectionConfig = {
   admin: {
     useAsTitle: "name",
     defaultColumns: ["name", "productCode", "category", "publishedAt", "_status"],
-    group: "产品目录",
+    group: "内容与产品",
     description: "管理官网产品目录。保存草稿不会改变公开页面；点击发布后网站自动同步。",
   },
   versions: {

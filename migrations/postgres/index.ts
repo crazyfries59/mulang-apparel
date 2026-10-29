@@ -2,6 +2,7 @@ import * as migration_20261022_160341_initial_payload from './20261022_160341_in
 import * as migration_20261022_173021_payload_auth_security from './20261022_173021_payload_auth_security';
 import * as migration_20261023_082701_private_payload_access from './20261023_082701_private_payload_access';
 import * as migration_20261024_115512_product_catalog from './20261024_115512_product_catalog';
+import * as migration_20261029_112249_crm_backend from './20261029_112249_crm_backend';
 
 export const migrations = [
   {
@@ -22,6 +23,11 @@ export const migrations = [
   {
     up: migration_20261024_115512_product_catalog.up,
     down: migration_20261024_115512_product_catalog.down,
-    name: '20261024_115512_product_catalog'
+    name: '20261024_115512_product_catalog',
+  },
+  {
+    up: migration_20261029_112249_crm_backend.up,
+    down: migration_20261029_112249_crm_backend.down,
+    name: '20261029_112249_crm_backend'
   },
 ];

@@ -12,6 +12,7 @@
     "generate:types": "payload --disable-transpile generate:types",
     "db:migrate": "node scripts/migrate-cms.mjs",
     "cms:import-products": "node --import tsx scripts/import-product-catalog.mjs",
+    "crm:import-customers": "node scripts/import-crm-customers.mjs",
     "test:content": "node --test --test-isolation=none tests/content-publication.test.ts tests/contact-validation.test.ts tests/product-catalog.test.ts"
   },
   "dependencies": {

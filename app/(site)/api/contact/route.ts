@@ -1,8 +1,37 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
-import { parseContactData } from "@/lib/contact-validation";
+import config from "@payload-config";
+import { getPayload } from "payload";
+import { parseContactData, type ContactData } from "@/lib/contact-validation";
 
 const TO_EMAIL = "maxlinzhe@gmail.com";
+
+/* Every submission is also stored as a CRM inquiry so leads survive a mail outage. */
+async function saveInquiry(data: ContactData) {
+  try {
+    const payload = await getPayload({ config });
+    await payload.create({
+      collection: "inquiries",
+      overrideAccess: true,
+      data: {
+        name: data.name,
+        company: data.company,
+        email: data.email,
+        whatsapp: data.whatsapp,
+        productType: data.productType,
+        quantity: data.quantity,
+        message: data.message,
+        source: "website",
+        status: "new",
+        receivedAt: new Date().toISOString(),
+      },
+    });
+    return true;
+  } catch (err) {
+    console.error("[contact] Failed to save inquiry:", err);
+    return false;
+  }
+}
 
 const escapeHtml = (s: string) =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -20,11 +49,13 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Please check your name, email, message, and field lengths." }, { status: 400 });
   }
   const { name, company, email, whatsapp, productType, quantity, message } = data;
+  const saved = await saveInquiry(data);
 
   const gmailUser = process.env.GMAIL_USER;
   const gmailPass = process.env.GMAIL_APP_PASSWORD;
   if (!gmailUser || !gmailPass) {
     console.error("[contact] Email service is not configured.");
+    if (saved) return NextResponse.json({ ok: true });
     return NextResponse.json({ error: "Email service not configured" }, { status: 500 });
   }
 
@@ -65,6 +96,7 @@ export async function POST(req: NextRequest) {
     });
   } catch (err) {
     console.error("[contact] Failed to send via Gmail:", err);
+    if (saved) return NextResponse.json({ ok: true });
     return NextResponse.json({ error: "Failed to send email" }, { status: 502 });
   }
 

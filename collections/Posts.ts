@@ -8,7 +8,7 @@ export const Posts: CollectionConfig = {
   admin: {
     useAsTitle: "title",
     defaultColumns: ["title", "category", "publishedAt", "_status"],
-    group: "内容",
+    group: "内容与产品",
   },
   versions: {
     drafts: true,
