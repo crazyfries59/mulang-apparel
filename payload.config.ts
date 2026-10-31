@@ -44,13 +44,20 @@ export default buildConfig({
   i18n: {
     fallbackLanguage: "zh",
     supportedLanguages: { zh },
+    translations: { zh: { general: { dashboard: "概览" } } },
   },
   admin: {
     user: Users.slug,
     importMap: { baseDir: dirname },
     meta: { titleSuffix: " - Mulang 后台" },
     components: {
+      graphics: {
+        Icon: "/components/admin/Brand#BrandIcon",
+        Logo: "/components/admin/Brand#BrandLogo",
+      },
+      beforeNav: ["/components/admin/Brand#NavBrand", "/components/admin/KeepNavOpen#KeepNavOpen"],
       beforeNavLinks: ["/components/admin/NavLinks#NavLinks"],
+      logout: { Button: "/components/admin/LogoutButton#LogoutButton" },
       views: {
         dashboard: { Component: "/components/admin/Dashboard#Dashboard", meta: { title: "概览" } },
         crmBoard: {

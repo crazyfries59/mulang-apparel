@@ -1,4 +1,5 @@
 import type { CollectionConfig } from "payload";
+import { revalidateProducts } from "../lib/content/cache-tags.ts";
 import { publishedProductWhere, withPublicationDate } from "../lib/content/publication.ts";
 
 const categories = [
@@ -63,6 +64,8 @@ export const Products: CollectionConfig = {
       return data;
     }],
     beforeChange: [({ data, originalDoc }) => withPublicationDate(data, originalDoc)],
+    afterChange: [async ({ doc }) => { await revalidateProducts(); return doc; }],
+    afterDelete: [async ({ doc }) => { await revalidateProducts(); return doc; }],
   },
   fields: [
     {

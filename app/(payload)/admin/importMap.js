@@ -21,6 +21,11 @@ import { StrikethroughFeatureClient as StrikethroughFeatureClient_e70f5e05f09f93
 import { UnderlineFeatureClient as UnderlineFeatureClient_e70f5e05f09f93e00b997edb1ef0c864 } from '@payloadcms/richtext-lexical/client'
 import { BoldFeatureClient as BoldFeatureClient_e70f5e05f09f93e00b997edb1ef0c864 } from '@payloadcms/richtext-lexical/client'
 import { ItalicFeatureClient as ItalicFeatureClient_e70f5e05f09f93e00b997edb1ef0c864 } from '@payloadcms/richtext-lexical/client'
+import { LogoutButton as LogoutButton_9afb321262a9513c979915ca76b6cf86 } from '../../../components/admin/LogoutButton'
+import { BrandIcon as BrandIcon_81fda60f3e3709e861f40982a767707d } from '../../../components/admin/Brand'
+import { BrandLogo as BrandLogo_81fda60f3e3709e861f40982a767707d } from '../../../components/admin/Brand'
+import { NavBrand as NavBrand_81fda60f3e3709e861f40982a767707d } from '../../../components/admin/Brand'
+import { KeepNavOpen as KeepNavOpen_6d93cd2225a004be867ef95240bef722 } from '../../../components/admin/KeepNavOpen'
 import { NavLinks as NavLinks_c025f118f75d1c67ec1517e1fc784abd } from '../../../components/admin/NavLinks'
 import { Dashboard as Dashboard_16b88e9b8c48e393fa86591406efd08f } from '../../../components/admin/Dashboard'
 import { SalesBoardView as SalesBoardView_bca0db63c8af51976e7ada43b11a1c54 } from '../../../components/admin/SalesBoardView'
@@ -51,6 +56,11 @@ export const importMap = {
   "@payloadcms/richtext-lexical/client#UnderlineFeatureClient": UnderlineFeatureClient_e70f5e05f09f93e00b997edb1ef0c864,
   "@payloadcms/richtext-lexical/client#BoldFeatureClient": BoldFeatureClient_e70f5e05f09f93e00b997edb1ef0c864,
   "@payloadcms/richtext-lexical/client#ItalicFeatureClient": ItalicFeatureClient_e70f5e05f09f93e00b997edb1ef0c864,
+  "/components/admin/LogoutButton#LogoutButton": LogoutButton_9afb321262a9513c979915ca76b6cf86,
+  "/components/admin/Brand#BrandIcon": BrandIcon_81fda60f3e3709e861f40982a767707d,
+  "/components/admin/Brand#BrandLogo": BrandLogo_81fda60f3e3709e861f40982a767707d,
+  "/components/admin/Brand#NavBrand": NavBrand_81fda60f3e3709e861f40982a767707d,
+  "/components/admin/KeepNavOpen#KeepNavOpen": KeepNavOpen_6d93cd2225a004be867ef95240bef722,
   "/components/admin/NavLinks#NavLinks": NavLinks_c025f118f75d1c67ec1517e1fc784abd,
   "/components/admin/Dashboard#Dashboard": Dashboard_16b88e9b8c48e393fa86591406efd08f,
   "/components/admin/SalesBoardView#SalesBoardView": SalesBoardView_bca0db63c8af51976e7ada43b11a1c54,
