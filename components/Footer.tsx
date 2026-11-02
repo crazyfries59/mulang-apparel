@@ -66,10 +66,10 @@ export default function Footer() {
                 <MessageCircle size={14} className="flex-shrink-0" />
                 +86 159 8621 3212
               </a>
-              <a href="mailto:sales@lin6666.top"
+              <a href="mailto:sales@mulangapparel.com"
                 className="flex items-center gap-2.5 text-sm text-white/45 hover:text-violet-400 transition-colors">
                 <Mail size={14} className="flex-shrink-0" />
-                sales@lin6666.top
+                sales@mulangapparel.com
               </a>
               <div className="flex items-start gap-2.5 text-sm text-white/45">
                 <MapPin size={14} className="flex-shrink-0 mt-0.5" />

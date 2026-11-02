@@ -69,7 +69,7 @@ export async function POST(req: NextRequest) {
   ];
 
   const html = `
-    <h2 style="font-family:sans-serif">New inquiry from lin6666.top</h2>
+    <h2 style="font-family:sans-serif">New inquiry from mulangapparel.com</h2>
     <table style="font-family:sans-serif; font-size:14px; border-collapse:collapse;">
       ${rows.map(([k, v]) => `
         <tr>
