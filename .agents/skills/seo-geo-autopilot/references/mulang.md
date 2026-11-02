@@ -5,7 +5,7 @@
 - 目标：从海外服装品牌获取合适的 B2B 询盘，不以文章数量或通用 SEO 分数为目标。
 - 品牌：Mulang Apparel；不能把工作台中的 Potato Apparel、宏宇及其客户案例自动当作木朗品牌的资质或案例。
 - 市场：美国、澳大利亚、瑞士、加拿大、英国、新西兰；网站当前为英文。地区种子不是该地区真实 SERP 或排名证据。
-- 当前站点地址来自 `lib/site.ts`：`https://www.lin6666.top`。`mulangapparel.com` 只是历史候选，未确认购买，不迁移 DNS 或 canonical。
+- 当前站点地址来自 `lib/site.ts`：`https://www.mulangapparel.com`。2026-11-02 从 lin6666.top 迁移，旧域名在 Vercel 308 跳转到新域名，Search Console 已提交地址更改。
 - Next.js 16.2.7 App Router、React 19.2.4、TypeScript、Tailwind 4；本地 Payload 3.89 + SQLite 是原型，尚未部署，线上历史版本使用 Sanity。每次重新确认线上与本地 CMS。
 - 网站路由现在在 `app/(site)/`；Payload 在 `app/(payload)/`，读取集合 `collections/Posts.ts`，规范化接口 `lib/content/index.ts`。
 - 已有逐页 canonical、Organization/产品/文章 JSON-LD、robots 与 sitemap；优先核查实际输出和内容一致性，避免重复添加。静态抓取工具未显示 JSON-LD 不代表缺失。
@@ -25,7 +25,7 @@
 | keyword_research | 从真实服务与搜索结果提取主题；搜索量、CPC、难度未知 |
 | ai_query | 未接入；不得把当前代理回答或普通网页搜索当成外部引擎样本 |
 | analytics_read | 未接入 |
-| search_console_read | 已验证浏览器内域名资源 lin6666.top；可手动读取报告，未接入 API/OAuth；每次重新检查登录状态 |
+| search_console_read | 已验证浏览器内域名资源 mulangapparel.com（旧资源 lin6666.top 已提交地址更改）；可手动读取报告，未接入 API/OAuth；每次重新检查登录状态 |
 | cms_read | 当前通过本地源码和用户提供导出读取结构；后台数据库和线上 CMS 内容尚未验证 |
 | cms_write | 未接入自动写入；先输出文件草稿/本地补丁；未来接入时逐项记录目标、变更、验证和回滚 |
 | file_store | 本地文件工具；报告归 Obsidian，技能入口留在代码仓库 |

@@ -1,6 +1,6 @@
 {
   "project_id": "mulang-apparel",
-  "domain": "https://www.lin6666.top",
+  "domain": "https://www.mulangapparel.com",
   "mode": "audit",
   "publication_policy": "review_before_publish",
   "market": "US",
@@ -46,7 +46,7 @@
     "keyword_research": "Qualitative topics only; no volume/CPC/difficulty data",
     "cms_read": "Local source/schema only; authenticated CMS content access unverified",
     "file_store": "Filesystem sandbox permissions still apply",
-    "search_console_read": "Manual authenticated browser reports only; domain property lin6666.top verified. No Search Console API/OAuth integration; recheck session access each run."
+    "search_console_read": "Manual authenticated browser reports only; domain property mulangapparel.com verified (2026-11-02; change of address from lin6666.top submitted). No Search Console API/OAuth integration; recheck session access each run."
   },
   "paths": {
     "code_root": "C:/B/u盘文件/mulang-apparel",
