@@ -65,15 +65,18 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     : post.date;
   const image = "image" in post && post.image ? post.image : "img" in post ? post.img : "/products/y2k-fashion/bx8105-rib-260gsm-stretch-crop-y2k-baby-tee/img-1.jpg";
 
+  // Google expects ISO 8601 dates and absolute image URLs in Article markup.
+  const rawPublished = isCmsPost ? post.publishedAt : post.date;
+  const publishedTime = rawPublished ? new Date(rawPublished) : null;
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: post.title,
     description: post.excerpt,
-    image,
-    author: { "@type": "Organization", name: "Mulang Apparel" },
-    publisher: { "@type": "Organization", name: "Mulang Apparel" },
-    datePublished: isCmsPost ? post.publishedAt : post.date,
+    image: new URL(image, SITE_URL).toString(),
+    author: { "@type": "Organization", name: "Mulang Apparel", url: SITE_URL },
+    publisher: { "@type": "Organization", name: "Mulang Apparel", url: SITE_URL },
+    datePublished: publishedTime && !Number.isNaN(publishedTime.getTime()) ? publishedTime.toISOString() : undefined,
     mainEntityOfPage: `${SITE_URL}/blog/${post.slug}`,
   };
 

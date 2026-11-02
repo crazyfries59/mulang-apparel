@@ -99,14 +99,15 @@ export default function HomeClient({ categories }: { categories: Category[] }) {
           className="relative z-10 h-full flex flex-col justify-center px-6 md:px-16 max-w-3xl"
         >
           {/* Headline */}
-          <div className="overflow-hidden mb-8">
+          <h1 className="overflow-hidden mb-8">
             {[
               { text: "Manufacturer For",  grad: false },
               { text: "YOUR",              grad: true  },
               { text: "Clothing Line.",    grad: false },
             ].map(({ text, grad }, i) => (
-              <div key={i} className="overflow-hidden">
-                <motion.div
+              <span key={i} className="block overflow-hidden">
+                <motion.span
+                  className="block"
                   initial={{ y: "110%" }} animate={{ y: "0%" }}
                   transition={{ duration: 0.9, delay: 0.5 + i * 0.12, ease: [0.22, 1, 0.36, 1] }}
                 >
@@ -115,12 +116,12 @@ export default function HomeClient({ categories }: { categories: Category[] }) {
                       text-[clamp(2.8rem,7.2vw,7.8rem)]
                       ${grad ? "gradient-text italic" : "text-white"}`}
                   >
-                    {text}
+                    {text}{" "}
                   </span>
-                </motion.div>
-              </div>
+                </motion.span>
+              </span>
             ))}
-          </div>
+          </h1>
 
           {/* CTAs */}
           <motion.div

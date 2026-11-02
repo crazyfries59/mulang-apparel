@@ -22,11 +22,8 @@ const STATIC_ROUTES = [
 export const dynamic = "force-dynamic";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const now = new Date();
-
   const staticEntries: MetadataRoute.Sitemap = STATIC_ROUTES.map(({ path, priority, changeFrequency }) => ({
     url: `${SITE_URL}${path}`,
-    lastModified: now,
     changeFrequency,
     priority,
   }));
@@ -34,19 +31,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const products = await getPublicProducts();
   const productEntries: MetadataRoute.Sitemap = products.map((p) => ({
     url: `${SITE_URL}/products/${p.slug}`,
-    lastModified: now,
     changeFrequency: "monthly",
     priority: 0.5,
   }));
 
   const cmsPosts = await getCmsPosts();
   const publishedPosts = [
-    ...(cmsPosts ?? []).map((post) => ({ slug: post.slug, published: true })),
+    ...(cmsPosts ?? []).map((post) => ({ slug: post.slug, date: post.publishedAt })),
     ...POSTS.filter((post) => post.published && !cmsPosts?.some((cmsPost) => cmsPost.slug === post.slug)),
   ];
   const blogEntries: MetadataRoute.Sitemap = publishedPosts.map((p) => ({
     url: `${SITE_URL}/blog/${p.slug}`,
-    lastModified: now,
+    lastModified: p.date ? new Date(p.date) : undefined,
     changeFrequency: "monthly",
     priority: 0.6,
   }));

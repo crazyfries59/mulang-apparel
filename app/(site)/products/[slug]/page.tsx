@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getPublicProduct, getPublicProducts } from "@/lib/content/products";
 import ProductDetailClient from "./ProductDetailClient";
+import { SITE_URL } from "@/lib/site";
 
 export const dynamic = "force-dynamic";
 
@@ -35,7 +36,10 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
     "@context": "https://schema.org",
     "@type": "Product",
     name: p.name,
-    image: p.img ? [p.img] : undefined,
+    url: `${SITE_URL}/products/${p.slug}`,
+    brand: { "@type": "Brand", name: "Mulang Apparel" },
+    sku: p.id !== "—" ? p.id : undefined,
+    image: p.img ? [new URL(p.img, SITE_URL).toString()] : undefined,
     description: `${p.fabric}, ${p.gsm}. MOQ ${p.moq}, ${p.lead} lead time.`,
     ...(Number.isFinite(numericPrice) && numericPrice > 0
       ? {
