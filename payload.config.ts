@@ -20,7 +20,7 @@ const deploymentOrigins = [process.env.VERCEL_URL, process.env.VERCEL_BRANCH_URL
   .map((host) => `https://${host}`);
 const allowedOrigins = [...new Set([
   "http://localhost:3000",
-  "https://www.lin6666.top",
+  "https://www.mulangapparel.com",
   ...deploymentOrigins,
   ...(process.env.CMS_LOCAL_ORIGIN && ["localhost", "127.0.0.1"].includes(new URL(process.env.CMS_LOCAL_ORIGIN).hostname)
     ? [process.env.CMS_LOCAL_ORIGIN] : []),

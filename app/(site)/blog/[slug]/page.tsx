@@ -9,6 +9,7 @@ import ChinaManufacturerTipsContent from "./ChinaManufacturerTipsContent";
 import MinimumOrderQuantityContent from "./MinimumOrderQuantityContent";
 import { RichText } from "@payloadcms/richtext-lexical/react";
 import { getCmsPost, getCmsPosts } from "@/lib/content";
+import { SITE_URL } from "@/lib/site";
 
 const CONTENT_BY_SLUG: Record<string, React.ComponentType> = {
   "china-clothing-manufacturer-tips": ChinaManufacturerTipsContent,
@@ -73,7 +74,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     author: { "@type": "Organization", name: "Mulang Apparel" },
     publisher: { "@type": "Organization", name: "Mulang Apparel" },
     datePublished: isCmsPost ? post.publishedAt : post.date,
-    mainEntityOfPage: `https://www.lin6666.top/blog/${post.slug}`,
+    mainEntityOfPage: `${SITE_URL}/blog/${post.slug}`,
   };
 
   return (

@@ -35,7 +35,7 @@ export default function ContactPage({ initialProduct }: {
       if (!res.ok) throw new Error("request failed");
       setSubmitted(true);
     } catch {
-      setError("Something went wrong sending your message — please try WhatsApp instead, or email sales@lin6666.top directly.");
+      setError("Something went wrong sending your message — please try WhatsApp instead, or email sales@mulangapparel.com directly.");
     } finally {
       setLoading(false);
     }
@@ -70,7 +70,7 @@ export default function ContactPage({ initialProduct }: {
               <div className="space-y-4">
                 {[
                   { icon: MessageCircle, label: "WhatsApp", val: "+86 159 8621 3212", href: "https://wa.me/8615986213212", accent: "#25D366" },
-                  { icon: Mail,          label: "Email",    val: "sales@lin6666.top",  href: "mailto:sales@lin6666.top",  accent: "#8b5cf6" },
+                  { icon: Mail,          label: "Email",    val: "sales@mulangapparel.com",  href: "mailto:sales@mulangapparel.com",  accent: "#8b5cf6" },
                   { icon: MapPin,        label: "Factory",  val: "Guangzhou, Guangdong, China", href: "#", accent: "#ec4899" },
                 ].map(({ icon: Icon, label, val, href, accent }) => (
                   <a key={label} href={href} target={href.startsWith("http") ? "_blank" : undefined}
