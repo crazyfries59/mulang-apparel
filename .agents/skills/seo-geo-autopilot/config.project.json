@@ -51,8 +51,8 @@
   "paths": {
     "code_root": "/Users/linzhe/Downloads/u盘文件/mulang-apparel",
     "obsidian_project": "/Users/linzhe/Downloads/obsidian本地仓库/项目/03-SEO-GEO",
-    "reports": "/Users/linzhe/Downloads/obsidian本地仓库/项目/03-SEO-GEO/审计报告",
-    "state": "/Users/linzhe/Downloads/obsidian本地仓库/项目/03-SEO-GEO/审计报告/project-state.json"
+    "reports": "/Users/linzhe/Downloads/obsidian本地仓库/项目/03-SEO-GEO",
+    "state": "/Users/linzhe/Downloads/obsidian本地仓库/项目/03-SEO-GEO/project-state.json"
   },
   "commercial_paths": [
     "/",
