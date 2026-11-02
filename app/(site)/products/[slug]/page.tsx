@@ -38,7 +38,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
     name: p.name,
     url: `${SITE_URL}/products/${p.slug}`,
     brand: { "@type": "Brand", name: "Mulang Apparel" },
-    sku: p.id !== "—" ? p.id : undefined,
+    sku: p.id !== "—" ? p.id.replace(/^#/, "") : undefined,
     image: p.img ? [new URL(p.img, SITE_URL).toString()] : undefined,
     description: `${p.fabric}, ${p.gsm}. MOQ ${p.moq}, ${p.lead} lead time.`,
     ...(Number.isFinite(numericPrice) && numericPrice > 0

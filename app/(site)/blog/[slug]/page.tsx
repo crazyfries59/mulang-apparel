@@ -4,7 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import AnimatedSection from "@/components/AnimatedSection";
 import { ArrowRight, Clock, Tag } from "lucide-react";
-import { POSTS } from "../posts";
+import { POSTS, postDateIso } from "../posts";
 import ChinaManufacturerTipsContent from "./ChinaManufacturerTipsContent";
 import MinimumOrderQuantityContent from "./MinimumOrderQuantityContent";
 import { RichText } from "@payloadcms/richtext-lexical/react";
@@ -66,8 +66,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const image = "image" in post && post.image ? post.image : "img" in post ? post.img : "/products/y2k-fashion/bx8105-rib-260gsm-stretch-crop-y2k-baby-tee/img-1.jpg";
 
   // Google expects ISO 8601 dates and absolute image URLs in Article markup.
-  const rawPublished = isCmsPost ? post.publishedAt : post.date;
-  const publishedTime = rawPublished ? new Date(rawPublished) : null;
+  const datePublished = isCmsPost ? post.publishedAt : postDateIso(post.date);
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -76,7 +75,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     image: new URL(image, SITE_URL).toString(),
     author: { "@type": "Organization", name: "Mulang Apparel", url: SITE_URL },
     publisher: { "@type": "Organization", name: "Mulang Apparel", url: SITE_URL },
-    datePublished: publishedTime && !Number.isNaN(publishedTime.getTime()) ? publishedTime.toISOString() : undefined,
+    datePublished,
     mainEntityOfPage: `${SITE_URL}/blog/${post.slug}`,
   };
 

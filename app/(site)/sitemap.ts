@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { POSTS } from "./blog/posts";
+import { POSTS, postDateIso } from "./blog/posts";
 import { SITE_URL } from "@/lib/site";
 import { getCmsPosts } from "@/lib/content";
 import { getPublicProducts } from "@/lib/content/products";
@@ -38,11 +38,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const cmsPosts = await getCmsPosts();
   const publishedPosts = [
     ...(cmsPosts ?? []).map((post) => ({ slug: post.slug, date: post.publishedAt })),
-    ...POSTS.filter((post) => post.published && !cmsPosts?.some((cmsPost) => cmsPost.slug === post.slug)),
+    ...POSTS.filter((post) => post.published && !cmsPosts?.some((cmsPost) => cmsPost.slug === post.slug))
+      .map((post) => ({ slug: post.slug, date: postDateIso(post.date) })),
   ];
   const blogEntries: MetadataRoute.Sitemap = publishedPosts.map((p) => ({
     url: `${SITE_URL}/blog/${p.slug}`,
-    lastModified: p.date ? new Date(p.date) : undefined,
+    lastModified: p.date,
     changeFrequency: "monthly",
     priority: 0.6,
   }));

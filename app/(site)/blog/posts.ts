@@ -12,6 +12,14 @@ export type Post = {
   body?: unknown[];
 };
 
+/** "Oct 7, 2026" → "2026-10-07", independent of the server's time zone. */
+export function postDateIso(date: string): string | undefined {
+  const parsed = new Date(date);
+  if (Number.isNaN(parsed.getTime())) return undefined;
+  const pad = (n: number) => String(n).padStart(2, "0");
+  return `${parsed.getFullYear()}-${pad(parsed.getMonth() + 1)}-${pad(parsed.getDate())}`;
+}
+
 export const POSTS: Post[] = [
   {
     slug: "minimum-order-quantity-guide",
