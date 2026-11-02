@@ -22,7 +22,7 @@
 导入客户：先整理一份 JSON 列表（`name` 必填，可带 `country`、`productFocus`、`localFolder`、`notes`、`stage` 等字段），放在 Git 忽略的 `data/` 目录，再用管理员账号运行：
 
 ```bash
-CRM_BASE_URL=https://www.lin6666.top CRM_EMAIL=... CRM_PASSWORD=... npm run crm:import-customers -- data/crm-customers.json
+CRM_BASE_URL=https://www.mulangapparel.com CRM_EMAIL=... CRM_PASSWORD=... npm run crm:import-customers -- data/crm-customers.json
 ```
 
 脚本通过正常登录调用后台接口，同名客户自动跳过，可以重复运行。账号密码只在命令行临时提供，不写进文件。
