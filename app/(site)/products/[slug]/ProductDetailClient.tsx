@@ -126,13 +126,13 @@ export default function ProductDetailPage({ product: p, relatedProducts }: {
         </div>
 
         {/* ── Gallery + Introduction ── */}
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-start">
+        <div className="grid md:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] gap-8 lg:gap-12 items-start">
           {/* Gallery */}
           <div className="md:sticky md:top-28">
             <motion.div key={active}
               initial={{ opacity: 0.4 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }}
-              className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-[#141414]">
-              <Image src={gallery[active]} alt={p.name} fill priority className="object-cover" sizes="(max-width:768px) 100vw, 50vw" />
+              className="relative aspect-square rounded-2xl overflow-hidden bg-[#141414]">
+              <Image src={gallery[active]} alt={p.name} fill priority className="object-contain" sizes="(max-width:768px) 100vw, 520px" />
               {p.gsm !== "—" && (
                 <span className="absolute top-4 left-4 bg-black/85 text-white text-xs font-bold px-3 py-1.5 rounded-md">{p.gsm}</span>
               )}
@@ -148,11 +148,11 @@ export default function ProductDetailPage({ product: p, relatedProducts }: {
               )}
             </motion.div>
             {gallery.length > 1 && (
-              <div className="flex gap-3 mt-4 flex-wrap">
+              <div className="flex gap-2.5 mt-3 flex-wrap">
                 {gallery.map((g, i) => (
                   <button key={i} onClick={() => setActive(i)}
-                    className={`relative w-[18%] aspect-square rounded-lg overflow-hidden bg-[#141414] transition-all ${active === i ? "ring-2 ring-violet-500" : "opacity-55 hover:opacity-100"}`}>
-                    <Image src={g} alt={`${p.name} ${i + 1}`} fill className="object-cover" sizes="120px" />
+                    className={`relative w-14 sm:w-[72px] aspect-square rounded-lg overflow-hidden bg-[#141414] transition-all ${active === i ? "ring-2 ring-violet-500" : "opacity-55 hover:opacity-100"}`}>
+                    <Image src={g} alt={`${p.name} ${i + 1}`} fill className="object-contain" sizes="72px" />
                   </button>
                 ))}
               </div>
@@ -216,8 +216,8 @@ export default function ProductDetailPage({ product: p, relatedProducts }: {
           </p>
           <p className="text-white/40 text-xs tracking-[0.3em] uppercase mt-2">Custom Clothing Manufacturer · Guangzhou, China</p>
           {gallery[1] && (
-            <div className="relative w-full max-w-3xl mx-auto aspect-[16/7] mt-7 rounded-xl overflow-hidden bg-[#141414]">
-              <Image src={gallery[1]} alt={`${p.name} lineup`} fill className="object-cover" sizes="100vw" />
+            <div className="relative w-full max-w-sm mx-auto aspect-square mt-7 rounded-xl overflow-hidden bg-[#141414]">
+              <Image src={gallery[1]} alt={`${p.name} lineup`} fill className="object-contain" sizes="384px" />
             </div>
           )}
         </div>
@@ -330,7 +330,7 @@ export default function ProductDetailPage({ product: p, relatedProducts }: {
         {/* ── PRODUCT DETAIL (real detail strip — size chart, fabric, colors) ── */}
         <SectionHeader icon={<Shirt size={16} />} title="Product Detail" />
         {details.length > 0 ? (
-          <div className="rounded-2xl overflow-hidden border border-white/10 bg-white mb-6">
+          <div className="max-w-[760px] mx-auto rounded-2xl overflow-hidden border border-white/10 bg-white mb-6">
             {details.map((src, i) => (
               <div key={i} className="relative w-full">
                 {/* eslint-disable-next-line @next/next/no-img-element -- intrinsic aspect ratio is unknown per-image, so next/image fill would require guessing dimensions and could distort the layout */}
@@ -364,13 +364,13 @@ export default function ProductDetailPage({ product: p, relatedProducts }: {
 
         {/* ── FRONT AND BACK DISPLAY ── */}
         <SectionHeader icon={<Layers size={16} />} title="Front and Back Display" />
-        <div className="grid grid-cols-2 gap-4 sm:gap-6 mb-6">
+        <div className="max-w-[760px] mx-auto grid grid-cols-2 gap-4 sm:gap-6 mb-6">
           {[
             { label: "Front", img: gallery[0] },
             { label: "Back", img: gallery[1] || gallery[gallery.length - 1] || gallery[0] },
           ].map(f => (
-            <div key={f.label} className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-[#141414] border border-white/10">
-              <Image src={f.img} alt={`${p.name} ${f.label.toLowerCase()}`} fill className="object-cover" sizes="(max-width:640px) 50vw, 45vw" />
+            <div key={f.label} className="relative aspect-square rounded-2xl overflow-hidden bg-[#141414] border border-white/10">
+              <Image src={f.img} alt={`${p.name} ${f.label.toLowerCase()}`} fill className="object-contain" sizes="(max-width:640px) 50vw, 370px" />
               <span className="absolute top-4 left-4 bg-black/85 text-white text-[0.6rem] font-bold px-3 py-1.5 rounded-md tracking-wider uppercase">{f.label}</span>
               <span className="absolute bottom-4 left-4 flex items-center gap-1.5 bg-gradient-to-r from-violet-600 to-pink-500 text-white text-[0.6rem] font-bold px-3 py-1.5 rounded-md tracking-wider uppercase">
                 <Printer size={11} /> Printing
@@ -386,8 +386,8 @@ export default function ProductDetailPage({ product: p, relatedProducts }: {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
               {relatedProducts.map(r => (
                 <Link key={r.slug} href={`/products/${r.slug}`} className="group block">
-                  <div className="relative aspect-[3/4] rounded-xl overflow-hidden bg-[#141414] mb-3">
-                    <Image src={r.img} alt={r.name} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="25vw" />
+                  <div className="relative aspect-square rounded-xl overflow-hidden bg-[#141414] mb-3">
+                    <Image src={r.img} alt={r.name} fill className="object-contain transition-transform duration-700 group-hover:scale-105" sizes="(max-width:768px) 50vw, 280px" />
                     {r.gsm !== "—" && (
                       <span className="absolute top-3 left-3 bg-black/85 text-white text-[0.6rem] font-bold px-2.5 py-1 rounded-md">{r.gsm}</span>
                     )}
