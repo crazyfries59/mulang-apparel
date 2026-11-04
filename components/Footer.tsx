@@ -33,9 +33,9 @@ export default function Footer() {
         <div className="container-wide mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <p className="label mb-2">Ready To Scale?</p>
-            <h3 className="font-syne font-bold text-2xl text-white">
+            <h2 className="font-syne font-bold text-2xl text-white">
               Let&apos;s Build Your Brand Together
-            </h3>
+            </h2>
           </div>
           <div className="flex gap-3">
             <Link href="/contact" className="btn-gradient">Get A Free Quote</Link>

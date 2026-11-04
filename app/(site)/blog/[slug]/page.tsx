@@ -10,6 +10,7 @@ import MinimumOrderQuantityContent from "./MinimumOrderQuantityContent";
 import { RichText } from "@payloadcms/richtext-lexical/react";
 import { getCmsPost, getCmsPosts } from "@/lib/content";
 import { SITE_URL } from "@/lib/site";
+import { metaDescription, pageTitle } from "@/lib/seo";
 
 const CONTENT_BY_SLUG: Record<string, React.ComponentType> = {
   "china-clothing-manufacturer-tips": ChinaManufacturerTipsContent,
@@ -35,10 +36,10 @@ export async function generateMetadata(
   if (!post) return { title: "Post Not Found" };
   const image = "image" in post ? post.image : post.img;
   const title = "seoTitle" in post && post.seoTitle ? post.seoTitle : post.title;
-  const description = "seoDescription" in post && post.seoDescription ? post.seoDescription : post.excerpt;
+  const description = metaDescription("seoDescription" in post && post.seoDescription ? post.seoDescription : post.excerpt);
 
   return {
-    title,
+    title: pageTitle(title),
     description,
     alternates: { canonical: `/blog/${post.slug}` },
     openGraph: {

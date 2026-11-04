@@ -122,7 +122,7 @@ export default function ServicesPage() {
                   {/* Content */}
                   <div className="p-6 flex flex-col flex-1">
                     <p className="label mb-2">{tagline}</p>
-                    <h3 className="font-syne font-black text-white text-lg mb-3 group-hover:text-violet-300 transition-colors">{title}</h3>
+                    <h2 className="font-syne font-black text-white text-lg mb-3 group-hover:text-violet-300 transition-colors">{title}</h2>
                     <p className="text-white/40 text-sm leading-relaxed mb-5 flex-1">{desc}</p>
 
                     <ul className="space-y-2 mb-6">

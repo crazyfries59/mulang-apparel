@@ -53,7 +53,7 @@ export default function ContactPage({ initialProduct }: {
               <span className="gradient-text">Project Today</span>
             </h1>
             <p className="text-white/40 text-sm leading-relaxed max-w-lg">
-              Tell us about your brand and what you need. We respond to all inquiries within 24 hours with a detailed quote.
+              Tell us about your brand and what you need. We review every inquiry and reply with a detailed quote.
             </p>
           </AnimatedSection>
         </div>
@@ -129,9 +129,9 @@ export default function ContactPage({ initialProduct }: {
                   <div className="w-20 h-20 rounded-full bg-violet-500/10 flex items-center justify-center mb-6">
                     <CheckCircle size={38} className="text-violet-400" />
                   </div>
-                  <h3 className="font-syne font-black text-2xl text-white mb-3">Message Received!</h3>
+                  <h2 className="font-syne font-black text-2xl text-white mb-3">Message Received!</h2>
                   <p className="text-white/45 text-sm leading-relaxed max-w-xs mb-8">
-                    Thank you for reaching out. We&apos;ll review your inquiry and respond within 24 business hours with a detailed quote.
+                    Thank you for reaching out. We&apos;ll review your inquiry and reply with a detailed quote.
                   </p>
                   <button onClick={() => setSubmitted(false)} className="btn-ghost">
                     Send Another Message
@@ -216,7 +216,7 @@ export default function ContactPage({ initialProduct }: {
                   </button>
 
                   <p className="text-center text-white/20 text-xs">
-                    We respond within 24 hours · All inquiries are confidential
+                    All inquiries are confidential
                   </p>
                 </form>
               )}

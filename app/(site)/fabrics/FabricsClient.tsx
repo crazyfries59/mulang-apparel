@@ -213,7 +213,7 @@ export default function FabricsPage() {
                     <div className="flex items-start justify-between mb-2">
                       <div>
                         <p className="text-white/30 text-[0.58rem] tracking-widest uppercase">{fabric.category}</p>
-                        <h3 className="font-syne font-bold text-white text-base group-hover:text-violet-300 transition-colors">{fabric.name}</h3>
+                        <h2 className="font-syne font-bold text-white text-base group-hover:text-violet-300 transition-colors">{fabric.name}</h2>
                       </div>
                       <span className="text-white/50 text-xs font-mono bg-white/5 px-2 py-0.5 rounded-lg">{fabric.gsm}</span>
                     </div>

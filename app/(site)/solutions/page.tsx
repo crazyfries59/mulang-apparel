@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import SolutionsClient from "./SolutionsClient";
 
 export const metadata: Metadata = {
-  title: "Solutions — Cut & Sew, Private Label & Blank Wholesale",
+  title: "Clothing Private Label Manufacturer",
   description:
-    "Manufacturing solutions for every brand stage: cut & sew customization, logo branding, blank wholesale, private label, and low-MOQ startup programs.",
+    "Clothing private label manufacturer in Guangzhou: cut and sew from 100 pcs per style per color, OEM/ODM, logo customization and blank wholesale from 50 pcs.",
   alternates: { canonical: "/solutions" },
 };
 

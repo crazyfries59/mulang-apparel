@@ -27,11 +27,11 @@ const OG_IMAGE = "https://images.unsplash.com/photo-1503341504253-dff4815485f1?w
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Mulang Apparel — Premium Streetwear Manufacturer",
+    default: "Clothing Manufacturer in China | Mulang Apparel",
     template: "%s | Mulang Apparel",
   },
   description:
-    "Premium streetwear and private label clothing manufacturer based in Guangzhou, China. OEM & ODM services for global fashion brands. Low MOQ, fast sampling, strict QC.",
+    "Clothing manufacturer in Guangzhou, China for streetwear and private label brands. Blanks and logo from 50 pcs, cut & sew from 100 pcs, OEM & ODM.",
   keywords: [
     "streetwear manufacturer",
     "private label clothing manufacturer",
@@ -47,8 +47,8 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Mulang Apparel — Premium Streetwear Manufacturer",
-    description: "Custom Clothing Manufacturing For Global Fashion Brands",
+    title: "Clothing Manufacturer in China | Mulang Apparel",
+    description: "Clothing manufacturer in Guangzhou, China for streetwear and private label brands.",
     type: "website",
     locale: "en_US",
     siteName: "Mulang Apparel",
@@ -57,8 +57,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mulang Apparel — Premium Streetwear Manufacturer",
-    description: "Custom Clothing Manufacturing For Global Fashion Brands",
+    title: "Clothing Manufacturer in China | Mulang Apparel",
+    description: "Clothing manufacturer in Guangzhou, China for streetwear and private label brands.",
     images: [OG_IMAGE],
   },
   robots: {
@@ -78,7 +78,7 @@ export default function RootLayout({
     url: SITE_URL,
     logo: `${SITE_URL}/favicon.ico`,
     description:
-      "Premium streetwear and private label clothing manufacturer based in Guangzhou, China.",
+      "Clothing manufacturer in Guangzhou, China for streetwear and private label brands.",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Guangzhou",

@@ -4,7 +4,7 @@ import ManufacturingClient from "./ManufacturingClient";
 export const metadata: Metadata = {
   title: "Clothing Manufacturing in Guangzhou",
   description:
-    "How Mulang Apparel makes your clothing line in Guangzhou: tech packs, fabric sourcing, cutting and sewing, printing and embroidery, and quality checks against your approved sample.",
+    "How we make your clothing line in Guangzhou: tech packs, fabric sourcing, cutting and sewing, printing, embroidery and checks against your approved sample.",
   alternates: { canonical: "/manufacturing" },
 };
 

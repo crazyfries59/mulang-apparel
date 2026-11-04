@@ -144,7 +144,7 @@ export default function SolutionsPage() {
             transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
             className="font-syne font-black text-white leading-[0.92] tracking-tight"
             style={{ fontSize: "clamp(2.5rem,6vw,6rem)" }}>
-            Manufacturing<br /><span className="gradient-text">Solutions</span>
+            Clothing Private Label<br /><span className="gradient-text">Manufacturer</span>
           </motion.h1>
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.9 }}
             className="text-white/50 text-sm mt-4 max-w-md">
@@ -184,7 +184,7 @@ export default function SolutionsPage() {
                   {/* Content */}
                   <div className="p-6 flex flex-col flex-1">
                     <p className="label mb-2">{headline}</p>
-                    <h3 className="font-syne font-black text-white text-xl mb-3 group-hover:text-violet-300 transition-colors">{title}</h3>
+                    <h2 className="font-syne font-black text-white text-xl mb-3 group-hover:text-violet-300 transition-colors">{title}</h2>
                     <p className="text-white/40 text-sm leading-relaxed mb-5 flex-1">{desc}</p>
 
                     <ul className="space-y-2 mb-6">

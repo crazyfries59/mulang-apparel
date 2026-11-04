@@ -89,9 +89,9 @@ export default function HomeClient({ categories }: { categories: Category[] }) {
           {/* Headline */}
           <h1 className="overflow-hidden mb-8">
             {[
-              { text: "Manufacturer For",  grad: false },
-              { text: "YOUR",              grad: true  },
-              { text: "Clothing Line.",    grad: false },
+              { text: "Clothing Manufacturer", grad: false },
+              { text: "For YOUR",              grad: true  },
+              { text: "Streetwear Brand.",     grad: false },
             ].map(({ text, grad }, i) => (
               <span key={i} className="block overflow-hidden">
                 <span className="block">
