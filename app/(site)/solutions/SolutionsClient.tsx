@@ -17,14 +17,14 @@ const SOLUTIONS = [
     img: "https://images.unsplash.com/photo-1565084888279-aca607ecce0c?w=900&q=85",
     features: [
       "Pattern making & size grading from your design",
-      "Fabric sourcing from 500+ in-stock options",
-      "MOQ from 50 pieces per style/color",
-      "Bulk production in 21–30 days",
-      "42-point quality inspection",
+      "Fabric sourcing by composition and weight (GSM)",
+      "MOQ 100 pieces per style per color",
+      "Samples in 12–20 days, single-piece sampling",
+      "Bulk checked against your approved sample",
       "Full private labeling available",
     ],
     cta: "Start Cut & Sew",
-    highlight: { val: "50 pcs", label: "Minimum Order" },
+    highlight: { val: "100 pcs", label: "Minimum Order" },
   },
   {
     id: "logo",
@@ -36,15 +36,14 @@ const SOLUTIONS = [
     desc: "Add your logo to premium blank garments. Screen print, embroidery, DTG, heat transfer—we apply your mark precisely to our quality basics and blanks.",
     img: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=85",
     features: [
-      "6 decoration techniques available",
+      "Print, embroidery, silicone & woven logos",
       "Pantone color matching for screen print",
-      "Up to 12-thread embroidery",
       "Works on any garment type",
-      "MOQ from 50 pieces",
-      "7–14 day turnaround",
+      "MOQ 50 pieces—mix styles, colors & sizes",
+      "Logo samples in 9–15 days",
     ],
     cta: "Apply My Logo",
-    highlight: { val: "14 days", label: "Fast Turnaround" },
+    highlight: { val: "50 pcs", label: "Minimum Order" },
   },
   {
     id: "blank",
@@ -56,15 +55,15 @@ const SOLUTIONS = [
     desc: "Stock up on our premium blank garments for your custom decorating business. Consistent quality, consistent sizing, FOB Guangzhou pricing.",
     img: "https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=900&q=85",
     features: [
-      "T-shirts from 180–350GSM",
-      "Hoodies from 280–420GSM",
-      "Mix sizes and colors in same order",
+      "T-shirts, hoodies, sets and more",
+      "Choose from multiple fabric weights",
+      "Mix styles, colors and sizes in one order",
       "FOB Guangzhou pricing",
-      "MOQ 100 pcs per style",
+      "MOQ 50 pcs, blank samples in about 5 days",
       "Consistent dye-lot management",
     ],
     cta: "View Blank Catalog",
-    highlight: { val: "$5.99", label: "Starting Price" },
+    highlight: { val: "50 pcs", label: "Mixed MOQ" },
   },
   {
     id: "private-label",
@@ -81,10 +80,10 @@ const SOLUTIONS = [
       "Brand identity development support",
       "Low MOQ for new brands",
       "Seasonal collection planning",
-      "Exclusive designs—never duplicated",
+      "Logo customization from 50 pcs",
     ],
     cta: "Build My Brand",
-    highlight: { val: "100%", label: "Exclusive Designs" },
+    highlight: { val: "Full", label: "Private Label Service" },
   },
   {
     id: "startups",
@@ -96,7 +95,7 @@ const SOLUTIONS = [
     desc: "Purpose-built for new fashion entrepreneurs. Low MOQs, flexible sampling, brand consultation, and a dedicated account manager to guide you through your first collection.",
     img: "https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=900&q=85",
     features: [
-      "MOQ from 50 pieces (some styles 30 pcs)",
+      "MOQ from 50 pieces for blanks & logo",
       "Free first consultation call",
       "Dedicated account manager",
       "Brand identity & logo consultation",
@@ -118,13 +117,13 @@ const SOLUTIONS = [
     features: [
       "OEM: your designs, our production",
       "ODM: our design team creates for you",
-      "High-volume capacity (2M+ pcs/year)",
+      "Single-piece sampling before bulk",
       "R&D and trend research included in ODM",
       "Seasonal collection development",
       "NDA & IP protection available",
     ],
     cta: "Scale With Us",
-    highlight: { val: "2M+", label: "Annual Capacity" },
+    highlight: { val: "100 pcs", label: "Cut & Sew MOQ" },
   },
 ];
 
@@ -222,19 +221,19 @@ export default function SolutionsPage() {
                 <thead>
                   <tr className="border-b border-white/8">
                     <th className="text-left py-4 pr-6 text-white/30 text-xs uppercase tracking-widest font-medium w-40">Solution</th>
-                    {["MOQ", "Lead Time", "Custom Design", "Private Label", "Best For"].map(h => (
+                    {["MOQ", "Sample Time", "Custom Design", "Private Label", "Best For"].map(h => (
                       <th key={h} className="text-left py-4 px-4 text-white/30 text-xs uppercase tracking-widest font-medium">{h}</th>
                     ))}
                   </tr>
                 </thead>
                 <tbody>
                   {[
-                    ["Cut & Sew",      "50 pcs",  "21–30d", "✓ Full",   "✓ Full", "Brands with designs"],
-                    ["Logo Customize", "50 pcs",  "7–14d",  "✓ Deco",   "✓ Basic","Print-on-demand"],
-                    ["Blank Wholesale","100 pcs", "3–7d",   "✗",        "✗",      "Decorators & resellers"],
-                    ["Private Label",  "50 pcs",  "25–35d", "✓ Full",   "✓ Full", "Brand launchers"],
-                    ["For Startups",   "30–50pcs","14–21d", "✓ Full",   "✓ Full", "First-time founders"],
-                    ["OEM / ODM",      "200 pcs", "30–45d", "✓ Full",   "✓ Full", "Established brands"],
+                    ["Cut & Sew",      "100 pcs",    "12–20d", "✓ Full",   "✓ Full", "Brands with designs"],
+                    ["Logo Customize", "50 pcs",     "9–15d",  "✓ Deco",   "✓ Basic","Print-on-demand"],
+                    ["Blank Wholesale","50 pcs",     "~5d",    "✗",        "✗",      "Decorators & resellers"],
+                    ["Private Label",  "50–100 pcs", "9–20d",  "✓ Full",   "✓ Full", "Brand launchers"],
+                    ["For Startups",   "50 pcs",     "5–20d",  "✓ Full",   "✓ Full", "First-time founders"],
+                    ["OEM / ODM",      "100 pcs",    "12–20d", "✓ Full",   "✓ Full", "Established brands"],
                   ].map(([sol, ...vals], i) => (
                     <tr key={sol} className={`border-b border-white/5 ${i % 2 === 0 ? "" : "bg-white/[0.02]"}`}>
                       <td className="py-4 pr-6 font-syne font-bold text-white text-sm">{sol}</td>

@@ -149,7 +149,7 @@ export default function FabricsPage() {
           </motion.h1>
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.9 }}
             className="text-white/50 text-sm mt-4 max-w-sm">
-            500+ fabrics in stock. From 180GSM tees to 600G denim. Request physical swatches with your sample order.
+            Cotton jersey, French terry, fleece, denim and more, in a range of weights. Request physical swatches with your sample order.
           </motion.p>
         </div>
       </section>

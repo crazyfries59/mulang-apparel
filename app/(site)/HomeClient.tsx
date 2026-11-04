@@ -31,13 +31,6 @@ const PROCESS = [
   { n: "06", title: "Global Delivery",     desc: "We ship to the US, Australia, Europe and beyond, with tracking on every shipment." },
 ];
 
-const PORTFOLIO = [
-  { img: "https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=800&q=85&auto=format", label: "SS25 Collection" },
-  { img: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&q=85&auto=format", label: "Editorial Series" },
-  { img: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=800&q=85&auto=format", label: "Minimal FW" },
-  { img: "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800&q=85&auto=format", label: "Urban Capsule" },
-  { img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=85&auto=format", label: "Heavyweight Drop" },
-];
 
 const FAQS = [
   { q: "What is the minimum order quantity (MOQ)?", a: "50 pieces for blank wholesale and for adding your logo to our ready-made blanks — styles, colors and sizes can be mixed. Full cut & sew starts at 100 pieces per style per color." },
@@ -119,8 +112,8 @@ export default function HomeClient({ categories }: { categories: Category[] }) {
             <Link href="/contact" className="btn-gradient">
               Get A Quote <ArrowRight size={14} />
             </Link>
-            <Link href="/portfolio" className="btn-ghost">
-              View Portfolio
+            <Link href="/products" className="btn-ghost">
+              View Products
             </Link>
           </div>
         </motion.div>
@@ -279,40 +272,6 @@ export default function HomeClient({ categories }: { categories: Category[] }) {
                     <span className="text-white/70 text-[0.65rem] tracking-widest uppercase">{label}</span>
                   </div>
                 </div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════
-          §7  PORTFOLIO
-      ══════════════════════════════════════ */}
-      <section className="section">
-        <div className="container">
-          <AnimatedSection className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-            <div>
-              <p className="label mb-4">Our Work</p>
-              <h2 className="heading-xl">Portfolio</h2>
-            </div>
-            <Link href="/portfolio" className="btn-ghost self-start">
-              Full Portfolio <ArrowRight size={13} />
-            </Link>
-          </AnimatedSection>
-
-          <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
-            {PORTFOLIO.map(({ img, label }, i) => (
-              <AnimatedSection key={i} delay={i * 0.07} className="break-inside-avoid">
-                <Link href="/portfolio" className="group block relative rounded-2xl overflow-hidden img-zoom">
-                  <div className={`relative ${i % 3 === 1 ? "aspect-[3/4]" : "aspect-square"}`}>
-                    <Image src={img} alt={label} fill className="object-cover" sizes="33vw" />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-400 flex items-end p-5">
-                      <div className="translate-y-3 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                        <span className="text-white font-syne font-bold text-sm">{label}</span>
-                      </div>
-                    </div>
-                  </div>
-                </Link>
               </AnimatedSection>
             ))}
           </div>

@@ -4,7 +4,7 @@ import ServicesClient from "./ServicesClient";
 export const metadata: Metadata = {
   title: "Services — Prototyping, Sampling, Production & More",
   description:
-    "Full-service clothing manufacturing: prototypes in 7-12 days, unlimited sample revisions, OEM/ODM production, private labels, global shipping, and product photography.",
+    "Full-service clothing manufacturing: prototypes and single-piece sampling, OEM/ODM production from 50 pcs, private labels and packaging, global shipping, and product photography.",
   alternates: { canonical: "/services" },
 };
 

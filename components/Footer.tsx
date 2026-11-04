@@ -6,7 +6,6 @@ const LINKS = {
   Company:  [
     { label: "About Us",       href: "/about"         },
     { label: "Manufacturing",  href: "/manufacturing" },
-    { label: "Portfolio",      href: "/portfolio"     },
     { label: "Blog",           href: "/blog"          },
     { label: "Contact",        href: "/contact"       },
   ],
@@ -58,7 +57,7 @@ export default function Footer() {
               <p className="font-syne font-light text-lg tracking-widest uppercase text-white/35">APPAREL</p>
             </div>
             <p className="text-white/40 text-sm leading-relaxed mb-6 max-w-xs">
-              Premium streetwear and private label clothing manufacturer. Serving global fashion brands since 2010.
+              Premium streetwear and private label clothing manufacturer based in Guangzhou, China.
             </p>
             <div className="space-y-3">
               <a href="https://wa.me/8615986213212" target="_blank" rel="noopener noreferrer"

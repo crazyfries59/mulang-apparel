@@ -229,7 +229,7 @@ export default function ContactPage({ initialProduct }: {
       <section className="section-sm bg-[#0a0a0a] border-t border-white/5">
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            {[["< 24h", "Response Time"], ["7-12", "Days Sampling"], ["50+", "Min. MOQ"], ["60+", "Countries Served"]].map(([n, l]) => (
+            {[["50", "Pcs Min. MOQ"], ["1", "Piece Sampling"], ["5–20", "Days Sampling"], ["OEM", "& ODM Service"]].map(([n, l]) => (
               <AnimatedSection key={l}>
                 <p className="font-syne font-black text-3xl gradient-text mb-1">{n}</p>
                 <p className="text-white/30 text-xs tracking-widest uppercase">{l}</p>
