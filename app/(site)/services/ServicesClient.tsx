@@ -180,6 +180,9 @@ export default function ServicesPage() {
           <p className="text-white/55 text-sm leading-relaxed mb-5">Share a reference image or tech pack, your target quantity and size range, fabric preferences, and customization details. Tell us which specifications are still undecided so we can discuss the options.</p>
           <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm">
             <Link href="/blog/minimum-order-quantity-guide" className="text-violet-300 hover:text-white underline underline-offset-4">Understand clothing MOQ</Link>
+            <Link href="/t-shirt-manufacturer" className="text-violet-300 hover:text-white underline underline-offset-4">T-shirt manufacturing</Link>
+            <Link href="/custom-hoodie-manufacturer" className="text-violet-300 hover:text-white underline underline-offset-4">Hoodie manufacturing</Link>
+            <Link href="/blog/how-to-find-a-clothing-manufacturer" className="text-violet-300 hover:text-white underline underline-offset-4">How to find a manufacturer</Link>
             <Link href="/products" className="text-violet-300 hover:text-white underline underline-offset-4">Find a product reference</Link>
             <Link href="/contact" className="text-violet-300 hover:text-white underline underline-offset-4">Discuss your project</Link>
           </div>

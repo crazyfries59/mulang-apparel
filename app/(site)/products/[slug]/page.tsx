@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getPublicProduct, getPublicProducts } from "@/lib/content/products";
 import ProductDetailClient from "./ProductDetailClient";
 import { SITE_URL } from "@/lib/site";
+import { buildProductDescription, buildProductSpecLine, buildProductTitle } from "@/lib/seo/product-copy";
 
 export const dynamic = "force-dynamic";
 
@@ -13,13 +14,16 @@ export async function generateMetadata(
   const p = await getPublicProduct(slug);
   if (!p) notFound();
 
-  const description = p.seoDescription || `${p.name} — ${p.fabric}, ${p.gsm}. MOQ ${p.moq}, ${p.lead} lead time. Custom OEM/ODM manufacturing from Mulang Apparel.`;
+  const title = buildProductTitle(p);
+  const description = buildProductDescription(p);
   return {
-    title: p.seoTitle || p.name,
+    // `absolute` bypasses the layout's "%s | Mulang Apparel" template so the brand
+    // suffix cannot push a product title past the SERP truncation point.
+    title: { absolute: title },
     description,
     alternates: { canonical: `/products/${p.slug}` },
     openGraph: {
-      title: p.seoTitle || p.name,
+      title,
       description,
       images: p.img ? [{ url: p.img }] : undefined,
     },
@@ -40,7 +44,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
     brand: { "@type": "Brand", name: "Mulang Apparel" },
     sku: p.id !== "—" ? p.id.replace(/^#/, "") : undefined,
     image: p.img ? [new URL(p.img, SITE_URL).toString()] : undefined,
-    description: `${p.fabric}, ${p.gsm}. MOQ ${p.moq}, ${p.lead} lead time.`,
+    description: buildProductSpecLine(p) || buildProductDescription(p),
     ...(Number.isFinite(numericPrice) && numericPrice > 0
       ? {
           offers: {

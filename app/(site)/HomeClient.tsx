@@ -48,6 +48,14 @@ const FAQS = [
   { q: "Which countries do you ship to?", a: "We work with brands in the US, Australia, Switzerland, Canada, the UK and New Zealand, and can ship to most other countries. Shipping is quoted per order." },
 ];
 
+/* Categories that have their own landing page link there instead of to the filtered
+   product list. The home page is the strongest link on the site, so it should point
+   at the pages that carry the buying copy and pass equity on to the individual styles. */
+const CATEGORY_LANDING: Record<string, string> = {
+  "t-shirts": "/t-shirt-manufacturer",
+  hoodies: "/custom-hoodie-manufacturer",
+};
+
 /* ─── PAGE ─── */
 
 export default function HomeClient({ categories }: { categories: Category[] }) {
@@ -174,7 +182,7 @@ export default function HomeClient({ categories }: { categories: Category[] }) {
             {categories.map(({ slug, label, img }, i) => (
               <AnimatedSection key={slug} delay={i * 0.06}
                 className={i === 1 ? "col-span-1 row-span-2" : "col-span-1"}>
-                <Link href={`/products?cat=${slug}`} className="group block relative w-full h-full rounded-2xl overflow-hidden img-zoom">
+                <Link href={CATEGORY_LANDING[slug] ?? `/products?cat=${slug}`} className="group block relative w-full h-full rounded-2xl overflow-hidden img-zoom">
                   <Image src={img} alt={label} fill className="object-cover" sizes="25vw" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                   <div className="absolute inset-0 bg-violet-500/0 group-hover:bg-violet-500/10 transition-colors duration-400" />

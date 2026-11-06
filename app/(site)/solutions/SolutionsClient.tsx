@@ -252,6 +252,45 @@ export default function SolutionsPage() {
         </div>
       </section>
 
+      {/* Category entry points. The filtered product list cannot rank for commercial
+          keywords, so these links pass readers and equity down to the category pages,
+          which in turn link to the individual styles. */}
+      <section className="py-16 px-6 border-t border-white/5">
+        <div className="container max-w-[1200px] mx-auto">
+          <AnimatedSection className="mb-8">
+            <p className="label mb-4">By Product Category</p>
+            <h2 className="font-syne font-black text-white text-3xl">Start From What You Actually Sell</h2>
+          </AnimatedSection>
+          <div className="grid md:grid-cols-2 gap-4">
+            <Link href="/t-shirt-manufacturer" className="group block rounded-2xl border border-white/8 bg-[#111] p-7 hover:border-violet-500/40 transition-colors">
+              <h3 className="font-syne font-bold text-white text-lg">T-Shirt Manufacturing</h3>
+              <p className="mt-3 text-sm text-white/50 leading-relaxed">106 styles from 145 to 425 gsm — oversized, vintage wash, polo, long sleeve and blank wholesale, from 50 pcs.</p>
+              <span className="mt-4 inline-flex items-center gap-1 text-violet-400 text-xs font-bold uppercase tracking-wider">
+                View t-shirt line <ArrowRight size={11} />
+              </span>
+            </Link>
+            <Link href="/custom-hoodie-manufacturer" className="group block rounded-2xl border border-white/8 bg-[#111] p-7 hover:border-violet-500/40 transition-colors">
+              <h3 className="font-syne font-bold text-white text-lg">Hoodie Manufacturing</h3>
+              <p className="mt-3 text-sm text-white/50 leading-relaxed">43 styles over 300–500 gsm fleece and French terry — spray dye, acid wash, puff print and blank wholesale, from 50 pcs.</p>
+              <span className="mt-4 inline-flex items-center gap-1 text-violet-400 text-xs font-bold uppercase tracking-wider">
+                View hoodie line <ArrowRight size={11} />
+              </span>
+            </Link>
+          </div>
+          <p className="mt-8 text-sm text-white/40">
+            New to manufacturing? Start with{" "}
+            <Link href="/blog/how-to-start-a-clothing-brand" className="text-violet-400 hover:underline">
+              how to start a clothing brand
+            </Link>{" "}
+            or{" "}
+            <Link href="/blog/how-to-find-a-clothing-manufacturer" className="text-violet-400 hover:underline">
+              how to find a clothing manufacturer
+            </Link>
+            .
+          </p>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-16 px-6">
         <div className="container max-w-2xl mx-auto text-center">

@@ -7,6 +7,8 @@ import { getPublicProducts } from "@/lib/content/products";
 const STATIC_ROUTES = [
   { path: "", priority: 1, changeFrequency: "weekly" as const },
   { path: "/products", priority: 0.9, changeFrequency: "weekly" as const },
+  { path: "/t-shirt-manufacturer", priority: 0.9, changeFrequency: "weekly" as const },
+  { path: "/custom-hoodie-manufacturer", priority: 0.9, changeFrequency: "weekly" as const },
   { path: "/about", priority: 0.7, changeFrequency: "monthly" as const },
   { path: "/services", priority: 0.8, changeFrequency: "monthly" as const },
   { path: "/solutions", priority: 0.8, changeFrequency: "monthly" as const },
