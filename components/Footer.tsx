@@ -11,8 +11,9 @@ const LINKS = {
     { label: "Contact",        href: "/contact"       },
   ],
   Products: [
-    { label: "Oversized T-Shirts",    href: "/products" },
-    { label: "Hoodies & Sweatshirts", href: "/products" },
+    { label: "T-Shirt Manufacturing",  href: "/t-shirt-manufacturer" },
+    { label: "Hoodie Manufacturing",   href: "/custom-hoodie-manufacturer" },
+    { label: "All Styles",             href: "/products" },
     { label: "Tracksuits & Sets",     href: "/products" },
     { label: "Jackets & Outerwear",   href: "/products" },
     { label: "Cargo Pants & Shorts",  href: "/products" },

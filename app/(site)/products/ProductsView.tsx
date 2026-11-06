@@ -6,8 +6,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import AnimatedSection from "@/components/AnimatedSection";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { Search } from "lucide-react";
+import { Search, ArrowRight } from "lucide-react";
 import { CATEGORIES, type Product } from "./data";
+import { CATEGORY_LANDING_LIST } from "@/lib/seo/category-landing";
 
 const badgeColor = (b: string) =>
   b === "Best Seller" ? "bg-red-500" : b === "New" ? "bg-violet-500" : "bg-emerald-500";
@@ -66,6 +67,22 @@ export default function ProductsView({ products }: { products: Product[] }) {
             <h1 className="font-display-serif text-white text-[clamp(2.2rem,5vw,4rem)] leading-none">
               Products
             </h1>
+            <p className="text-white/45 text-sm leading-relaxed max-w-2xl mt-5">
+              {products.length} ready-to-customize styles across {CATEGORIES.length} categories. Every style can ship
+              blank, carry your logo, or be re-cut in your own fit and fabric. Manufacturing detail for our two
+              biggest categories:
+            </p>
+            <div className="flex flex-wrap gap-2.5 mt-5">
+              {CATEGORY_LANDING_LIST.map((landing) => (
+                <Link
+                  key={landing.path}
+                  href={landing.path}
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-violet-500/25 bg-violet-500/[0.07] text-violet-300 text-[0.7rem] font-semibold tracking-wide hover:border-violet-500/50 hover:text-violet-200 transition-colors"
+                >
+                  {landing.keyword} <ArrowRight size={10} />
+                </Link>
+              ))}
+            </div>
           </AnimatedSection>
         </div>
       </section>
