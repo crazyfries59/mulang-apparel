@@ -10,9 +10,14 @@ import {
   Layers,
 } from "lucide-react";
 import { catLabel, type Product } from "../data";
+import { landingForCategory } from "@/lib/seo/category-landing";
 
 const badgeBg = (b: string) =>
   b === "Best Seller" ? "bg-red-500" : b === "New" ? "bg-violet-500" : "bg-emerald-500";
+
+/* Specs missing in the CMS arrive as the "—" placeholder. Render the row only when
+   there is a real value, so a page never advertises an empty spec to a buyer. */
+const hasValue = (value?: string) => Boolean(value && value.trim() && value !== "—");
 
 const parseSizes = (s?: string) =>
   (s ?? "S, M, L, XL, 2XL").split(/[,，]/).map(x => x.trim()).filter(Boolean);
@@ -90,6 +95,7 @@ export default function ProductDetailPage({ product: p, relatedProducts }: {
   const intro = p.intro ?? {};
   const details = p.details ?? [];
   const cleanedSizes = cleanSizes(sizes);
+  const categoryLanding = landingForCategory(p.cat);
   const chart = cleanedSizes.length ? buildSizeChart(cleanedSizes, isBottom(p.cat, p.sub)) : null;
 
   // Introduction rows (mirrors Hongyu's per-product introduction block)
@@ -182,14 +188,25 @@ export default function ProductDetailPage({ product: p, relatedProducts }: {
             </div>
 
             <div className="flex flex-wrap gap-x-8 gap-y-2 py-4 border-y border-white/8 text-sm">
-              <span><span className="text-violet-400 font-semibold">Weight</span> <span className="text-white/60 ml-1">{p.gsm}</span></span>
-              <span><span className="text-violet-400 font-semibold">MOQ</span> <span className="text-white/60 ml-1">{p.moq}</span></span>
-              <span><span className="text-violet-400 font-semibold">Lead</span> <span className="text-white/60 ml-1">{p.lead}</span></span>
+              {hasValue(p.gsm) && (
+                <span><span className="text-violet-400 font-semibold">Weight</span> <span className="text-white/60 ml-1">{p.gsm}</span></span>
+              )}
+              {hasValue(p.moq) && (
+                <span><span className="text-violet-400 font-semibold">MOQ</span> <span className="text-white/60 ml-1">{p.moq}</span></span>
+              )}
+              {hasValue(p.lead) && (
+                <span><span className="text-violet-400 font-semibold">Lead</span> <span className="text-white/60 ml-1">{p.lead}</span></span>
+              )}
             </div>
 
             <p className="text-white/45 text-sm mt-4 mb-6">
               Looking to produce your own?{" "}
-              <Link href="/contact" className="text-violet-400 hover:text-violet-300 font-medium">{catLabel(p.cat)} manufacturer</Link>
+              <Link
+                href={categoryLanding?.path ?? "/contact"}
+                className="text-violet-400 hover:text-violet-300 font-medium"
+              >
+                {categoryLanding?.keyword ?? `${catLabel(p.cat)} manufacturer`}
+              </Link>
               {" "}— low MOQ, full OEM / ODM.
             </p>
 
@@ -227,8 +244,8 @@ export default function ProductDetailPage({ product: p, relatedProducts }: {
         <div className="grid md:grid-cols-2 gap-6 mb-6">
           <div className="rounded-2xl border border-white/10 bg-[#0e0e10] p-6 space-y-4">
             <SpecLine k="SKU" v={p.id} />
-            <SpecLine k="Thickness" v={p.gsm} />
-            <SpecLine k="Fabric" v={intro.Material || p.fabric} />
+            {hasValue(p.gsm) && <SpecLine k="Thickness" v={p.gsm} />}
+            {hasValue(intro.Material || p.fabric) && <SpecLine k="Fabric" v={intro.Material || p.fabric} />}
             <div>
               <p className="text-white font-semibold text-sm mb-2">Available Sizes</p>
               {cleanedSizes.length ? (
@@ -355,7 +372,9 @@ export default function ProductDetailPage({ product: p, relatedProducts }: {
             <div className="relative aspect-[16/9] bg-[#141414]">
               <Image src={gallery[gallery.length - 1] || p.img} alt={`${p.name} fabric`} fill className="object-cover" sizes="100vw" />
               <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/30">
-                <p className="font-display-serif text-white text-[clamp(2.5rem,8vw,6rem)] leading-none drop-shadow-lg">{p.gsm}</p>
+                {hasValue(p.gsm) && (
+                  <p className="font-display-serif text-white text-[clamp(2.5rem,8vw,6rem)] leading-none drop-shadow-lg">{p.gsm}</p>
+                )}
                 <p className="text-white/85 text-sm tracking-[0.3em] uppercase mt-2">{intro.Material || p.fabric}</p>
               </div>
             </div>
@@ -382,7 +401,17 @@ export default function ProductDetailPage({ product: p, relatedProducts }: {
         {/* ── Related ── */}
         {relatedProducts.length > 0 && (
           <div className="mt-16">
-            <p className="label mb-6">More in {catLabel(p.cat)}</p>
+            <div className="flex items-center justify-between gap-4 mb-6">
+              <p className="label">More in {catLabel(p.cat)}</p>
+              {categoryLanding && (
+                <Link
+                  href={categoryLanding.path}
+                  className="flex items-center gap-1 text-[0.66rem] font-bold tracking-wider uppercase text-violet-400 hover:text-violet-300 transition-colors"
+                >
+                  {categoryLanding.keyword} <ChevronRight size={10} />
+                </Link>
+              )}
+            </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
               {relatedProducts.map(r => (
                 <Link key={r.slug} href={`/products/${r.slug}`} className="group block">
