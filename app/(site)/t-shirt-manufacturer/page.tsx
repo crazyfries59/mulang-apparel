@@ -3,7 +3,7 @@ import CategoryLanding, { type LandingConfig } from "@/components/CategoryLandin
 import { getPublicProducts } from "@/lib/content/products";
 import { SITE_URL } from "@/lib/site";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 600;
 
 const PAGE_PATH = "/t-shirt-manufacturer";
 const TITLE = "T-Shirt Manufacturer in China | Custom & Blank Tees";

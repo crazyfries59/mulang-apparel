@@ -17,7 +17,7 @@ const CONTENT_BY_SLUG: Record<string, React.ComponentType> = {
   "minimum-order-quantity-guide": MinimumOrderQuantityContent,
 };
 
-export const dynamic = "force-dynamic";
+export const revalidate = 600;
 
 export async function generateStaticParams() {
   const cmsPosts = await getCmsPosts();

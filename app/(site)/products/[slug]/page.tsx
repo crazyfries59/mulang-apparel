@@ -5,7 +5,18 @@ import ProductDetailClient from "./ProductDetailClient";
 import { SITE_URL } from "@/lib/site";
 import { buildProductDescription, buildProductSpecLine, buildProductTitle } from "@/lib/seo/product-copy";
 
-export const dynamic = "force-dynamic";
+/* Prerendered on demand and cached for 10 minutes. 241 product pages therefore
+   stop paying a database round-trip per crawler hit. */
+export const revalidate = 600;
+
+/* Listing the slugs is what lets Next prerender the 241 product pages at build
+   time. Without it the route renders on demand and stays uncached, which is the
+   slow path Googlebot was hitting. Styles published later still render on demand
+   (dynamicParams defaults to true) and are cached from then on. */
+export async function generateStaticParams() {
+  const products = await getPublicProducts();
+  return products.map((product) => ({ slug: product.slug }));
+}
 
 export async function generateMetadata(
   { params }: { params: Promise<{ slug: string }> }

@@ -3,7 +3,7 @@ import CategoryLanding, { type LandingConfig } from "@/components/CategoryLandin
 import { getPublicProducts } from "@/lib/content/products";
 import { SITE_URL } from "@/lib/site";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 600;
 
 const PAGE_PATH = "/custom-hoodie-manufacturer";
 const TITLE = "Custom Hoodie Manufacturer in China | Blank Wholesale";

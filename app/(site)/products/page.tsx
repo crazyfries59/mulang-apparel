@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/products" },
 };
 
-export const dynamic = "force-dynamic";
+export const revalidate = 600;
 
 export default async function ProductsPage() {
   const products = await getPublicProducts();
