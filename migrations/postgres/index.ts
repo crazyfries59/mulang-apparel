@@ -4,6 +4,7 @@ import * as migration_20261023_082701_private_payload_access from './20261023_08
 import * as migration_20261024_115512_product_catalog from './20261024_115512_product_catalog';
 import * as migration_20261029_112249_crm_backend from './20261029_112249_crm_backend';
 import * as migration_20261107_164000_invoices from './20261107_164000_invoices';
+import * as migration_20261107_174500_invoice_grants from './20261107_174500_invoice_grants';
 
 export const migrations = [
   {
@@ -35,5 +36,10 @@ export const migrations = [
     up: migration_20261107_164000_invoices.up,
     down: migration_20261107_164000_invoices.down,
     name: '20261107_164000_invoices'
+  },
+  {
+    up: migration_20261107_174500_invoice_grants.up,
+    down: migration_20261107_174500_invoice_grants.down,
+    name: '20261107_174500_invoice_grants'
   },
 ];
