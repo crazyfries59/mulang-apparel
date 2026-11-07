@@ -1,6 +1,7 @@
 import type { CollectionConfig } from "payload";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { publishedPostWhere, withPublicationDate } from "../lib/content/publication.ts";
+import { revalidatePosts } from "../lib/content/cache-tags.ts";
 
 export const Posts: CollectionConfig = {
   slug: "posts",
@@ -22,6 +23,8 @@ export const Posts: CollectionConfig = {
   },
   hooks: {
     beforeChange: [({ data, originalDoc }) => withPublicationDate(data, originalDoc)],
+    afterChange: [async ({ doc }) => { await revalidatePosts(); return doc; }],
+    afterDelete: [async ({ doc }) => { await revalidatePosts(); return doc; }],
   },
   fields: [
     {

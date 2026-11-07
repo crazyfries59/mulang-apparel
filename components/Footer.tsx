@@ -6,13 +6,13 @@ const LINKS = {
   Company:  [
     { label: "About Us",       href: "/about"         },
     { label: "Manufacturing",  href: "/manufacturing" },
-    { label: "Portfolio",      href: "/portfolio"     },
     { label: "Blog",           href: "/blog"          },
     { label: "Contact",        href: "/contact"       },
   ],
   Products: [
-    { label: "Oversized T-Shirts",    href: "/products" },
-    { label: "Hoodies & Sweatshirts", href: "/products" },
+    { label: "T-Shirt Manufacturing",  href: "/t-shirt-manufacturer" },
+    { label: "Hoodie Manufacturing",   href: "/custom-hoodie-manufacturer" },
+    { label: "All Styles",             href: "/products" },
     { label: "Tracksuits & Sets",     href: "/products" },
     { label: "Jackets & Outerwear",   href: "/products" },
     { label: "Cargo Pants & Shorts",  href: "/products" },
@@ -34,9 +34,9 @@ export default function Footer() {
         <div className="container-wide mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <p className="label mb-2">Ready To Scale?</p>
-            <h3 className="font-syne font-bold text-2xl text-white">
+            <h2 className="font-syne font-bold text-2xl text-white">
               Let&apos;s Build Your Brand Together
-            </h3>
+            </h2>
           </div>
           <div className="flex gap-3">
             <Link href="/contact" className="btn-gradient">Get A Free Quote</Link>
@@ -58,7 +58,7 @@ export default function Footer() {
               <p className="font-syne font-light text-lg tracking-widest uppercase text-white/35">APPAREL</p>
             </div>
             <p className="text-white/40 text-sm leading-relaxed mb-6 max-w-xs">
-              Premium streetwear and private label clothing manufacturer. Serving global fashion brands since 2010.
+              Premium streetwear and private label clothing manufacturer based in Guangzhou, China.
             </p>
             <div className="space-y-3">
               <a href="https://wa.me/8615986213212" target="_blank" rel="noopener noreferrer"
@@ -66,10 +66,10 @@ export default function Footer() {
                 <MessageCircle size={14} className="flex-shrink-0" />
                 +86 159 8621 3212
               </a>
-              <a href="mailto:sales@mulangapparel.com"
+              <a href="mailto:max@mulangapparel.com"
                 className="flex items-center gap-2.5 text-sm text-white/45 hover:text-violet-400 transition-colors">
                 <Mail size={14} className="flex-shrink-0" />
-                sales@mulangapparel.com
+                max@mulangapparel.com
               </a>
               <div className="flex items-start gap-2.5 text-sm text-white/45">
                 <MapPin size={14} className="flex-shrink-0 mt-0.5" />

@@ -2,8 +2,21 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getPublicProduct, getPublicProducts } from "@/lib/content/products";
 import ProductDetailClient from "./ProductDetailClient";
+import { SITE_URL } from "@/lib/site";
+import { buildProductDescription, buildProductSpecLine, buildProductTitle } from "@/lib/seo/product-copy";
 
-export const dynamic = "force-dynamic";
+/* Prerendered on demand and cached for 10 minutes. 241 product pages therefore
+   stop paying a database round-trip per crawler hit. */
+export const revalidate = 600;
+
+/* Listing the slugs is what lets Next prerender the 241 product pages at build
+   time. Without it the route renders on demand and stays uncached, which is the
+   slow path Googlebot was hitting. Styles published later still render on demand
+   (dynamicParams defaults to true) and are cached from then on. */
+export async function generateStaticParams() {
+  const products = await getPublicProducts();
+  return products.map((product) => ({ slug: product.slug }));
+}
 
 export async function generateMetadata(
   { params }: { params: Promise<{ slug: string }> }
@@ -12,13 +25,16 @@ export async function generateMetadata(
   const p = await getPublicProduct(slug);
   if (!p) notFound();
 
-  const description = p.seoDescription || `${p.name} — ${p.fabric}, ${p.gsm}. MOQ ${p.moq}, ${p.lead} lead time. Custom OEM/ODM manufacturing from Mulang Apparel.`;
+  const title = buildProductTitle(p);
+  const description = buildProductDescription(p);
   return {
-    title: p.seoTitle || p.name,
+    // `absolute` bypasses the layout's "%s | Mulang Apparel" template so the brand
+    // suffix cannot push a product title past the SERP truncation point.
+    title: { absolute: title },
     description,
     alternates: { canonical: `/products/${p.slug}` },
     openGraph: {
-      title: p.seoTitle || p.name,
+      title,
       description,
       images: p.img ? [{ url: p.img }] : undefined,
     },
@@ -35,8 +51,11 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
     "@context": "https://schema.org",
     "@type": "Product",
     name: p.name,
-    image: p.img ? [p.img] : undefined,
-    description: `${p.fabric}, ${p.gsm}. MOQ ${p.moq}, ${p.lead} lead time.`,
+    url: `${SITE_URL}/products/${p.slug}`,
+    brand: { "@type": "Brand", name: "Mulang Apparel" },
+    sku: p.id !== "—" ? p.id.replace(/^#/, "") : undefined,
+    image: p.img ? [new URL(p.img, SITE_URL).toString()] : undefined,
+    description: buildProductSpecLine(p) || buildProductDescription(p),
     ...(Number.isFinite(numericPrice) && numericPrice > 0
       ? {
           offers: {

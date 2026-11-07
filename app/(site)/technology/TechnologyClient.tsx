@@ -12,7 +12,7 @@ const TECH_SECTIONS = [
     subtitle: "6 Printing Methods. Infinite Possibilities.",
     img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&q=85",
     techniques: [
-      { name: "Screen Printing",   desc: "Up to 12 colors. Best for large runs and opaque prints. Pantone matching." },
+      { name: "Screen Printing",   desc: "Multi-color prints with Pantone matching. Best for larger runs and opaque prints." },
       { name: "DTG Direct-To-Garment", desc: "Full-color photographic prints. No minimum. Best for complex artwork." },
       { name: "Heat Transfer",     desc: "Soft-hand feel. Works on all fabric types. Fast setup, no screens needed." },
       { name: "Sublimation",       desc: "Full-garment all-over prints. Permanent, wash-proof. Polyester fabrics only." },
@@ -23,7 +23,7 @@ const TECH_SECTIONS = [
   {
     id: "embroidery",
     title: "Embroidery",
-    subtitle: "12-Thread Precision. Built To Last.",
+    subtitle: "Precise Stitching. Built To Last.",
     img: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&q=85",
     techniques: [
       { name: "Flat Embroidery",    desc: "Clean, precise stitching. Unlimited colors. Standard for logos and text." },
@@ -64,14 +64,6 @@ const TECH_SECTIONS = [
   },
 ];
 
-const CERTIFICATIONS = [
-  { title: "ISO 9001:2015", desc: "Quality Management System certified" },
-  { title: "OEKO-TEX® Standard 100", desc: "Harmful substance testing" },
-  { title: "GOTS Organic", desc: "Global Organic Textile Standard" },
-  { title: "GRS Certified", desc: "Global Recycled Standard" },
-  { title: "Sedex Member", desc: "Ethical trade platform member" },
-  { title: "WRAP Certified", desc: "Worldwide Responsible Apparel" },
-];
 
 export default function TechnologyPage() {
   return (
@@ -94,7 +86,7 @@ export default function TechnologyPage() {
           </motion.h1>
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.9 }}
             className="text-white/50 text-sm mt-4 max-w-md">
-            State-of-the-art equipment and time-tested craftsmanship. 14 decoration techniques under one roof.
+            Printing, embroidery, washing and finishing techniques for your designs.
           </motion.p>
         </div>
       </section>
@@ -142,36 +134,12 @@ export default function TechnologyPage() {
         </div>
       </section>
 
-      {/* Certifications */}
-      <section className="py-16 px-6 bg-[#0a0a0a] border-t border-white/5">
-        <div className="container max-w-[1200px] mx-auto">
-          <AnimatedSection className="text-center mb-12">
-            <p className="label mb-4">Compliance & Standards</p>
-            <h2 className="font-syne font-black text-white text-3xl">Our Certifications</h2>
-          </AnimatedSection>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {CERTIFICATIONS.map(({ title, desc }, i) => (
-              <AnimatedSection key={title} delay={i * 0.07}>
-                <div className="glass-card p-5 text-center group hover:border-violet-500/30 transition-all">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-violet-600/20 to-pink-500/20 flex items-center justify-center mx-auto mb-3
-                    group-hover:from-violet-600 group-hover:to-pink-500 transition-all duration-300">
-                    <CheckCircle size={16} className="text-violet-400 group-hover:text-white transition-colors" />
-                  </div>
-                  <p className="font-syne font-bold text-white text-xs mb-1">{title}</p>
-                  <p className="text-white/30 text-[0.6rem] leading-tight">{desc}</p>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="py-16 px-6">
         <div className="container max-w-2xl mx-auto text-center">
           <AnimatedSection>
             <h2 className="font-syne font-black text-white text-3xl mb-5">See Our Technology In Action</h2>
-            <p className="text-white/40 text-sm mb-8">Schedule a virtual factory tour or request a technique sample pack.</p>
+            <p className="text-white/40 text-sm mb-8">Send us your design and we&apos;ll recommend the right technique and quote a sample.</p>
             <div className="flex gap-3 justify-center">
               <Link href="/contact" className="btn-gradient">Book A Factory Tour <ArrowRight size={13} /></Link>
               <a href="https://wa.me/8615986213212" target="_blank" rel="noopener noreferrer" className="btn-ghost">WhatsApp Us</a>

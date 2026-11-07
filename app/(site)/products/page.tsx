@@ -4,13 +4,13 @@ import ProductsView from "./ProductsView";
 import { getPublicProducts } from "@/lib/content/products";
 
 export const metadata: Metadata = {
-  title: "Products — T-Shirts, Hoodies, Denim & More",
+  title: "Products — T-Shirts, Hoodies & More",
   description:
     "Browse ready-to-customize styles across T-Shirts, Hoodies, Denim, Dresses and more. OEM & ODM manufacturing available.",
   alternates: { canonical: "/products" },
 };
 
-export const dynamic = "force-dynamic";
+export const revalidate = 600;
 
 export default async function ProductsPage() {
   const products = await getPublicProducts();

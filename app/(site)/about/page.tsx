@@ -4,7 +4,7 @@ import AboutClient from "./AboutClient";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Founded in Guangzhou's garment district, Mulang Apparel operates a 50,000 sq ft factory with 400+ skilled workers, serving 500+ fashion brands across 60+ countries.",
+    "Mulang Apparel is a Guangzhou clothing manufacturer for growing brands: blanks and logo from 50 pcs, cut & sew from 100 pcs per style per color, 1-pc sampling.",
   alternates: { canonical: "/about" },
 };
 

@@ -6,10 +6,10 @@ import AnimatedSection from "@/components/AnimatedSection";
 import { ArrowRight, CheckCircle } from "lucide-react";
 
 const CAPABILITIES = [
-  { n: "50,000", u: "sq ft",  label: "Factory Floor" },
-  { n: "400+",   u: "people", label: "Skilled Workers" },
-  { n: "500+",   u: "fabrics",label: "Fabric Library" },
-  { n: "ISO",    u: "9001",   label: "Certified" },
+  { n: "50",  u: "pcs",   label: "Blank & Logo MOQ" },
+  { n: "100", u: "pcs",   label: "Cut & Sew MOQ" },
+  { n: "1",   u: "piece", label: "Sampling" },
+  { n: "OEM", u: "& ODM", label: "Services" },
 ];
 
 const TECHNIQUES = [
@@ -23,7 +23,7 @@ const QC = [
   "Raw material inspection upon arrival",
   "In-line quality checks during production",
   "Stitching density & seam strength test",
-  "Color fastness & wash test (ISO standards)",
+  "Color fastness & wash test",
   "Measurement accuracy check (AQL)",
   "Label, tag & packaging verification",
   "Pre-shipment final inspection",
@@ -50,7 +50,7 @@ export default function ManufacturingPage() {
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.9 }}
             className="text-white/55 text-base max-w-md">
-            State-of-the-art facility with 400+ skilled workers producing 2M+ garments annually.
+            Sampling, cutting, sewing, printing, embroidery and quality checks for growing clothing brands.
           </motion.p>
         </div>
       </section>
@@ -76,7 +76,7 @@ export default function ManufacturingPage() {
             <p className="label mb-4">Full-Service Production</p>
             <h2 className="heading-xl mb-5">From Fiber To<br />Finished Garment</h2>
             <p className="text-white/40 text-sm max-w-lg leading-relaxed">
-              We manage every step of production under one roof—no outsourcing, no surprises. Complete visibility from start to finish.
+              We coordinate every step from tech pack to packing, so you have one point of contact from start to finish.
             </p>
           </AnimatedSection>
 
@@ -90,9 +90,9 @@ export default function ManufacturingPage() {
             <AnimatedSection direction="right" className="space-y-6">
               {[
                 ["Design & Tech Packs", "CAD pattern making, size grading, material specs and construction details."],
-                ["Material Sourcing", "500+ premium fabrics in stock. Custom fabric sourcing available for special projects."],
+                ["Material Sourcing", "Choose fabric composition and weight (GSM) for your design. Custom fabric sourcing available for special projects."],
                 ["Cutting & Sewing", "Computerized cutting for precision. Expert sewers with brand-specific training."],
-                ["Decoration & Finishing", "14 decoration techniques in-house: printing, embroidery, washing and more."],
+                ["Decoration & Finishing", "Printing, embroidery, washing and more."],
               ].map(([t, d]) => (
                 <div key={t as string} className="flex gap-4">
                   <CheckCircle size={18} className="text-violet-400 flex-shrink-0 mt-0.5" />
@@ -112,7 +112,7 @@ export default function ManufacturingPage() {
         <div className="container">
           <AnimatedSection className="text-center mb-12">
             <p className="label mb-4">Decoration Capabilities</p>
-            <h2 className="heading-lg">Every Technique.<br />One Factory.</h2>
+            <h2 className="heading-lg">Decoration<br />Options</h2>
           </AnimatedSection>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-3">
             {TECHNIQUES.map((t, i) => (
@@ -132,9 +132,9 @@ export default function ManufacturingPage() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <AnimatedSection direction="left" className="space-y-6">
               <p className="label">Quality Standards</p>
-              <h2 className="heading-xl">Zero Defects.<br />Zero Compromises.</h2>
+              <h2 className="heading-xl">Checked Against<br />Your Sample.</h2>
               <p className="text-white/40 text-sm leading-relaxed">
-                Our 42-point QC system ensures every garment meets international quality standards before it leaves our facility.
+                Bulk garments are checked against your approved sample at each stage before they are packed and shipped.
               </p>
               <ul className="space-y-3">
                 {QC.map(item => (
@@ -151,8 +151,8 @@ export default function ManufacturingPage() {
                   alt="Quality Control" fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6 glass-card p-5">
-                  <p className="font-syne font-black text-white text-2xl">42-Point</p>
-                  <p className="text-white/50 text-xs tracking-widest uppercase mt-1">Inspection Checklist</p>
+                  <p className="font-syne font-black text-white text-2xl">Sample-Matched</p>
+                  <p className="text-white/50 text-xs tracking-widest uppercase mt-1">Quality Checks</p>
                 </div>
               </div>
             </AnimatedSection>
@@ -165,7 +165,7 @@ export default function ManufacturingPage() {
         <div className="container text-center">
           <AnimatedSection>
             <h2 className="heading-lg mb-5">Ready To Start Production?</h2>
-            <p className="text-white/40 text-sm mb-8">Get a free consultation and quote within 24 hours.</p>
+            <p className="text-white/40 text-sm mb-8">Send us your design or tech pack for a free consultation and quote.</p>
             <div className="flex gap-3 justify-center">
               <Link href="/contact" className="btn-gradient">Request A Quote <ArrowRight size={13} /></Link>
               <a href="https://wa.me/8615986213212" target="_blank" rel="noopener noreferrer" className="btn-ghost">WhatsApp Us</a>

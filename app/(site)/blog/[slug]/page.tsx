@@ -4,19 +4,20 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import AnimatedSection from "@/components/AnimatedSection";
 import { ArrowRight, Clock, Tag } from "lucide-react";
-import { POSTS } from "../posts";
+import { POSTS, postDateIso } from "../posts";
 import ChinaManufacturerTipsContent from "./ChinaManufacturerTipsContent";
 import MinimumOrderQuantityContent from "./MinimumOrderQuantityContent";
 import { RichText } from "@payloadcms/richtext-lexical/react";
 import { getCmsPost, getCmsPosts } from "@/lib/content";
 import { SITE_URL } from "@/lib/site";
+import { metaDescription, pageTitle } from "@/lib/seo";
 
 const CONTENT_BY_SLUG: Record<string, React.ComponentType> = {
   "china-clothing-manufacturer-tips": ChinaManufacturerTipsContent,
   "minimum-order-quantity-guide": MinimumOrderQuantityContent,
 };
 
-export const dynamic = "force-dynamic";
+export const revalidate = 600;
 
 export async function generateStaticParams() {
   const cmsPosts = await getCmsPosts();
@@ -35,10 +36,10 @@ export async function generateMetadata(
   if (!post) return { title: "Post Not Found" };
   const image = "image" in post ? post.image : post.img;
   const title = "seoTitle" in post && post.seoTitle ? post.seoTitle : post.title;
-  const description = "seoDescription" in post && post.seoDescription ? post.seoDescription : post.excerpt;
+  const description = metaDescription("seoDescription" in post && post.seoDescription ? post.seoDescription : post.excerpt);
 
   return {
-    title,
+    title: pageTitle(title),
     description,
     alternates: { canonical: `/blog/${post.slug}` },
     openGraph: {
@@ -65,15 +66,17 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     : post.date;
   const image = "image" in post && post.image ? post.image : "img" in post ? post.img : "/products/y2k-fashion/bx8105-rib-260gsm-stretch-crop-y2k-baby-tee/img-1.jpg";
 
+  // Google expects ISO 8601 dates and absolute image URLs in Article markup.
+  const datePublished = isCmsPost ? post.publishedAt : postDateIso(post.date);
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: post.title,
     description: post.excerpt,
-    image,
-    author: { "@type": "Organization", name: "Mulang Apparel" },
-    publisher: { "@type": "Organization", name: "Mulang Apparel" },
-    datePublished: isCmsPost ? post.publishedAt : post.date,
+    image: new URL(image, SITE_URL).toString(),
+    author: { "@type": "Organization", name: "Mulang Apparel", url: SITE_URL },
+    publisher: { "@type": "Organization", name: "Mulang Apparel", url: SITE_URL },
+    datePublished,
     mainEntityOfPage: `${SITE_URL}/blog/${post.slug}`,
   };
 

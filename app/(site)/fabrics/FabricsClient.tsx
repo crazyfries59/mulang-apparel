@@ -149,7 +149,7 @@ export default function FabricsPage() {
           </motion.h1>
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.9 }}
             className="text-white/50 text-sm mt-4 max-w-sm">
-            500+ fabrics in stock. From 180GSM tees to 600G denim. Request physical swatches with your sample order.
+            Cotton jersey, French terry, fleece, denim and more, in a range of weights. Request physical swatches with your sample order.
           </motion.p>
         </div>
       </section>
@@ -213,7 +213,7 @@ export default function FabricsPage() {
                     <div className="flex items-start justify-between mb-2">
                       <div>
                         <p className="text-white/30 text-[0.58rem] tracking-widest uppercase">{fabric.category}</p>
-                        <h3 className="font-syne font-bold text-white text-base group-hover:text-violet-300 transition-colors">{fabric.name}</h3>
+                        <h2 className="font-syne font-bold text-white text-base group-hover:text-violet-300 transition-colors">{fabric.name}</h2>
                       </div>
                       <span className="text-white/50 text-xs font-mono bg-white/5 px-2 py-0.5 rounded-lg">{fabric.gsm}</span>
                     </div>

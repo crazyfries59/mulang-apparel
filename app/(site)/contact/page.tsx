@@ -5,7 +5,7 @@ import { getPublicProduct } from "@/lib/content/products";
 export const metadata: Metadata = {
   title: "Contact Us — Get A Free Quote",
   description:
-    "Get in touch with Mulang Apparel for a free manufacturing quote. WhatsApp, email, or fill out our form — we respond within 24 business hours with pricing and timelines.",
+    "Get a free clothing manufacturing quote from Mulang Apparel. Send your design, tech pack or reference images by WhatsApp, email or our form.",
   alternates: { canonical: "/contact" },
 };
 

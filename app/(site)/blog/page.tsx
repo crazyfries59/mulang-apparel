@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/blog" },
 };
 
-export const dynamic = "force-dynamic";
+export const revalidate = 600;
 
 const CATS = ["All", "Manufacturing", "Brand Startup", "Custom Apparel", "OEM & ODM", "Industry News"];
 

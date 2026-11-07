@@ -35,7 +35,7 @@ export default function ContactPage({ initialProduct }: {
       if (!res.ok) throw new Error("request failed");
       setSubmitted(true);
     } catch {
-      setError("Something went wrong sending your message — please try WhatsApp instead, or email sales@mulangapparel.com directly.");
+      setError("Something went wrong sending your message — please try WhatsApp instead, or email max@mulangapparel.com directly.");
     } finally {
       setLoading(false);
     }
@@ -53,7 +53,7 @@ export default function ContactPage({ initialProduct }: {
               <span className="gradient-text">Project Today</span>
             </h1>
             <p className="text-white/40 text-sm leading-relaxed max-w-lg">
-              Tell us about your brand and what you need. We respond to all inquiries within 24 hours with a detailed quote.
+              Tell us about your brand and what you need. We review every inquiry and reply with a detailed quote.
             </p>
           </AnimatedSection>
         </div>
@@ -70,7 +70,7 @@ export default function ContactPage({ initialProduct }: {
               <div className="space-y-4">
                 {[
                   { icon: MessageCircle, label: "WhatsApp", val: "+86 159 8621 3212", href: "https://wa.me/8615986213212", accent: "#25D366" },
-                  { icon: Mail,          label: "Email",    val: "sales@mulangapparel.com",  href: "mailto:sales@mulangapparel.com",  accent: "#8b5cf6" },
+                  { icon: Mail,          label: "Email",    val: "max@mulangapparel.com",  href: "mailto:max@mulangapparel.com",  accent: "#8b5cf6" },
                   { icon: MapPin,        label: "Factory",  val: "Guangzhou, Guangdong, China", href: "#", accent: "#ec4899" },
                 ].map(({ icon: Icon, label, val, href, accent }) => (
                   <a key={label} href={href} target={href.startsWith("http") ? "_blank" : undefined}
@@ -129,9 +129,9 @@ export default function ContactPage({ initialProduct }: {
                   <div className="w-20 h-20 rounded-full bg-violet-500/10 flex items-center justify-center mb-6">
                     <CheckCircle size={38} className="text-violet-400" />
                   </div>
-                  <h3 className="font-syne font-black text-2xl text-white mb-3">Message Received!</h3>
+                  <h2 className="font-syne font-black text-2xl text-white mb-3">Message Received!</h2>
                   <p className="text-white/45 text-sm leading-relaxed max-w-xs mb-8">
-                    Thank you for reaching out. We&apos;ll review your inquiry and respond within 24 business hours with a detailed quote.
+                    Thank you for reaching out. We&apos;ll review your inquiry and reply with a detailed quote.
                   </p>
                   <button onClick={() => setSubmitted(false)} className="btn-ghost">
                     Send Another Message
@@ -216,7 +216,7 @@ export default function ContactPage({ initialProduct }: {
                   </button>
 
                   <p className="text-center text-white/20 text-xs">
-                    We respond within 24 hours · All inquiries are confidential
+                    All inquiries are confidential
                   </p>
                 </form>
               )}
@@ -229,7 +229,7 @@ export default function ContactPage({ initialProduct }: {
       <section className="section-sm bg-[#0a0a0a] border-t border-white/5">
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            {[["< 24h", "Response Time"], ["7-12", "Days Sampling"], ["50+", "Min. MOQ"], ["60+", "Countries Served"]].map(([n, l]) => (
+            {[["50", "Pcs Min. MOQ"], ["1", "Piece Sampling"], ["5–20", "Days Sampling"], ["OEM", "& ODM Service"]].map(([n, l]) => (
               <AnimatedSection key={l}>
                 <p className="font-syne font-black text-3xl gradient-text mb-1">{n}</p>
                 <p className="text-white/30 text-xs tracking-widest uppercase">{l}</p>

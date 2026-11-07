@@ -12,10 +12,10 @@ const SERVICES = [
     title: "Clothing Prototype",
     tagline: "Your Idea. Our First Sample.",
     img: "https://images.unsplash.com/photo-1565084888279-aca607ecce0c?w=900&q=80",
-    desc: "We translate your design concept into a physical sample. Our patternmakers work from sketches, reference images, or tech packs. First proto in 7–12 days.",
-    features: ["CAD pattern making", "Size grading", "Material matching", "Unlimited revisions"],
-    highlight: "7–12 Days",
-    highlightLabel: "First Sample",
+    desc: "We translate your design concept into a physical sample. Our patternmakers work from sketches, reference images, or tech packs. Cut & sew samples take 12–20 days.",
+    features: ["CAD pattern making", "Size grading", "Material matching", "Single-piece sampling"],
+    highlight: "12–20 Days",
+    highlightLabel: "Cut & Sew Sample",
   },
   {
     id: "sampling",
@@ -25,19 +25,19 @@ const SERVICES = [
     img: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=80",
     desc: "From proto to salesman samples. We refine every detail—construction, fit, fabric hand-feel, and decoration placement—until you sign off with confidence.",
     features: ["Proto → SMS workflow", "Fit sessions & revisions", "Fabric swatching", "Tech pack updates"],
-    highlight: "100%",
-    highlightLabel: "Satisfaction Policy",
+    highlight: "1 Piece",
+    highlightLabel: "Sampling Available",
   },
   {
     id: "production",
     icon: Scissors,
     title: "Custom Apparel Production",
-    tagline: "From 50 Pcs To 50,000 Pcs.",
+    tagline: "Start From 50 Pieces.",
     img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=900&q=80",
-    desc: "Full OEM & ODM manufacturing. 400+ skilled workers, ISO 9001 certified, 42-point QC inspection. Consistent quality across every run, every season.",
-    features: ["MOQ from 50 pieces", "OEM & ODM", "42-point QC inspection", "AQL standard testing"],
-    highlight: "21–30",
-    highlightLabel: "Days Bulk Production",
+    desc: "Full OEM & ODM manufacturing. Blanks and logo customization from 50 pieces with mixed styles, colors and sizes; cut & sew from 100 pieces per style per color. Bulk is checked against your approved sample.",
+    features: ["Blank & logo MOQ 50 pcs", "Cut & sew MOQ 100 pcs", "OEM & ODM", "Checked against approved sample"],
+    highlight: "100",
+    highlightLabel: "Pcs Cut & Sew MOQ",
   },
   {
     id: "labels",
@@ -56,10 +56,10 @@ const SERVICES = [
     title: "Global Shipping",
     tagline: "Delivered To Your Door.",
     img: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=900&q=80",
-    desc: "Door-to-door shipping with full export management. DDP, DAP, FOB—your choice. Real-time tracking, customs clearance, and delivery to 60+ countries.",
-    features: ["DDP, DAP & FOB terms", "60+ countries", "Real-time tracking", "Customs documentation"],
-    highlight: "60+",
-    highlightLabel: "Countries Served",
+    desc: "Door-to-door shipping with full export management. DDP, DAP, FOB—your choice. Tracking on every shipment, customs paperwork, and delivery to the US, Australia, Europe and beyond.",
+    features: ["DDP, DAP & FOB terms", "US, AU, UK, EU & more", "Shipment tracking", "Customs documentation"],
+    highlight: "Door",
+    highlightLabel: "To Door Delivery",
   },
   {
     id: "photography",
@@ -122,7 +122,7 @@ export default function ServicesPage() {
                   {/* Content */}
                   <div className="p-6 flex flex-col flex-1">
                     <p className="label mb-2">{tagline}</p>
-                    <h3 className="font-syne font-black text-white text-lg mb-3 group-hover:text-violet-300 transition-colors">{title}</h3>
+                    <h2 className="font-syne font-black text-white text-lg mb-3 group-hover:text-violet-300 transition-colors">{title}</h2>
                     <p className="text-white/40 text-sm leading-relaxed mb-5 flex-1">{desc}</p>
 
                     <ul className="space-y-2 mb-6">
@@ -158,7 +158,7 @@ export default function ServicesPage() {
                 From your first sketch to the garment landing at your warehouse—we handle every step. No chasing multiple vendors. No coordination headaches. Just results.
               </p>
               <div className="grid grid-cols-2 gap-4">
-                {[["500+","Global Clients"],["14+","Years Experience"],["60+","Countries Served"],["42pt","QC Inspection"]].map(([n,l]) => (
+                {[["50","Pcs Blank & Logo MOQ"],["100","Pcs Cut & Sew MOQ"],["1","Piece Sampling"],["5–20","Days Sample Time"]].map(([n,l]) => (
                   <div key={l} className="glass-card p-4">
                     <p className="gradient-text font-syne font-black text-2xl">{n}</p>
                     <p className="text-white/35 text-xs tracking-widest uppercase mt-1">{l}</p>
@@ -180,6 +180,9 @@ export default function ServicesPage() {
           <p className="text-white/55 text-sm leading-relaxed mb-5">Share a reference image or tech pack, your target quantity and size range, fabric preferences, and customization details. Tell us which specifications are still undecided so we can discuss the options.</p>
           <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm">
             <Link href="/blog/minimum-order-quantity-guide" className="text-violet-300 hover:text-white underline underline-offset-4">Understand clothing MOQ</Link>
+            <Link href="/t-shirt-manufacturer" className="text-violet-300 hover:text-white underline underline-offset-4">T-shirt manufacturing</Link>
+            <Link href="/custom-hoodie-manufacturer" className="text-violet-300 hover:text-white underline underline-offset-4">Hoodie manufacturing</Link>
+            <Link href="/blog/how-to-find-a-clothing-manufacturer" className="text-violet-300 hover:text-white underline underline-offset-4">How to find a manufacturer</Link>
             <Link href="/products" className="text-violet-300 hover:text-white underline underline-offset-4">Find a product reference</Link>
             <Link href="/contact" className="text-violet-300 hover:text-white underline underline-offset-4">Discuss your project</Link>
           </div>

@@ -12,11 +12,11 @@ import { Menu, X, Search, MessageCircle, ChevronDown, ArrowRight } from "lucide-
    NAV DATA — mirrors Hongyu structure
 ───────────────────────────────────────────── */
 const SERVICE_ITEMS = [
-  { label: "Clothing Prototype",        href: "/services#prototype",   desc: "First samples in 7-12 days" },
-  { label: "Sample Development",        href: "/services#sampling",    desc: "Unlimited revisions" },
-  { label: "Custom Apparel Production", href: "/services#production",  desc: "OEM & ODM, MOQ 50pcs" },
+  { label: "Clothing Prototype",        href: "/services#prototype",   desc: "Single-piece sampling" },
+  { label: "Sample Development",        href: "/services#sampling",    desc: "Refine fit, fabric & details" },
+  { label: "Custom Apparel Production", href: "/services#production",  desc: "OEM & ODM production" },
   { label: "Labels / Tags / Packaging", href: "/services#labels",      desc: "Full private label service" },
-  { label: "Global Shipping",           href: "/services#shipping",    desc: "DDP to 60+ countries" },
+  { label: "Global Shipping",           href: "/services#shipping",    desc: "Shipping to your door" },
   { label: "Product Photography",       href: "/services#photography", desc: "Studio & lifestyle shots" },
 ];
 
@@ -30,8 +30,6 @@ const SOLUTIONS_ITEMS = [
 
 const ABOUT_ITEMS = [
   { label: "About Us",        href: "/about" },
-  { label: "Our Ethics",      href: "/about#ethics" },
-  { label: "Customer Reviews",href: "/about#reviews" },
   { label: "Blog",            href: "/blog" },
   { label: "Contact Us",      href: "/contact" },
 ];

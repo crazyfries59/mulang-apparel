@@ -23,9 +23,9 @@ export default function ChinaManufacturerTipsContent() {
     <article>
       <P>
         Working with a clothing manufacturer in China can cut your production costs in half compared to
-        sourcing domestically — but only if you know what to ask before you wire a deposit. We&apos;ve run
-        production for 500+ brands out of our own 50,000 sq ft facility in Guangzhou, and these are the ten
-        things that actually separate a smooth first order from a nightmare one.
+        sourcing domestically — but only if you know what to ask before you wire a deposit. We produce custom
+        apparel in Guangzhou and field these questions from brands every week — these are the ten things that
+        actually separate a smooth first order from a nightmare one.
       </P>
 
       <H2>1. Ask for the real MOQ, not the headline number</H2>
@@ -33,8 +33,8 @@ export default function ChinaManufacturerTipsContent() {
         Marketing pages love to advertise &ldquo;MOQ from 1 piece&rdquo; — in practice that usually means one
         piece <em>per size, per color, from an existing blank</em>, not one piece of a fully custom design.
         A factory that can genuinely produce a custom style at low volume will tell you the real number
-        upfront: ours is <strong>50 pieces per style</strong> (mixed sizes and colors), or 100 pieces for
-        accessories. If a supplier won&apos;t give you a straight number in the first message, that&apos;s
+        upfront: ours is <strong>50 pieces</strong> for blank or logo work (mixed sizes and colors), and{" "}
+        <strong>100 pieces per style</strong> for full custom cut &amp; sew. If a supplier won&apos;t give you a straight number in the first message, that&apos;s
         your answer.
       </P>
 
@@ -51,9 +51,8 @@ export default function ChinaManufacturerTipsContent() {
       <P>
         A big fabric library sounds impressive until you realize it just means the factory can source
         anything from a middleman — with the markup and lead time that comes with it. Ask specifically
-        which fabrics are stocked in-house versus sourced per order. Our library spans <strong>200–500GSM</strong>{" "}
-        French terry, ringspun cotton, and selvedge denim held on-site, which is what keeps sample turnaround
-        fast. See the full breakdown on our{" "}
+        which fabrics are stocked in-house versus sourced per order. The fabrics we use most — French terry,
+        ringspun cotton, denim — are stocked, which is what keeps sample turnaround fast. See the full breakdown on our{" "}
         <Link href="/fabrics" className="text-violet-400 hover:text-violet-300 underline underline-offset-2">
           fabric library page
         </Link>.
@@ -71,10 +70,9 @@ export default function ChinaManufacturerTipsContent() {
 
       <H2>5. Ask exactly what &ldquo;quality control&rdquo; means to them</H2>
       <P>
-        &ldquo;We do QC&rdquo; is not an answer. Ask for the actual checklist. Ours runs a{" "}
-        <strong>42-point inspection</strong> across eight stages — from raw material inspection on arrival,
-        through in-line checks during sewing, to a final pre-shipment inspection before anything leaves the
-        floor. If a supplier can&apos;t describe their process in that level of detail, they probably
+        &ldquo;We do QC&rdquo; is not an answer. Ask for the actual checklist. A real answer names the stages —
+        raw-material inspection on arrival, in-line checks during sewing, and a final pre-shipment inspection
+        before anything leaves the floor. If a supplier can&apos;t describe their process in that level of detail, they probably
         don&apos;t have one. More on our process on the{" "}
         <Link href="/manufacturing" className="text-violet-400 hover:text-violet-300 underline underline-offset-2">
           manufacturing page
@@ -98,9 +96,8 @@ export default function ChinaManufacturerTipsContent() {
       <P>
         &ldquo;Fast production&rdquo; means nothing without a number attached to a specific product. Lead
         time varies by category more than most brands expect — a basic tee runs faster than a lined jacket
-        or a pair of jeans. Ask for bulk lead time by category, not a blanket estimate: expect roughly{" "}
-        <strong>14 days</strong> for most styles and <strong>21 days</strong> for hoodies, denim, outerwear,
-        and dresses that need more finishing steps.
+        or a pair of jeans. Ask for bulk lead time by category, in writing, not a blanket estimate —
+        finishing-heavy styles like hoodies and outerwear always run longer than basic tees.
       </P>
 
       <InlineCTA>Tell us your product category and target quantity — we&apos;ll give you an exact timeline.</InlineCTA>
@@ -110,8 +107,8 @@ export default function ChinaManufacturerTipsContent() {
         FOB (Free On Board) means you handle customs clearance and duties on arrival — unpredictable if
         you&apos;ve never imported before. DDP (Delivered Duty Paid) means the manufacturer handles customs,
         duties, and delivery to your door, for one all-in price. For a first order, DDP removes the biggest
-        source of surprise costs. We ship DDP, DAP, or FOB to 60+ countries — ask your supplier which they
-        actually offer, since not all factories can manage DDP paperwork themselves.
+        source of surprise costs. We ship DDP, DAP, or FOB — ask your supplier which they actually offer,
+        since not all factories can manage DDP paperwork themselves.
       </P>
 
       <H2>9. Be wary of a factory that won&apos;t say who&apos;s actually sewing your order</H2>
@@ -119,7 +116,7 @@ export default function ChinaManufacturerTipsContent() {
         Plenty of &ldquo;factories&rdquo; are trading companies that quote you a price, then farm the actual
         production out to a third workshop you&apos;ll never see or vet. Ask directly: is this produced in
         your own facility? A supplier with nothing to hide will tell you exactly where your order is
-        physically made — ours is a single 50,000 sq ft floor with 400+ in-house workers, not a network of
+        physically made — ours is produced in-house at our own Guangzhou facility, not a network of
         subcontractors.
       </P>
 
@@ -127,9 +124,8 @@ export default function ChinaManufacturerTipsContent() {
       <P>
         How a supplier communicates during the quote stage is the best predictor of how they&apos;ll
         communicate mid-production, when something inevitably needs a decision fast. Send a real question
-        with real specs and time the reply. We commit to responding to every quote request within 24
-        business hours — if a supplier takes a week to answer a simple question now, expect the same during
-        your production run.
+        with real specs and time the reply. We answer every quote request ourselves — if a supplier takes a
+        week to answer a simple question now, expect the same during your production run.
       </P>
 
       <div className="my-10 p-6 rounded-2xl glass-card">
@@ -167,8 +163,8 @@ export default function ChinaManufacturerTipsContent() {
       <P>
         <strong className="text-white/80">How long should I budget from first sample to delivered bulk order?</strong>
         <br />
-        Plan for roughly 3–5 weeks total: 7–12 days for sampling and revisions, then 14–21 days for bulk
-        production depending on the product category, plus shipping time.
+        Plan for roughly 3–5 weeks total: 7–12 days for sampling and revisions, then bulk production
+        depending on the product category — get that number in writing — plus shipping time.
       </P>
       <P>
         <strong className="text-white/80">Is it normal for a factory to ask for a deposit before sampling?</strong>
@@ -181,7 +177,7 @@ export default function ChinaManufacturerTipsContent() {
         <h3 className="font-syne font-bold text-white text-xl mb-3">Ready to run this checklist against a real quote?</h3>
         <p className="text-white/50 text-sm mb-6 max-w-md mx-auto">
           Send us your product idea, target quantity, and timeline — you&apos;ll get a straight answer on
-          MOQ, sample lead time, and pricing within 24 business hours.
+          MOQ, sample lead time, and pricing.
         </p>
         <Link href="/contact" className="btn-gradient inline-flex">
           Get A Free Quote <ArrowRight size={14} />
