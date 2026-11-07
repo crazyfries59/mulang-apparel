@@ -1,6 +1,6 @@
 import type { CollectionConfig } from "payload";
-import { crmAccess } from "../lib/crm/access.ts";
-import { COOPERATION_MODES, CUSTOMER_SOURCES, CUSTOMER_STAGES, toOptions } from "../lib/crm/options.ts";
+import { ownedCustomerAccess } from "../lib/crm/access.ts";
+import { COOPERATION_MODES, CURRENCIES, CUSTOMER_SOURCES, CUSTOMER_STAGES, toOptions } from "../lib/crm/options.ts";
 
 export const Customers: CollectionConfig = {
   slug: "customers",
@@ -10,9 +10,9 @@ export const Customers: CollectionConfig = {
     defaultColumns: ["name", "country", "stage", "owner", "nextFollowUpAt", "updatedAt"],
     group: "客户与销售",
     listSearchableFields: ["name", "contactName", "email", "whatsapp", "country"],
-    description: "客户台账：联系方式、销售阶段、负责人和下次跟进时间。询盘、订单和跟进记录会显示在客户详情底部。",
+    description: "客户台账：联系方式、销售阶段、负责人和下次跟进时间。开票用的地址和币种也在上面，发票会把它们抄成快照。",
   },
-  access: crmAccess,
+  access: ownedCustomerAccess,
   hooks: {
     beforeChange: [({ data, operation, req }) => {
       if (operation === "create" && !data.owner && req.user) return { ...data, owner: req.user.id };
@@ -40,6 +40,22 @@ export const Customers: CollectionConfig = {
       fields: [
         { name: "website", type: "text", label: "网站 / 社媒" },
         { name: "productFocus", type: "text", label: "主要品类", admin: { description: "例如 卫衣、T 恤、腰带" } },
+      ],
+    },
+    {
+      type: "collapsible",
+      label: "开票信息",
+      admin: { description: "开票时自动带到发票抬头。地址写成客户能直接拿去清关的完整英文地址。" },
+      fields: [
+        { name: "billingAddress", type: "textarea", label: "开票地址 Address" },
+        {
+          type: "row",
+          fields: [
+            { name: "billingPostcode", type: "text", label: "邮编 Postcode" },
+            { name: "phone", type: "text", label: "电话 Phone" },
+            { name: "currency", type: "select", label: "常用币种", defaultValue: "USD", options: toOptions(CURRENCIES) },
+          ],
+        },
       ],
     },
     {
@@ -115,6 +131,14 @@ export const Customers: CollectionConfig = {
       on: "customer",
       label: "跟进记录",
       defaultSort: "-date",
+    },
+    {
+      name: "invoices",
+      type: "join",
+      collection: "invoices",
+      on: "customer",
+      label: "发票",
+      defaultSort: "-number",
     },
   ],
 };

@@ -8,6 +8,7 @@ import { buildConfig } from "payload";
 import { Customers } from "./collections/Customers.ts";
 import { FollowUps } from "./collections/FollowUps.ts";
 import { Inquiries } from "./collections/Inquiries.ts";
+import { Invoices } from "./collections/Invoices.ts";
 import { Knowledge } from "./collections/Knowledge.ts";
 import { Orders } from "./collections/Orders.ts";
 import { Posts } from "./collections/Posts.ts";
@@ -69,7 +70,7 @@ export default buildConfig({
     },
   },
   // Nav groups follow this order: 内容与产品 → 客户与销售 → 系统.
-  collections: [Products, Posts, SalesScripts, Knowledge, Customers, Inquiries, Orders, FollowUps, Users],
+  collections: [Products, Posts, SalesScripts, Knowledge, Customers, Inquiries, Orders, FollowUps, Invoices, Users],
   editor: lexicalEditor({}),
   db: isPostgres ? postgresAdapter({
     pg: payloadPg,

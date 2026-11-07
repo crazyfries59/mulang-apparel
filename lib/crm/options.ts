@@ -62,6 +62,38 @@ export const CURRENCIES = [
   { value: "CNY", label: "CNY" },
 ] as const satisfies readonly Option[];
 
+/* 发票。docType 只影响内部逻辑和列表筛选，票面标题仍印 Commercial Invoice。 */
+export const INVOICE_DOC_TYPES = [
+  { value: "pi", label: "PI 形式发票" },
+  { value: "ci", label: "CI 商业发票" },
+] as const satisfies readonly Option[];
+
+export const INVOICE_KINDS = [
+  { value: "bulk", label: "大货" },
+  { value: "sample", label: "样品" },
+] as const satisfies readonly Option[];
+
+export const INVOICE_STATUSES = [
+  { value: "draft", label: "草稿" },
+  { value: "sent", label: "已发出" },
+  { value: "settled", label: "已收尾款" },
+  { value: "void", label: "作废" },
+] as const satisfies readonly Option[];
+
+/* 目前只走 T/T。要加 Wise、XTransfer 等，在这里加一行即可，页面会自动出现。 */
+export const PAY_METHODS = [
+  { value: "tt", label: "T/T 电汇" },
+] as const satisfies readonly Option[];
+
+/* 换算基数是 TOTAL 还是尾款。 */
+export const FX_TARGETS = [
+  { value: "total", label: "按 TOTAL 换算" },
+  { value: "balance", label: "按尾款换算" },
+] as const satisfies readonly Option[];
+
+/* 尺码顺序与发票页一致，尺码合计按这个顺序逐项相加。 */
+export const SIZE_KEYS = ["XS", "S", "M", "L", "XL", "XXL", "3XL"] as const;
+
 export const FOLLOW_UP_CHANNELS = [
   { value: "whatsapp", label: "WhatsApp" },
   { value: "email", label: "邮件" },

@@ -75,6 +75,7 @@ export interface Config {
     inquiries: Inquiry;
     orders: Order;
     'follow-ups': FollowUp;
+    invoices: Invoice;
     users: User;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
@@ -86,6 +87,7 @@ export interface Config {
       inquiries: 'inquiries';
       orders: 'orders';
       followUps: 'follow-ups';
+      invoices: 'invoices';
     };
   };
   collectionsSelect: {
@@ -97,6 +99,7 @@ export interface Config {
     inquiries: InquiriesSelect<false> | InquiriesSelect<true>;
     orders: OrdersSelect<false> | OrdersSelect<true>;
     'follow-ups': FollowUpsSelect<false> | FollowUpsSelect<true>;
+    invoices: InvoicesSelect<false> | InvoicesSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
@@ -329,7 +332,7 @@ export interface Knowledge {
   createdAt: string;
 }
 /**
- * 客户台账：联系方式、销售阶段、负责人和下次跟进时间。询盘、订单和跟进记录会显示在客户详情底部。
+ * 客户台账：联系方式、销售阶段、负责人和下次跟进时间。开票用的地址和币种也在上面，发票会把它们抄成快照。
  *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "customers".
@@ -346,6 +349,10 @@ export interface Customer {
    * 例如 卫衣、T 恤、腰带
    */
   productFocus?: string | null;
+  billingAddress?: string | null;
+  billingPostcode?: string | null;
+  phone?: string | null;
+  currency?: ('USD' | 'EUR' | 'GBP' | 'AUD' | 'CAD' | 'CHF' | 'CNY') | null;
   cooperation?: ('blank' | 'logo' | 'cut-sew')[] | null;
   /**
    * 需求要点、付款习惯、注意事项等。报价、MOQ 等以实际确认为准。
@@ -374,6 +381,11 @@ export interface Customer {
   };
   followUps?: {
     docs?: (number | FollowUp)[];
+    hasNextPage?: boolean;
+    totalDocs?: number;
+  };
+  invoices?: {
+    docs?: (number | Invoice)[];
     hasNextPage?: boolean;
     totalDocs?: number;
   };
@@ -480,6 +492,128 @@ export interface FollowUp {
   createdAt: string;
 }
 /**
+ * 开票：选客户带出抬头，填明细自动算合计、定金和尾款。所有金额由系统计算，不手填。
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "invoices".
+ */
+export interface Invoice {
+  id: number;
+  /**
+   * 自动生成：MLA-年月日-序号，同一天按顺序往下排。
+   */
+  number: string;
+  date: string;
+  customer: number | Customer;
+  kind: 'bulk' | 'sample';
+  billToCompany?: string | null;
+  billToContact?: string | null;
+  billToTel?: string | null;
+  billToEmail?: string | null;
+  billToAddress?: string | null;
+  billToPostcode?: string | null;
+  items: {
+    product: string;
+    colorSize?: string | null;
+    unitPrice: number;
+    /**
+     * 例如 Front: DTF Printing / Back: DTG Printing
+     */
+    description?: string | null;
+    /**
+     * 成分 + 克重，例如 100% Cotton 430gsm
+     */
+    fabric?: string | null;
+    /**
+     * 留空则导出时按款号取产品库主图
+     */
+    image?: string | null;
+    /**
+     * 按尺码填件数，合计自动算。没有尺码的辅料行只填下面的数量。
+     */
+    sizes?: {
+      sizeXs?: number | null;
+      sizeS?: number | null;
+      sizeM?: number | null;
+      sizeL?: number | null;
+      sizeXl?: number | null;
+      sizeXxl?: number | null;
+      size3xl?: number | null;
+    };
+    /**
+     * 尺码相加；只填了数量没有尺码时用这个数
+     */
+    qty?: number | null;
+    rowAmount?: number | null;
+    id?: string | null;
+  }[];
+  /**
+   * 快递费、海运、辅料费都可以分行列。金额没定可以先留空，合计按 0 算。
+   */
+  shipping?:
+    | {
+        label?: string | null;
+        amount?: number | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * 按实际到账填，可以多笔。一分没收时大货单自动按 50% 定金显示。
+   */
+  payments?:
+    | {
+        date?: string | null;
+        method?: 'tt' | null;
+        amount?: number | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * 发票上只印 USD 合计；选了币种只多一行换算金额，票面不印汇率。
+   */
+  fx?: {
+    currency?: ('EUR' | 'GBP' | 'AUD' | 'CAD' | 'CHF' | 'CNY') | null;
+    /**
+     * 1 外币 = ? USD，填连连「卖外币买 USD」看到的报价
+     */
+    quote?: number | null;
+    on?: ('total' | 'balance') | null;
+    /**
+     * 例如 2026-11-07 09:20
+     */
+    readAt?: string | null;
+    source?: string | null;
+    amount?: number | null;
+  };
+  /**
+   * 全部由系统算，不用填。保存时会按明细重新算一遍。
+   */
+  totals?: {
+    subtotal?: number | null;
+    shipping?: number | null;
+    total?: number | null;
+    received?: number | null;
+    deposit?: number | null;
+    balance?: number | null;
+  };
+  /**
+   * PI 给客户付款用，CI 报关用。票面标题目前都印 Commercial Invoice。
+   */
+  docType: 'pi' | 'ci';
+  status: 'draft' | 'sent' | 'settled' | 'void';
+  voidReason?: string | null;
+  /**
+   * 自动记录当前登录用户。
+   */
+  issuedBy?: (number | null) | User;
+  /**
+   * 只给自己看，不上票面。
+   */
+  note?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
@@ -534,6 +668,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'follow-ups';
         value: number | FollowUp;
+      } | null)
+    | ({
+        relationTo: 'invoices';
+        value: number | Invoice;
       } | null)
     | ({
         relationTo: 'users';
@@ -696,6 +834,10 @@ export interface CustomersSelect<T extends boolean = true> {
   whatsapp?: T;
   website?: T;
   productFocus?: T;
+  billingAddress?: T;
+  billingPostcode?: T;
+  phone?: T;
+  currency?: T;
   cooperation?: T;
   notes?: T;
   localFolder?: T;
@@ -706,6 +848,7 @@ export interface CustomersSelect<T extends boolean = true> {
   inquiries?: T;
   orders?: T;
   followUps?: T;
+  invoices?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -763,6 +906,88 @@ export interface FollowUpsSelect<T extends boolean = true> {
   channel?: T;
   nextFollowUpAt?: T;
   author?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "invoices_select".
+ */
+export interface InvoicesSelect<T extends boolean = true> {
+  number?: T;
+  date?: T;
+  customer?: T;
+  kind?: T;
+  billToCompany?: T;
+  billToContact?: T;
+  billToTel?: T;
+  billToEmail?: T;
+  billToAddress?: T;
+  billToPostcode?: T;
+  items?:
+    | T
+    | {
+        product?: T;
+        colorSize?: T;
+        unitPrice?: T;
+        description?: T;
+        fabric?: T;
+        image?: T;
+        sizes?:
+          | T
+          | {
+              sizeXs?: T;
+              sizeS?: T;
+              sizeM?: T;
+              sizeL?: T;
+              sizeXl?: T;
+              sizeXxl?: T;
+              size3xl?: T;
+            };
+        qty?: T;
+        rowAmount?: T;
+        id?: T;
+      };
+  shipping?:
+    | T
+    | {
+        label?: T;
+        amount?: T;
+        id?: T;
+      };
+  payments?:
+    | T
+    | {
+        date?: T;
+        method?: T;
+        amount?: T;
+        id?: T;
+      };
+  fx?:
+    | T
+    | {
+        currency?: T;
+        quote?: T;
+        on?: T;
+        readAt?: T;
+        source?: T;
+        amount?: T;
+      };
+  totals?:
+    | T
+    | {
+        subtotal?: T;
+        shipping?: T;
+        total?: T;
+        received?: T;
+        deposit?: T;
+        balance?: T;
+      };
+  docType?: T;
+  status?: T;
+  voidReason?: T;
+  issuedBy?: T;
+  note?: T;
   updatedAt?: T;
   createdAt?: T;
 }

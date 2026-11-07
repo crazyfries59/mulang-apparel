@@ -1,0 +1,64 @@
+{
+  "_note": "发票版式的唯一来源。本机 make_invoice.py 与后台 exceljs 都按这里出图。改版式只改这份文件，两边的数字才对得上。",
+  "company": {
+    "name": "Mulang Apparel",
+    "address": "",
+    "website": "www.mulangapparel.com",
+    "email": "",
+    "whatsapp": "WhatsApp: +86 159 8621 3212"
+  },
+  "columns": [17, 17, 15, 24, 18, 13, 13, 16],
+  "rowHeights": {
+    "title": 30,
+    "subtitle": 20,
+    "banner": 34,
+    "info": 24,
+    "head": 26,
+    "item": 30,
+    "summary": 24,
+    "remark": 24
+  },
+  "fonts": {
+    "family": "Arial",
+    "body": 11,
+    "head": 12,
+    "banner": 18,
+    "title": 18
+  },
+  "fills": {
+    "title": "FFFF99",
+    "summary": "FFFF00",
+    "remark": "FFD966",
+    "head": "EDEDED"
+  },
+  "borderColor": "FF000000",
+  "currencyFormats": {
+    "USD": "\"US$\"#,##0.00;[Red]\\-\"US$\"#,##0.00",
+    "CAD": "#,##0.00\" CAD\"",
+    "AUD": "#,##0.00\" AUD\"",
+    "NZD": "#,##0.00\" NZD\"",
+    "EUR": "#,##0.00\" EUR\"",
+    "GBP": "#,##0.00\" GBP\"",
+    "CHF": "#,##0.00\" CHF\""
+  },
+  "pcsFormat": "#,##0\" PCS\"",
+  "dateFormat": "yyyy/m/d",
+  "pictureBox": [118, 110],
+  "bannerText": "Commercial Invoice",
+  "headers": ["Picture", "Style #", "Description", "Fabric", "Color/Size", "Quantity", "Per Unit", "Amount"],
+  "terms": {
+    "sample": [
+      "Sample payment terms shall be 100% before production. (If the order is cancelled midway for personal reasons, the payment is non-refundable.)",
+      "Samples are shipped via the fastest courier service (e.g., DHL/FedEx), excluding import duties. Please ensure your cooperation with local customs clearance and settle any applicable charges. All duties and taxes are the recipient's responsibility.",
+      "All sample specifications will be confirmed before production begins. No changes are allowed once production is arranged.",
+      "If the sample does not match the agreed specifications (as per the invoice/proof), the supplier will correct it at no extra cost.",
+      "If modifications are requested due to personal preference (e.g., color, design change), the customer will cover all additional costs."
+    ],
+    "bulk": [
+      "Payment terms shall be 50% deposit before production, the balance before shipping. (If the order is cancelled midway, the deposit is non-refundable.)",
+      "It's allowed of 5-10% quantity tolerance (more or less), which will be updated before shipping.",
+      "The size will have 1-3cm difference because of handmade; the fabric may have color difference, touching feeling deviation from different batch for sample and bulk orders.",
+      "If customers fail to pay the balance one month after goods ready, warehouse fee will be charged 20USD/Day/CBM. We will consider the goods abandoned by the customers, and we can sell them to other customers without a refund of the deposit."
+    ]
+  }
+}
