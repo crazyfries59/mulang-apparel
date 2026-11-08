@@ -1,0 +1,82 @@
+/* 客户表里的国家是中文（内部台账看得顺），但 PI 是给国外客户和海关看的，
+   所以开票和导出时统一转成英文。表里已是英文的原样保留。 */
+
+const ZH_TO_EN: Record<string, string> = {
+  中国: "China",
+  中国大陆: "China",
+  香港: "Hong Kong, China",
+  中国香港: "Hong Kong, China",
+  澳门: "Macao, China",
+  中国澳门: "Macao, China",
+  台湾: "Taiwan, China",
+  中国台湾: "Taiwan, China",
+  美国: "United States",
+  加拿大: "Canada",
+  墨西哥: "Mexico",
+  巴西: "Brazil",
+  阿根廷: "Argentina",
+  智利: "Chile",
+  秘鲁: "Peru",
+  哥伦比亚: "Colombia",
+  英国: "United Kingdom",
+  爱尔兰: "Ireland",
+  法国: "France",
+  德国: "Germany",
+  荷兰: "Netherlands",
+  比利时: "Belgium",
+  卢森堡: "Luxembourg",
+  瑞士: "Switzerland",
+  奥地利: "Austria",
+  意大利: "Italy",
+  西班牙: "Spain",
+  葡萄牙: "Portugal",
+  瑞典: "Sweden",
+  挪威: "Norway",
+  丹麦: "Denmark",
+  芬兰: "Finland",
+  冰岛: "Iceland",
+  波兰: "Poland",
+  捷克: "Czech Republic",
+  斯洛伐克: "Slovakia",
+  匈牙利: "Hungary",
+  罗马尼亚: "Romania",
+  希腊: "Greece",
+  俄罗斯: "Russia",
+  乌克兰: "Ukraine",
+  土耳其: "Turkey",
+  以色列: "Israel",
+  阿联酋: "United Arab Emirates",
+  沙特阿拉伯: "Saudi Arabia",
+  卡塔尔: "Qatar",
+  科威特: "Kuwait",
+  埃及: "Egypt",
+  南非: "South Africa",
+  尼日利亚: "Nigeria",
+  肯尼亚: "Kenya",
+  摩洛哥: "Morocco",
+  澳大利亚: "Australia",
+  新西兰: "New Zealand",
+  日本: "Japan",
+  韩国: "South Korea",
+  新加坡: "Singapore",
+  马来西亚: "Malaysia",
+  泰国: "Thailand",
+  越南: "Vietnam",
+  印尼: "Indonesia",
+  印度尼西亚: "Indonesia",
+  菲律宾: "Philippines",
+  柬埔寨: "Cambodia",
+  印度: "India",
+  巴基斯坦: "Pakistan",
+  孟加拉: "Bangladesh",
+};
+
+const HAS_CJK = /[\u4e00-\u9fa5]/;
+
+/** 中文国名转英文；已经是英文（或空值）就原样返回。 */
+export const toEnglishCountry = (value?: string | null): string => {
+  const text = (value ?? "").trim();
+  if (!text) return "";
+  if (!HAS_CJK.test(text)) return text;
+  return ZH_TO_EN[text] ?? text;
+};

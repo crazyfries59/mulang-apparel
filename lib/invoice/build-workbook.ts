@@ -1,4 +1,5 @@
 import ExcelJS from "exceljs";
+import { toEnglishCountry } from "../crm/country";
 import layout from "./layout.json";
 
 /* 按 lib/invoice/layout.json 出一张与本机 make_invoice.py 逐格一致的发票。
@@ -25,6 +26,7 @@ export type InvoiceLike = {
   billToTel?: string | null;
   billToEmail?: string | null;
   billToAddress?: string | null;
+  billToCountry?: string | null;
   items?: ItemLike[] | null;
   shipping?: { label?: string | null; amount?: number | null }[] | null;
   payments?: { date?: string | null; method?: string | null; amount?: number | null }[] | null;
@@ -166,8 +168,13 @@ export const buildInvoiceWorkbook = (invoice: InvoiceLike, images: (ResolvedImag
   styleCell(row, 1, { bold: true });
   ws.getCell(row, 1).value = "Address:";
   const address = invoice.billToAddress ?? "";
-  merged(row, 2, 8, address);
-  ws.getRow(row).height = Math.max(layout.rowHeights.info, linesFor(address, 110) * 15);
+  /* 国家跟在地址后面；地址里已经写了就不重复。 */
+  const country = toEnglishCountry(invoice.billToCountry);
+  const addressText = country && !address.toLowerCase().includes(country.toLowerCase())
+    ? [address, country].filter(Boolean).join(", ")
+    : address;
+  merged(row, 2, 8, addressText);
+  ws.getRow(row).height = Math.max(layout.rowHeights.info, linesFor(addressText, 110) * 15);
 
   /* 表头 */
   row += 1;

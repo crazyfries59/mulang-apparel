@@ -1,5 +1,6 @@
 import type { CollectionConfig, PayloadRequest } from "payload";
 import { invoiceAccess, isAdminUser } from "../lib/crm/access.ts";
+import { toEnglishCountry } from "../lib/crm/country.ts";
 import {
   CURRENCIES,
   FX_TARGETS,
@@ -80,7 +81,11 @@ export const Invoices: CollectionConfig = {
     description: "开票：选客户带出抬头，填明细自动算合计、定金和尾款。所有金额由系统计算，不手填。",
     components: {
       edit: {
-        beforeDocumentControls: ["/components/admin/InvoiceExport#InvoiceExport"],
+        /* FillBillTo 不渲染界面，只监听客户变化并即时补抬头；InvoiceExport 是下载按钮。 */
+        beforeDocumentControls: [
+          "/components/admin/FillBillTo#FillBillTo",
+          "/components/admin/InvoiceExport#InvoiceExport",
+        ],
       },
     },
   },
@@ -112,11 +117,12 @@ export const Invoices: CollectionConfig = {
         }
         const switched = operation === "create" || relId(originalDoc?.customer) !== customerId;
         if (switched) {
-          next.billToCompany = next.billToCompany || customer.name;
+          next.billToCompany = next.billToCompany || customer.company || customer.name;
           next.billToContact = next.billToContact || customer.contactName;
           next.billToTel = next.billToTel || customer.phone || customer.whatsapp;
           next.billToEmail = next.billToEmail || customer.email;
           next.billToAddress = next.billToAddress || customer.billingAddress;
+          next.billToCountry = next.billToCountry || toEnglishCountry(customer.country);
           next.billToPostcode = next.billToPostcode || customer.billingPostcode;
         }
       }
@@ -204,7 +210,13 @@ export const Invoices: CollectionConfig = {
           ],
         },
         { name: "billToAddress", type: "textarea", label: "地址 Address" },
-        { name: "billToPostcode", type: "text", label: "邮编 Postcode" },
+        {
+          type: "row",
+          fields: [
+            { name: "billToCountry", type: "text", label: "国家 Country" },
+            { name: "billToPostcode", type: "text", label: "邮编 Postcode" },
+          ],
+        },
       ],
     },
     {

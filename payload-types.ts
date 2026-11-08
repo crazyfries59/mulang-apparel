@@ -349,6 +349,10 @@ export interface Customer {
    * 例如 卫衣、T 恤、腰带
    */
   productFocus?: string | null;
+  /**
+   * 发票 Company 栏印这个。留空就印上面的客户/品牌名称。
+   */
+  company?: string | null;
   billingAddress?: string | null;
   billingPostcode?: string | null;
   phone?: string | null;
@@ -511,6 +515,7 @@ export interface Invoice {
   billToTel?: string | null;
   billToEmail?: string | null;
   billToAddress?: string | null;
+  billToCountry?: string | null;
   billToPostcode?: string | null;
   items: {
     product: string;
@@ -834,6 +839,7 @@ export interface CustomersSelect<T extends boolean = true> {
   whatsapp?: T;
   website?: T;
   productFocus?: T;
+  company?: T;
   billingAddress?: T;
   billingPostcode?: T;
   phone?: T;
@@ -923,6 +929,7 @@ export interface InvoicesSelect<T extends boolean = true> {
   billToTel?: T;
   billToEmail?: T;
   billToAddress?: T;
+  billToCountry?: T;
   billToPostcode?: T;
   items?:
     | T

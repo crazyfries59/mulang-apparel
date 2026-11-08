@@ -47,6 +47,12 @@ export const Customers: CollectionConfig = {
       label: "开票信息",
       admin: { description: "开票时自动带到发票抬头。地址写成客户能直接拿去清关的完整英文地址。" },
       fields: [
+        {
+          name: "company",
+          type: "text",
+          label: "公司 Company（票面抬头）",
+          admin: { description: "发票 Company 栏印这个。留空就印上面的客户/品牌名称。" },
+        },
         { name: "billingAddress", type: "textarea", label: "开票地址 Address" },
         {
           type: "row",
