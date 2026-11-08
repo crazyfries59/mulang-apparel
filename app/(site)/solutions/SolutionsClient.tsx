@@ -260,7 +260,7 @@ export default function SolutionsPage() {
             <p className="label mb-4">By Product Category</p>
             <h2 className="font-syne font-black text-white text-3xl">Start From What You Actually Sell</h2>
           </AnimatedSection>
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid md:grid-cols-3 gap-4">
             <Link href="/t-shirt-manufacturer" className="group block rounded-2xl border border-white/8 bg-[#111] p-7 hover:border-violet-500/40 transition-colors">
               <h3 className="font-syne font-bold text-white text-lg">T-Shirt Manufacturing</h3>
               <p className="mt-3 text-sm text-white/50 leading-relaxed">106 styles from 145 to 425 gsm — oversized, vintage wash, polo, long sleeve and blank wholesale, from 50 pcs.</p>
@@ -273,6 +273,13 @@ export default function SolutionsPage() {
               <p className="mt-3 text-sm text-white/50 leading-relaxed">43 styles over 300–500 gsm fleece and French terry — spray dye, acid wash, puff print and blank wholesale, from 50 pcs.</p>
               <span className="mt-4 inline-flex items-center gap-1 text-violet-400 text-xs font-bold uppercase tracking-wider">
                 View hoodie line <ArrowRight size={11} />
+              </span>
+            </Link>
+            <Link href="/custom-streetwear-manufacturer" className="group block rounded-2xl border border-white/8 bg-[#111] p-7 hover:border-violet-500/40 transition-colors">
+              <h3 className="font-syne font-bold text-white text-lg">Streetwear Manufacturing</h3>
+              <p className="mt-3 text-sm text-white/50 leading-relaxed">149 tee and hoodie styles from 240 to 500 gsm — boxy fits, garment dye, acid wash, puff print, private label, from 50 pcs.</p>
+              <span className="mt-4 inline-flex items-center gap-1 text-violet-400 text-xs font-bold uppercase tracking-wider">
+                View streetwear line <ArrowRight size={11} />
               </span>
             </Link>
           </div>

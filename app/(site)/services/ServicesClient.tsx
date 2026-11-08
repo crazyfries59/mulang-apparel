@@ -182,6 +182,7 @@ export default function ServicesPage() {
             <Link href="/blog/minimum-order-quantity-guide" className="text-violet-300 hover:text-white underline underline-offset-4">Understand clothing MOQ</Link>
             <Link href="/t-shirt-manufacturer" className="text-violet-300 hover:text-white underline underline-offset-4">T-shirt manufacturing</Link>
             <Link href="/custom-hoodie-manufacturer" className="text-violet-300 hover:text-white underline underline-offset-4">Hoodie manufacturing</Link>
+            <Link href="/custom-streetwear-manufacturer" className="text-violet-300 hover:text-white underline underline-offset-4">Streetwear manufacturing</Link>
             <Link href="/blog/how-to-find-a-clothing-manufacturer" className="text-violet-300 hover:text-white underline underline-offset-4">How to find a manufacturer</Link>
             <Link href="/products" className="text-violet-300 hover:text-white underline underline-offset-4">Find a product reference</Link>
             <Link href="/contact" className="text-violet-300 hover:text-white underline underline-offset-4">Discuss your project</Link>
