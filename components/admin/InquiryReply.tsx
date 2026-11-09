@@ -6,7 +6,6 @@ import {
   buildFollowUpSummary,
   buildReplyDraft,
   gmailComposeUrl,
-  mailtoUrl,
 } from "../../lib/crm/reply-draft";
 
 /* 在询盘详情页里直接回信（轻量版）：
@@ -85,6 +84,7 @@ export const InquiryReply: React.FC = () => {
   const [scripts, setScripts] = useState<ScriptDoc[]>([]);
   const [feedback, setFeedback] = useState("");
   const [marking, setMarking] = useState(false);
+  const [sending, setSending] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -126,16 +126,45 @@ export const InquiryReply: React.FC = () => {
     window.open(gmailComposeUrl(email, subject, body), "_blank", "noopener,noreferrer");
   };
 
-  const openMailApp = () => {
-    if (!email) return;
-    window.location.href = mailtoUrl(email, subject, body);
-  };
-
   const insertScript = (scriptId: string) => {
     const script = scripts.find((item) => String(item.id) === scriptId);
     if (!script?.content) return;
     const base = body === "" || body.endsWith("\n") ? body : `${body}\n`;
     setOverride({ subject, body: `${base}\n${script.content}` });
+  };
+
+  /* 直接在系统里发：服务端用 Gmail SMTP 发出去，顺手改状态、写跟进。
+     发信是不可撤的动作，所以先要一次确认。 */
+  const sendNow = async () => {
+    if (!id || !email) return;
+    if (!window.confirm(`确认把这封回复发给 ${email}？发出后撤不回来。`)) return;
+
+    setSending(true);
+    setFeedback("");
+    try {
+      const res = await fetch(`/api/inquiries/${id}/reply`, {
+        method: "POST",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ subject, body }),
+      });
+      const json = (await res.json().catch(() => null)) as
+        | { error?: string; warning?: string | null; keptReply?: boolean }
+        | null;
+      if (!res.ok) throw new Error(json?.error ?? "发送失败");
+
+      dispatchFields({ type: "UPDATE", path: "status", value: "replied" });
+      if (json?.keptReply) dispatchFields({ type: "UPDATE", path: "reply", value: body });
+
+      setFeedback(json?.warning ? `已发送给 ${email}；${json.warning}` : `已发送给 ${email}，并已写入跟进记录`);
+      toast.success("已发送");
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "未知错误";
+      setFeedback(`没发出去：${message}`);
+      toast.error("发送失败");
+    } finally {
+      setSending(false);
+    }
   };
 
   const markReplied = async () => {
@@ -229,11 +258,18 @@ export const InquiryReply: React.FC = () => {
       </div>
 
       <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "8px", marginBottom: "12px" }}>
-        <button type="button" className="btn btn--style-primary btn--size-small" style={actionBtn} onClick={openGmail} disabled={noEmail}>
-          用 Gmail 写信
+        <button
+          type="button"
+          className="btn btn--style-primary btn--size-small"
+          style={actionBtn}
+          onClick={sendNow}
+          disabled={noEmail || sending || !id}
+          title="用后台配置的邮箱直接发出，并发完自动记录"
+        >
+          {sending ? "发送中…" : "直接发送"}
         </button>
-        <button type="button" className="btn btn--style-secondary btn--size-small" style={actionBtn} onClick={openMailApp} disabled={noEmail}>
-          用本机邮件 App
+        <button type="button" className="btn btn--style-secondary btn--size-small" style={actionBtn} onClick={openGmail} disabled={noEmail}>
+          在 Gmail 里发
         </button>
         <button type="button" className="btn btn--style-secondary btn--size-small" style={actionBtn} onClick={copyAll}>
           复制主题和正文
@@ -272,7 +308,7 @@ export const InquiryReply: React.FC = () => {
           {marking ? "处理中…" : alreadyReplied ? "已回复" : "标记已回复"}
         </button>
         <span style={{ fontSize: "12px", color: "var(--theme-elevation-500)" }}>
-          {feedback || "附件、抄送在 Gmail 里补；发完再点「标记已回复」，进度和跟进记录会自动更新。"}
+          {feedback || "「直接发送」用后台邮箱发出，状态和跟进会自动更新；要带附件就去 Gmail 发，发完点「标记已回复」。"}
         </span>
       </div>
     </div>
