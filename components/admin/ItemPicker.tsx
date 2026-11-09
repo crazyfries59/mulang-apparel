@@ -48,6 +48,16 @@ const fabricText = (product: ProductLite): string => {
   return /\d/.test(gsm) && !/gsm/i.test(gsm) ? `${fabric} ${gsm}gsm` : `${fabric} ${gsm}`;
 };
 
+/* 「工艺 / 描述」里手写的其他说明要留着，所以只把符合「部位: 工艺」的行当成工艺条目。 */
+const POSITION_VALUES = new Set<string>(CRAFT_POSITIONS.map((item) => item.value));
+const PROCESS_VALUES = new Set<string>(CRAFT_GROUPS.flatMap((group) => group.items.map((item) => item.value)));
+
+const isCraftLine = (line: string): boolean => {
+  const match = /^(.*?):\s*(.*)$/.exec(line.trim());
+  if (!match) return false;
+  return POSITION_VALUES.has(match[1].trim()) && PROCESS_VALUES.has(match[2].trim());
+};
+
 const boxStyle: React.CSSProperties = {
   display: "flex",
   flexWrap: "wrap",
@@ -81,6 +91,37 @@ const buttonStyle: React.CSSProperties = {
 const hintStyle: React.CSSProperties = {
   color: "var(--theme-elevation-600)",
   fontSize: 12,
+};
+
+const chipRowStyle: React.CSSProperties = {
+  display: "flex",
+  flexWrap: "wrap",
+  alignItems: "center",
+  gap: 6,
+  width: "100%",
+  marginTop: 2,
+};
+
+const chipStyle: React.CSSProperties = {
+  display: "inline-flex",
+  alignItems: "center",
+  gap: 4,
+  padding: "3px 4px 3px 10px",
+  border: "1px solid var(--theme-elevation-200)",
+  borderRadius: 999,
+  background: "var(--theme-elevation-50)",
+  color: "var(--theme-text)",
+  fontSize: 12,
+};
+
+const chipButtonStyle: React.CSSProperties = {
+  border: "none",
+  background: "transparent",
+  color: "var(--theme-elevation-600)",
+  cursor: "pointer",
+  fontSize: 14,
+  lineHeight: 1,
+  padding: "0 4px",
 };
 
 export const ItemPicker: React.FC<{ path?: string }> = ({ path }) => {
@@ -152,13 +193,29 @@ export const ItemPicker: React.FC<{ path?: string }> = ({ path }) => {
       return;
     }
     dispatchFields({ type: "UPDATE", path: `${base}.description`, value: current ? `${current}\n${line}` : line });
-    setFlash(`已加入：${line}`);
+    setFlash(`已加入：${line}（可以继续加别的部位）`);
+  };
+
+  const removeCraft = (line: string) => {
+    const rest = value("description")
+      .split("\n")
+      .filter((row) => row.trim() !== line)
+      .join("\n")
+      .trim();
+    dispatchFields({ type: "UPDATE", path: `${base}.description`, value: rest });
+    setFlash(`已删除：${line}`);
   };
 
   const clearCraft = () => {
     dispatchFields({ type: "UPDATE", path: `${base}.description`, value: "" });
     setFlash("描述已清空");
   };
+
+  /* 已经写进描述里的工艺条目，一件衣服可以有好几条（前幅 + 后幅 + 袖子…）。 */
+  const craftLines = value("description")
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(isCraftLine);
 
   /* 只在真实存在商品行的页面渲染；新建空行时也照常显示，方便先选款。 */
   if (!base) return null;
@@ -183,12 +240,12 @@ export const ItemPicker: React.FC<{ path?: string }> = ({ path }) => {
       </select>
 
       <span style={{ ...hintStyle, marginLeft: 4 }}>工艺</span>
-      <select style={controlStyle} value={position} onChange={(e) => setPosition(e.target.value)}>
+      <select data-testid="craft-position" style={controlStyle} value={position} onChange={(e) => setPosition(e.target.value)}>
         {CRAFT_POSITIONS.map((p) => (
           <option key={p.value} value={p.value}>{p.label}</option>
         ))}
       </select>
-      <select style={{ ...controlStyle, maxWidth: 200 }} value={process} onChange={(e) => setProcess(e.target.value)}>
+      <select data-testid="craft-process" style={{ ...controlStyle, maxWidth: 200 }} value={process} onChange={(e) => setProcess(e.target.value)}>
         {CRAFT_GROUPS.map((group) => (
           <optgroup key={group.name} label={group.name}>
             {group.items.map((item) => (
@@ -197,10 +254,26 @@ export const ItemPicker: React.FC<{ path?: string }> = ({ path }) => {
           </optgroup>
         ))}
       </select>
-      <button type="button" style={buttonStyle} onClick={addCraft}>加入描述</button>
+      <button type="button" data-testid="craft-add" style={buttonStyle} onClick={addCraft}>+ 添加工艺</button>
       <button type="button" style={buttonStyle} onClick={clearCraft}>清空描述</button>
 
-      {flash ? <span style={hintStyle}>{flash}</span> : <span style={hintStyle}>也可以直接在下面手填</span>}
+      {craftLines.length > 0 && (
+        <div data-testid="craft-chips" style={chipRowStyle}>
+          <span style={hintStyle}>已加工艺（{craftLines.length} 条）：</span>
+          {craftLines.map((line) => (
+            <span key={line} style={chipStyle}>
+              {line}
+              <button type="button" style={chipButtonStyle} title="删掉这条工艺" onClick={() => removeCraft(line)}>
+                ×
+              </button>
+            </span>
+          ))}
+        </div>
+      )}
+
+      <div style={{ ...hintStyle, width: "100%" }}>
+        {flash || "前幅、后幅、袖子可以分开加多条；点工艺右边的 × 删掉一条，手写的其他说明不受影响。"}
+      </div>
     </div>
   );
 };

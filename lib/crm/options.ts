@@ -91,6 +91,15 @@ export const FX_TARGETS = [
   { value: "balance", label: "按尾款换算" },
 ] as const satisfies readonly Option[];
 
+/* 运费行名称：来自本机开票页面 options.json 的 shipping，text 就是发票上印的英文。
+   「其他费用」留空，让人自己写辅料费、样品费等。 */
+export const SHIPPING_KINDS = [
+  { value: "express", label: "快递 Express", text: "Shipping by express delivery (5-7 days)" },
+  { value: "air", label: "空运 Air freight", text: "Air freight" },
+  { value: "sea", label: "海运 Sea freight", text: "Regular sea freight" },
+  { value: "other", label: "其他费用 Other", text: "" },
+] as const;
+
 /* 尺码顺序与发票页一致，尺码合计按这个顺序逐项相加。 */
 export const SIZE_KEYS = ["XS", "S", "M", "L", "XL", "XXL", "3XL"] as const;
 
