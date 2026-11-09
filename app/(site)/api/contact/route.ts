@@ -47,7 +47,7 @@ export async function POST(req: NextRequest) {
 
   const data = parseContactData(body);
   if (!data) {
-    return NextResponse.json({ error: "Please check your name, email, message, and field lengths." }, { status: 400 });
+    return NextResponse.json({ error: "Please check your name, email, country, message, and field lengths." }, { status: 400 });
   }
   const { name, company, email, whatsapp, country, productType, quantity, message } = data;
   const saved = await saveInquiry(data);

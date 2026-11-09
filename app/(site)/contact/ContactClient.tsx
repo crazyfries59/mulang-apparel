@@ -189,8 +189,8 @@ export default function ContactPage({ initialProduct }: {
                   {/* Row 3 */}
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="country" className="block text-[0.6rem] tracking-widest uppercase text-white/30 mb-1.5">Country</label>
-                      <input id="country" type="text" name="country" list="country-suggestions" autoComplete="country-name"
+                      <label htmlFor="country" className="block text-[0.6rem] tracking-widest uppercase text-white/30 mb-1.5">Country *</label>
+                      <input id="country" type="text" name="country" list="country-suggestions" autoComplete="country-name" required
                         maxLength={CONTACT_LIMITS.country} value={form.country} onChange={onChange} placeholder="e.g. United States"
                         className="w-full bg-white/3 border border-white/8 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-violet-500/50 transition-colors" />
                       <datalist id="country-suggestions">
