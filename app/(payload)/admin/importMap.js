@@ -23,6 +23,7 @@ import { BoldFeatureClient as BoldFeatureClient_e70f5e05f09f93e00b997edb1ef0c864
 import { ItalicFeatureClient as ItalicFeatureClient_e70f5e05f09f93e00b997edb1ef0c864 } from '@payloadcms/richtext-lexical/client'
 import { ItemPicker as ItemPicker_9385381cd1e68a3f77724b8d2d4d1d37 } from '../../../components/admin/ItemPicker'
 import { InquiryReply as InquiryReply_2054355cd2b5325f5e17a1c775fde6b1 } from '../../../components/admin/InquiryReply'
+import { ImageThumb as ImageThumb_5d3c9a7b64e2f8105a4c7d9be0f2a631 } from '../../../components/admin/ImageThumb'
 import { FillBillTo as FillBillTo_d25bf474562779ad528f73369a742b99 } from '../../../components/admin/FillBillTo'
 import { InvoiceExport as InvoiceExport_210be90c11d2e9f9b31b785bcec1b6d2 } from '../../../components/admin/InvoiceExport'
 import { LogoutButton as LogoutButton_9afb321262a9513c979915ca76b6cf86 } from '../../../components/admin/LogoutButton'
@@ -62,6 +63,7 @@ export const importMap = {
   "@payloadcms/richtext-lexical/client#ItalicFeatureClient": ItalicFeatureClient_e70f5e05f09f93e00b997edb1ef0c864,
   "/components/admin/ItemPicker#ItemPicker": ItemPicker_9385381cd1e68a3f77724b8d2d4d1d37,
   "/components/admin/InquiryReply#InquiryReply": InquiryReply_2054355cd2b5325f5e17a1c775fde6b1,
+  "/components/admin/ImageThumb#ImageThumb": ImageThumb_5d3c9a7b64e2f8105a4c7d9be0f2a631,
   "/components/admin/FillBillTo#FillBillTo": FillBillTo_d25bf474562779ad528f73369a742b99,
   "/components/admin/InvoiceExport#InvoiceExport": InvoiceExport_210be90c11d2e9f9b31b785bcec1b6d2,
   "/components/admin/LogoutButton#LogoutButton": LogoutButton_9afb321262a9513c979915ca76b6cf86,

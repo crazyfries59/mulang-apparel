@@ -259,6 +259,15 @@ export const Invoices: CollectionConfig = {
           ],
         },
         {
+          /* 不存数据：把上面填的图片路径渲染成缩略图，导出 xlsx 时同一张图放进 Picture 列。 */
+          name: "imageThumb",
+          type: "ui",
+          admin: {
+            disableListColumn: true,
+            components: { Field: "/components/admin/ImageThumb#ImageThumb" },
+          },
+        },
+        {
           name: "sizes",
           type: "group",
           label: "尺码数量",
