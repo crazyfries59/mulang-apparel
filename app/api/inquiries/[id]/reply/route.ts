@@ -4,6 +4,7 @@ import nodemailer from "nodemailer";
 import { getPayload } from "payload";
 import config from "@payload-config";
 import { buildFollowUpSummary } from "@/lib/crm/reply-draft";
+import { checkFiles, describeFiles, formatBytes } from "@/lib/crm/attachments";
 
 export const dynamic = "force-dynamic";
 /* nodemailer 要 Node 运行时，不能跑在 Edge 上。 */
@@ -12,12 +13,22 @@ export const runtime = "nodejs";
 /* 在后台直接把回信发出去，不用跳 Gmail。
    发信走和官网通知同一套 Gmail SMTP（GMAIL_USER / GMAIL_APP_PASSWORD），
    发完把这封的发件内容记进询盘和跟进记录。
-   Gmail 会自己把这封信存进「已发送」，客户回信仍落在 Gmail 收件箱。 */
+   Gmail 会自己把这封信存进「已发送」，客户回信仍落在 Gmail 收件箱。
+   附件按 multipart 直接传，不走 base64，免得体积凭空多出三分之一。 */
 
 const MAX_SUBJECT = 200;
 const MAX_BODY = 20000;
 
 const text = (value: unknown) => (typeof value === "string" ? value.trim() : "");
+
+/* formData 里的文件在 Node 运行时是 undici 的 File，用结构化判断，不依赖全局 File 类型。 */
+type Uploaded = { name: string; size: number; arrayBuffer: () => Promise<ArrayBuffer> };
+const isFileLike = (value: unknown): value is Uploaded =>
+  typeof value === "object" &&
+  value !== null &&
+  "arrayBuffer" in value &&
+  "name" in value &&
+  "size" in value;
 
 /* 自定义路由没有 Payload 的 CSRF 检查，用同源校验替代：浏览器带 Origin 时必须与本站一致。 */
 const sameOrigin = (request: NextRequest) => {
@@ -30,6 +41,37 @@ const sameOrigin = (request: NextRequest) => {
   }
 };
 
+type Parsed = {
+  subject: unknown;
+  body: unknown;
+  files: Uploaded[];
+};
+
+/* 老客户端还是发 JSON，新面板发 multipart，两种都认。 */
+const readPayload = async (request: NextRequest): Promise<Parsed | null> => {
+  const contentType = request.headers.get("content-type") ?? "";
+
+  if (contentType.includes("multipart/form-data")) {
+    try {
+      const form = await request.formData();
+      const files: Uploaded[] = [];
+      for (const entry of form.getAll("attachments")) {
+        if (isFileLike(entry)) files.push(entry);
+      }
+      return { subject: form.get("subject"), body: form.get("body"), files };
+    } catch {
+      return null;
+    }
+  }
+
+  try {
+    const json = (await request.json()) as { subject?: unknown; body?: unknown } | null;
+    return { subject: json?.subject, body: json?.body, files: [] };
+  } catch {
+    return null;
+  }
+};
+
 export async function POST(request: NextRequest, context: { params: Promise<{ id: string }> }) {
   if (!sameOrigin(request)) return NextResponse.json({ error: "来源不合法" }, { status: 403 });
 
@@ -39,19 +81,18 @@ export async function POST(request: NextRequest, context: { params: Promise<{ id
 
   const { id } = await context.params;
 
-  let body: unknown;
-  try {
-    body = await request.json();
-  } catch {
-    return NextResponse.json({ error: "请求内容读不出来" }, { status: 400 });
-  }
+  const parsed = await readPayload(request);
+  if (!parsed) return NextResponse.json({ error: "请求内容读不出来" }, { status: 400 });
 
-  const { subject, body: mailBody } = (body ?? {}) as { subject?: unknown; body?: unknown };
-  const cleanSubject = text(subject).slice(0, MAX_SUBJECT);
-  const cleanBody = text(mailBody).slice(0, MAX_BODY);
+  const cleanSubject = text(parsed.subject).slice(0, MAX_SUBJECT);
+  const cleanBody = text(parsed.body).slice(0, MAX_BODY);
   if (!cleanSubject || !cleanBody) {
     return NextResponse.json({ error: "主题和正文都不能为空" }, { status: 400 });
   }
+
+  /* 附件大小/类型先在这里拦一道，别等发到一半才失败。 */
+  const fileError = checkFiles(parsed.files);
+  if (fileError) return NextResponse.json({ error: fileError }, { status: 400 });
 
   let inquiry;
   try {
@@ -70,10 +111,24 @@ export async function POST(request: NextRequest, context: { params: Promise<{ id
     return NextResponse.json({ error: "邮件服务没有配置（GMAIL_USER / GMAIL_APP_PASSWORD）" }, { status: 500 });
   }
 
+  const attachments = await Promise.all(
+    parsed.files.map(async (file) => ({
+      filename: file.name,
+      content: Buffer.from(await file.arrayBuffer()),
+    })),
+  );
+  const attachmentNames = attachments.map((file) => file.filename);
+  const attachmentNote = describeFiles(attachmentNames);
+
   /* 发送失败就什么都不改，用户可以重试；发送成功但后续记录失败，返回 ok 加提示，避免重复发信。 */
   try {
     if (dryRun) {
-      console.log(`[inquiry-reply] dry run → ${to} | ${cleanSubject}`);
+      const total = parsed.files.reduce((sum, file) => sum + file.size, 0);
+      console.log(
+        `[inquiry-reply] dry run → ${to} | ${cleanSubject} | 附件 ${attachmentNames.length} 个（${formatBytes(total)}）${
+          attachmentNote ? ` ${attachmentNote}` : ""
+        }`,
+      );
     } else {
       const transporter = nodemailer.createTransport({
         service: "gmail",
@@ -85,6 +140,7 @@ export async function POST(request: NextRequest, context: { params: Promise<{ id
         replyTo: `${gmailUser}`,
         subject: cleanSubject,
         text: cleanBody,
+        ...(attachments.length > 0 ? { attachments } : {}),
       });
     }
   } catch (err) {
@@ -109,6 +165,10 @@ export async function POST(request: NextRequest, context: { params: Promise<{ id
     warnings.push("询盘状态没更新，请手动改一下");
   }
 
+  const summary = attachmentNote
+    ? `${buildFollowUpSummary(cleanSubject)}（${attachmentNote}）`
+    : buildFollowUpSummary(cleanSubject);
+
   const customerId = typeof inquiry.customer === "object" ? inquiry.customer?.id : inquiry.customer;
   if (customerId) {
     try {
@@ -119,7 +179,7 @@ export async function POST(request: NextRequest, context: { params: Promise<{ id
         user,
         data: {
           customer: customerId,
-          summary: buildFollowUpSummary(cleanSubject),
+          summary,
           content: cleanBody,
           channel: "email",
           date: new Date().toISOString(),
@@ -138,6 +198,8 @@ export async function POST(request: NextRequest, context: { params: Promise<{ id
     ok: true,
     dryRun,
     keptReply,
+    attachments: attachmentNames,
+    summary,
     warning: warnings.length > 0 ? warnings.join("；") : null,
   });
 }
