@@ -63,6 +63,11 @@ export const Inquiries: CollectionConfig = {
     { name: "message", type: "textarea", label: "询盘内容", required: true },
     { name: "reply", type: "textarea", label: "回复要点 / 内部备注" },
     {
+      type: "ui",
+      name: "replyPanel",
+      admin: { components: { Field: "/components/admin/InquiryReply#InquiryReply" } },
+    },
+    {
       name: "status",
       type: "select",
       label: "处理状态",
