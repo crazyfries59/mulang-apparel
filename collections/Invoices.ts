@@ -228,6 +228,16 @@ export const Invoices: CollectionConfig = {
       required: true,
       fields: [
         {
+          /* 不存数据：选产品自动带款号/面料/主图，选工艺自动写进描述。 */
+          name: "itemPicker",
+          type: "ui",
+          label: "快速填写",
+          admin: {
+            disableListColumn: true,
+            components: { Field: "/components/admin/ItemPicker#ItemPicker" },
+          },
+        },
+        {
           type: "row",
           fields: [
             { name: "product", type: "text", label: "款号 Style #", required: true },
