@@ -293,8 +293,17 @@ export const Invoices: CollectionConfig = {
       type: "array",
       label: "运费 / 其他费用",
       labels: { singular: "费用行", plural: "运费与其他费用" },
-      admin: { description: "快递费、海运、辅料费都可以分行列。金额没定可以先留空，合计按 0 算。" },
+      admin: { description: "快递、空运、海运、辅料费都可以分行列。金额没定可以先留空，合计按 0 算。" },
       fields: [
+        {
+          /* 不存数据：把快递/空运/海运的英文名写进下面 label，省得每次手打。 */
+          name: "shippingPicker",
+          type: "ui",
+          admin: {
+            disableListColumn: true,
+            components: { Field: "/components/admin/ShippingPicker#ShippingPicker" },
+          },
+        },
         {
           type: "row",
           fields: [
