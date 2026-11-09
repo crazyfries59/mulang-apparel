@@ -5,19 +5,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 import { MessageCircle, Mail, MapPin, CheckCircle, Send } from "lucide-react";
 import Link from "next/link";
 import { CONTACT_LIMITS } from "@/lib/contact-validation";
-
-/* Suggestions only — the field stays free text so no buyer is ever blocked by a
-   missing entry. Order roughly by how often these markets show up in our inquiries. */
-const COUNTRIES = [
-  "United States", "Canada", "United Kingdom", "Ireland", "Germany", "France",
-  "Netherlands", "Belgium", "Spain", "Portugal", "Italy", "Sweden", "Norway",
-  "Denmark", "Finland", "Poland", "Czechia", "Austria", "Switzerland", "Greece",
-  "Turkey", "United Arab Emirates", "Saudi Arabia", "Qatar", "Kuwait", "Israel",
-  "Australia", "New Zealand", "Japan", "South Korea", "Singapore", "Malaysia",
-  "Thailand", "Vietnam", "Indonesia", "Philippines", "India", "Mexico", "Brazil",
-  "Chile", "Colombia", "Argentina", "Peru", "South Africa", "Nigeria", "Kenya",
-  "Egypt", "Morocco", "Hong Kong SAR, China", "Taiwan, China", "Macao SAR, China",
-];
+import CountrySelect from "./CountrySelect";
 
 export default function ContactPage({ initialProduct }: {
   initialProduct?: { name: string; slug: string };
@@ -37,6 +25,12 @@ export default function ContactPage({ initialProduct }: {
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    /* Country is a custom picker, so the browser's native required check
+       doesn't apply — enforce it here before sending. */
+    if (!form.country.trim()) {
+      setError("Please select your country so we can quote shipping and lead times accurately.");
+      return;
+    }
     setLoading(true);
     setError(null);
     try {
@@ -190,12 +184,11 @@ export default function ContactPage({ initialProduct }: {
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="country" className="block text-[0.6rem] tracking-widest uppercase text-white/30 mb-1.5">Country *</label>
-                      <input id="country" type="text" name="country" list="country-suggestions" autoComplete="country-name" required
-                        maxLength={CONTACT_LIMITS.country} value={form.country} onChange={onChange} placeholder="e.g. United States"
-                        className="w-full bg-white/3 border border-white/8 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-violet-500/50 transition-colors" />
-                      <datalist id="country-suggestions">
-                        {COUNTRIES.map((c) => <option key={c} value={c} />)}
-                      </datalist>
+                      <CountrySelect
+                        id="country"
+                        value={form.country}
+                        onChange={(country) => { setForm(p => ({ ...p, country })); setError(null); }}
+                      />
                     </div>
                     <div>
                       <label htmlFor="productType" className="block text-[0.6rem] tracking-widest uppercase text-white/30 mb-1.5">Product Type</label>
