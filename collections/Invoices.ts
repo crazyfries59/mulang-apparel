@@ -337,10 +337,19 @@ export const Invoices: CollectionConfig = {
       admin: { description: "发票上只印 USD 合计；选了币种只多一行换算金额，票面不印汇率。" },
       fields: [
         {
+          /* 不存数据：点按钮取中间价，填进下面的 quote / readAt / source。 */
+          name: "fxRate",
+          type: "ui",
+          admin: {
+            disableListColumn: true,
+            components: { Field: "/components/admin/FxRateButton#FxRateButton" },
+          },
+        },
+        {
           type: "row",
           fields: [
             { name: "currency", type: "select", label: "币种", options: toOptions(CURRENCIES.filter((item) => item.value !== "USD")) },
-            { name: "quote", type: "number", label: "汇率", admin: { description: "1 外币 = ? USD，填连连「卖外币买 USD」看到的报价" } },
+            { name: "quote", type: "number", label: "汇率", admin: { description: "1 外币 = ? USD。一键取的是中间价，实际结汇按连连「卖外币买 USD」的报价手改" } },
             { name: "on", type: "select", label: "换算基数", defaultValue: "total", options: toOptions(FX_TARGETS) },
           ],
         },
