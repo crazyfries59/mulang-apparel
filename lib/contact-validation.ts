@@ -1,5 +1,5 @@
 export const CONTACT_LIMITS = {
-  name: 200, company: 200, email: 254, whatsapp: 80,
+  name: 200, company: 200, email: 254, whatsapp: 80, country: 100,
   productType: 100, quantity: 100, message: 5000,
 } as const;
 

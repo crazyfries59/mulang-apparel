@@ -6,11 +6,24 @@ import { MessageCircle, Mail, MapPin, CheckCircle, Send } from "lucide-react";
 import Link from "next/link";
 import { CONTACT_LIMITS } from "@/lib/contact-validation";
 
+/* Suggestions only — the field stays free text so no buyer is ever blocked by a
+   missing entry. Order roughly by how often these markets show up in our inquiries. */
+const COUNTRIES = [
+  "United States", "Canada", "United Kingdom", "Ireland", "Germany", "France",
+  "Netherlands", "Belgium", "Spain", "Portugal", "Italy", "Sweden", "Norway",
+  "Denmark", "Finland", "Poland", "Czechia", "Austria", "Switzerland", "Greece",
+  "Turkey", "United Arab Emirates", "Saudi Arabia", "Qatar", "Kuwait", "Israel",
+  "Australia", "New Zealand", "Japan", "South Korea", "Singapore", "Malaysia",
+  "Thailand", "Vietnam", "Indonesia", "Philippines", "India", "Mexico", "Brazil",
+  "Chile", "Colombia", "Argentina", "Peru", "South Africa", "Nigeria", "Kenya",
+  "Egypt", "Morocco", "Hong Kong SAR, China", "Taiwan, China", "Macao SAR, China",
+];
+
 export default function ContactPage({ initialProduct }: {
   initialProduct?: { name: string; slug: string };
 }) {
   const [form, setForm] = useState({
-    name: "", company: "", email: "", whatsapp: "",
+    name: "", company: "", email: "", whatsapp: "", country: "",
     productType: "", quantity: "", message: initialProduct
       ? `I'm interested in ${initialProduct.name}.\nProduct: ${initialProduct.slug}\n\nCustomization details: `
       : "",
@@ -176,6 +189,15 @@ export default function ContactPage({ initialProduct }: {
                   {/* Row 3 */}
                   <div className="grid grid-cols-2 gap-4">
                     <div>
+                      <label htmlFor="country" className="block text-[0.6rem] tracking-widest uppercase text-white/30 mb-1.5">Country</label>
+                      <input id="country" type="text" name="country" list="country-suggestions" autoComplete="country-name"
+                        maxLength={CONTACT_LIMITS.country} value={form.country} onChange={onChange} placeholder="e.g. United States"
+                        className="w-full bg-white/3 border border-white/8 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-violet-500/50 transition-colors" />
+                      <datalist id="country-suggestions">
+                        {COUNTRIES.map((c) => <option key={c} value={c} />)}
+                      </datalist>
+                    </div>
+                    <div>
                       <label htmlFor="productType" className="block text-[0.6rem] tracking-widest uppercase text-white/30 mb-1.5">Product Type</label>
                       <select id="productType" name="productType" value={form.productType} onChange={onChange}
                         className="w-full bg-white/3 border border-white/8 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-violet-500/50 transition-colors">
@@ -184,11 +206,13 @@ export default function ContactPage({ initialProduct }: {
                           <option key={o} value={o} className="bg-[#111]">{o}</option>)}
                       </select>
                     </div>
-                    <div>
-                      <label htmlFor="quantity" className="block text-[0.6rem] tracking-widest uppercase text-white/30 mb-1.5">Quantity</label>
-                      <input id="quantity" type="text" name="quantity" maxLength={CONTACT_LIMITS.quantity} value={form.quantity} onChange={onChange} placeholder="e.g. 200 pcs"
-                        className="w-full bg-white/3 border border-white/8 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-violet-500/50 transition-colors" />
-                    </div>
+                  </div>
+
+                  {/* Row 4 */}
+                  <div>
+                    <label htmlFor="quantity" className="block text-[0.6rem] tracking-widest uppercase text-white/30 mb-1.5">Quantity</label>
+                    <input id="quantity" type="text" name="quantity" maxLength={CONTACT_LIMITS.quantity} value={form.quantity} onChange={onChange} placeholder="e.g. 200 pcs"
+                      className="w-full bg-white/3 border border-white/8 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-violet-500/50 transition-colors" />
                   </div>
 
                   {/* Message */}

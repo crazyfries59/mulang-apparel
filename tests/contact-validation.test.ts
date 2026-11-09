@@ -17,10 +17,17 @@ test("malformed JSON field types return a validation error instead of throwing",
   }
 });
 
+test("keeps the buyer's country and trims surrounding spaces", () => {
+  const parsed = parseContactData({ ...valid, country: "  Vietnam " });
+  assert.equal(parsed?.country, "Vietnam");
+  assert.equal(parseContactData(valid)?.country, "");
+});
+
 test("rejects missing details, malformed email and oversized optional fields", () => {
   for (const input of [
     { ...valid, message: "  " }, { ...valid, email: "not-an-email" },
     { ...valid, whatsapp: "x".repeat(CONTACT_LIMITS.whatsapp + 1) },
+    { ...valid, country: "x".repeat(CONTACT_LIMITS.country + 1) },
     { ...valid, message: "x".repeat(CONTACT_LIMITS.message + 1) },
   ]) assert.equal(parseContactData(input), null);
 });
