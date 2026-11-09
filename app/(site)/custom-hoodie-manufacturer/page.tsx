@@ -35,7 +35,7 @@ const config: LandingConfig = {
     { label: "Bulk lead time", value: "21 days" },
   ],
   intro: {
-    title: "Why Weight Is the First Decision",
+    title: "What a Custom Hoodie Manufacturer Should Do For You",
     paragraphs: [
       "A hoodie lives or dies on two numbers: the weight of the fleece and the depth of the hood. Everything else — print, patch, drawcord, label — is visible on top of that base. Get the base wrong and no amount of decoration saves it.",
       "Our stock line runs 300 to 500 gsm, and the middle band around 350–400 gsm is what most private label programmes order: heavy enough to hold a boxy shape, light enough to wear in autumn. Below 320 gsm it drapes and layers, above 450 gsm it stands off the body and reads as a statement piece.",
@@ -164,6 +164,7 @@ const config: LandingConfig = {
     { href: "/blog/how-to-find-a-clothing-manufacturer", label: "How to find a clothing manufacturer" },
     { href: "/blog/custom-streetwear-manufacturer-guide", label: "How to choose a custom streetwear manufacturer" },
     { href: "/t-shirt-manufacturer", label: "T-shirt manufacturer" },
+    { href: "/custom-streetwear-manufacturer", label: "Custom streetwear manufacturer" },
     { href: "/manufacturing", label: "Our production process" },
     { href: "/solutions", label: "All manufacturing solutions" },
   ],

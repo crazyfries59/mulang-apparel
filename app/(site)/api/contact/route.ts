@@ -18,6 +18,7 @@ async function saveInquiry(data: ContactData) {
         company: data.company,
         email: data.email,
         whatsapp: data.whatsapp,
+        country: data.country,
         productType: data.productType,
         quantity: data.quantity,
         message: data.message,
@@ -46,9 +47,9 @@ export async function POST(req: NextRequest) {
 
   const data = parseContactData(body);
   if (!data) {
-    return NextResponse.json({ error: "Please check your name, email, message, and field lengths." }, { status: 400 });
+    return NextResponse.json({ error: "Please check your name, email, country, message, and field lengths." }, { status: 400 });
   }
-  const { name, company, email, whatsapp, productType, quantity, message } = data;
+  const { name, company, email, whatsapp, country, productType, quantity, message } = data;
   const saved = await saveInquiry(data);
 
   const gmailUser = process.env.GMAIL_USER;
@@ -64,6 +65,7 @@ export async function POST(req: NextRequest) {
     ["Company", company || "—"],
     ["Email", email],
     ["WhatsApp", whatsapp || "—"],
+    ["Country", country || "—"],
     ["Product Type", productType || "—"],
     ["Quantity", quantity || "—"],
   ];

@@ -5,12 +5,13 @@ import AnimatedSection from "@/components/AnimatedSection";
 import { MessageCircle, Mail, MapPin, CheckCircle, Send } from "lucide-react";
 import Link from "next/link";
 import { CONTACT_LIMITS } from "@/lib/contact-validation";
+import CountrySelect from "./CountrySelect";
 
 export default function ContactPage({ initialProduct }: {
   initialProduct?: { name: string; slug: string };
 }) {
   const [form, setForm] = useState({
-    name: "", company: "", email: "", whatsapp: "",
+    name: "", company: "", email: "", whatsapp: "", country: "",
     productType: "", quantity: "", message: initialProduct
       ? `I'm interested in ${initialProduct.name}.\nProduct: ${initialProduct.slug}\n\nCustomization details: `
       : "",
@@ -24,6 +25,12 @@ export default function ContactPage({ initialProduct }: {
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    /* Country is a custom picker, so the browser's native required check
+       doesn't apply — enforce it here before sending. */
+    if (!form.country.trim()) {
+      setError("Please select your country so we can quote shipping and lead times accurately.");
+      return;
+    }
     setLoading(true);
     setError(null);
     try {
@@ -176,6 +183,14 @@ export default function ContactPage({ initialProduct }: {
                   {/* Row 3 */}
                   <div className="grid grid-cols-2 gap-4">
                     <div>
+                      <label htmlFor="country" className="block text-[0.6rem] tracking-widest uppercase text-white/30 mb-1.5">Country *</label>
+                      <CountrySelect
+                        id="country"
+                        value={form.country}
+                        onChange={(country) => { setForm(p => ({ ...p, country })); setError(null); }}
+                      />
+                    </div>
+                    <div>
                       <label htmlFor="productType" className="block text-[0.6rem] tracking-widest uppercase text-white/30 mb-1.5">Product Type</label>
                       <select id="productType" name="productType" value={form.productType} onChange={onChange}
                         className="w-full bg-white/3 border border-white/8 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-violet-500/50 transition-colors">
@@ -184,11 +199,13 @@ export default function ContactPage({ initialProduct }: {
                           <option key={o} value={o} className="bg-[#111]">{o}</option>)}
                       </select>
                     </div>
-                    <div>
-                      <label htmlFor="quantity" className="block text-[0.6rem] tracking-widest uppercase text-white/30 mb-1.5">Quantity</label>
-                      <input id="quantity" type="text" name="quantity" maxLength={CONTACT_LIMITS.quantity} value={form.quantity} onChange={onChange} placeholder="e.g. 200 pcs"
-                        className="w-full bg-white/3 border border-white/8 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-violet-500/50 transition-colors" />
-                    </div>
+                  </div>
+
+                  {/* Row 4 */}
+                  <div>
+                    <label htmlFor="quantity" className="block text-[0.6rem] tracking-widest uppercase text-white/30 mb-1.5">Quantity</label>
+                    <input id="quantity" type="text" name="quantity" maxLength={CONTACT_LIMITS.quantity} value={form.quantity} onChange={onChange} placeholder="e.g. 200 pcs"
+                      className="w-full bg-white/3 border border-white/8 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-violet-500/50 transition-colors" />
                   </div>
 
                   {/* Message */}

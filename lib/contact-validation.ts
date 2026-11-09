@@ -1,5 +1,5 @@
 export const CONTACT_LIMITS = {
-  name: 200, company: 200, email: 254, whatsapp: 80,
+  name: 200, company: 200, email: 254, whatsapp: 80, country: 100,
   productType: 100, quantity: 100, message: 5000,
 } as const;
 
@@ -14,7 +14,7 @@ export function parseContactData(body: unknown): ContactData | null {
     if (typeof value !== "string" || value.length > CONTACT_LIMITS[key]) return null;
     result[key] = value.trim();
   }
-  if (!result.name || !result.email || !result.message) return null;
+  if (!result.name || !result.email || !result.country || !result.message) return null;
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(result.email)) return null;
   return result;
 }

@@ -89,7 +89,12 @@ export default function ChinaManufacturerTipsContent() {
         <Link href="/solutions" className="text-violet-400 hover:text-violet-300 underline underline-offset-2">
           solutions page
         </Link>{" "}
-        breaks down all three plus blank wholesale and startup programs.
+        breaks down all three plus blank wholesale and startup programs. If the label you&apos;re building is
+        streetwear specifically,{" "}
+        <Link href="/custom-streetwear-manufacturer" className="text-violet-400 hover:text-violet-300 underline underline-offset-2">
+          custom streetwear manufacturing
+        </Link>{" "}
+        covers the washes, weights and decoration methods that set that category apart from basic blanks.
       </P>
 
       <H2>7. Pin down lead times for samples and bulk separately</H2>
@@ -97,7 +102,16 @@ export default function ChinaManufacturerTipsContent() {
         &ldquo;Fast production&rdquo; means nothing without a number attached to a specific product. Lead
         time varies by category more than most brands expect — a basic tee runs faster than a lined jacket
         or a pair of jeans. Ask for bulk lead time by category, in writing, not a blanket estimate —
-        finishing-heavy styles like hoodies and outerwear always run longer than basic tees.
+        finishing-heavy styles like hoodies and outerwear always run longer than basic tees. Ours are quoted
+        per style for exactly this reason: the{" "}
+        <Link href="/t-shirt-manufacturer" className="text-violet-400 hover:text-violet-300 underline underline-offset-2">
+          custom t-shirt manufacturing
+        </Link>{" "}
+        line and the{" "}
+        <Link href="/custom-hoodie-manufacturer" className="text-violet-400 hover:text-violet-300 underline underline-offset-2">
+          custom hoodie manufacturing
+        </Link>{" "}
+        line carry different bulk windows because the washing and finishing steps are not the same.
       </P>
 
       <InlineCTA>Tell us your product category and target quantity — we&apos;ll give you an exact timeline.</InlineCTA>
