@@ -1,7 +1,8 @@
 "use client";
 
-import { useForm, useFormFields } from "@payloadcms/ui";
+import { useFormFields } from "@payloadcms/ui";
 import React, { useState } from "react";
+import { useFormUpdater } from "./useFormUpdater";
 
 /* 「换算币种」里的联网取汇率按钮。
    点一下按选中的币种取欧洲央行中间价，填进汇率 / 汇率时间 / 来源；填完还能手改。
@@ -26,7 +27,7 @@ const stamp = (): string => {
 };
 
 export const FxRateButton: React.FC<{ path?: string }> = ({ path }) => {
-  const { dispatchFields } = useForm();
+  const update = useFormUpdater();
   const base = path ? path.replace(/\.fxRate$/, "") : "";
 
   const currency = useFormFields(([fields]) => {
@@ -53,9 +54,9 @@ export const FxRateButton: React.FC<{ path?: string }> = ({ path }) => {
         setStatus(data.error || "取不到汇率，手填吧");
         return;
       }
-      dispatchFields({ type: "UPDATE", path: `${base}.quote`, value: data.quote });
-      dispatchFields({ type: "UPDATE", path: `${base}.readAt`, value: stamp() });
-      dispatchFields({ type: "UPDATE", path: `${base}.source`, value: data.source ?? "联网" });
+      update(`${base}.quote`, data.quote);
+      update(`${base}.readAt`, stamp());
+      update(`${base}.source`, data.source ?? "联网");
       setStatus(`已填入 1 ${currency} = ${data.quote} USD（中间价，可手改）`);
     } catch {
       setStatus("网络不通，手填吧");

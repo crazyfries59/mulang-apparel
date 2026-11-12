@@ -1,8 +1,9 @@
 "use client";
 
-import { useForm, useFormFields } from "@payloadcms/ui";
+import { useFormFields } from "@payloadcms/ui";
 import React, { useState } from "react";
 import { SHIPPING_KINDS } from "../../lib/crm/options";
+import { useFormUpdater } from "./useFormUpdater";
 
 /* 运费行上方的名称选择：快递 / 空运 / 海运 / 其他费用。
    选了就把发票上要印的英文写进同一行的 label；「其他费用」清空 label 让人自己写。
@@ -25,7 +26,7 @@ const hintStyle: React.CSSProperties = {
 };
 
 export const ShippingPicker: React.FC<{ path?: string }> = ({ path }) => {
-  const { dispatchFields } = useForm();
+  const update = useFormUpdater();
   const base = path ? path.replace(/\.shippingPicker$/, "") : "";
 
   const label = useFormFields(([fields]) => {
@@ -45,7 +46,7 @@ export const ShippingPicker: React.FC<{ path?: string }> = ({ path }) => {
     if (!kind) return;
     setPicked(next);
     /* 其他费用：名称清空，提示直接写中文/英文都行 */
-    dispatchFields({ type: "UPDATE", path: `${base}.label`, value: kind.text });
+    update(`${base}.label`, kind.text);
   };
 
   return (

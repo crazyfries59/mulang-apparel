@@ -1,8 +1,9 @@
 "use client";
 
-import { useForm, useFormFields } from "@payloadcms/ui";
+import { useFormFields } from "@payloadcms/ui";
 import React, { useEffect, useMemo, useState } from "react";
 import { CRAFT_GROUPS, CRAFT_POSITIONS, craftLine } from "../../lib/crm/crafts";
+import { useFormUpdater } from "./useFormUpdater";
 
 /* 商品行顶部的小工具：
    1) 从产品库选款 → 自动填款号、面料、主图（填过的格子不会被覆盖）
@@ -125,7 +126,7 @@ const chipButtonStyle: React.CSSProperties = {
 };
 
 export const ItemPicker: React.FC<{ path?: string }> = ({ path }) => {
-  const { dispatchFields } = useForm();
+  const update = useFormUpdater();
   const fields = useFormFields(([all]) => all);
 
   const base = useMemo(() => (path ? path.replace(/\.itemPicker$/, "") : ""), [path]);
@@ -161,17 +162,17 @@ export const ItemPicker: React.FC<{ path?: string }> = ({ path }) => {
     const filled: string[] = [];
     const code = product.productCode?.trim() ?? "";
     if (code) {
-      dispatchFields({ type: "UPDATE", path: `${base}.product`, value: code });
+      update(`${base}.product`, code);
       filled.push("款号");
     }
     const fabric = fabricText(product);
     if (fabric) {
-      dispatchFields({ type: "UPDATE", path: `${base}.fabric`, value: fabric });
+      update(`${base}.fabric`, fabric);
       filled.push("面料");
     }
     const cover = product.coverImage?.trim() ?? "";
     if (cover) {
-      dispatchFields({ type: "UPDATE", path: `${base}.image`, value: cover });
+      update(`${base}.image`, cover);
       filled.push("主图");
     }
     setFlash(filled.length ? `已带出：${filled.join("、")}` : "这条产品没有款号/面料/主图，请手填");
@@ -192,7 +193,7 @@ export const ItemPicker: React.FC<{ path?: string }> = ({ path }) => {
       setFlash("这条工艺已经在描述里了");
       return;
     }
-    dispatchFields({ type: "UPDATE", path: `${base}.description`, value: current ? `${current}\n${line}` : line });
+    update(`${base}.description`, current ? `${current}\n${line}` : line);
     setFlash(`已加入：${line}（可以继续加别的部位）`);
   };
 
@@ -202,12 +203,12 @@ export const ItemPicker: React.FC<{ path?: string }> = ({ path }) => {
       .filter((row) => row.trim() !== line)
       .join("\n")
       .trim();
-    dispatchFields({ type: "UPDATE", path: `${base}.description`, value: rest });
+    update(`${base}.description`, rest);
     setFlash(`已删除：${line}`);
   };
 
   const clearCraft = () => {
-    dispatchFields({ type: "UPDATE", path: `${base}.description`, value: "" });
+    update(`${base}.description`, "");
     setFlash("描述已清空");
   };
 
