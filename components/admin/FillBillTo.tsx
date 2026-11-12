@@ -1,8 +1,9 @@
 "use client";
 
-import { useForm, useFormFields } from "@payloadcms/ui";
+import { useFormFields } from "@payloadcms/ui";
 import React, { useEffect, useRef } from "react";
 import { toEnglishCountry } from "../../lib/crm/country";
+import { useFormUpdater } from "./useFormUpdater";
 
 /* 选中客户 → 立刻把抬头填进表单，不用等保存。
    规则与后端快照一致：只覆盖"空字段"或"上一秒还是自动填的那个值"，
@@ -40,7 +41,7 @@ const idOf = (value: unknown): string | null => {
 };
 
 export const FillBillTo: React.FC = () => {
-  const { dispatchFields } = useForm();
+  const update = useFormUpdater();
   const fields = useFormFields(([all]) => all);
   const customerValue = fields?.customer?.value;
 
@@ -81,7 +82,7 @@ export const FillBillTo: React.FC = () => {
             if (next) autoFilled.current[path] = next;
             continue;
           }
-          dispatchFields({ type: "UPDATE", path, value: next });
+          update(path, next);
           autoFilled.current[path] = next;
         }
       } catch {
@@ -92,7 +93,7 @@ export const FillBillTo: React.FC = () => {
     return () => {
       cancelled = true;
     };
-  }, [customerId, dispatchFields]);
+  }, [customerId, update]);
 
   return null;
 };

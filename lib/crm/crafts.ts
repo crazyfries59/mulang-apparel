@@ -57,4 +57,11 @@ export const CRAFT_GROUPS = [
 ] as const;
 
 /** 一条工艺在发票上印成什么样。 */
-export const craftLine = (position: string, process: string): string => `${position}: ${process}`;
+export const craftLine = (position: string, process: string): string => {
+  /* 没选部位（或部位被清空）时不要生成 ": DTF Printing" 这种前导冒号 */
+  const where = position.trim();
+  const what = process.trim();
+  if (!where) return what;
+  if (!what) return where;
+  return `${where}: ${what}`;
+};
