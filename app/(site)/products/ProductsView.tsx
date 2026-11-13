@@ -40,13 +40,23 @@ export default function ProductsView({ products }: { products: Product[] }) {
     if (value.trim()) params.set("q", value.trim());
     else params.delete("q");
     const qs = params.toString();
-    window.history.replaceState(null, "", qs ? `${window.location.pathname}?${qs}` : window.location.pathname);
+    const nextUrl = qs ? `${window.location.pathname}?${qs}` : window.location.pathname;
+    if (nextUrl === `${window.location.pathname}${window.location.search}`) return;
+    // history.state carries the router payload: overwriting it with null breaks back/forward.
+    window.history.replaceState(window.history.state, "", nextUrl);
   };
 
   /* A real navigation (navbar search, back button, external link) carries a new q. */
   useEffect(() => {
     setSearch((current) => (current.trim() === urlQuery.trim() ? current : urlQuery));
   }, [urlQuery]);
+
+  /* Coming back from a product page the router may not report the q we mirrored
+     into history, so trust the address bar once on mount. */
+  useEffect(() => {
+    const fromLocation = new URLSearchParams(window.location.search).get("q") ?? "";
+    setSearch((current) => (current.trim() === fromLocation.trim() ? current : fromLocation));
+  }, []);
 
   /* Picking a category is a fresh browse, not a filter inside the last search.
      Without this the old keyword kept filtering the new category (component stays
