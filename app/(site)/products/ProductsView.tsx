@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import AnimatedSection from "@/components/AnimatedSection";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { Search, ArrowRight } from "lucide-react";
+import { Search, ArrowRight, X } from "lucide-react";
 import { CATEGORIES, type Product } from "./data";
 import { CATEGORY_LANDING_LIST } from "@/lib/seo/category-landing";
 
@@ -14,6 +14,16 @@ const badgeColor = (b: string) =>
   b === "Best Seller" ? "bg-red-500" : b === "New" ? "bg-violet-500" : "bg-emerald-500";
 
 const catHref = (slug: string) => (slug === "all" ? "/products" : `/products?cat=${slug}`);
+
+/* Style numbers are displayed as "#K1160" but buyers type "k1160", "1160" or "K-1160",
+   so compare on letters + digits only. */
+const normalize = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, "");
+
+const matchesQuery = (product: Product, q: string, nq: string) => {
+  const fields = [product.id, product.name, product.cat, product.sub, product.fabric, product.slug];
+  if (fields.some(f => f.toLowerCase().includes(q))) return true;
+  return nq !== "" && fields.some(f => normalize(f).includes(nq));
+};
 
 export default function ProductsView({ products }: { products: Product[] }) {
   const searchParams = useSearchParams();
@@ -36,8 +46,10 @@ export default function ProductsView({ products }: { products: Product[] }) {
       ? products
       : products.filter(p => p.cat === activeCat || p.sub === activeCat);
     const q = search.trim().toLowerCase();
-    if (q) list = list.filter(p =>
-      p.name.toLowerCase().includes(q) || p.cat.toLowerCase().includes(q) || p.fabric.toLowerCase().includes(q));
+    if (q) {
+      const nq = normalize(q);
+      list = list.filter(p => matchesQuery(p, q, nq));
+    }
     return list;
   }, [activeCat, products, search]);
 
@@ -133,10 +145,19 @@ export default function ProductsView({ products }: { products: Product[] }) {
               <div className="relative">
                 <Search size={13} className="absolute left-3 top-1/2 -translate-y-1/2 text-white/30" />
                 <input
-                  type="text" placeholder="Search products..."
+                  type="text" placeholder="Style no. or name..."
+                  aria-label="Search products by style number or name"
                   value={search} onChange={e => setSearch(e.target.value)}
-                  className="bg-white/5 border border-white/10 rounded-full pl-9 pr-4 py-2 text-xs text-white placeholder:text-white/25 focus:outline-none focus:border-violet-500/50 w-40 sm:w-56 transition-all"
+                  className="bg-white/5 border border-white/10 rounded-full pl-9 pr-8 py-2 text-xs text-white placeholder:text-white/25 focus:outline-none focus:border-violet-500/50 w-52 sm:w-64 transition-all"
                 />
+                {search && (
+                  <button
+                    type="button" onClick={() => setSearch("")} aria-label="Clear search"
+                    className="absolute right-2.5 top-1/2 -translate-y-1/2 text-white/30 hover:text-white transition-colors"
+                  >
+                    <X size={13} />
+                  </button>
+                )}
               </div>
             </div>
 
