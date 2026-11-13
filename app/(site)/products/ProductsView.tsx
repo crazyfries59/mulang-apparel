@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useEffect, useRef, useState, useMemo } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -28,7 +28,46 @@ const matchesQuery = (product: Product, q: string, nq: string) => {
 export default function ProductsView({ products }: { products: Product[] }) {
   const searchParams = useSearchParams();
   const activeCat = searchParams.get("cat") ?? "all";
-  const [search, setSearch] = useState(searchParams.get("q") ?? "");
+  const urlQuery = searchParams.get("q") ?? "";
+  const [search, setSearch] = useState(urlQuery);
+
+  /* Keep the keyword in the URL so a refresh, a share or a "back" from a product
+     page keeps the result the visitor was looking at. window.history is used on
+     purpose: this must not kick off a router navigation per keystroke. */
+  const syncQueryInUrl = (value: string) => {
+    if (typeof window === "undefined") return;
+    const params = new URLSearchParams(window.location.search);
+    if (value.trim()) params.set("q", value.trim());
+    else params.delete("q");
+    const qs = params.toString();
+    window.history.replaceState(null, "", qs ? `${window.location.pathname}?${qs}` : window.location.pathname);
+  };
+
+  /* A real navigation (navbar search, back button, external link) carries a new q. */
+  useEffect(() => {
+    setSearch((current) => (current.trim() === urlQuery.trim() ? current : urlQuery));
+  }, [urlQuery]);
+
+  /* Picking a category is a fresh browse, not a filter inside the last search.
+     Without this the old keyword kept filtering the new category (component stays
+     mounted on client navigation), and the list looked frozen until a reload. */
+  const previousCat = useRef(activeCat);
+  useEffect(() => {
+    if (previousCat.current === activeCat) return;
+    previousCat.current = activeCat;
+    // A navbar search lands here with a new keyword and no category: keep it.
+    if (urlQuery.trim()) {
+      setSearch(urlQuery);
+      return;
+    }
+    setSearch("");
+    syncQueryInUrl("");
+  }, [activeCat, urlQuery]);
+
+  const handleSearchChange = (value: string) => {
+    setSearch(value);
+    syncQueryInUrl(value);
+  };
 
   const counts = useMemo(() => {
     const map: Record<string, number> = {};
@@ -147,12 +186,12 @@ export default function ProductsView({ products }: { products: Product[] }) {
                 <input
                   type="text" placeholder="Style no. or name..."
                   aria-label="Search products by style number or name"
-                  value={search} onChange={e => setSearch(e.target.value)}
+                  value={search} onChange={e => handleSearchChange(e.target.value)}
                   className="bg-white/5 border border-white/10 rounded-full pl-9 pr-8 py-2 text-xs text-white placeholder:text-white/25 focus:outline-none focus:border-violet-500/50 w-52 sm:w-64 transition-all"
                 />
                 {search && (
                   <button
-                    type="button" onClick={() => setSearch("")} aria-label="Clear search"
+                    type="button" onClick={() => handleSearchChange("")} aria-label="Clear search"
                     className="absolute right-2.5 top-1/2 -translate-y-1/2 text-white/30 hover:text-white transition-colors"
                   >
                     <X size={13} />
@@ -213,7 +252,7 @@ export default function ProductsView({ products }: { products: Product[] }) {
               <div className="text-center py-24">
                 <p className="text-white/25 text-sm">
                   No products found.{" "}
-                  <Link href="/products" onClick={() => setSearch("")} className="text-violet-400 hover:text-violet-300">
+                  <Link href="/products" onClick={() => handleSearchChange("")} className="text-violet-400 hover:text-violet-300">
                     Clear filters
                   </Link>
                 </p>
