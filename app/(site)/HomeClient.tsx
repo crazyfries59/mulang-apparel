@@ -193,7 +193,7 @@ export default function HomeClient({ categories }: { categories: Category[] }) {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {SPECIALTIES.map(({ href, title, desc }, i) => (
-              <AnimatedSection key={href} delay={i * 0.07}>
+              <AnimatedSection key={href} delay={i * 0.07} className="h-full">
                 <Link href={href} className="glass-card p-7 h-full flex flex-col group">
                   <h3 className="font-syne font-bold text-lg text-white mb-3 group-hover:text-violet-300 transition-colors">
                     {title}
