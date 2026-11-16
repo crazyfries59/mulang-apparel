@@ -70,7 +70,7 @@ export default function TechnologyPage() {
             transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
             className="font-syne font-black text-white leading-[0.92] tracking-tight"
             style={{ fontSize: "clamp(2.5rem,6vw,6rem)" }}>
-            Decoration<br /><span className="gradient-text">Techniques</span>
+            Decoration{" "}<br /><span className="gradient-text">Techniques</span>
           </motion.h1>
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.9 }}
             className="text-white/50 text-sm mt-4 max-w-md">
@@ -127,6 +127,13 @@ export default function TechnologyPage() {
               <Link href="/contact" className="btn-gradient">Get A Technique Recommendation <ArrowRight size={13} /></Link>
               <a href="https://wa.me/8615986213212" target="_blank" rel="noopener noreferrer" className="btn-ghost">WhatsApp Us</a>
             </div>
+            <p className="text-white/25 text-xs mt-8 leading-relaxed">
+              Applied across our{" "}
+              <Link href="/t-shirt-manufacturer" className="text-white/45 hover:text-violet-300 underline underline-offset-2">custom T-shirt production</Link>,{" "}
+              <Link href="/custom-hoodie-manufacturer" className="text-white/45 hover:text-violet-300 underline underline-offset-2">hoodie manufacturing</Link>{" "}
+              and{" "}
+              <Link href="/custom-streetwear-manufacturer" className="text-white/45 hover:text-violet-300 underline underline-offset-2">streetwear programs</Link>.
+            </p>
           </AnimatedSection>
         </div>
       </section>
