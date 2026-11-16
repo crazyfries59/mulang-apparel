@@ -2,7 +2,6 @@ import type { MetadataRoute } from "next";
 import { POSTS, postDateIso } from "./blog/posts";
 import { SITE_URL } from "@/lib/site";
 import { getCmsPosts } from "@/lib/content";
-import { getPublicProducts } from "@/lib/content/products";
 
 const STATIC_ROUTES = [
   { path: "", priority: 1, changeFrequency: "weekly" as const },
@@ -29,12 +28,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority,
   }));
 
-  const products = await getPublicProducts();
-  const productEntries: MetadataRoute.Sitemap = products.map((p) => ({
-    url: `${SITE_URL}/products/${p.slug}`,
-    changeFrequency: "monthly",
-    priority: 0.5,
-  }));
+  /* The 241 product pages are deliberately NOT listed here. They are template
+     pages (~400 words, same layout, differing only in SKU, photo and GSM), and
+     submitting all of them made Google mark 240 of 266 URLs as "Discovered -
+     currently not indexed": the crawl budget went to near-duplicates instead of
+     the pages that can rank. They stay crawlable and indexable through
+     /products, the category landings and the related-styles block, they are just
+     no longer queued ahead of the money pages. Re-add selected styles once the
+     domain has authority and the pages carry unique copy. */
 
   const cmsPosts = await getCmsPosts();
   const publishedPosts = [
@@ -49,5 +50,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
-  return [...staticEntries, ...productEntries, ...blogEntries];
+  return [...staticEntries, ...blogEntries];
 }

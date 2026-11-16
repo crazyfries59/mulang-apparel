@@ -12,6 +12,7 @@ const LINKS = {
   Products: [
     { label: "T-Shirt Manufacturing",  href: "/t-shirt-manufacturer" },
     { label: "Hoodie Manufacturing",   href: "/custom-hoodie-manufacturer" },
+    { label: "Streetwear Manufacturing", href: "/custom-streetwear-manufacturer" },
     { label: "All Styles",             href: "/products" },
     { label: "Tracksuits & Sets",     href: "/products" },
     { label: "Jackets & Outerwear",   href: "/products" },

@@ -47,6 +47,28 @@ const FAQS = [
    at the pages that carry the buying copy and pass equity on to the individual styles. */
 const categoryLandingPath = (slug: string) => landingForCategory(slug)?.path ?? `/products?cat=${slug}`;
 
+/* The three landing pages we actually want ranked. They are linked from here, from
+   the footer and from the blog, which is what gets them crawled ahead of the 241
+   template product pages. Figures are taken from the live catalogue (106 tee styles
+   135–310 GSM, 43 hoodie styles 320–543 GSM). */
+const SPECIALTIES = [
+  {
+    href: "/t-shirt-manufacturer",
+    title: "Custom T-Shirt Manufacturing",
+    desc: "106 styles from 135 to 310 GSM, in oversized, boxy and vintage-wash fits. Screen print, puff print, embroidery and garment dye run on the same line.",
+  },
+  {
+    href: "/custom-hoodie-manufacturer",
+    title: "Custom Hoodie Manufacturing",
+    desc: "43 styles from 320 to 543 GSM brushed fleece, with dropped shoulders and heavyweight fits. Ribbing, drawcords and patch embroidery made to your sample.",
+  },
+  {
+    href: "/custom-streetwear-manufacturer",
+    title: "Custom Streetwear Manufacturing",
+    desc: "Full cut & sew from your tech pack: tees, hoodies, tracksuits, cargo and denim, with wash, print and embroidery handled under one roof in Guangzhou.",
+  },
+];
+
 /* ─── PAGE ─── */
 
 export default function HomeClient({ categories }: { categories: Category[] }) {
@@ -147,6 +169,40 @@ export default function HomeClient({ categories }: { categories: Category[] }) {
                   <h3 className="font-syne font-bold text-lg text-white mb-2.5">{title}</h3>
                   <p className="text-white/55 text-sm leading-relaxed">{desc}</p>
                 </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════
+          §3b  THE THREE LINES WE SPECIALISE IN
+      ══════════════════════════════════════ */}
+      <section className="section-sm border-t border-white/5">
+        <div className="container">
+          <AnimatedSection className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div>
+              <p className="label mb-4">What We Specialise In</p>
+              <h2 className="heading-xl">Tees, Hoodies,<br />Streetwear.</h2>
+            </div>
+            <p className="text-white/40 text-sm leading-relaxed max-w-xs">
+              One factory, three lines. Each one has its own team, its own machines and its own
+              page — so you can go straight to the process you need.
+            </p>
+          </AnimatedSection>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {SPECIALTIES.map(({ href, title, desc }, i) => (
+              <AnimatedSection key={href} delay={i * 0.07}>
+                <Link href={href} className="glass-card p-7 h-full flex flex-col group">
+                  <h3 className="font-syne font-bold text-lg text-white mb-3 group-hover:text-violet-300 transition-colors">
+                    {title}
+                  </h3>
+                  <p className="text-white/55 text-sm leading-relaxed flex-1">{desc}</p>
+                  <span className="mt-6 inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.15em] text-violet-400">
+                    Explore {title.replace("Custom ", "").replace(" Manufacturing", "")} <ArrowRight size={12} />
+                  </span>
+                </Link>
               </AnimatedSection>
             ))}
           </div>
