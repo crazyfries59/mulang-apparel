@@ -198,7 +198,7 @@ export default function ServicesPage() {
             <p className="text-white/40 text-sm mb-8">Tell us about your project and we&apos;ll put together a detailed plan and quote.</p>
             <div className="flex gap-3 justify-center">
               <Link href="/contact" className="btn-gradient">Get A Free Quote <ArrowRight size={13} /></Link>
-              <a href="https://wa.me/8615986213212" target="_blank" rel="noopener noreferrer" className="btn-ghost">WhatsApp Us</a>
+              <a href="https://wa.me/8615382890150" target="_blank" rel="noopener noreferrer" className="btn-ghost">WhatsApp Us</a>
             </div>
           </AnimatedSection>
         </div>

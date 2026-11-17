@@ -125,7 +125,7 @@ export default function TechnologyPage() {
             <p className="text-white/40 text-sm mb-8">Send us your design and we&apos;ll recommend the right technique, then quote a sample.</p>
             <div className="flex gap-3 justify-center">
               <Link href="/contact" className="btn-gradient">Get A Technique Recommendation <ArrowRight size={13} /></Link>
-              <a href="https://wa.me/8615986213212" target="_blank" rel="noopener noreferrer" className="btn-ghost">WhatsApp Us</a>
+              <a href="https://wa.me/8615382890150" target="_blank" rel="noopener noreferrer" className="btn-ghost">WhatsApp Us</a>
             </div>
             <p className="text-white/25 text-xs mt-8 leading-relaxed">
               Applied across our{" "}

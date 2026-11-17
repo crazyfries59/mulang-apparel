@@ -87,7 +87,7 @@ export default function AboutPage() {
             <p className="text-white/40 text-sm mb-8">Send us your design, tech pack or reference images and we&apos;ll recommend the right route.</p>
             <div className="flex gap-3 justify-center">
               <Link href="/contact" className="btn-gradient">Get A Quote <ArrowRight size={13} /></Link>
-              <a href="https://wa.me/8615986213212" target="_blank" rel="noopener noreferrer" className="btn-ghost">WhatsApp Us</a>
+              <a href="https://wa.me/8615382890150" target="_blank" rel="noopener noreferrer" className="btn-ghost">WhatsApp Us</a>
             </div>
           </AnimatedSection>
         </div>

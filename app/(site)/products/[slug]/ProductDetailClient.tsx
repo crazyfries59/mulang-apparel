@@ -217,7 +217,7 @@ export default function ProductDetailPage({ product: p, relatedProducts }: {
                 <Link href={`/contact?product=${encodeURIComponent(p.slug)}`} className="flex-1 flex items-center justify-center gap-2 py-3.5 bg-white/8 border border-white/12 text-white text-[0.67rem] font-bold tracking-wider uppercase rounded-full hover:bg-white/14 transition-colors">
                 <FileText size={14} /> Request Sample
               </Link>
-              <a href={`https://wa.me/8615986213212?text=${encodeURIComponent(`Hi! I'm interested in ${p.name} (${p.id}). Can you send more details?`)}`}
+              <a href={`https://wa.me/8615382890150?text=${encodeURIComponent(`Hi! I'm interested in ${p.name} (${p.id}). Can you send more details?`)}`}
                 target="_blank" rel="noopener noreferrer"
                 className="flex-1 flex items-center justify-center gap-2 py-3.5 bg-[#25D366] text-white text-[0.67rem] font-bold tracking-wider uppercase rounded-full hover:opacity-90 transition-opacity">
                 <MessageCircle size={14} /> WhatsApp

@@ -76,7 +76,7 @@ export default function ContactPage({ initialProduct }: {
               {/* Contact cards */}
               <div className="space-y-4">
                 {[
-                  { icon: MessageCircle, label: "WhatsApp", val: "+86 159 8621 3212", href: "https://wa.me/8615986213212", accent: "#25D366" },
+                  { icon: MessageCircle, label: "WhatsApp", val: "+86 153 8289 0150", href: "https://wa.me/8615382890150", accent: "#25D366" },
                   { icon: Mail,          label: "Email",    val: "max@mulangapparel.com",  href: "mailto:max@mulangapparel.com",  accent: "#8b5cf6" },
                   { icon: MapPin,        label: "Factory",  val: "Guangzhou, Guangdong, China", href: "#", accent: "#ec4899" },
                 ].map(({ icon: Icon, label, val, href, accent }) => (
@@ -103,7 +103,7 @@ export default function ContactPage({ initialProduct }: {
                 </div>
                 <div className="bg-[#111] p-5">
                   <a
-                    href="https://wa.me/8615986213212?text=Hi%20Mulang%20Apparel!%20I'm%20interested%20in%20custom%20clothing%20manufacturing."
+                    href="https://wa.me/8615382890150?text=Hi%20Mulang%20Apparel!%20I'm%20interested%20in%20custom%20clothing%20manufacturing."
                     target="_blank" rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2 w-full py-3 bg-[#25D366] text-white text-xs font-bold tracking-wider uppercase rounded-full hover:opacity-90 transition-opacity"
                   >
