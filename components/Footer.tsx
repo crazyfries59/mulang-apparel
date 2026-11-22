@@ -8,6 +8,7 @@ const LINKS = {
     { label: "Manufacturing",  href: "/manufacturing" },
     { label: "Blog",           href: "/blog"          },
     { label: "Contact",        href: "/contact"       },
+    { label: "Payment Methods", href: "/payment-method" },
   ],
   Products: [
     { label: "T-Shirt Manufacturing",  href: "/t-shirt-manufacturer" },
