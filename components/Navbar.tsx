@@ -30,6 +30,7 @@ const SOLUTIONS_ITEMS = [
 
 const ABOUT_ITEMS = [
   { label: "About Us",        href: "/about" },
+  { label: "Payment Method",  href: "/payment-method" },
   { label: "Blog",            href: "/blog" },
   { label: "Contact Us",      href: "/contact" },
 ];
@@ -359,6 +360,20 @@ export default function Navbar() {
                   </Link>
                 </motion.div>
               ))}
+
+              {/* Mobile About sub-links */}
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.36 }}
+                className="mt-6">
+                <p className="label mb-3">About Us</p>
+                <div className="flex flex-wrap gap-2">
+                  {ABOUT_ITEMS.map(({ label: aLabel, href: aHref }) => (
+                    <Link key={aHref} href={aHref}
+                      className="py-2.5 px-4 border border-white/8 rounded-xl text-xs text-white/50 hover:text-white hover:border-violet-500/40 transition-all">
+                      {aLabel}
+                    </Link>
+                  ))}
+                </div>
+              </motion.div>
 
               {/* Mobile product categories */}
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}
