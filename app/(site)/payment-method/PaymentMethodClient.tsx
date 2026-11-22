@@ -14,6 +14,7 @@ type Account = {
   method: string;
   anchor: string;
   fields: Field[];
+  remarks?: string;
 };
 
 /* Account details are copied from the XTransfer "export all accounts" export.
@@ -50,6 +51,23 @@ const ACCOUNTS: Account[] = [
       { label: "Bank name", value: "Community Federal Savings Bank" },
       { label: "Bank address", value: "5 Penn Plaza, 14th Floor, New York, NY 10001" },
     ],
+  },
+  {
+    flag: "🇨🇦",
+    region: "Canada Local Bank Account",
+    bank: "Digital Commerce Bank",
+    currency: "CAD",
+    method: "EFT payment",
+    anchor: "canada",
+    fields: [
+      { label: "Account number", value: "969264597" },
+      { label: "Account name", value: "Shantou Longhu District Mulang Department Store Sole Proprietorship" },
+      { label: "Bank name", value: "Digital Commerce Bank" },
+      { label: "Bank address", value: "736 Meridian Road N.E, Calgary, Alberta, CA" },
+      { label: "Routing number", value: "035210009" },
+      { label: "Clearing system", value: "EFT" },
+    ],
+    remarks: "Please include the following contents to your receiver when making a payment: [Seller Name]; [Product]; [PI/Contract Number]",
   },
   {
     flag: "🇬🇧",
@@ -219,9 +237,10 @@ export default function PaymentMethodClient() {
                         </div>
                       ))}
                     </dl>
-                    <p className="text-white/35 text-xs mt-7 pt-5 border-t border-white/5">
-                      Payment method: {a.method}
-                    </p>
+                    <div className="mt-7 pt-5 border-t border-white/5 space-y-2">
+                      <p className="text-white/35 text-xs">Payment method: {a.method}</p>
+                      {a.remarks && <p className="text-white/35 text-xs leading-relaxed">{a.remarks}</p>}
+                    </div>
                   </div>
                 </div>
               </AnimatedSection>
