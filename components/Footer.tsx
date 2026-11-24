@@ -24,7 +24,8 @@ const LINKS = {
     { label: "ODM Development",    href: "/services" },
     { label: "Private Label",      href: "/services" },
     { label: "Custom Printing",    href: "/services" },
-    { label: "Brand Packaging",    href: "/services" },
+    { label: "Brand Packaging",    href: "/labels-tags-packaging" },
+    { label: "Global Shipping",    href: "/global-shipping" },
   ],
 };
 

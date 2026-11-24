@@ -41,6 +41,7 @@ const SERVICES = [
   },
   {
     id: "labels",
+    href: "/labels-tags-packaging",
     icon: Tag,
     title: "Labels / Tags / Packaging",
     tagline: "Brand Every Touchpoint.",
@@ -52,6 +53,7 @@ const SERVICES = [
   },
   {
     id: "shipping",
+    href: "/global-shipping",
     icon: Truck,
     title: "Global Shipping",
     tagline: "Delivered To Your Door.",
@@ -100,9 +102,9 @@ export default function ServicesPage() {
       <section className="py-20 px-6">
         <div className="container max-w-[1200px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {SERVICES.map(({ id, icon: Icon, title, tagline, img, desc, features, highlight, highlightLabel }, i) => (
+            {SERVICES.map(({ id, href, icon: Icon, title, tagline, img, desc, features, highlight, highlightLabel }, i) => (
               <AnimatedSection key={id} delay={i * 0.07}>
-                <div id={id} className="glass-card overflow-hidden flex flex-col h-full group">
+                <div id={id} className="glass-card scroll-mt-24 overflow-hidden flex flex-col h-full group">
                   {/* Card image */}
                   <div className="relative aspect-[16/9] img-zoom overflow-hidden">
                     <Image src={img} alt={title} fill className="object-cover" sizes="33vw" />
@@ -133,7 +135,7 @@ export default function ServicesPage() {
                       ))}
                     </ul>
 
-                    <Link href="/contact"
+                    <Link href={href ?? "/contact"}
                       className="flex items-center gap-2 text-violet-400 text-xs font-semibold tracking-widest uppercase hover:text-violet-300 transition-colors group/btn">
                       Learn More <ArrowRight size={12} className="group-hover/btn:translate-x-1 transition-transform" />
                     </Link>
