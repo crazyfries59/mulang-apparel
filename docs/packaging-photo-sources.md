@@ -12,4 +12,4 @@ These are reference photographs for `/labels-tags-packaging`. They illustrate th
 | `clothing-tissue-wrap.webp` | [Kampus Production, Close-up Photo of Packing Clothes](https://www.pexels.com/photo/close-up-photo-of-packing-clothes-7857492/) | Pexels |
 | `retail-apparel-packaging-box.webp` | [Ron Lach, Eco-friendly Packaging for Fashion Products](https://www.pexels.com/photo/fashion-clothing-paper-box-9594426/) | Pexels |
 
-Heat-transfer neck labels and stitched logo patches use original illustrations until suitable photos are available.
+Heat-transfer neck label and silicone patch illustrations were supplied by Max on 2026-11-25 as `mulang-collar-print.jpg` and `mulang-silicone-patch.jpg`; website versions are resized WebP files. Both are displayed as illustrations.
