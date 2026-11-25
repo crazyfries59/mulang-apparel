@@ -15,8 +15,8 @@ const SERVICE_ITEMS = [
   { label: "Clothing Prototype",        href: "/services#prototype",   desc: "Single-piece sampling" },
   { label: "Sample Development",        href: "/services#sampling",    desc: "Refine fit, fabric & details" },
   { label: "Custom Apparel Production", href: "/services#production",  desc: "OEM & ODM production" },
-  { label: "Labels / Tags / Packaging", href: "/services#labels",      desc: "Full private label service" },
-  { label: "Global Shipping",           href: "/services#shipping",    desc: "Shipping to your door" },
+  { label: "Labels / Tags / Packaging", href: "/labels-tags-packaging", desc: "Full private label service" },
+  { label: "Global Shipping",           href: "/global-shipping",       desc: "Shipping to your door" },
   { label: "Product Photography",       href: "/services#photography", desc: "Studio & lifestyle shots" },
 ];
 
@@ -62,6 +62,7 @@ export default function Navbar() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeProductCat, setProductCat] = useState("t-shirts");
   const pathname                  = usePathname();
+  const isServiceDetail           = ["/global-shipping", "/labels-tags-packaging"].includes(pathname);
   const router                    = useRouter();
   const navRef                    = useRef<HTMLElement>(null);
   const timerRef                  = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -128,13 +129,18 @@ export default function Navbar() {
           {/* ── Desktop Nav (spaced) ── */}
           <nav className="hidden lg:flex items-center gap-2">
             {NAV.map(({ href, label, dropdown }) => {
-              const isActive = pathname === href || (pathname.startsWith(href) && href !== "/");
+              const isActive = pathname === href || (pathname.startsWith(href) && href !== "/")
+                || (href === "/services" && isServiceDetail);
               return (
               <div
                 key={href}
                 className="relative"
                 onMouseEnter={() => dropdown && openDropdown(dropdown)}
                 onMouseLeave={closeDropdown}
+                onFocus={() => dropdown && openDropdown(dropdown)}
+                onBlur={(event) => {
+                  if (!event.currentTarget.contains(event.relatedTarget)) closeDropdown();
+                }}
               >
                 <Link
                   href={href}
@@ -354,12 +360,28 @@ export default function Navbar() {
                   transition={{ delay: i * 0.04 }}>
                   <Link href={href}
                     className={`block py-4 text-xl font-syne font-bold border-b border-white/5 transition-colors hover:text-violet-400 ${
-                      pathname === href ? "text-violet-400" : "text-white"
+                      pathname === href || (href === "/services" && isServiceDetail) ? "text-violet-400" : "text-white"
                     }`}>
                     {label}
                   </Link>
                 </motion.div>
               ))}
+
+              {/* Mobile Service sub-links */}
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.32 }}
+                className="mt-6">
+                <p className="label mb-3">Service</p>
+                <div className="flex flex-wrap gap-2">
+                  {SERVICE_ITEMS.map(({ label: sLabel, href: sHref }) => (
+                    <Link key={sHref} href={sHref} onClick={() => setMobile(false)}
+                      className={`py-2.5 px-4 border rounded-xl text-sm transition-all hover:text-white hover:border-violet-500/40 ${
+                        pathname === sHref ? "border-violet-500/40 text-violet-300" : "border-white/8 text-white/60"
+                      }`}>
+                      {sLabel}
+                    </Link>
+                  ))}
+                </div>
+              </motion.div>
 
               {/* Mobile About sub-links */}
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.36 }}
