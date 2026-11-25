@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Check, FileText, Palette, PackageCheck, Scissors, Tag, Package } from "lucide-react";
+import { Check, FileText, Palette, PackageCheck, Scissors, Tag, Package, type LucideIcon } from "lucide-react";
+import type { ComponentProps } from "react";
 import { ServiceHero, ServiceCTA, ServiceFAQ, ServiceStructuredData } from "@/components/services/ServicePage";
 import { PackagingHeroPhoto, PackagingVisual } from "./BrandArtwork";
 
@@ -21,16 +22,60 @@ export const metadata: Metadata = {
   twitter: { title: `${TITLE} | Mulang Apparel`, description: DESCRIPTION, images: [SHARE_IMAGE] },
 };
 
-const GROUPS = [
+type PackagingItem = {
+  id: string;
+  kind: ComponentProps<typeof PackagingVisual>["kind"];
+  title: string;
+  description: string;
+  details: string[];
+  ordering?: { label: string; value: string }[];
+};
+
+const GROUPS: {
+  id: string;
+  name: string;
+  icon: LucideIcon;
+  heading: string;
+  intro: string;
+  items: PackagingItem[];
+}[] = [
   {
     id: "labels-and-tags", name: "Labels & Tags", icon: Tag,
     heading: "Custom Garment Labels & Hang Tags",
     intro: "Choose the neck labels, wash care labels and hang tags you want on your collection. Share your artwork, preferred placement and garment details so each trim fits the piece.",
     items: [
-      { id: "woven-labels", kind: "woven" as const, title: "Woven Brand Labels", description: "A woven label brings your brand name into the garment itself. Consider how the design reads at its finished size and how the label sits against the fabric.", details: ["Logo, lettering and colors", "Finished dimensions and fold", "Neck, seam or hem placement"] },
-      { id: "printed-labels", kind: "printed" as const, title: "Printed & Heat-Transfer Labels", description: "Printed labels and neck transfers offer another way to carry your branding. The garment fabric, artwork and placement help determine a suitable application.", details: ["Print-ready logo and colors", "Label or direct neck transfer", "Position and finished print size"] },
-      { id: "care-and-size", kind: "care" as const, title: "Care & Size Labels", description: "Keep size, fabric composition and care information clear. Supply the wording and language required for your market, together with the details of the garment.", details: ["Size range and label position", "Confirmed composition and care text", "Destination-market requirements"] },
-      { id: "hang-tags", kind: "tag" as const, title: "Custom Hang Tags", description: "Introduce your collection before the garment is worn. Coordinate the hang tag with your labels, packaging and brand artwork for a considered first impression.", details: ["Shape, dimensions and artwork", "Front and back information", "Attachment and placement"] },
+      {
+        id: "woven-labels",
+        kind: "woven",
+        title: "Main Brand Labels",
+        description: "A woven main label brings your brand name into the garment itself. Consider how the design reads at its finished size and how the label sits against the fabric.",
+        details: ["Logo, lettering and colors", "Finished dimensions and fold", "Neck, seam or hem placement"],
+        ordering: [
+          { label: "Minimum order for custom main labels", value: "1,000 pieces" },
+          { label: "Black and white", value: "USD 0.10 each" },
+          { label: "Color", value: "USD 0.15 each" },
+        ],
+      },
+      { id: "printed-labels", kind: "printed", title: "Printed & Heat-Transfer Labels", description: "Printed labels and neck transfers offer another way to carry your branding. The garment fabric, artwork and placement help determine a suitable application.", details: ["Print-ready logo and colors", "Label or direct neck transfer", "Position and finished print size"] },
+      {
+        id: "care-and-size",
+        kind: "care",
+        title: "Care & Size Labels",
+        description: "Keep size, fabric composition and care information clear. Supply the wording and language required for your market, together with the details of the garment.",
+        details: ["Size range and label position", "Confirmed composition and care text", "Destination-market requirements"],
+        ordering: [
+          { label: "Paper care labels", value: "Included at no extra charge" },
+          { label: "Care labels in other materials", value: "USD 30 for 300 pieces" },
+        ],
+      },
+      {
+        id: "hang-tags",
+        kind: "tag",
+        title: "Custom Hang Tags",
+        description: "Introduce your collection before the garment is worn. Coordinate the hang tag with your labels, packaging and brand artwork for a considered first impression.",
+        details: ["Shape, dimensions and artwork", "Front and back information", "Attachment and placement"],
+        ordering: [{ label: "Custom hang tags", value: "USD 100 for 1,000 pieces" }],
+      },
     ],
   },
   {
@@ -38,7 +83,7 @@ const GROUPS = [
     heading: "A Signature in the Details.",
     intro: "Carry the identity beyond the neck label. Tell us how you want the logo to look and feel, and where it belongs on your garment.",
     items: [
-      { id: "logo-patches", kind: "patch" as const, title: "Logo Patches & Brand Trims", description: "Explore embroidered, silicone or woven branding for a visible finishing detail. Share a reference and the garment construction to discuss the right approach for your design.", details: ["Artwork and intended finish", "Patch dimensions and colors", "Placement and attachment details"] },
+      { id: "logo-patches", kind: "patch", title: "Logo Patches & Brand Trims", description: "Explore embroidered, silicone or woven branding for a visible finishing detail. Share a reference and the garment construction to discuss the right approach for your design.", details: ["Artwork and intended finish", "Patch dimensions and colors", "Placement and attachment details"] },
     ],
   },
   {
@@ -46,9 +91,16 @@ const GROUPS = [
     heading: "Branded Packaging for Clothing Orders",
     intro: "Choose branded garment bags, tissue paper or retail boxes alongside your apparel order. Confirm the folded garment size and packing instructions early so the packaging fits your collection.",
     items: [
-      { id: "garment-bags", kind: "bag" as const, title: "Branded Garment Bags", description: "Individual garment bags can keep your collection organized and carry your brand identity. Plan the bag around the folded product and the information you need to display.", details: ["Bag dimensions and closure", "Logo layout and print colors", "Size or product identification"] },
-      { id: "tissue-paper", kind: "tissue" as const, title: "Tissue Paper & Wrapping", description: "Use tissue as a finishing layer around your garments. Coordinate the color and artwork with the rest of your packaging, and explain how you want each piece wrapped.", details: ["Plain or branded artwork", "Sheet size and color direction", "Wrapping and packing reference"] },
-      { id: "retail-boxes", kind: "box" as const, title: "Retail & Gift Boxes", description: "A branded box brings the garment and its presentation together. Share the folded product dimensions, contents and intended use so the packaging can be discussed as part of your order.", details: ["Box dimensions and structure", "Exterior and interior artwork", "Contents and packing arrangement"] },
+      {
+        id: "garment-bags",
+        kind: "bag",
+        title: "Branded Garment Bags",
+        description: "Individual garment bags can keep your collection organized and carry your brand identity. Plan the bag around the folded product and the information you need to display.",
+        details: ["Bag dimensions and closure", "Logo layout and print colors", "Size or product identification"],
+        ordering: [{ label: "Custom polybags", value: "USD 150 for 1,000 pieces" }],
+      },
+      { id: "tissue-paper", kind: "tissue", title: "Tissue Paper & Wrapping", description: "Use tissue as a finishing layer around your garments. Coordinate the color and artwork with the rest of your packaging, and explain how you want each piece wrapped.", details: ["Plain or branded artwork", "Sheet size and color direction", "Wrapping and packing reference"] },
+      { id: "retail-boxes", kind: "box", title: "Retail & Gift Boxes", description: "A branded box brings the garment and its presentation together. Share the folded product dimensions, contents and intended use so the packaging can be discussed as part of your order.", details: ["Box dimensions and structure", "Exterior and interior artwork", "Contents and packing arrangement"] },
     ],
   },
 ];
@@ -63,8 +115,11 @@ const PROCESS = [
 const FAQ = [
   { question: "Can I add custom labels and hang tags to my clothing order?", answer: "Yes. Mulang Apparel offers woven and printed neck labels, neck transfers, hang tags and branded packaging for private label clothing orders. Share your garment styles, logo and preferred placements so we can discuss what fits your collection." },
   { question: "What should I send for a custom labels and packaging quote?", answer: "Send your garment styles and quantities, logo or artwork, trim dimensions, colors and reference images. A vector file is helpful if available. For care labels, include the confirmed garment composition and the wording or language you require." },
-  { question: "Do labels and packaging use the same MOQ as the garments?", answer: "Trim and packaging quantities depend on the item, material, artwork and supplier requirements. Confirm these separately in your quote; the garment MOQ does not automatically apply to every custom label or packaging item." },
+  { question: "Do labels and packaging use the same MOQ as the garments?", answer: "Custom main labels have their own minimum order quantity of 1,000 pieces. Confirm quantities for other trims and packaging separately in your garment quote." },
   { question: "Can I review the design before production?", answer: "Discuss the review needed for your order: artwork layout, a physical trim sample or a garment sample with the branding applied. The sampling arrangements, cost and timing should be confirmed before you approve production." },
+  { question: "Will my sample include my custom main label?", answer: "We generally do not add custom main labels during the garment sample stage because these labels have a 1,000-piece minimum order." },
+  { question: "What if I do not request custom labels or packaging?", answer: "We use our standard specifications for any items you do not ask us to customize." },
+  { question: "What happens to unused hang tags or labels?", answer: "We keep any unused hang tags or labels for you and use them on your future orders." },
   { question: "How are labeling requirements handled for my market?", answer: "Tell us where the garments will be sold and provide the required composition, care, size and other label information. Have the wording and any mandatory requirements checked for your destination market before approving the artwork." },
 ];
 
@@ -98,11 +153,24 @@ export default function LabelsTagsPackagingPage() {
             <p className="max-w-xl text-base leading-relaxed text-zinc-400">{intro}</p>
           </div>
           <div className={`grid gap-6 ${items.length === 1 ? "" : items.length === 3 ? "lg:grid-cols-3" : "md:grid-cols-2"}`}>
-            {items.map(({ id: itemId, kind, title, description, details }) => <article key={itemId} id={itemId} className={`scroll-mt-24 overflow-hidden rounded-2xl border border-white/10 bg-[#0d0d11] ${items.length === 1 ? "grid md:grid-cols-2" : ""}`}>
+            {items.map(({ id: itemId, kind, title, description, details, ordering }) => <article key={itemId} id={itemId} className={`scroll-mt-24 overflow-hidden rounded-2xl border border-white/10 bg-[#0d0d11] ${items.length === 1 ? "grid md:grid-cols-2" : ""}`}>
               <PackagingVisual kind={kind} />
               <div className="p-6 md:p-7">
                 <h3 className="font-syne text-2xl font-bold leading-tight text-white">{title}</h3>
                 <p className="mt-4 text-base leading-relaxed text-zinc-300">{description}</p>
+                {ordering && (
+                  <div className="mt-5 rounded-xl border border-violet-400/25 bg-violet-500/5 px-4 py-3">
+                    <p className="mb-2 text-sm font-medium text-violet-300">Ordering details</p>
+                    <dl className="divide-y divide-white/10">
+                      {ordering.map(({ label, value }) => (
+                        <div key={label} className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 py-2 text-sm">
+                          <dt className="text-zinc-300">{label}</dt>
+                          <dd className="font-semibold text-white">{value}</dd>
+                        </div>
+                      ))}
+                    </dl>
+                  </div>
+                )}
                 <p className="mb-3 mt-6 text-sm font-medium text-violet-300">Details to discuss</p>
                 <ul className="space-y-2">{details.map(detail => <li key={detail} className="flex gap-2 text-base text-zinc-400"><Check size={17} aria-hidden="true" className="mt-1 shrink-0 text-violet-400" /><span>{detail}</span></li>)}</ul>
               </div>
