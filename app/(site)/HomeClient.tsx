@@ -14,9 +14,56 @@ import {
 
 /* ─── DATA ─── */
 
+const ORDER_OPTIONS = [
+  {
+    title: "1. Blank Wholesale",
+    audience: "For Wholesalers",
+    description: "Order ready-made clothing from our product collection.",
+    quantity: "50 pieces",
+    details: "Mix styles, colors and sizes.",
+    facts: [
+      { label: "Sample time", value: "3 days" },
+      { label: "Sample fee", value: "USD 20–25 per piece" },
+      { label: "Bulk price", value: "As shown on the product page. Share your address for a shipping quote." },
+    ],
+    href: "/products",
+    action: "Explore blanks",
+  },
+  {
+    title: "2. Logo Customize",
+    audience: "For Brand Starters",
+    description: "Add your logo to our blank clothing with printing, embroidery or your private label.",
+    quantity: "50 pieces",
+    details: "Mix styles, colors and sizes.",
+    facts: [
+      { label: "Sample time", value: "5–8 days, depending on the final design" },
+      { label: "Bulk order time", value: "12–18 days" },
+      { label: "Sample fee", value: "USD 50 per piece" },
+      { label: "Bulk price", value: "Choose a blank design and send your logo for a quote. Share your address for a shipping quote." },
+    ],
+    href: "/contact",
+    action: "Discuss your logo",
+  },
+  {
+    title: "3. Cut & Sew Customize",
+    audience: "For Fashion Brands",
+    description: "Create your own clothing designs from a sketch.",
+    quantity: "100 pieces",
+    details: "Per style, per color (4 sizes).",
+    facts: [
+      { label: "Sample time", value: "8–15 days after confirming all details" },
+      { label: "Sample fee", value: "USD 50 per piece, depending on the design; printing and embroidery may cost extra" },
+      { label: "Bulk order time", value: "24–30 days, depending on the design and order quantity" },
+      { label: "Bulk price", value: "Quoted after confirming the quantity, design and fabric." },
+    ],
+    href: "/contact",
+    action: "Discuss your design",
+  },
+];
+
 const FEATURES = [
   { icon: Package, n: "01", title: "Low MOQ",          desc: "50 pieces for blanks or adding your logo — mix styles, colors and sizes. Cut & sew from 100 pcs per style per color." },
-  { icon: Zap,     n: "02", title: "Fast Sampling",    desc: "Single-piece sampling. Blanks in about 5 days, logo samples in 9–15 days, cut & sew in 12–20 days." },
+  { icon: Zap,     n: "02", title: "Sampling",         desc: "Single-piece sampling: 3 days for blanks, 5–8 days for logo customization and 8–15 days for cut & sew." },
   { icon: Star,    n: "03", title: "OEM & ODM",        desc: "Whether you have a design or need one—we handle everything from concept to delivery." },
   { icon: Shield,  n: "04", title: "Premium Quality",  desc: "Pick the fabric composition and weight (GSM) that fit your design, hand-feel and price point." },
   { icon: Globe,   n: "05", title: "Strict QC",        desc: "Garments are checked against your approved sample before they are packed and shipped." },
@@ -25,7 +72,7 @@ const FEATURES = [
 
 const PROCESS = [
   { n: "01", title: "Design Consultation", desc: "Share your concept, references or tech pack. We review it and advise on fabric, trims and techniques." },
-  { n: "02", title: "Sampling",            desc: "Single-piece sampling: about 5 days for blanks, 9–15 days with your logo, 12–20 days for cut & sew." },
+  { n: "02", title: "Sampling",            desc: "Single-piece sampling: 3 days for blanks, 5–8 days with your logo and 8–15 days for cut & sew after confirming the details." },
   { n: "03", title: "Fabric Selection",    desc: "Choose composition, weight (GSM) and finish to match your design and target price." },
   { n: "04", title: "Production",          desc: "Bulk production starts once you approve the sample. Lead time is confirmed with your quote." },
   { n: "05", title: "Quality Inspection",  desc: "Garments are checked against the approved sample before packing." },
@@ -35,10 +82,10 @@ const PROCESS = [
 
 const FAQS = [
   { q: "What is the minimum order quantity (MOQ)?", a: "50 pieces for blank wholesale and for adding your logo to our ready-made blanks — styles, colors and sizes can be mixed. Full cut & sew starts at 100 pieces per style per color." },
-  { q: "How long does sampling take?", a: "Single-piece sampling is available. Blank samples take about 5 days, logo samples 9–15 days, and cut & sew samples 12–20 days." },
-  { q: "What is the cost for samples?", a: "It depends on the design, fabric and techniques. Send us your design or reference images and we will quote the sample cost." },
+  { q: "How long does sampling take?", a: "Single-piece sampling is available. Blank samples take 3 days, logo samples 5–8 days depending on the design, and cut & sew samples 8–15 days after all details are confirmed." },
+  { q: "What is the cost for samples?", a: "Blank samples are USD 20–25 per piece. Logo samples are USD 50 per piece. Cut & sew samples are USD 50 per piece depending on the design; printing and embroidery may cost extra." },
   { q: "Can you produce custom labels and packaging?", a: "Yes! We offer complete private label services including woven labels, hang tags, heat transfers, custom poly bags, boxes, and tissue paper—all with your branding." },
-  { q: "What is the lead time for bulk production?", a: "It depends on quantity, fabric and techniques. We confirm a production timeline with your quote, once the sample is approved." },
+  { q: "What is the lead time for bulk production?", a: "Logo customization takes 12–18 days. Cut & sew takes 24–30 days depending on the design and order quantity. We confirm the timeline with your quote." },
   { q: "Which countries do you ship to?", a: "We work with brands in the US, Australia, Switzerland, Canada, the UK and New Zealand, and can ship to most other countries. Shipping is quoted per order." },
 ];
 
@@ -138,6 +185,28 @@ export default function HomeClient({ categories }: { categories: Category[] }) {
           </div>
         </motion.div>
 
+      </section>
+
+      {/* Order options and minimums, immediately after the hero. */}
+      <section id="minimum-order-quantity" aria-label="Clothing order options and minimums" className="bg-[#09090c] px-4 py-6 md:px-6 md:py-8">
+        <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-5 md:grid-cols-3">
+            {ORDER_OPTIONS.map(({ title, audience, description, quantity, details, facts, href, action }) => (
+              <article key={title} className="flex h-full flex-col border border-white/10 bg-[#19161e] px-7 py-10 text-white sm:px-10 md:px-7 lg:px-12 lg:py-14">
+                <div className="text-center">
+                  <h2 className="font-sans text-2xl font-bold leading-tight lg:text-3xl">{title}</h2>
+                  <p className="mt-3 text-lg text-violet-300">{audience}</p>
+                </div>
+                <p className="mt-10 text-base leading-relaxed lg:mt-14 lg:text-lg">{description}</p>
+                <div className="mt-7 space-y-5 text-base leading-relaxed lg:text-lg">
+                  <p><strong>MOQ:</strong> {quantity}. {details}</p>
+                  {facts.map(({ label, value }) => <p key={label}><strong>{label}:</strong> {value}</p>)}
+                </div>
+                <Link href={href} className="mt-8 self-start font-semibold text-violet-300 underline underline-offset-4 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-300">
+                  {action}
+                </Link>
+              </article>
+            ))}
+        </div>
       </section>
 
       {/* ══════════════════════════════════════
