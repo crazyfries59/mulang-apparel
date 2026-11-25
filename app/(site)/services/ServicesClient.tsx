@@ -45,7 +45,7 @@ const SERVICES = [
     icon: Tag,
     title: "Custom Clothing Labels & Packaging",
     tagline: "Brand Every Touchpoint.",
-    img: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=900&q=80",
+    img: "/images/services/packaging/retail-apparel-packaging-box.webp",
     desc: "Complete private label service. Woven labels, heat transfers, hang tags, custom poly bags, tissue paper, and retail-ready boxes. Your brand, everywhere.",
     features: ["Woven & printed labels", "Custom hang tags", "Branded poly bags", "Gift boxes & tissue"],
     highlight: "Full",

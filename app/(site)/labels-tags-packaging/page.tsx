@@ -2,17 +2,23 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Check, FileText, Palette, PackageCheck, Scissors, Tag, Package } from "lucide-react";
 import { ServiceHero, ServiceCTA, ServiceFAQ, ServiceStructuredData } from "@/components/services/ServicePage";
-import { BrandArtwork, BrandHeroArtwork } from "./BrandArtwork";
+import { PackagingHeroPhoto, PackagingVisual } from "./BrandArtwork";
 
 const TITLE = "Custom Clothing Labels & Packaging";
 const DESCRIPTION = "Add woven neck labels, care labels, custom hang tags and branded packaging to your private label clothing order. Review options with Mulang Apparel.";
+const SHARE_IMAGE = {
+  url: "/images/services/packaging/retail-apparel-packaging-box.webp",
+  width: 1100,
+  height: 857,
+  alt: "Folded knitwear in a cardboard apparel packaging box",
+};
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   alternates: { canonical: "/labels-tags-packaging" },
-  openGraph: { title: `${TITLE} | Mulang Apparel`, description: DESCRIPTION, url: "/labels-tags-packaging", type: "website" },
-  twitter: { title: `${TITLE} | Mulang Apparel`, description: DESCRIPTION },
+  openGraph: { title: `${TITLE} | Mulang Apparel`, description: DESCRIPTION, url: "/labels-tags-packaging", type: "website", images: [SHARE_IMAGE] },
+  twitter: { title: `${TITLE} | Mulang Apparel`, description: DESCRIPTION, images: [SHARE_IMAGE] },
 };
 
 const GROUPS = [
@@ -67,7 +73,7 @@ export default function LabelsTagsPackagingPage() {
     <>
       <ServiceStructuredData name={TITLE} description={DESCRIPTION} path="/labels-tags-packaging" />
       <ServiceHero eyebrow="Labels, Tags & Packaging" title={<>Custom Clothing<br /><span className="gradient-text">Labels &amp; Packaging</span></>} description="Plan woven neck labels, wash care labels, custom hang tags and branded packaging as part of your private label clothing order. Confirm the details alongside your T-shirts, hoodies or streetwear collection.">
-        <BrandHeroArtwork />
+        <PackagingHeroPhoto />
       </ServiceHero>
 
       <section id="service-details" aria-labelledby="explore-branding" className="scroll-mt-24 border-b border-white/10 px-6 py-12">
@@ -93,7 +99,7 @@ export default function LabelsTagsPackagingPage() {
           </div>
           <div className={`grid gap-6 ${items.length === 1 ? "" : items.length === 3 ? "lg:grid-cols-3" : "md:grid-cols-2"}`}>
             {items.map(({ id: itemId, kind, title, description, details }) => <article key={itemId} id={itemId} className={`scroll-mt-24 overflow-hidden rounded-2xl border border-white/10 bg-[#0d0d11] ${items.length === 1 ? "grid md:grid-cols-2" : ""}`}>
-              <div className="border-b border-white/10 bg-[#17141d]"><BrandArtwork kind={kind} /></div>
+              <PackagingVisual kind={kind} />
               <div className="p-6 md:p-7">
                 <h3 className="font-syne text-2xl font-bold leading-tight text-white">{title}</h3>
                 <p className="mt-4 text-base leading-relaxed text-zinc-300">{description}</p>
@@ -102,7 +108,6 @@ export default function LabelsTagsPackagingPage() {
               </div>
             </article>)}
           </div>
-          <p className="mt-5 text-sm text-zinc-400">Illustrative mockups. Your artwork, materials and finished specifications are agreed separately.</p>
         </div>
       </section>)}
 
