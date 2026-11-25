@@ -189,11 +189,13 @@ export default function HomeClient({ categories }: { categories: Category[] }) {
 
       {/* Order options and minimums, immediately after the hero. */}
       <section id="minimum-order-quantity" aria-label="Clothing order options and minimums" className="bg-[#09090c] px-4 py-8 md:px-6 md:py-10">
-        <div className="mx-auto grid w-full max-w-[1200px] grid-cols-1 gap-5 lg:w-[84%] lg:grid-cols-3">
+        <div className="mx-auto w-full max-w-[1200px] lg:w-[84%]">
+          <div role="region" aria-label="Clothing order options" tabIndex={0} className="overflow-x-auto focus-visible:outline focus-visible:outline-2 focus-visible:outline-violet-300">
+          <div className="grid min-w-[570px] grid-cols-3 gap-3 sm:gap-5">
             {ORDER_OPTIONS.map(({ title, audience, description, quantity, details, facts, href, action }) => (
-              <article key={title} className="flex h-full flex-col border border-white/10 bg-[#19161e] px-7 py-10 text-white sm:px-10 lg:px-8 lg:py-12">
+              <article key={title} className="flex h-full flex-col border border-white/10 bg-[#19161e] px-3 py-8 text-white sm:px-5 lg:px-8 lg:py-12">
                 <div className="text-center">
-                  <h2 className="font-sans text-2xl font-bold leading-tight">{title}</h2>
+                  <h2 className="font-sans text-lg font-bold leading-tight sm:text-xl lg:text-2xl">{title}</h2>
                   <p className="mt-3 text-base text-violet-300">{audience}</p>
                 </div>
                 <p className="mt-10 text-base leading-relaxed">{description}</p>
@@ -206,6 +208,9 @@ export default function HomeClient({ categories }: { categories: Category[] }) {
                 </Link>
               </article>
             ))}
+          </div>
+          </div>
+          <p className="mt-3 text-sm text-white/60 min-[602px]:hidden">Swipe sideways to view all three options.</p>
         </div>
       </section>
 
