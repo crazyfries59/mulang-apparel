@@ -4,8 +4,8 @@ import { Check, FileText, Palette, PackageCheck, Scissors, Tag, Package } from "
 import { ServiceHero, ServiceCTA, ServiceFAQ, ServiceStructuredData } from "@/components/services/ServicePage";
 import { BrandArtwork, BrandHeroArtwork } from "./BrandArtwork";
 
-const TITLE = "Custom Clothing Labels, Tags & Packaging";
-const DESCRIPTION = "Bring your clothing brand together with woven and printed labels, hang tags, logo patches and custom packaging. Explore the details to prepare your Mulang Apparel order.";
+const TITLE = "Custom Clothing Labels & Packaging";
+const DESCRIPTION = "Add woven neck labels, care labels, custom hang tags and branded packaging to your private label clothing order. Review options with Mulang Apparel.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -18,8 +18,8 @@ export const metadata: Metadata = {
 const GROUPS = [
   {
     id: "labels-and-tags", name: "Labels & Tags", icon: Tag,
-    heading: "Make Every Garment Yours.",
-    intro: "Build a consistent identity from the inside neck to the hang tag. Share your artwork, preferred placement and garment details so the trim fits the piece.",
+    heading: "Custom Garment Labels & Hang Tags",
+    intro: "Choose the neck labels, wash care labels and hang tags you want on your collection. Share your artwork, preferred placement and garment details so each trim fits the piece.",
     items: [
       { id: "woven-labels", kind: "woven" as const, title: "Woven Brand Labels", description: "A woven label brings your brand name into the garment itself. Consider how the design reads at its finished size and how the label sits against the fabric.", details: ["Logo, lettering and colors", "Finished dimensions and fold", "Neck, seam or hem placement"] },
       { id: "printed-labels", kind: "printed" as const, title: "Printed & Heat-Transfer Labels", description: "Printed labels and neck transfers offer another way to carry your branding. The garment fabric, artwork and placement help determine a suitable application.", details: ["Print-ready logo and colors", "Label or direct neck transfer", "Position and finished print size"] },
@@ -37,8 +37,8 @@ const GROUPS = [
   },
   {
     id: "packaging", name: "Packaging", icon: Package,
-    heading: "Finish the Brand Experience.",
-    intro: "Bring the same care to the way your collection is presented. Packaging is specified alongside the garments so size, branding and packing instructions work together.",
+    heading: "Branded Packaging for Clothing Orders",
+    intro: "Choose branded garment bags, tissue paper or retail boxes alongside your apparel order. Confirm the folded garment size and packing instructions early so the packaging fits your collection.",
     items: [
       { id: "garment-bags", kind: "bag" as const, title: "Branded Garment Bags", description: "Individual garment bags can keep your collection organized and carry your brand identity. Plan the bag around the folded product and the information you need to display.", details: ["Bag dimensions and closure", "Logo layout and print colors", "Size or product identification"] },
       { id: "tissue-paper", kind: "tissue" as const, title: "Tissue Paper & Wrapping", description: "Use tissue as a finishing layer around your garments. Coordinate the color and artwork with the rest of your packaging, and explain how you want each piece wrapped.", details: ["Plain or branded artwork", "Sheet size and color direction", "Wrapping and packing reference"] },
@@ -55,8 +55,8 @@ const PROCESS = [
 ];
 
 const FAQ = [
-  { question: "Can I add my own labels to the garments?", answer: "Mulang Apparel offers private label options including woven and printed labels, neck transfers, hang tags and branded packaging. Share your garment styles, logo and preferred placements so we can discuss the options for your order." },
-  { question: "What files should I send for a quote?", answer: "Send your logo or artwork, dimensions, colors, quantity and reference images. A vector file is helpful if available. For care labels, include the confirmed garment composition and the wording or language you require." },
+  { question: "Can I add custom labels and hang tags to my clothing order?", answer: "Yes. Mulang Apparel offers woven and printed neck labels, neck transfers, hang tags and branded packaging for private label clothing orders. Share your garment styles, logo and preferred placements so we can discuss what fits your collection." },
+  { question: "What should I send for a custom labels and packaging quote?", answer: "Send your garment styles and quantities, logo or artwork, trim dimensions, colors and reference images. A vector file is helpful if available. For care labels, include the confirmed garment composition and the wording or language you require." },
   { question: "Do labels and packaging use the same MOQ as the garments?", answer: "Trim and packaging quantities depend on the item, material, artwork and supplier requirements. Confirm these separately in your quote; the garment MOQ does not automatically apply to every custom label or packaging item." },
   { question: "Can I review the design before production?", answer: "Discuss the review needed for your order: artwork layout, a physical trim sample or a garment sample with the branding applied. The sampling arrangements, cost and timing should be confirmed before you approve production." },
   { question: "How are labeling requirements handled for my market?", answer: "Tell us where the garments will be sold and provide the required composition, care, size and other label information. Have the wording and any mandatory requirements checked for your destination market before approving the artwork." },
@@ -66,7 +66,7 @@ export default function LabelsTagsPackagingPage() {
   return (
     <>
       <ServiceStructuredData name={TITLE} description={DESCRIPTION} path="/labels-tags-packaging" />
-      <ServiceHero eyebrow="Labels, Tags & Packaging" title={<>Labels, Tags &amp;<br /><span className="gradient-text">Packaging.</span></>} description="From the label inside your tee to the box around your collection, bring your clothing brand together with custom labels, hang tags and packaging.">
+      <ServiceHero eyebrow="Labels, Tags & Packaging" title={<>Custom Clothing<br /><span className="gradient-text">Labels &amp; Packaging</span></>} description="Plan woven neck labels, wash care labels, custom hang tags and branded packaging as part of your private label clothing order. Confirm the details alongside your T-shirts, hoodies or streetwear collection.">
         <BrandHeroArtwork />
       </ServiceHero>
 
@@ -117,12 +117,13 @@ export default function LabelsTagsPackagingPage() {
           <div className="mt-10 rounded-2xl border border-white/10 bg-white/[0.025] p-6 md:p-8">
             <h3 className="text-lg font-medium text-white">A mockup shows the layout. A sample helps you judge the finish.</h3>
             <p className="mt-3 max-w-4xl text-base leading-relaxed text-zinc-300">Screen colors and digital illustrations do not show the exact texture, scale or feel of a finished label. Tell us what you need to review and confirm the approval steps in your quote. Keep artwork and packing instructions consistent with your <Link href="/services#sampling" className="text-violet-300 underline underline-offset-4 hover:text-white">garment sample</Link>.</p>
+            <p className="mt-4 text-base text-zinc-300">Still choosing a label position? See our <Link href="/blog/woven-size-labels" className="text-violet-300 underline underline-offset-4 hover:text-white">guide to woven size labels and placement</Link>.</p>
           </div>
         </div>
       </section>
 
       <ServiceFAQ items={FAQ} />
-      <ServiceCTA title="Make It Recognizably Yours." description="Send your logo, garment references and the labels or packaging you have in mind. We can discuss how the details come together for your collection." relatedHref="/global-shipping" relatedLabel="Plan how your collection will ship" />
+      <ServiceCTA title="Quote Labels & Packaging With Your Apparel Order" description="Send your garment styles and quantities, logo and packaging preferences so we can discuss the finishing details for your collection." relatedHref="/global-shipping" relatedLabel="Plan apparel shipping from China" />
     </>
   );
 }

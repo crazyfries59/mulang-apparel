@@ -27,7 +27,7 @@ export type LandingConfig = {
   finishing: { title: string; items: { name: string; body: string }[]; link: { href: string; label: string } };
   programs: LandingProgram[];
   logisticsTitle: string;
-  logistics: LandingSpec[];
+  logistics: (LandingSpec & { link?: { href: string; label: string } })[];
   productsTitle: string;
   productsNote: string;
   productsLink: { href: string; label: string };
@@ -206,7 +206,14 @@ export default function CategoryLanding({
               <dt className="text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-[#52525b]">
                 {item.label}
               </dt>
-              <dd className="text-sm leading-relaxed text-[#a1a1aa]">{item.value}</dd>
+              <dd className="text-sm leading-relaxed text-[#a1a1aa]">
+                {item.value}
+                {item.link && (
+                  <Link href={item.link.href} className="mt-2 block w-fit text-violet-300 underline underline-offset-4 hover:text-white">
+                    {item.link.label}
+                  </Link>
+                )}
+              </dd>
             </div>
           ))}
         </dl>

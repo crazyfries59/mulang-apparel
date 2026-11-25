@@ -3,18 +3,19 @@ import Link from "next/link";
 import { Box, Check, ClipboardList, MapPin, PackageCheck, Plane, Scale, Ship, Truck } from "lucide-react";
 import { ServiceCTA, ServiceFAQ, ServiceHero, ServiceStructuredData } from "@/components/services/ServicePage";
 
-const DESCRIPTION = "Plan shipping for your custom clothing order with Mulang Apparel. Compare express, air and sea freight, discuss delivery terms, and request a destination-specific quote.";
+const TITLE = "Custom Apparel Shipping from China";
+const DESCRIPTION = "Plan shipping for custom apparel from Guangzhou, China. Compare sample courier, air and sea freight, and confirm delivery terms with your order quote.";
 
 export const metadata: Metadata = {
-  title: "Global Shipping for Custom Clothing Orders",
+  title: TITLE,
   description: DESCRIPTION,
   alternates: { canonical: "/global-shipping" },
   openGraph: {
-    title: "Global Shipping | Mulang Apparel",
+    title: `${TITLE} | Mulang Apparel`,
     description: DESCRIPTION,
     url: "/global-shipping",
   },
-  twitter: { title: "Global Shipping | Mulang Apparel", description: DESCRIPTION },
+  twitter: { title: `${TITLE} | Mulang Apparel`, description: DESCRIPTION },
 };
 
 const SHIPPING_OPTIONS = [
@@ -42,9 +43,9 @@ const SHIPPING_OPTIONS = [
 ];
 
 const FAQS = [
-  { question: "How much will shipping cost?", answer: "Freight is quoted for the actual order and destination. Send us the product type, quantity, country, postcode and required delivery date. Packed weight, carton dimensions, service availability and the agreed delivery terms all affect the final quote." },
-  { question: "How long will delivery take?", answer: "We confirm an estimated transit window with the shipping quote. Transit begins after dispatch and is separate from sampling and production. Customs checks, carrier schedules and local delivery conditions can affect arrival, so share your launch date before the order is confirmed." },
-  { question: "Are import duties and taxes included?", answer: "That depends on the delivery terms confirmed in your quote. Under DDP, import clearance and duties are the seller’s responsibility; under DAP, import clearance and import charges are the buyer’s responsibility. Ask us to confirm the named destination and the included charges before paying." },
+  { question: "How much does it cost to ship a custom apparel order from China?", answer: "Freight is quoted for the actual order and destination. Send us the garment type, quantity, country, postcode and required arrival date. Packed weight, carton dimensions, service availability and the agreed delivery terms all affect the final quote." },
+  { question: "How long do clothing samples and production orders take to ship?", answer: "The available transit window depends on the destination and shipping method. Transit begins after dispatch and is separate from sampling and production. Customs checks, carrier schedules and local delivery conditions can affect arrival, so share your launch date before the order is confirmed." },
+  { question: "Does DDP shipping include import duties and taxes?", answer: "Under DDP, import clearance and applicable import duties and taxes are the seller’s responsibility. Under DAP, the buyer is responsible for import clearance and charges. Ask us to confirm route availability, the named destination and the included charges in your quote." },
   { question: "Can I use my own freight forwarder?", answer: "Yes. Share your forwarder’s contact details and shipping instructions so we can coordinate the handover. The collection location, timing, export documents and each party’s responsibilities should be agreed before dispatch." },
   { question: "Can I arrange rail or road freight?", answer: "These are route-specific options rather than a service available for every destination. Tell us where the order is going, or share your forwarder’s proposed route, so availability and the handover requirements can be checked." },
   { question: "Can branded packaging be included before shipping?", answer: "We can discuss garment bags, labels, hang tags and other packaging as part of the clothing order. Confirm the packing requirements before production because boxes, inserts and individual packing can change the packed volume and freight quote." },
@@ -95,8 +96,8 @@ function ShippingArtwork() {
 export default function GlobalShippingPage() {
   return (
     <>
-      <ServiceStructuredData name="Global Shipping" description={DESCRIPTION} path="/global-shipping" />
-      <ServiceHero eyebrow="Global Shipping" title={<>Global Shipping.<br /><span className="gradient-text">From Us to You.</span></>} description="Your collection is ready. Let’s plan the journey. We help coordinate shipping for your clothing order, with the route, delivery terms and freight quote agreed around your destination.">
+      <ServiceStructuredData name={TITLE} description={DESCRIPTION} path="/global-shipping" />
+      <ServiceHero eyebrow="Global Shipping" title={<>Custom Apparel<br /><span className="gradient-text">Shipping from China</span></>} description="Mulang Apparel helps clothing brands arrange delivery of samples and production orders from Guangzhou. Compare express courier, air freight and sea freight, then confirm the route and delivery terms with your garment quote.">
         <ShippingArtwork />
       </ServiceHero>
 
@@ -104,8 +105,8 @@ export default function GlobalShippingPage() {
         <div className="mx-auto max-w-[1200px]">
           <div className="mb-10 max-w-2xl">
             <p className="mb-4 text-sm uppercase tracking-[0.18em] text-violet-300">Choose Your Route</p>
-            <h2 id="shipping-options" className="font-syne text-3xl font-bold leading-tight text-white md:text-5xl">The Right Shipping Method<br />for Your Order.</h2>
-            <p className="mt-5 text-base leading-relaxed text-zinc-300">Samples, a first collection or a larger restock each need a different plan. We compare the available options against your quantity, budget and delivery schedule.</p>
+            <h2 id="shipping-options" className="font-syne text-3xl font-bold leading-tight text-white md:text-5xl">Shipping Options for Samples<br />and Production Orders</h2>
+            <p className="mt-5 text-base leading-relaxed text-zinc-300">Compare courier delivery for a fit sample with air or sea freight for a finished collection. For a <Link href="/custom-streetwear-manufacturer" className="text-violet-300 underline underline-offset-4 hover:text-white">custom streetwear order</Link>, share your launch date early so production and transit can be planned together.</p>
           </div>
           <div className="grid gap-5 md:grid-cols-3">
             {SHIPPING_OPTIONS.map(({ icon: Icon, title, subtitle, description, points }) => (
@@ -127,7 +128,7 @@ export default function GlobalShippingPage() {
       <section aria-labelledby="delivery-terms" className="border-y border-white/10 bg-[#0b0b0e] px-6 py-20 md:py-24">
         <div className="mx-auto max-w-[1200px]">
           <div className="mb-10 grid gap-6 md:grid-cols-2 md:items-end md:gap-16">
-            <div><p className="mb-4 text-sm uppercase tracking-[0.18em] text-violet-300">Know What Is Included</p><h2 id="delivery-terms" className="font-syne text-3xl font-bold text-white md:text-5xl">Delivery, Duties<br />& the Details.</h2></div>
+            <div><p className="mb-4 text-sm uppercase tracking-[0.18em] text-violet-300">Delivery Terms</p><h2 id="delivery-terms" className="font-syne text-3xl font-bold text-white md:text-5xl">DDP, DAP & FOB<br />for Apparel Orders</h2></div>
             <p className="text-base leading-relaxed text-zinc-300">A freight price means more when everyone knows what it covers. Confirm the delivery term, named place or port, customs responsibilities and destination charges in your written quote.</p>
           </div>
           <div className="grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 md:grid-cols-3">
@@ -145,7 +146,7 @@ export default function GlobalShippingPage() {
         <div className="mx-auto grid max-w-[1200px] gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
           <div>
             <p className="mb-4 text-sm uppercase tracking-[0.18em] text-violet-300">A Quote Built Around Your Shipment</p>
-            <h2 id="freight-quote" className="font-syne text-3xl font-bold leading-tight text-white md:text-5xl">What Determines<br />Your Shipping Cost?</h2>
+            <h2 id="freight-quote" className="font-syne text-3xl font-bold leading-tight text-white md:text-5xl">What Affects Your<br />Apparel Shipping Quote?</h2>
             <p className="mt-6 text-base leading-relaxed text-zinc-300">There is no single freight rate for every clothing order. The final route and price depend on how the order is packed, where it is going and when you need it.</p>
             <div className="mt-8 rounded-2xl border border-violet-400/20 bg-violet-500/5 p-6"><Scale size={24} className="mb-4 text-violet-300" aria-hidden="true" /><h3 className="mb-2 text-lg font-medium text-white">Weight and volume both matter.</h3><p className="text-base leading-relaxed text-zinc-300">Carriers may charge using actual or volumetric weight. Retail boxes and individual packaging can increase the space your order occupies, so confirm packaging before the freight quote is finalized.</p></div>
           </div>
@@ -155,7 +156,7 @@ export default function GlobalShippingPage() {
               { icon: Box, title: "Products & packing", text: "Garment type, quantity, carton count, packed weight and carton dimensions." },
               { icon: ClipboardList, title: "Schedule & delivery terms", text: "Your required arrival date, preferred shipping method and the charges to include." },
             ].map(({ icon: Icon, title, text }) => <div key={title} className="flex gap-5 border-b border-white/10 pb-6"><Icon size={23} className="mt-1 shrink-0 text-violet-300" aria-hidden="true" /><div><h3 className="mb-2 text-lg font-medium text-white">{title}</h3><p className="text-base leading-relaxed text-zinc-300">{text}</p></div></div>)}
-            <p className="text-base leading-relaxed text-zinc-400">Still planning your collection? Share the estimated quantity first. We can discuss shipping alongside your <Link href="/labels-tags-packaging" className="text-violet-300 underline underline-offset-4 hover:text-white">labels and packaging</Link>.</p>
+            <p className="text-base leading-relaxed text-zinc-400">Still planning your collection? Share the estimated quantity first. We can discuss shipping alongside your <Link href="/labels-tags-packaging" className="text-violet-300 underline underline-offset-4 hover:text-white">custom clothing labels and packaging</Link>.</p>
           </div>
         </div>
       </section>
@@ -176,7 +177,7 @@ export default function GlobalShippingPage() {
       </section>
 
       <ServiceFAQ items={FAQS} />
-      <ServiceCTA title="Let’s Plan Your Delivery." description="Send your product details, quantity, destination and target arrival date. We’ll discuss the packing and shipping arrangements alongside your clothing order." relatedHref="/labels-tags-packaging" relatedLabel="Explore Labels, Tags & Packaging" />
+      <ServiceCTA title="Get a Shipping Quote for Your Clothing Order" description="Send your garment styles, quantity, shipping destination and target arrival date so we can discuss freight alongside your production quote." relatedHref="/labels-tags-packaging" relatedLabel="Explore Labels, Tags & Packaging" />
     </>
   );
 }

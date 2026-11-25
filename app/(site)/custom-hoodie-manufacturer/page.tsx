@@ -117,8 +117,16 @@ const config: LandingConfig = {
     { label: "Size range", value: "XS to 2XL on most styles, up to 4XL on request." },
     { label: "Sampling", value: "Sample from your tech pack or from a stock style, approved in writing before bulk starts." },
     { label: "Bulk lead time", value: "21 days for hoodies after sample approval. Wash and dye add time on top, and we confirm the schedule before you commit." },
-    { label: "Trims", value: "Drawcords, eyelets, zips, woven labels and hang tags handled in-house." },
-    { label: "Shipping", value: "FOB Guangzhou, or to a forwarder you nominate. Export documents prepared by us." },
+    {
+      label: "Trims",
+      value: "Drawcords, eyelets, zips, woven labels and hang tags handled in-house.",
+      link: { href: "/labels-tags-packaging", label: "Custom hoodie labels, hang tags and packaging" },
+    },
+    {
+      label: "Shipping",
+      value: "FOB Guangzhou, or to a forwarder you nominate. Export documents prepared by us.",
+      link: { href: "/global-shipping", label: "Shipping options for hoodie samples and production" },
+    },
   ],
   productsTitle: "Start From These Styles",
   productsNote: "Six of the 43 hoodies in production, spanning 300 gsm through 500 gsm. Any of them can change fabric, weight, hood construction, pocket and decoration.",

@@ -118,8 +118,16 @@ const config: LandingConfig = {
     { label: "Size range", value: "S to 4XL depending on the style. Grading is included, not charged per size." },
     { label: "Sampling", value: "We build a sample from your tech pack or from a stock style, and bulk does not start until you approve it in writing." },
     { label: "Bulk lead time", value: "14 days for t-shirts after sample approval. Fabric that has to be specially knitted or dyed adds time." },
-    { label: "Labels & packing", value: "Woven labels, printed neck labels, hang tags, care labels and polybags, all handled in-house." },
-    { label: "Shipping", value: "FOB Guangzhou, or to a forwarder you nominate. We prepare export documents; duties and destination charges sit with you." },
+    {
+      label: "Labels & packing",
+      value: "Woven labels, printed neck labels, hang tags, care labels and polybags, all handled in-house.",
+      link: { href: "/labels-tags-packaging", label: "Custom labels and packaging for T-shirts" },
+    },
+    {
+      label: "Shipping",
+      value: "FOB Guangzhou, or to a forwarder you nominate. We prepare export documents; duties and destination charges sit with you.",
+      link: { href: "/global-shipping", label: "Shipping options for custom T-shirt orders" },
+    },
   ],
   productsTitle: "Start From These Styles",
   productsNote: "Six of the 106 tees currently in production. Every one can change fabric, weight, fit, colour and decoration — they are a starting point, not a fixed menu.",
