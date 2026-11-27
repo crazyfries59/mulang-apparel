@@ -244,7 +244,7 @@ export default function FabricsPage() {
             </p>
             <div className="flex gap-3 justify-center">
               <Link href="/contact" className="btn-gradient">Request Swatches <ArrowRight size={13} /></Link>
-              <a href="https://wa.me/8615382890150" target="_blank" rel="noopener noreferrer" className="btn-ghost">WhatsApp</a>
+              <a href="https://wa.me/8615986213212" target="_blank" rel="noopener noreferrer" className="btn-ghost">WhatsApp</a>
             </div>
           </AnimatedSection>
         </div>

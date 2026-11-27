@@ -474,7 +474,7 @@ export default function HomeClient({ categories }: { categories: Category[] }) {
               <Link href="/contact" className="btn-gradient text-sm py-4 px-8">
                 Start Your Project <ArrowRight size={15} />
               </Link>
-              <a href="https://wa.me/8615382890150" target="_blank" rel="noopener noreferrer"
+              <a href="https://wa.me/8615986213212" target="_blank" rel="noopener noreferrer"
                 className="btn-ghost text-sm py-4 px-8">
                 Chat On WhatsApp
               </a>

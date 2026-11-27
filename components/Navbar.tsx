@@ -308,7 +308,7 @@ export default function Navbar() {
               className="flex w-8 h-8 items-center justify-center rounded-full border border-white/10 text-white/40 hover:text-white hover:border-white/25 transition-colors">
               <Search size={13} />
             </button>
-            <a href="https://wa.me/8615382890150" target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/8615986213212" target="_blank" rel="noopener noreferrer"
               className="hidden lg:flex w-8 h-8 items-center justify-center rounded-full border border-white/10 text-white/40 hover:text-[#25D366] hover:border-[#25D366]/40 transition-colors">
               <MessageCircle size={13} />
             </a>
@@ -414,9 +414,9 @@ export default function Navbar() {
 
             <div className="px-6 pb-8 pt-4 border-t border-white/5 space-y-3">
               <Link href="/contact" className="btn-gradient w-full justify-center">Get A Quote</Link>
-              <a href="https://wa.me/8615382890150" target="_blank" rel="noopener noreferrer"
+              <a href="https://wa.me/8615986213212" target="_blank" rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 w-full py-3 rounded-full border border-[#25D366]/30 text-[#25D366] text-xs font-semibold hover:bg-[#25D366]/10 transition-colors">
-                <MessageCircle size={14} /> WhatsApp: +86 153 8289 0150
+                <MessageCircle size={14} /> WhatsApp: +86 159 8621 3212
               </a>
             </div>
           </motion.div>

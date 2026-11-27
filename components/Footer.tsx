@@ -43,7 +43,7 @@ export default function Footer() {
           </div>
           <div className="flex gap-3">
             <Link href="/contact" className="btn-gradient">Get A Free Quote</Link>
-            <a href="https://wa.me/8615382890150" target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/8615986213212" target="_blank" rel="noopener noreferrer"
               className="btn-ghost flex items-center gap-2">
               <MessageCircle size={14} /> WhatsApp
             </a>
@@ -64,10 +64,10 @@ export default function Footer() {
               Premium streetwear and private label clothing manufacturer based in Guangzhou, China.
             </p>
             <div className="space-y-3">
-              <a href="https://wa.me/8615382890150" target="_blank" rel="noopener noreferrer"
+              <a href="https://wa.me/8615986213212" target="_blank" rel="noopener noreferrer"
                 className="flex items-center gap-2.5 text-sm text-white/45 hover:text-[#25D366] transition-colors group">
                 <MessageCircle size={14} className="flex-shrink-0" />
-                +86 153 8289 0150
+                +86 159 8621 3212
               </a>
               <a href="mailto:max@mulangapparel.com"
                 className="flex items-center gap-2.5 text-sm text-white/45 hover:text-violet-400 transition-colors">

@@ -305,7 +305,7 @@ export default function SolutionsPage() {
             <p className="text-white/40 text-sm mb-8">Tell us about your brand and we&apos;ll recommend the right path forward. Free consultation, no commitment.</p>
             <div className="flex gap-3 justify-center">
               <Link href="/contact" className="btn-gradient">Get A Free Consultation <ArrowRight size={13} /></Link>
-              <a href="https://wa.me/8615382890150" target="_blank" rel="noopener noreferrer" className="btn-ghost">WhatsApp</a>
+              <a href="https://wa.me/8615986213212" target="_blank" rel="noopener noreferrer" className="btn-ghost">WhatsApp</a>
             </div>
           </AnimatedSection>
         </div>

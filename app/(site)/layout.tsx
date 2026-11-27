@@ -94,7 +94,7 @@ export default function RootLayout({
       addressLocality: "Guangzhou",
       addressCountry: "CN",
     },
-    sameAs: ["https://wa.me/8615382890150"],
+    sameAs: ["https://wa.me/8615986213212"],
   };
 
   return (

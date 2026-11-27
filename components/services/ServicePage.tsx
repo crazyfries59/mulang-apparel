@@ -51,7 +51,7 @@ export function ServiceCTA({ title, description, relatedHref, relatedLabel }: {
         <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-zinc-300">{description}</p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <Link href="/contact" className="btn-gradient !text-sm">Request a Quote</Link>
-          <a href="https://wa.me/8615382890150" target="_blank" rel="noopener noreferrer" className="btn-ghost !text-sm"><MessageCircle size={17} aria-hidden="true" />Chat on WhatsApp</a>
+          <a href="https://wa.me/8615986213212" target="_blank" rel="noopener noreferrer" className="btn-ghost !text-sm"><MessageCircle size={17} aria-hidden="true" />Chat on WhatsApp</a>
         </div>
         <Link href={relatedHref} className="mt-8 inline-block text-sm text-violet-300 underline underline-offset-4 hover:text-white">{relatedLabel}</Link>
       </div>

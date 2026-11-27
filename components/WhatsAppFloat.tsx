@@ -3,7 +3,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, MessageCircle } from "lucide-react";
 
-const WA  = "8615382890150";
+const WA  = "8615986213212";
 const MSG = encodeURIComponent("Hi! 👋 I'm interested in custom clothing manufacturing with Mulang Apparel. Can you help?");
 
 export default function WhatsAppFloat() {
@@ -50,7 +50,7 @@ export default function WhatsAppFloat() {
               >
                 <MessageCircle size={14} /> Start Chat
               </a>
-              <p className="text-center text-white/25 text-[0.6rem] mt-3">+86 153 8289 0150</p>
+              <p className="text-center text-white/25 text-[0.6rem] mt-3">+86 159 8621 3212</p>
             </div>
           </motion.div>
         )}
