@@ -1,12 +1,12 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useEffect, useRef, useState, useMemo } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedSection from "@/components/AnimatedSection";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { Search, ArrowRight } from "lucide-react";
+import { Search, ArrowRight, X } from "lucide-react";
 import { CATEGORIES, type Product } from "./data";
 import { CATEGORY_LANDING_LIST } from "@/lib/seo/category-landing";
 
@@ -15,10 +15,69 @@ const badgeColor = (b: string) =>
 
 const catHref = (slug: string) => (slug === "all" ? "/products" : `/products?cat=${slug}`);
 
+/* Style numbers are displayed as "#K1160" but buyers type "k1160", "1160" or "K-1160",
+   so compare on letters + digits only. */
+const normalize = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, "");
+
+const matchesQuery = (product: Product, q: string, nq: string) => {
+  const fields = [product.id, product.name, product.cat, product.sub, product.fabric, product.slug];
+  if (fields.some(f => f.toLowerCase().includes(q))) return true;
+  return nq !== "" && fields.some(f => normalize(f).includes(nq));
+};
+
 export default function ProductsView({ products }: { products: Product[] }) {
   const searchParams = useSearchParams();
   const activeCat = searchParams.get("cat") ?? "all";
-  const [search, setSearch] = useState(searchParams.get("q") ?? "");
+  const urlQuery = searchParams.get("q") ?? "";
+  const [search, setSearch] = useState(urlQuery);
+
+  /* Keep the keyword in the URL so a refresh, a share or a "back" from a product
+     page keeps the result the visitor was looking at. window.history is used on
+     purpose: this must not kick off a router navigation per keystroke. */
+  const syncQueryInUrl = (value: string) => {
+    if (typeof window === "undefined") return;
+    const params = new URLSearchParams(window.location.search);
+    if (value.trim()) params.set("q", value.trim());
+    else params.delete("q");
+    const qs = params.toString();
+    const nextUrl = qs ? `${window.location.pathname}?${qs}` : window.location.pathname;
+    if (nextUrl === `${window.location.pathname}${window.location.search}`) return;
+    // history.state carries the router payload: overwriting it with null breaks back/forward.
+    window.history.replaceState(window.history.state, "", nextUrl);
+  };
+
+  /* A real navigation (navbar search, back button, external link) carries a new q. */
+  useEffect(() => {
+    setSearch((current) => (current.trim() === urlQuery.trim() ? current : urlQuery));
+  }, [urlQuery]);
+
+  /* Coming back from a product page the router may not report the q we mirrored
+     into history, so trust the address bar once on mount. */
+  useEffect(() => {
+    const fromLocation = new URLSearchParams(window.location.search).get("q") ?? "";
+    setSearch((current) => (current.trim() === fromLocation.trim() ? current : fromLocation));
+  }, []);
+
+  /* Picking a category is a fresh browse, not a filter inside the last search.
+     Without this the old keyword kept filtering the new category (component stays
+     mounted on client navigation), and the list looked frozen until a reload. */
+  const previousCat = useRef(activeCat);
+  useEffect(() => {
+    if (previousCat.current === activeCat) return;
+    previousCat.current = activeCat;
+    // A navbar search lands here with a new keyword and no category: keep it.
+    if (urlQuery.trim()) {
+      setSearch(urlQuery);
+      return;
+    }
+    setSearch("");
+    syncQueryInUrl("");
+  }, [activeCat, urlQuery]);
+
+  const handleSearchChange = (value: string) => {
+    setSearch(value);
+    syncQueryInUrl(value);
+  };
 
   const counts = useMemo(() => {
     const map: Record<string, number> = {};
@@ -36,8 +95,10 @@ export default function ProductsView({ products }: { products: Product[] }) {
       ? products
       : products.filter(p => p.cat === activeCat || p.sub === activeCat);
     const q = search.trim().toLowerCase();
-    if (q) list = list.filter(p =>
-      p.name.toLowerCase().includes(q) || p.cat.toLowerCase().includes(q) || p.fabric.toLowerCase().includes(q));
+    if (q) {
+      const nq = normalize(q);
+      list = list.filter(p => matchesQuery(p, q, nq));
+    }
     return list;
   }, [activeCat, products, search]);
 
@@ -133,10 +194,19 @@ export default function ProductsView({ products }: { products: Product[] }) {
               <div className="relative">
                 <Search size={13} className="absolute left-3 top-1/2 -translate-y-1/2 text-white/30" />
                 <input
-                  type="text" placeholder="Search products..."
-                  value={search} onChange={e => setSearch(e.target.value)}
-                  className="bg-white/5 border border-white/10 rounded-full pl-9 pr-4 py-2 text-xs text-white placeholder:text-white/25 focus:outline-none focus:border-violet-500/50 w-40 sm:w-56 transition-all"
+                  type="text" placeholder="Style no. or name..."
+                  aria-label="Search products by style number or name"
+                  value={search} onChange={e => handleSearchChange(e.target.value)}
+                  className="bg-white/5 border border-white/10 rounded-full pl-9 pr-8 py-2 text-xs text-white placeholder:text-white/25 focus:outline-none focus:border-violet-500/50 w-52 sm:w-64 transition-all"
                 />
+                {search && (
+                  <button
+                    type="button" onClick={() => handleSearchChange("")} aria-label="Clear search"
+                    className="absolute right-2.5 top-1/2 -translate-y-1/2 text-white/30 hover:text-white transition-colors"
+                  >
+                    <X size={13} />
+                  </button>
+                )}
               </div>
             </div>
 
@@ -192,7 +262,7 @@ export default function ProductsView({ products }: { products: Product[] }) {
               <div className="text-center py-24">
                 <p className="text-white/25 text-sm">
                   No products found.{" "}
-                  <Link href="/products" onClick={() => setSearch("")} className="text-violet-400 hover:text-violet-300">
+                  <Link href="/products" onClick={() => handleSearchChange("")} className="text-violet-400 hover:text-violet-300">
                     Clear filters
                   </Link>
                 </p>

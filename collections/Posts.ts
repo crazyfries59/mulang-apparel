@@ -47,7 +47,7 @@ export const Posts: CollectionConfig = {
       type: "textarea",
       label: "摘要",
       required: true,
-      admin: { description: "列表页摘要和默认 SEO 描述" },
+      admin: { description: "列表页摘要和默认 SEO 描述。建议 140–155 字符，一句话说清这篇解决什么问题。" },
     },
     {
       name: "category",
@@ -80,7 +80,10 @@ export const Posts: CollectionConfig = {
       label: "封面图片路径",
       required: true,
       defaultValue: "/products/y2k-fashion/bx8105-rib-260gsm-stretch-crop-y2k-baby-tee/img-1.jpg",
-      admin: { description: "先使用网站图片路径；后续可接入 Media 图片库" },
+      admin: {
+        description:
+          "填站内图片路径（以 /products/ 开头）或外部 http 图片地址。选用与文章主题一致的实拍图：写工艺的用看得见工艺的图，不要用无关成品图，同一张图不要在站内重复当封面。",
+      },
     },
     {
       name: "body",
@@ -88,6 +91,10 @@ export const Posts: CollectionConfig = {
       label: "正文",
       required: true,
       editor: lexicalEditor({}),
+      admin: {
+        description:
+          "排版已由网站统一控制：H2 标题最大、H3 次之、正文偏小、段落之间自动留白。写的时候只用「标题 H2／H3 + 段落 + 项目符号 + 表格」，不要再手动调字号或插空行；每段控制在 2–4 句。",
+      },
     },
     {
       name: "publishedAt",

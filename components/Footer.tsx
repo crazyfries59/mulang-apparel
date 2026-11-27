@@ -8,10 +8,12 @@ const LINKS = {
     { label: "Manufacturing",  href: "/manufacturing" },
     { label: "Blog",           href: "/blog"          },
     { label: "Contact",        href: "/contact"       },
+    { label: "Payment Methods", href: "/payment-method" },
   ],
   Products: [
     { label: "T-Shirt Manufacturing",  href: "/t-shirt-manufacturer" },
     { label: "Hoodie Manufacturing",   href: "/custom-hoodie-manufacturer" },
+    { label: "Streetwear Manufacturing", href: "/custom-streetwear-manufacturer" },
     { label: "All Styles",             href: "/products" },
     { label: "Tracksuits & Sets",     href: "/products" },
     { label: "Jackets & Outerwear",   href: "/products" },
@@ -22,7 +24,8 @@ const LINKS = {
     { label: "ODM Development",    href: "/services" },
     { label: "Private Label",      href: "/services" },
     { label: "Custom Printing",    href: "/services" },
-    { label: "Brand Packaging",    href: "/services" },
+    { label: "Brand Packaging",    href: "/labels-tags-packaging" },
+    { label: "Global Shipping",    href: "/global-shipping" },
   ],
 };
 

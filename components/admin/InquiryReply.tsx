@@ -1,19 +1,27 @@
 "use client";
 
 import { toast, useDocumentInfo, useForm, useFormFields } from "@payloadcms/ui";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import {
   buildFollowUpSummary,
   buildReplyDraft,
   gmailComposeUrl,
 } from "../../lib/crm/reply-draft";
+import {
+  MAX_ATTACHMENTS,
+  MAX_TOTAL_BYTES,
+  checkFiles,
+  formatBytes,
+} from "../../lib/crm/attachments";
+import { INQUIRY_STATUSES } from "../../lib/crm/options";
 
-/* 在询盘详情页里直接回信（轻量版）：
-   拼好英文草稿 → 可以改 → 一键在 Gmail 或本机邮件 App 里打开写好收件人和正文的信
-   → 发完点「标记已回复」，顺手给客户记一条跟进。
+/* 在询盘详情页里直接回信：
+   拼好英文草稿 → 可以改、可以带小附件 → 一键用后台邮箱发出（服务端 Gmail SMTP）
+   → 状态自动变「已回复」、给客户记一条邮件跟进 → 面板顶上直接看到发送记录。
    不在这个页面里收信，所以不需要邮箱授权，也不会因为授权过期而断。 */
 
 type ScriptDoc = { id: string | number; title?: string | null; content?: string | null };
+type RecordDoc = { id: string | number; summary?: string | null; date?: string | null };
 
 const textOf = (value: unknown) => (typeof value === "string" ? value : "");
 
@@ -24,6 +32,25 @@ const idOf = (value: unknown): string | null => {
     if (typeof id === "number" || typeof id === "string") return String(id);
   }
   return null;
+};
+
+/* 「11-09 18:20」这种短格式，够看出来是什么时候发的就行。 */
+const shortDate = (value?: string | null) => {
+  if (!value) return "";
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "";
+  const pad = (n: number) => String(n).padStart(2, "0");
+  return `${pad(date.getMonth() + 1)}-${pad(date.getDate())} ${pad(date.getHours())}:${pad(date.getMinutes())}`;
+};
+
+const statusLabel = (value: string) =>
+  INQUIRY_STATUSES.find((item) => item.value === value)?.label ?? value;
+
+const statusColor = (value: string) => {
+  if (value === "replied") return "var(--theme-success-500, #1F7A4C)";
+  if (value === "converted") return "var(--theme-success-600, #14603A)";
+  if (value === "invalid") return "var(--theme-elevation-500)";
+  return "var(--theme-warning-600, #8A5A00)";
 };
 
 const panelStyle: React.CSSProperties = {
@@ -53,6 +80,17 @@ const inputStyle: React.CSSProperties = {
   borderRadius: "4px",
   fontFamily: "inherit",
 };
+
+const chipStyle = (color: string): React.CSSProperties => ({
+  display: "inline-block",
+  padding: "2px 8px",
+  borderRadius: "10px",
+  border: `1px solid ${color}`,
+  color,
+  fontSize: "11px",
+  lineHeight: "16px",
+  fontWeight: 600,
+});
 
 type Draft = { subject: string; body: string };
 
@@ -86,6 +124,14 @@ export const InquiryReply: React.FC = () => {
   const [marking, setMarking] = useState(false);
   const [sending, setSending] = useState(false);
 
+  const [files, setFiles] = useState<File[]>([]);
+  const fileInput = useRef<HTMLInputElement>(null);
+
+  /* 发送记录：就是这位客户的「邮件」类跟进，最近 5 条。
+     发送/标记成功后会 +1 触发重拉，以服务端为准，界面自己不用拼。 */
+  const [records, setRecords] = useState<RecordDoc[]>([]);
+  const [recordsVersion, setRecordsVersion] = useState(0);
+
   useEffect(() => {
     let cancelled = false;
     const params = new URLSearchParams({
@@ -106,6 +152,30 @@ export const InquiryReply: React.FC = () => {
       cancelled = true;
     };
   }, []);
+
+  useEffect(() => {
+    /* 没关联客户就没有邮件记录可看，整块也不渲染，这里直接不请求。 */
+    if (!customerId) return;
+    let cancelled = false;
+    const params = new URLSearchParams({
+      limit: "5",
+      depth: "0",
+      sort: "-date",
+      "where[customer][equals]": customerId,
+      "where[channel][equals]": "email",
+    });
+    fetch(`/api/follow-ups?${params.toString()}`, { credentials: "include" })
+      .then((res) => (res.ok ? res.json() : null))
+      .then((json: { docs?: RecordDoc[] } | null) => {
+        if (!cancelled) setRecords(json?.docs ?? []);
+      })
+      .catch(() => {
+        /* 拉不到就只显示「还没有记录」，不影响发信 */
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [customerId, recordsVersion]);
 
   const regenerate = () => {
     setOverride(null);
@@ -133,30 +203,61 @@ export const InquiryReply: React.FC = () => {
     setOverride({ subject, body: `${base}\n${script.content}` });
   };
 
+  const pickFiles = (picked: FileList | null) => {
+    if (!picked || picked.length === 0) return;
+    setFiles((current) => [...current, ...Array.from(picked)]);
+    if (fileInput.current) fileInput.current.value = "";
+  };
+
+  const removeFile = (index: number) => {
+    setFiles((current) => current.filter((_, i) => i !== index));
+  };
+
+  const totalBytes = files.reduce((sum, file) => sum + file.size, 0);
+  const fileError = checkFiles(files.map((file) => ({ name: file.name, size: file.size })));
+  const remainingBytes = Math.max(MAX_TOTAL_BYTES - totalBytes, 0);
+
   /* 直接在系统里发：服务端用 Gmail SMTP 发出去，顺手改状态、写跟进。
      发信是不可撤的动作，所以先要一次确认。 */
   const sendNow = async () => {
     if (!id || !email) return;
-    if (!window.confirm(`确认把这封回复发给 ${email}？发出后撤不回来。`)) return;
+    if (fileError) {
+      toast.error(fileError);
+      return;
+    }
+    const attachNote = files.length > 0 ? `，带 ${files.length} 个附件（${formatBytes(totalBytes)}）` : "";
+    if (!window.confirm(`确认把这封回复发给 ${email}${attachNote}？发出后撤不回来。`)) return;
 
     setSending(true);
     setFeedback("");
     try {
+      /* 附件走 multipart，不转 base64，同样的文件体积更小。 */
+      const form = new FormData();
+      form.append("subject", subject);
+      form.append("body", body);
+      files.forEach((file) => form.append("attachments", file, file.name));
+
       const res = await fetch(`/api/inquiries/${id}/reply`, {
         method: "POST",
         credentials: "include",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ subject, body }),
+        body: form,
       });
       const json = (await res.json().catch(() => null)) as
-        | { error?: string; warning?: string | null; keptReply?: boolean }
+        | { error?: string; warning?: string | null; keptReply?: boolean; attachments?: string[] }
         | null;
       if (!res.ok) throw new Error(json?.error ?? "发送失败");
 
       dispatchFields({ type: "UPDATE", path: "status", value: "replied" });
       if (json?.keptReply) dispatchFields({ type: "UPDATE", path: "reply", value: body });
 
-      setFeedback(json?.warning ? `已发送给 ${email}；${json.warning}` : `已发送给 ${email}，并已写入跟进记录`);
+      const sentFiles = json?.attachments?.length ? `（含 ${json.attachments.length} 个附件）` : "";
+      setFeedback(
+        json?.warning
+          ? `已发送给 ${email}${sentFiles}；${json.warning}`
+          : `已发送给 ${email}${sentFiles}，状态已改为「已回复」，跟进记录已写入`,
+      );
+      setFiles([]);
+      setRecordsVersion((v) => v + 1);
       toast.success("已发送");
     } catch (err) {
       const message = err instanceof Error ? err.message : "未知错误";
@@ -201,6 +302,7 @@ export const InquiryReply: React.FC = () => {
           }),
         });
         followUp = followRes.ok ? "，并已写入跟进记录" : "（跟进记录没写成，请手动补一条）";
+        setRecordsVersion((v) => v + 1);
       } else {
         followUp = "（这条询盘还没关联客户，所以没写跟进记录）";
       }
@@ -224,15 +326,49 @@ export const InquiryReply: React.FC = () => {
   return (
     <div style={panelStyle}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: "12px", marginBottom: "12px" }}>
-        <strong style={{ fontSize: "14px", fontWeight: 600 }}>回复询盘</strong>
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <strong style={{ fontSize: "14px", fontWeight: 600 }}>回复询盘</strong>
+          {status ? (
+            <span style={chipStyle(statusColor(status))}>{statusLabel(status)}</span>
+          ) : null}
+        </div>
         <span style={{ fontSize: "12px", color: "var(--theme-elevation-500)" }}>
           草稿按询盘内容生成，发之前改一遍
         </span>
       </div>
 
+      {customerId ? (
+        <div
+          style={{
+            marginBottom: "14px",
+            padding: "8px 10px",
+            borderRadius: "4px",
+            border: "1px dashed var(--theme-elevation-150)",
+            background: "var(--theme-elevation-0)",
+          }}
+        >
+          <div style={{ fontSize: "12px", color: "var(--theme-elevation-600)", marginBottom: records.length ? "4px" : 0 }}>
+            最近发送记录（这位客户，最近 5 条）
+          </div>
+          {records.length === 0 ? (
+            <span style={{ fontSize: "12px", color: "var(--theme-elevation-500)" }}>还没有邮件记录</span>
+          ) : (
+            <ul style={{ margin: 0, paddingLeft: "16px", fontSize: "12px", lineHeight: 1.8 }}>
+              {records.map((record) => (
+                <li key={String(record.id)}>
+                  <span style={{ color: "var(--theme-elevation-500)" }}>{shortDate(record.date)}</span>
+                  {"  "}
+                  {record.summary ?? "（无摘要）"}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      ) : null}
+
       {noEmail ? (
         <p style={{ fontSize: "12px", color: "var(--theme-warning-500, #854F0B)", margin: "0 0 12px" }}>
-          这条询盘没填邮箱，先把上面的邮箱补上，才能直接唤起写信。
+          这条询盘没填邮箱，先把上面的邮箱补上，才能直接发信。
         </p>
       ) : null}
 
@@ -257,13 +393,56 @@ export const InquiryReply: React.FC = () => {
         />
       </div>
 
+      <div style={{ marginBottom: "14px" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "10px", flexWrap: "wrap", marginBottom: "6px" }}>
+          <label style={{ ...labelStyle, marginBottom: 0 }} htmlFor="inquiry-reply-files">
+            附件（可选）
+          </label>
+          <input
+            id="inquiry-reply-files"
+            ref={fileInput}
+            type="file"
+            multiple
+            onChange={(e) => pickFiles(e.target.files)}
+            style={{ fontSize: "12px" }}
+          />
+          <span style={{ fontSize: "12px", color: fileError ? "var(--theme-error-500, #B42318)" : "var(--theme-elevation-500)" }}>
+            {files.length === 0
+              ? `最多 ${MAX_ATTACHMENTS} 个，合计不超过 ${formatBytes(MAX_TOTAL_BYTES)}（报价表、PI、图片都行）`
+              : `已选 ${files.length} 个，合计 ${formatBytes(totalBytes)}，还能加 ${formatBytes(remainingBytes)}`}
+          </span>
+        </div>
+
+        {files.length > 0 ? (
+          <ul style={{ margin: 0, paddingLeft: "16px", fontSize: "12px", lineHeight: 1.9 }}>
+            {files.map((file, index) => (
+              <li key={`${file.name}-${index}`}>
+                {file.name}
+                <span style={{ color: "var(--theme-elevation-500)" }}>（{formatBytes(file.size)}）</span>
+                <button
+                  type="button"
+                  onClick={() => removeFile(index)}
+                  style={{ marginLeft: "8px", border: "none", background: "none", color: "var(--theme-error-500, #B42318)", cursor: "pointer", fontSize: "12px", padding: 0 }}
+                >
+                  移除
+                </button>
+              </li>
+            ))}
+          </ul>
+        ) : null}
+
+        {fileError ? (
+          <p style={{ fontSize: "12px", color: "var(--theme-error-500, #B42318)", margin: "4px 0 0" }}>{fileError}</p>
+        ) : null}
+      </div>
+
       <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "8px", marginBottom: "12px" }}>
         <button
           type="button"
           className="btn btn--style-primary btn--size-small"
           style={actionBtn}
           onClick={sendNow}
-          disabled={noEmail || sending || !id}
+          disabled={noEmail || sending || !id || Boolean(fileError)}
           title="用后台配置的邮箱直接发出，并发完自动记录"
         >
           {sending ? "发送中…" : "直接发送"}
@@ -308,7 +487,7 @@ export const InquiryReply: React.FC = () => {
           {marking ? "处理中…" : alreadyReplied ? "已回复" : "标记已回复"}
         </button>
         <span style={{ fontSize: "12px", color: "var(--theme-elevation-500)" }}>
-          {feedback || "「直接发送」用后台邮箱发出，状态和跟进会自动更新；要带附件就去 Gmail 发，发完点「标记已回复」。"}
+          {feedback || "「直接发送」发出后，状态会变「已回复」，并自动写一条邮件跟进记录。"}
         </span>
       </div>
     </div>

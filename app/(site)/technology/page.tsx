@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import TechnologyClient from "./TechnologyClient";
 
 export const metadata: Metadata = {
-  title: "Printing, Embroidery & Fabric Finishing",
+  title: "Custom Apparel Decoration Techniques | Screen Printing, DTF & Embroidery",
   description:
-    "6 printing methods, 6 embroidery styles, and premium washing/finishing techniques — the technology behind every Mulang Apparel garment.",
+    "15 decoration techniques for custom T-shirts, hoodies and streetwear: screen printing, DTF, DTG, puff print, 3D and terry embroidery, appliqué, rhinestone, laser and more. MOQ from 50 pieces.",
   alternates: { canonical: "/technology" },
 };
 

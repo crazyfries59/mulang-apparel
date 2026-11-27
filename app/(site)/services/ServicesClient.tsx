@@ -41,10 +41,11 @@ const SERVICES = [
   },
   {
     id: "labels",
+    href: "/labels-tags-packaging",
     icon: Tag,
-    title: "Labels / Tags / Packaging",
+    title: "Custom Clothing Labels & Packaging",
     tagline: "Brand Every Touchpoint.",
-    img: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=900&q=80",
+    img: "/images/services/packaging/retail-apparel-packaging-box.webp",
     desc: "Complete private label service. Woven labels, heat transfers, hang tags, custom poly bags, tissue paper, and retail-ready boxes. Your brand, everywhere.",
     features: ["Woven & printed labels", "Custom hang tags", "Branded poly bags", "Gift boxes & tissue"],
     highlight: "Full",
@@ -52,11 +53,12 @@ const SERVICES = [
   },
   {
     id: "shipping",
+    href: "/global-shipping",
     icon: Truck,
-    title: "Global Shipping",
+    title: "Custom Apparel Shipping from China",
     tagline: "Delivered To Your Door.",
     img: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=900&q=80",
-    desc: "Door-to-door shipping with full export management. DDP, DAP, FOB—your choice. Tracking on every shipment, customs paperwork, and delivery to the US, Australia, Europe and beyond.",
+    desc: "Compare express courier, air and sea freight for samples and production orders from Guangzhou. Confirm route availability and DDP, DAP or FOB terms in your quote.",
     features: ["DDP, DAP & FOB terms", "US, AU, UK, EU & more", "Shipment tracking", "Customs documentation"],
     highlight: "Door",
     highlightLabel: "To Door Delivery",
@@ -100,9 +102,9 @@ export default function ServicesPage() {
       <section className="py-20 px-6">
         <div className="container max-w-[1200px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {SERVICES.map(({ id, icon: Icon, title, tagline, img, desc, features, highlight, highlightLabel }, i) => (
+            {SERVICES.map(({ id, href, icon: Icon, title, tagline, img, desc, features, highlight, highlightLabel }, i) => (
               <AnimatedSection key={id} delay={i * 0.07}>
-                <div id={id} className="glass-card overflow-hidden flex flex-col h-full group">
+                <div id={id} className="glass-card scroll-mt-24 overflow-hidden flex flex-col h-full group">
                   {/* Card image */}
                   <div className="relative aspect-[16/9] img-zoom overflow-hidden">
                     <Image src={img} alt={title} fill className="object-cover" sizes="33vw" />
@@ -133,9 +135,9 @@ export default function ServicesPage() {
                       ))}
                     </ul>
 
-                    <Link href="/contact"
+                    <Link href={href ?? "/contact"}
                       className="flex items-center gap-2 text-violet-400 text-xs font-semibold tracking-widest uppercase hover:text-violet-300 transition-colors group/btn">
-                      Learn More <ArrowRight size={12} className="group-hover/btn:translate-x-1 transition-transform" />
+                      {href ? `Explore ${title}` : "Learn More"} <ArrowRight size={12} className="shrink-0 group-hover/btn:translate-x-1 transition-transform" />
                     </Link>
                   </div>
                 </div>

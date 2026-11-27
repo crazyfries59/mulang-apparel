@@ -118,8 +118,16 @@ const config: LandingConfig = {
     { label: "Size range", value: "S to 4XL depending on the style. Grading is included, not charged per size." },
     { label: "Sampling", value: "Fit sample in the target weight, then the same sample after the intended wash, then decoration. Bulk starts only after written approval." },
     { label: "Bulk lead time", value: "14 days for t-shirts and 21 days for hoodies after sample approval. Garment dye and wash add process days." },
-    { label: "Labels & packing", value: "Woven labels, printed neck taps, hem tags, care labels and polybags, all handled in-house." },
-    { label: "Shipping", value: "FOB Guangzhou, or to a forwarder you nominate. We prepare export documents; duties and destination charges sit with you." },
+    {
+      label: "Labels & packing",
+      value: "Woven labels, printed neck labels, hem tags, care labels and polybags, all handled in-house.",
+      link: { href: "/labels-tags-packaging", label: "Custom labels and packaging for streetwear" },
+    },
+    {
+      label: "Shipping",
+      value: "FOB Guangzhou, or to a forwarder you nominate. We prepare export documents; duties and destination charges sit with you.",
+      link: { href: "/global-shipping", label: "Apparel shipping from China" },
+    },
   ],
   productsTitle: "Streetwear Styles We Already Run",
   productsNote: "Six of the 149 tees and hoodies currently in production, plus the Y2K and set styles built around them. Every one can change fabric, weight, fit, colour and decoration — they are a starting point, not a fixed menu.",

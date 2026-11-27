@@ -14,9 +14,56 @@ import {
 
 /* ─── DATA ─── */
 
+const ORDER_OPTIONS = [
+  {
+    title: "1. Blank Wholesale",
+    audience: "For Wholesalers",
+    description: "Order ready-made clothing from our product collection.",
+    quantity: "50 pieces",
+    details: "Mix styles, colors and sizes.",
+    facts: [
+      { label: "Sample time", value: "3 days" },
+      { label: "Sample fee", value: "USD 20–25 per piece" },
+      { label: "Bulk price", value: "As shown on the product page. Share your address for a shipping quote." },
+    ],
+    href: "/products",
+    action: "Explore blanks",
+  },
+  {
+    title: "2. Logo Customize",
+    audience: "For Brand Starters",
+    description: "Add your logo to our blank clothing with printing, embroidery or your private label.",
+    quantity: "50 pieces",
+    details: "Mix styles, colors and sizes.",
+    facts: [
+      { label: "Sample time", value: "5–8 days, depending on the final design" },
+      { label: "Bulk order time", value: "12–18 days" },
+      { label: "Sample fee", value: "USD 50 per piece" },
+      { label: "Bulk price", value: "Choose a blank design and send your logo for a quote. Share your address for a shipping quote." },
+    ],
+    href: "/contact",
+    action: "Discuss your logo",
+  },
+  {
+    title: "3. Cut & Sew Customize",
+    audience: "For Fashion Brands",
+    description: "Create your own clothing designs from a sketch.",
+    quantity: "100 pieces",
+    details: "Per style, per color (4 sizes).",
+    facts: [
+      { label: "Sample time", value: "8–15 days after confirming all details" },
+      { label: "Sample fee", value: "USD 50 per piece, depending on the design; printing and embroidery may cost extra" },
+      { label: "Bulk order time", value: "24–30 days, depending on the design and order quantity" },
+      { label: "Bulk price", value: "Quoted after confirming the quantity, design and fabric." },
+    ],
+    href: "/contact",
+    action: "Discuss your design",
+  },
+];
+
 const FEATURES = [
   { icon: Package, n: "01", title: "Low MOQ",          desc: "50 pieces for blanks or adding your logo — mix styles, colors and sizes. Cut & sew from 100 pcs per style per color." },
-  { icon: Zap,     n: "02", title: "Fast Sampling",    desc: "Single-piece sampling. Blanks in about 5 days, logo samples in 9–15 days, cut & sew in 12–20 days." },
+  { icon: Zap,     n: "02", title: "Sampling",         desc: "Single-piece sampling: 3 days for blanks, 5–8 days for logo customization and 8–15 days for cut & sew." },
   { icon: Star,    n: "03", title: "OEM & ODM",        desc: "Whether you have a design or need one—we handle everything from concept to delivery." },
   { icon: Shield,  n: "04", title: "Premium Quality",  desc: "Pick the fabric composition and weight (GSM) that fit your design, hand-feel and price point." },
   { icon: Globe,   n: "05", title: "Strict QC",        desc: "Garments are checked against your approved sample before they are packed and shipped." },
@@ -25,7 +72,7 @@ const FEATURES = [
 
 const PROCESS = [
   { n: "01", title: "Design Consultation", desc: "Share your concept, references or tech pack. We review it and advise on fabric, trims and techniques." },
-  { n: "02", title: "Sampling",            desc: "Single-piece sampling: about 5 days for blanks, 9–15 days with your logo, 12–20 days for cut & sew." },
+  { n: "02", title: "Sampling",            desc: "Single-piece sampling: 3 days for blanks, 5–8 days with your logo and 8–15 days for cut & sew after confirming the details." },
   { n: "03", title: "Fabric Selection",    desc: "Choose composition, weight (GSM) and finish to match your design and target price." },
   { n: "04", title: "Production",          desc: "Bulk production starts once you approve the sample. Lead time is confirmed with your quote." },
   { n: "05", title: "Quality Inspection",  desc: "Garments are checked against the approved sample before packing." },
@@ -35,10 +82,10 @@ const PROCESS = [
 
 const FAQS = [
   { q: "What is the minimum order quantity (MOQ)?", a: "50 pieces for blank wholesale and for adding your logo to our ready-made blanks — styles, colors and sizes can be mixed. Full cut & sew starts at 100 pieces per style per color." },
-  { q: "How long does sampling take?", a: "Single-piece sampling is available. Blank samples take about 5 days, logo samples 9–15 days, and cut & sew samples 12–20 days." },
-  { q: "What is the cost for samples?", a: "It depends on the design, fabric and techniques. Send us your design or reference images and we will quote the sample cost." },
+  { q: "How long does sampling take?", a: "Single-piece sampling is available. Blank samples take 3 days, logo samples 5–8 days depending on the design, and cut & sew samples 8–15 days after all details are confirmed." },
+  { q: "What is the cost for samples?", a: "Blank samples are USD 20–25 per piece. Logo samples are USD 50 per piece. Cut & sew samples are USD 50 per piece depending on the design; printing and embroidery may cost extra." },
   { q: "Can you produce custom labels and packaging?", a: "Yes! We offer complete private label services including woven labels, hang tags, heat transfers, custom poly bags, boxes, and tissue paper—all with your branding." },
-  { q: "What is the lead time for bulk production?", a: "It depends on quantity, fabric and techniques. We confirm a production timeline with your quote, once the sample is approved." },
+  { q: "What is the lead time for bulk production?", a: "Logo customization takes 12–18 days. Cut & sew takes 24–30 days depending on the design and order quantity. We confirm the timeline with your quote." },
   { q: "Which countries do you ship to?", a: "We work with brands in the US, Australia, Switzerland, Canada, the UK and New Zealand, and can ship to most other countries. Shipping is quoted per order." },
 ];
 
@@ -46,6 +93,28 @@ const FAQS = [
    product list. The home page is the strongest link on the site, so it should point
    at the pages that carry the buying copy and pass equity on to the individual styles. */
 const categoryLandingPath = (slug: string) => landingForCategory(slug)?.path ?? `/products?cat=${slug}`;
+
+/* The three landing pages we actually want ranked. They are linked from here, from
+   the footer and from the blog, which is what gets them crawled ahead of the 241
+   template product pages. Figures are taken from the live catalogue (106 tee styles
+   135–310 GSM, 43 hoodie styles 320–543 GSM). */
+const SPECIALTIES = [
+  {
+    href: "/t-shirt-manufacturer",
+    title: "Custom T-Shirt Manufacturing",
+    desc: "106 styles from 135 to 310 GSM, in oversized, boxy and vintage-wash fits. Screen print, puff print, embroidery and garment dye run on the same line.",
+  },
+  {
+    href: "/custom-hoodie-manufacturer",
+    title: "Custom Hoodie Manufacturing",
+    desc: "43 styles from 320 to 543 GSM brushed fleece, with dropped shoulders and heavyweight fits. Ribbing, drawcords and patch embroidery made to your sample.",
+  },
+  {
+    href: "/custom-streetwear-manufacturer",
+    title: "Custom Streetwear Manufacturing",
+    desc: "Full cut & sew from your tech pack: tees, hoodies, tracksuits, cargo and denim, with wash, print and embroidery handled under one roof in Guangzhou.",
+  },
+];
 
 /* ─── PAGE ─── */
 
@@ -118,6 +187,33 @@ export default function HomeClient({ categories }: { categories: Category[] }) {
 
       </section>
 
+      {/* Order options and minimums, immediately after the hero. */}
+      <section id="minimum-order-quantity" aria-label="Clothing order options and minimums" className="bg-[#09090c] px-4 py-8 md:px-6 md:py-10">
+        <div className="mx-auto w-full max-w-[1200px] lg:w-[84%]">
+          <div role="region" aria-label="Clothing order options" tabIndex={0} className="overflow-x-auto focus-visible:outline focus-visible:outline-2 focus-visible:outline-violet-300">
+          <div className="grid min-w-[570px] grid-cols-3 gap-3 sm:gap-5">
+            {ORDER_OPTIONS.map(({ title, audience, description, quantity, details, facts, href, action }) => (
+              <article key={title} className="flex h-full flex-col border border-white/10 bg-[#19161e] px-3 py-8 text-white sm:px-5 lg:px-8 lg:py-12">
+                <div className="text-center">
+                  <h2 className="font-sans text-lg font-bold leading-tight sm:text-xl lg:text-2xl">{title}</h2>
+                  <p className="mt-3 text-base text-violet-300">{audience}</p>
+                </div>
+                <p className="mt-10 text-base leading-relaxed">{description}</p>
+                <div className="mt-7 space-y-5 text-base leading-relaxed">
+                  <p><strong>MOQ:</strong> {quantity}. {details}</p>
+                  {facts.map(({ label, value }) => <p key={label}><strong>{label}:</strong> {value}</p>)}
+                </div>
+                <Link href={href} className="mt-8 self-start font-semibold text-violet-300 underline underline-offset-4 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-300">
+                  {action}
+                </Link>
+              </article>
+            ))}
+          </div>
+          </div>
+          <p className="mt-3 text-sm text-white/60 min-[602px]:hidden">Swipe sideways to view all three options.</p>
+        </div>
+      </section>
+
       {/* ══════════════════════════════════════
           §3  WHY CHOOSE MULANG
       ══════════════════════════════════════ */}
@@ -147,6 +243,40 @@ export default function HomeClient({ categories }: { categories: Category[] }) {
                   <h3 className="font-syne font-bold text-lg text-white mb-2.5">{title}</h3>
                   <p className="text-white/55 text-sm leading-relaxed">{desc}</p>
                 </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════
+          §3b  THE THREE LINES WE SPECIALISE IN
+      ══════════════════════════════════════ */}
+      <section className="section-sm border-t border-white/5">
+        <div className="container">
+          <AnimatedSection className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div>
+              <p className="label mb-4">What We Specialise In</p>
+              <h2 className="heading-xl">Tees, Hoodies,<br />Streetwear.</h2>
+            </div>
+            <p className="text-white/40 text-sm leading-relaxed max-w-xs">
+              One factory, three lines. Each one has its own team, its own machines and its own
+              page — so you can go straight to the process you need.
+            </p>
+          </AnimatedSection>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {SPECIALTIES.map(({ href, title, desc }, i) => (
+              <AnimatedSection key={href} delay={i * 0.07} className="h-full">
+                <Link href={href} className="glass-card p-7 h-full flex flex-col group">
+                  <h3 className="font-syne font-bold text-lg text-white mb-3 group-hover:text-violet-300 transition-colors">
+                    {title}
+                  </h3>
+                  <p className="text-white/55 text-sm leading-relaxed flex-1">{desc}</p>
+                  <span className="mt-6 inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.15em] text-violet-400">
+                    Explore {title.replace("Custom ", "").replace(" Manufacturing", "")} <ArrowRight size={12} />
+                  </span>
+                </Link>
               </AnimatedSection>
             ))}
           </div>

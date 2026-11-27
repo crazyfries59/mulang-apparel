@@ -123,7 +123,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <section className="px-6 pb-10">
         <div className="container max-w-3xl">
           <AnimatedSection>
-            {isCmsPost && post.body ? <div className="prose prose-invert max-w-none prose-headings:font-syne prose-headings:text-white prose-p:text-white/65 prose-p:leading-8 prose-li:text-white/65"><RichText data={post.body as never} /></div> : Content && <Content />}
+            {isCmsPost && post.body ? <div className="article-body"><RichText data={post.body as never} /></div> : Content && <Content />}
           </AnimatedSection>
         </div>
       </section>

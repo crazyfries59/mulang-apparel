@@ -38,6 +38,7 @@ export default function MinimumOrderQuantityContent() {
             {[
               ["moq-meaning", "What MOQ means"],
               ["moq-factors", "What affects the minimum"],
+              ["below-moq", "Ordering below MOQ"],
               ["compare-moq-quotes", "How to compare quotes"],
               ["smaller-first-order", "Planning a smaller first order"],
               ["request-moq", "What to send a manufacturer"],
@@ -73,6 +74,47 @@ export default function MinimumOrderQuantityContent() {
       </P>
       <P>
         The same design can therefore receive different MOQ and unit-price options depending on fabric availability, construction, decoration method, size range, and delivery schedule. Ask for the assumptions behind each quote so that you can compare like with like.
+      </P>
+
+      <H2 id="below-moq">Can You Place a Clothing Order Below the MOQ?</H2>
+
+      <P>
+        Sometimes a clothing manufacturer can accept an order below its minimum order quantity (MOQ), depending on the fabric, color and production setup. When a smaller run is feasible, expect the factory to quote it separately. A higher price per garment can reflect the cost of preparing and cutting a batch that produces fewer finished pieces.
+      </P>
+
+      <h3 className="font-syne font-semibold text-white text-lg mt-7 mb-3">Why a smaller run can cost more per garment</h3>
+
+      <P>
+        For a cut-and-sew order, the factory plans how the pattern pieces fit across the fabric, lays out the fabric and cuts the pieces together in a batch. A smaller run can still require much of the same cutting preparation. With fewer finished garments to share that work, the preparation cost per garment rises if the work stays the same.
+      </P>
+
+      <P>
+        Fabric purchasing is a separate factor. A custom color can require a minimum fabric purchase or dye batch larger than the order uses. Uncut fabric may be suitable for a later run, but the current order can still carry some of the cost of buying and preparing that batch. Ask whether the quote includes a material charge and whether any usable fabric can be held for a reorder.
+      </P>
+
+      <P>
+        For example, suppose a brand wants a small first run of one hoodie style in a custom color. If the supplier requires the same minimum dye batch for that smaller run as for a larger order, producing fewer hoodies uses less fabric while the initial fabric purchase can stay the same. An available fabric in a similar color might remove that particular constraint. Compare the swatch with the original brief before changing the fabric.
+      </P>
+
+      <h3 className="font-syne font-semibold text-white text-lg mt-7 mb-3">What to ask your manufacturer to quote</h3>
+
+      <ul className="list-disc pl-5 space-y-3 mb-6 text-white/60 text-sm leading-relaxed">
+        <li>
+          <strong className="text-white/85">Confirm where the minimum applies.</strong> Ask whether it is per style, per color, per fabric or for the order as a whole. Check whether sizes can be mixed within one color.
+        </li>
+        <li>
+          <strong className="text-white/85">Request two quantities with the same specifications.</strong> If both quantities are feasible, ask for your target quantity and the standard minimum on the same fabric, color, construction and decoration. Compare the per-garment price and the total you would pay.
+        </li>
+        <li>
+          <strong className="text-white/85">Ask what drives the difference.</strong> Confirm whether the quote includes one-time setup, fabric minimums or a separate material charge. If usable fabric remains, ask who keeps it and how it would be treated on a reorder.
+        </li>
+        <li>
+          <strong className="text-white/85">Ask for one alternative you can actually sell.</strong> If the original specification needs a larger batch, ask whether an available fabric color or a first run with fewer colorways would meet your design and launch needs.
+        </li>
+      </ul>
+
+      <P>
+        If you are planning a custom hoodie or T-shirt, share the style, the fabric or reference sample, the colorways and the quantity per color so Mulang Apparel can review the production options. <Link href="/contact" className="text-violet-300 hover:text-white underline underline-offset-4">Discuss your project with Mulang Apparel</Link>.
       </P>
 
       <H2 id="compare-moq-quotes">How to read a supplier&apos;s MOQ quote</H2>
@@ -120,7 +162,7 @@ export default function MinimumOrderQuantityContent() {
       <P>
         <strong className="text-white/80">Can a clothing manufacturer produce below its MOQ?</strong>
         <br />
-        Sometimes a supplier can offer a smaller run with a higher unit cost or a change to materials and customization. Whether that works depends on the production plan, so request a revised quote instead of assuming the published minimum is negotiable.
+        Sometimes, if the fabric and production setup allow it. Ask for a quote for your target quantity and the usual minimum. Cutting preparation and any fabric batch minimum may still apply, which can raise the price per garment.
       </P>
       <P>
         <strong className="text-white/80">Does a sample count toward the bulk order quantity?</strong>
