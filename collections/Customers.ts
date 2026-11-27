@@ -36,6 +36,11 @@ export const Customers: CollectionConfig = {
       ],
     },
     {
+      type: "ui",
+      name: "whatsappLink",
+      admin: { components: { Field: "/components/admin/WhatsAppLink#WhatsAppLink" } },
+    },
+    {
       type: "row",
       fields: [
         { name: "website", type: "text", label: "网站 / 社媒" },

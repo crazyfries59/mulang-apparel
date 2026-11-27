@@ -28,6 +28,7 @@ import { ShippingPicker as ShippingPicker_b60d94a9cd53a23e646e2a95bbfe87b0 } fro
 import { FxRateButton as FxRateButton_0c9e83c3a10afe92a4b4fd8ade8a803b } from '../../../components/admin/FxRateButton'
 import { FillBillTo as FillBillTo_d25bf474562779ad528f73369a742b99 } from '../../../components/admin/FillBillTo'
 import { InvoiceExport as InvoiceExport_210be90c11d2e9f9b31b785bcec1b6d2 } from '../../../components/admin/InvoiceExport'
+import { WhatsAppLink as WhatsAppLink_598bcb459cf46eb09cc5df0d3fe69267 } from '../../../components/admin/WhatsAppLink'
 import { LogoutButton as LogoutButton_9afb321262a9513c979915ca76b6cf86 } from '../../../components/admin/LogoutButton'
 import { BrandIcon as BrandIcon_81fda60f3e3709e861f40982a767707d } from '../../../components/admin/Brand'
 import { BrandLogo as BrandLogo_81fda60f3e3709e861f40982a767707d } from '../../../components/admin/Brand'
@@ -70,6 +71,7 @@ export const importMap = {
   "/components/admin/FxRateButton#FxRateButton": FxRateButton_0c9e83c3a10afe92a4b4fd8ade8a803b,
   "/components/admin/FillBillTo#FillBillTo": FillBillTo_d25bf474562779ad528f73369a742b99,
   "/components/admin/InvoiceExport#InvoiceExport": InvoiceExport_210be90c11d2e9f9b31b785bcec1b6d2,
+  "/components/admin/WhatsAppLink#WhatsAppLink": WhatsAppLink_598bcb459cf46eb09cc5df0d3fe69267,
   "/components/admin/LogoutButton#LogoutButton": LogoutButton_9afb321262a9513c979915ca76b6cf86,
   "/components/admin/Brand#BrandIcon": BrandIcon_81fda60f3e3709e861f40982a767707d,
   "/components/admin/Brand#BrandLogo": BrandLogo_81fda60f3e3709e861f40982a767707d,
