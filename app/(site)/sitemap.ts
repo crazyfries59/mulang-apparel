@@ -31,7 +31,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority,
   }));
 
-  /* The 241 product pages are deliberately NOT listed here. They are template
+  /* The product pages are deliberately NOT listed here. They are template
      pages (~400 words, same layout, differing only in SKU, photo and GSM), and
      submitting all of them made Google mark 240 of 266 URLs as "Discovered -
      currently not indexed": the crawl budget went to near-duplicates instead of

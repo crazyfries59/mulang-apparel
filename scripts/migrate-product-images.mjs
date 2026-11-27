@@ -21,7 +21,7 @@ const MAX_WIDTH = 1400;
 const JPEG_QUALITY = 78;
 
 const raw = JSON.parse(
-  fs.readFileSync(path.join(ROOT, "app", "products", "hongyu-products.json"), "utf8")
+  fs.readFileSync(path.join(ROOT, "app", "(site)", "products", "hongyu-products.json"), "utf8")
 );
 
 const resolveUrl = (p) => (p.startsWith("http") ? p : UPLOAD + p);

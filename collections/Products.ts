@@ -2,35 +2,45 @@ import type { CollectionConfig } from "payload";
 import { revalidateProducts } from "../lib/content/cache-tags.ts";
 import { publishedProductWhere, withPublicationDate } from "../lib/content/publication.ts";
 
+// Kept in sync with app/(site)/products/data.ts TREE. Old values remain so
+// historical and unpublished products can still be edited in the admin.
 const categories = [
-  ["kids-wear", "Kids Wear"],
-  ["shirt", "Shirt"],
   ["t-shirts", "T-Shirts"],
-  ["outdoor-clothing", "Outdoor Clothing"],
   ["pants", "Pants"],
   ["hoodies", "Hoodies"],
+  ["baby", "Baby"],
+  ["kids-wear", "Kids Wear"],
+  ["fishing-shirt", "Fishing Shirt"],
   ["denim", "Denim"],
-  ["y2k-fashion", "Y2K Fashion"],
-  ["sleepwear", "Sleepwear"],
-  ["sweater", "Sweater"],
-  ["jersey", "Jersey"],
-  ["dresses", "Dresses"],
-  ["swimwear", "Swimwear"],
   ["accessories", "Accessories"],
+  ["sleepwear", "Sleepwear"],
+  ["shirt", "Shirt"],
+  ["swimwear", "Swimwear"],
+  ["dresses", "Dresses"],
+  ["jersey", "Jersey"],
+  ["sweater", "Sweater"],
+  ["outdoor-clothing", "Outdoor Clothing"],
+  ["y2k-fashion", "Y2K Fashion"],
 ] as const;
 
 const subcategories = [
+  ["short-sleeve", "Short Sleeve"],
+  ["polo", "Polo"],
+  ["long-sleeve", "Long Sleeve"],
+  ["tank-top", "Tank Top"],
+  ["shorts", "Shorts"],
+  ["sweatpants", "Sweatpants"],
+  ["pullover-hoodie", "Pullover Hoodie"],
+  ["zip-up-hoodie", "Zip Up Hoodie"],
+  ["crewneck-sweatshirt", "Crewneck Sweatshirt"],
+  // legacy values kept for historical/unpublished products
   ["oversized-t-shirt", "Oversized T-Shirt"],
   ["vintage-wash-t-shirt", "Vintage T-Shirt"],
-  ["polo", "Polo"],
   ["vest", "Vest"],
-  ["long-sleeve", "Long Sleeve"],
   ["basic-fit-t-shirt", "Basic Fit T-Shirt"],
-  ["shorts", "Shorts"],
   ["fleece-hoodie", "Fleece Hoodie"],
   ["terry-hoodie", "Terry Hoodie"],
   ["sweatshirt", "Sweatshirt"],
-  ["zip-up-hoodie", "Zip Up Hoodie"],
 ] as const;
 
 const slugify = (value: string) => value

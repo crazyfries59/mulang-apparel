@@ -1,7 +1,7 @@
 /* ─────────────────────────────────────────────────────────────────
    Mulang Apparel — catalog cloned 1:1 from Hongyu Apparel.
    Categories + products mirror hongyuapparel.com exactly.
-   Product data lives in ./hongyu-products.json (241 products).
+   Product data lives in ./hongyu-products.json (331 products, synced 2026-11-27).
    Images: mirrored into public/products/<category>/<slug>/ by
    scripts/migrate-product-images.mjs so the site no longer depends on a
    third-party server for its own product photos.
@@ -28,38 +28,38 @@ const TREE: { slug: string; label: string; subs?: { label: string; slug: string 
   {
     slug: "t-shirts", label: "T-Shirts",
     subs: [
-      { label: "Oversized T-Shirt", slug: "oversized-t-shirt" },
-      { label: "Vintage T-Shirt",   slug: "vintage-wash-t-shirt" },
-      { label: "Polo",              slug: "polo" },
-      { label: "Vest",              slug: "vest" },
-      { label: "Long Sleeve",       slug: "long-sleeve" },
-      { label: "Basic Fit",         slug: "basic-fit-t-shirt" },
+      { label: "Short Sleeve",  slug: "short-sleeve" },
+      { label: "Polo",          slug: "polo" },
+      { label: "Long Sleeve",   slug: "long-sleeve" },
+      { label: "Tank Top",      slug: "tank-top" },
     ],
   },
   {
     slug: "pants", label: "Pants",
-    subs: [{ label: "Shorts", slug: "shorts" }],
+    subs: [
+      { label: "Shorts",     slug: "shorts" },
+      { label: "Sweatpants", slug: "sweatpants" },
+    ],
   },
   {
     slug: "hoodies", label: "Hoodies",
     subs: [
-      { label: "Fleece Hoodie", slug: "fleece-hoodie" },
-      { label: "Terry Hoodie",  slug: "terry-hoodie" },
-      { label: "Sweatshirt",    slug: "sweatshirt" },
-      { label: "Zip Up Hoodie", slug: "zip-up-hoodie" },
+      { label: "Pullover Hoodie",      slug: "pullover-hoodie" },
+      { label: "Zip Up Hoodie",        slug: "zip-up-hoodie" },
+      { label: "Crewneck Sweatshirt",  slug: "crewneck-sweatshirt" },
     ],
   },
-  { slug: "kids-wear",        label: "Kids Wear" },
-  { slug: "outdoor-clothing", label: "Outdoor Clothing" },
-  { slug: "denim",            label: "Denim" },
-  { slug: "accessories",      label: "Accessories" },
-  { slug: "sleepwear",        label: "Sleepwear" },
-  { slug: "y2k-fashion",      label: "Y2K Fashion" },
-  { slug: "shirt",            label: "Shirt" },
-  { slug: "swimwear",         label: "Swimwear" },
-  { slug: "dresses",          label: "Dresses" },
-  { slug: "jersey",           label: "Jersey" },
-  { slug: "sweater",          label: "Sweater" },
+  { slug: "baby",           label: "Baby" },
+  { slug: "kids-wear",      label: "Kids Wear" },
+  { slug: "fishing-shirt",  label: "Fishing Shirt" },
+  { slug: "denim",          label: "Denim" },
+  { slug: "accessories",    label: "Accessories" },
+  { slug: "sleepwear",      label: "Sleepwear" },
+  { slug: "shirt",          label: "Shirt" },
+  { slug: "swimwear",       label: "Swimwear" },
+  { slug: "dresses",        label: "Dresses" },
+  { slug: "jersey",         label: "Jersey" },
+  { slug: "sweater",        label: "Sweater" },
 ];
 
 /* ── Product shape used across the UI ───────────────────────────── */
