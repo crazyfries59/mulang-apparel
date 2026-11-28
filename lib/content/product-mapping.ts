@@ -1,4 +1,6 @@
-import type { Intro, Product } from "@/app/(site)/products/data";
+import type { Attributes, Intro, Product } from "@/app/(site)/products/data";
+
+const ATTR_KEYS: (keyof Attributes)[] = ["fit", "composition", "fabric", "weight", "look", "for", "occasion"];
 
 export type CmsProductDocument = {
   productCode?: string | null;
@@ -27,6 +29,16 @@ export type CmsProductDocument = {
     clothingCustomization?: string | null;
   } | null;
   seo?: { title?: string | null; description?: string | null } | null;
+  attributes?: Record<string, unknown> | null;
+};
+
+const mapAttributes = (value: Record<string, unknown> | null | undefined): Attributes => {
+  const out: Attributes = { fit: [], composition: [], fabric: [], weight: [], look: [], for: [], occasion: [] };
+  for (const key of ATTR_KEYS) {
+    const raw = value?.[key];
+    out[key] = Array.isArray(raw) ? raw.filter((v): v is string => typeof v === "string") : [];
+  }
+  return out;
 };
 
 export function mapCmsProduct(document: CmsProductDocument): Product {
@@ -65,6 +77,7 @@ export function mapCmsProduct(document: CmsProductDocument): Product {
     details: (document.details ?? [])
       .map((item) => item.image?.trim() ?? "")
       .filter(Boolean),
+    attrs: mapAttributes(document.attributes),
     seoTitle: document.seo?.title?.trim() || undefined,
     seoDescription: document.seo?.description?.trim() || undefined,
   };

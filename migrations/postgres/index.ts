@@ -7,6 +7,7 @@ import * as migration_20261107_164000_invoices from './20261107_164000_invoices'
 import * as migration_20261107_174500_invoice_grants from './20261107_174500_invoice_grants';
 import * as migration_20261107_180500_customer_company from './20261107_180500_customer_company';
 import * as migration_20261108_170000_invoice_country from './20261108_170000_invoice_country';
+import * as migration_20261128_020000_product_attributes from './20261128_020000_product_attributes';
 
 export const migrations = [
   {
@@ -53,5 +54,10 @@ export const migrations = [
     up: migration_20261108_170000_invoice_country.up,
     down: migration_20261108_170000_invoice_country.down,
     name: '20261108_170000_invoice_country'
+  },
+  {
+    up: migration_20261128_020000_product_attributes.up,
+    down: migration_20261128_020000_product_attributes.down,
+    name: '20261128_020000_product_attributes'
   },
 ];

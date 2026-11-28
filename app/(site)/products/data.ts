@@ -62,6 +62,31 @@ const TREE: { slug: string; label: string; subs?: { label: string; slug: string 
   { slug: "sweater",        label: "Sweater" },
 ];
 
+/* ── Multi-dimensional attributes (mirrors Hongyu's product filters) ─
+   Each value array is usually length 0 or 1; some products legitimately
+   carry several Fit / For / Look labels, so keep them as arrays. */
+export type Attributes = {
+  fit: string[];
+  composition: string[];
+  fabric: string[];
+  weight: string[];
+  look: string[];
+  for: string[];
+  occasion: string[];
+};
+
+export const FILTER_FIELDS = [
+  { key: "fit", label: "Fit" },
+  { key: "composition", label: "Composition" },
+  { key: "fabric", label: "Fabric" },
+  { key: "weight", label: "Weight" },
+  { key: "look", label: "Look" },
+  { key: "for", label: "For" },
+  { key: "occasion", label: "Occasion" },
+] as const;
+
+export type FilterKey = typeof FILTER_FIELDS[number]["key"];
+
 /* ── Product shape used across the UI ───────────────────────────── */
 export type Intro = {
   Feature?: string; Size?: string; Material?: string; Weight?: string;
@@ -74,6 +99,7 @@ export type Product = {
   fabric: string; badge: string; img: string; desc: string;
   sizes?: string; gallery: string[]; slug: string; intro: Intro;
   details: string[];
+  attrs: Attributes;
   seoTitle?: string;
   seoDescription?: string;
 };
@@ -81,7 +107,16 @@ export type Product = {
 type RawProduct = {
   id: number; name: string; slug: string; price: string;
   top: string; sub: string; imgs: string[]; intro?: Intro; details?: string[];
+  attrs?: Partial<Attributes>;
 };
+
+const EMPTY_ATTRS: Attributes = {
+  fit: [], composition: [], fabric: [], weight: [], look: [], for: [], occasion: [],
+};
+const readAttrs = (raw?: Partial<Attributes>): Attributes =>
+  raw ? { ...EMPTY_ATTRS, ...Object.fromEntries(
+    Object.entries(EMPTY_ATTRS).map(([k]) => [k, Array.isArray(raw[k as keyof Attributes]) ? raw[k as keyof Attributes]! : []]),
+  ) } as Attributes : { ...EMPTY_ATTRS };
 
 /* derive display fields from the product name */
 const extractId = (name: string) => {
@@ -154,6 +189,7 @@ export const PRODUCTS: Product[] = (raw.products as RawProduct[]).map(p => {
     slug: p.slug,
     intro,
     details: (p.details ?? []).map((_, i) => localImg(p.top, p.slug, "detail", i)),
+    attrs: readAttrs(p.attrs),
   };
 });
 

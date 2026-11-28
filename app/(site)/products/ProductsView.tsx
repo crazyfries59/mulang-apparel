@@ -7,7 +7,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Search, ArrowRight, X } from "lucide-react";
-import { CATEGORIES, type Product } from "./data";
+import { CATEGORIES, FILTER_FIELDS, type FilterKey, type Product } from "./data";
 import { CATEGORY_LANDING_LIST } from "@/lib/seo/category-landing";
 
 const badgeColor = (b: string) =>
@@ -20,9 +20,41 @@ const catHref = (slug: string) => (slug === "all" ? "/products" : `/products?cat
 const normalize = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, "");
 
 const matchesQuery = (product: Product, q: string, nq: string) => {
-  const fields = [product.id, product.name, product.cat, product.sub, product.fabric, product.slug];
+  const fields = [
+    product.id, product.name, product.cat, product.sub, product.fabric, product.slug,
+    ...Object.values(product.attrs ?? {}).flat(),
+  ];
   if (fields.some(f => f.toLowerCase().includes(q))) return true;
   return nq !== "" && fields.some(f => normalize(f).includes(nq));
+};
+
+/* Weight has ~50 distinct GSM values from Hongyu; group them into the same
+   four bands the reference site uses so the filter stays readable. */
+const weightBand = (gsm: string): string | null => {
+  const n = parseInt(gsm, 10);
+  if (!Number.isFinite(n)) return null;
+  if (n <= 180) return "Up to 180 GSM";
+  if (n <= 250) return "180-250 GSM";
+  if (n <= 350) return "250-350 GSM";
+  return "350+ GSM";
+};
+const WEIGHT_BANDS = ["Up to 180 GSM", "180-250 GSM", "250-350 GSM", "350+ GSM"];
+
+const valueOf = (p: Product, key: FilterKey): string[] =>
+  key === "weight"
+    ? (p.attrs?.weight ?? []).map(weightBand).filter((v): v is string => Boolean(v))
+    : (p.attrs?.[key] ?? []);
+
+/* Mirror Hongyu's priority order for the most common options; everything
+   else follows alphabetically so the list is stable across syncs. */
+const PRIORITY: Record<FilterKey, string[]> = {
+  fit: ["Oversized", "Regular", "Boxy", "Slim", "Crop", "Raglan"],
+  composition: ["100% Cotton", "Cotton & Polyester", "Cotton & Spandex", "Polyester", "Nylon", "Cotton & Sorona", "Modal", "Terry", "Spandex", "Bamboo", "Lyocell"],
+  fabric: ["French Terry", "Fleece", "Jersey", "Pique", "Denim", "Waffle", "Mesh", "Canvas"],
+  weight: WEIGHT_BANDS,
+  look: ["Solid", "Washed", "Color Block", "Print"],
+  for: ["Unisex", "Men", "Women", "Kids", "Baby"],
+  occasion: ["Streetwear", "Sports & Gym", "Casual", "Outdoor", "Y2K", "Beach & Swim", "Loungewear", "Workwear"],
 };
 
 export default function ProductsView({ products }: { products: Product[] }) {
@@ -90,6 +122,22 @@ export default function ProductsView({ products }: { products: Product[] }) {
     return map;
   }, [products]);
 
+  /* Multi-dimensional filters are client-side only (option A): they never
+     touch the URL, so no new indexable paths, no canonical/sitemap changes. */
+  const [selectedAttrs, setSelectedAttrs] = useState<Partial<Record<FilterKey, string>>>({});
+  const [filtersOpen, setFiltersOpen] = useState(false);
+
+  const attrOptions = useMemo(() => {
+    const out: Record<FilterKey, string[]> = { fit: [], composition: [], fabric: [], weight: [], look: [], for: [], occasion: [] };
+    for (const field of FILTER_FIELDS) {
+      const seen = new Set<string>();
+      for (const p of products) for (const v of valueOf(p, field.key)) seen.add(v);
+      const priority = PRIORITY[field.key].filter(v => seen.has(v));
+      out[field.key] = [...priority, ...[...seen].filter(v => !priority.includes(v)).sort()];
+    }
+    return out;
+  }, [products]);
+
   const filtered = useMemo(() => {
     let list = activeCat === "all"
       ? products
@@ -99,8 +147,21 @@ export default function ProductsView({ products }: { products: Product[] }) {
       const nq = normalize(q);
       list = list.filter(p => matchesQuery(p, q, nq));
     }
+    for (const field of FILTER_FIELDS) {
+      const chosen = selectedAttrs[field.key];
+      if (chosen) list = list.filter(p => valueOf(p, field.key).includes(chosen));
+    }
     return list;
-  }, [activeCat, products, search]);
+  }, [activeCat, products, search, selectedAttrs]);
+
+  const toggleAttr = (key: FilterKey, value: string) =>
+    setSelectedAttrs(prev => {
+      const next = { ...prev };
+      if (next[key] === value) delete next[key];
+      else next[key] = value;
+      return next;
+    });
+  const activeAttrCount = Object.keys(selectedAttrs).length;
 
   const catRow = (slug: string, label: string, n: number) => {
     const active = activeCat === slug;
@@ -208,6 +269,64 @@ export default function ProductsView({ products }: { products: Product[] }) {
                   </button>
                 )}
               </div>
+            </div>
+
+            {/* attribute filters — client-side only, no URL changes */}
+            <div className="border border-white/8 rounded-xl mb-6 overflow-hidden bg-white/[0.02]">
+              <button
+                type="button"
+                onClick={() => setFiltersOpen(o => !o)}
+                aria-expanded={filtersOpen}
+                className="w-full flex items-center justify-between px-4 py-3 text-xs tracking-widest uppercase text-white/50 hover:text-white/80 transition-colors"
+              >
+                <span>Filter by specs{activeAttrCount ? ` · ${activeAttrCount} active` : ""}</span>
+                <span className="flex items-center gap-3">
+                  {activeAttrCount > 0 && (
+                    <span
+                      role="button"
+                      tabIndex={0}
+                      onClick={(e) => { e.stopPropagation(); setSelectedAttrs({}); }}
+                      onKeyDown={(e) => { if (e.key === "Enter") { e.stopPropagation(); setSelectedAttrs({}); } }}
+                      className="normal-case tracking-normal text-violet-400 hover:text-violet-300"
+                    >
+                      Clear
+                    </span>
+                  )}
+                  <span className={`transition-transform ${filtersOpen ? "rotate-180" : ""}`}>▾</span>
+                </span>
+              </button>
+              {filtersOpen && (
+                <div className="border-t border-white/8 divide-y divide-white/6">
+                  {FILTER_FIELDS.map(field => {
+                    const options = attrOptions[field.key];
+                    if (!options.length) return null;
+                    return (
+                      <div key={field.key} className="flex gap-3 px-4 py-2.5 items-start">
+                        <span className="w-24 flex-shrink-0 pt-1 text-[0.62rem] tracking-widest uppercase text-white/30">{field.label}</span>
+                        <div className="flex flex-wrap gap-x-4 gap-y-1.5">
+                          <button
+                            type="button"
+                            onClick={() => setSelectedAttrs(prev => { const n = { ...prev }; delete n[field.key]; return n; })}
+                            className={`text-[0.78rem] transition-colors ${!selectedAttrs[field.key] ? "text-violet-400 font-semibold" : "text-white/45 hover:text-white"}`}
+                          >
+                            All
+                          </button>
+                          {options.map(option => (
+                            <button
+                              key={option}
+                              type="button"
+                              onClick={() => toggleAttr(field.key, option)}
+                              className={`text-[0.78rem] transition-colors ${selectedAttrs[field.key] === option ? "text-violet-400 font-semibold" : "text-white/45 hover:text-white"}`}
+                            >
+                              {option}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
             </div>
 
             {/* mobile category chips */}

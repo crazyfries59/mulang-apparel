@@ -21,6 +21,19 @@
     "Size": "Available for adult and kids size",
     "Material": "100% Cotton African print wax fabric",
     "MOQ": "This product has a minimum quantity of 50 Pieces"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -47,6 +60,21 @@
     "Size": "Available for adult and kids size",
     "Material": "Custom material: BIO-washed cotton, heavyweight brushed cotton, pigment-dyed, Canvas, Polyester, Acrylic and etc.",
     "MOQ": "This product has a minimum quantity of 50 Pieces"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Canvas"
+    ],
+    "weight": [],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -69,6 +97,17 @@
    "intro": {
     "Size": "Available for adult and kids size",
     "MOQ": "This product has a minimum quantity of 50 Pieces"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [],
+    "fabric": [],
+    "weight": [],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -95,6 +134,21 @@
     "Size": "Available for adult and kids size",
     "Material": "Custom material: BIO-washed cotton, heavyweight brushed cotton, pigment-dyed, Canvas, Polyester, Acrylic and etc.",
     "MOQ": "This product has a minimum quantity of 50 Pieces"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Canvas"
+    ],
+    "weight": [],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -122,6 +176,21 @@
     "Size": "Available for adult and kids size",
     "Material": "Custom material: BIO-washed cotton, heavyweight brushed cotton, pigment-dyed, Canvas, Polyester, Acrylic and etc.",
     "MOQ": "This product has a minimum quantity of 50 Pieces"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Canvas"
+    ],
+    "weight": [],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -154,6 +223,23 @@
     "Material": "100% Cotton",
     "Weight": "190Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Regular"
+    ],
+    "composition": [
+     "Cotton & Spandex"
+    ],
+    "fabric": [],
+    "weight": [
+     "230 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -186,6 +272,23 @@
     "Material": "100% Cotton",
     "Weight": "190Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Regular"
+    ],
+    "composition": [
+     "Cotton & Spandex"
+    ],
+    "fabric": [],
+    "weight": [
+     "230 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -218,6 +321,29 @@
     "Material": "100% Cotton",
     "Weight": "190Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Regular"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "Jersey"
+    ],
+    "weight": [
+     "190 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Baby"
+    ],
+    "occasion": [
+     "Casual"
+    ]
    }
   },
   {
@@ -250,6 +376,23 @@
     "Material": "100% Cotton",
     "Weight": "190Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Regular"
+    ],
+    "composition": [
+     "Cotton & Spandex"
+    ],
+    "fabric": [],
+    "weight": [
+     "230 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -284,6 +427,23 @@
     "Weight": "Cotton:190Gsm,odell:140Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size",
     "Material": "Cotton & Spandex"
+   },
+   "attrs": {
+    "fit": [
+     "Regular"
+    ],
+    "composition": [
+     "Cotton & Spandex"
+    ],
+    "fabric": [],
+    "weight": [
+     "230 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -316,6 +476,23 @@
     "Material": "95% Cotton,5%spandex",
     "Weight": "140Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Regular"
+    ],
+    "composition": [
+     "Cotton & Spandex"
+    ],
+    "fabric": [],
+    "weight": [
+     "230 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -350,6 +527,23 @@
     "Weight": "Cotton:190Gsm,odell:140Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size",
     "Material": "Cotton & Spandex"
+   },
+   "attrs": {
+    "fit": [
+     "Regular"
+    ],
+    "composition": [
+     "Cotton & Spandex"
+    ],
+    "fabric": [],
+    "weight": [
+     "230 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -385,6 +579,23 @@
     "Material": "91% Bamboo,9% Spandex",
     "Weight": "190Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Regular"
+    ],
+    "composition": [
+     "Cotton & Spandex"
+    ],
+    "fabric": [],
+    "weight": [
+     "230 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -422,6 +633,29 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [
+     "Regular"
+    ],
+    "composition": [
+     "Bamboo",
+     "Nylon",
+     "Spandex"
+    ],
+    "fabric": [
+     "Jersey"
+    ],
+    "weight": [
+     "190 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Baby"
+    ],
+    "occasion": []
    }
   },
   {
@@ -459,6 +693,24 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Denim"
+    ],
+    "weight": [
+     "543 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -497,6 +749,24 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Denim"
+    ],
+    "weight": [
+     "385 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -534,6 +804,22 @@
     "Size": "S, M, L, XL,2XL",
     "Material": "90% Cotton 10% Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Denim"
+    ],
+    "weight": [],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -571,6 +857,22 @@
     "Size": "S, M, L, XL,2XL",
     "Material": "91% Cotton 7% Polyester 2% Viscose",
     "MOQ": "This product has a minimum quantity of 50 Pieces"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Denim"
+    ],
+    "weight": [],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -607,6 +909,26 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [
+     "Crop"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Denim"
+    ],
+    "weight": [
+     "385 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -644,6 +966,24 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Denim"
+    ],
+    "weight": [
+     "430 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -663,6 +1003,19 @@
     "Size": "S, M, L, XL, 2XL & Customize",
     "Material": "100% Cotton with colorful embroidery",
     "MOQ": "100 Pieces, one color 5 sizes"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -683,6 +1036,19 @@
     "Size": "S, M, L, XL, 2XL & Customize",
     "Material": "100% Cotton with colorful embroidery",
     "MOQ": "100 Pieces, one color 5 sizes"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -718,6 +1084,30 @@
     "Logo customization": "MOQ 50 Pieces Change private label, Printing logo.",
     "Clothing Customize": "MOQ 50 Pieces per Style per Color 5 Sizes, Cut and sew customize the sizes, print, colors, and material all according to your request",
     "Weight": "180 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Regular"
+    ],
+    "composition": [
+     "Polyester"
+    ],
+    "fabric": [
+     "Jersey"
+    ],
+    "weight": [
+     "180 GSM"
+    ],
+    "look": [
+     "Print"
+    ],
+    "for": [
+     "Men"
+    ],
+    "occasion": [
+     "Outdoor",
+     "Sports & Gym"
+    ]
    }
   },
   {
@@ -755,6 +1145,30 @@
     "Logo customization": "MOQ 50 Pieces Change private label, Printing logo.",
     "Clothing Customize": "MOQ 50 Pieces per Style per Color 5 Sizes, Cut and sew customize the sizes, print, colors, and material all according to your request",
     "Weight": "180 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Regular"
+    ],
+    "composition": [
+     "Polyester"
+    ],
+    "fabric": [
+     "Jersey"
+    ],
+    "weight": [
+     "180 GSM"
+    ],
+    "look": [
+     "Print"
+    ],
+    "for": [
+     "Men"
+    ],
+    "occasion": [
+     "Outdoor",
+     "Sports & Gym"
+    ]
    }
   },
   {
@@ -791,6 +1205,31 @@
     "Material": "42% Cotton,53%polyester,5%other fiber",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "345 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Boxy",
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "345 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -829,6 +1268,24 @@
     "Material": "42% Cotton 53% Polyester 5%other fiber",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "365 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "365 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -867,6 +1324,32 @@
     "Material": "100% Cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "420 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "420 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -904,6 +1387,31 @@
     "Material": "65.39% cotton 34.61% polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "445 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "445 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -943,6 +1451,30 @@
     "Material": "100% Cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "420 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "420 GSM"
+    ],
+    "look": [
+     "Washed"
+    ],
+    "for": [
+     "Men",
+     "Unisex"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -981,6 +1513,25 @@
     "Material": "30.99% Cotton 69.01% Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "365 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "365 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -1019,6 +1570,25 @@
     "Material": "52% Cotton, 48%Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "350 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "350 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -1057,6 +1627,26 @@
     "Material": "100% Cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "420 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "420 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -1099,6 +1689,25 @@
     "Material": "58% Cotton,42%Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "430 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "430 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -1138,6 +1747,23 @@
     "Material": "42% Cotton 53% Polyester 5%other fiber",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "350 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "350 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -1177,6 +1803,25 @@
     "Material": "42% Cotton 58%Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "345 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "345 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -1215,6 +1860,34 @@
     "Material": "100% Cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "360 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Boxy",
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton",
+     "Terry"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "360 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -1253,6 +1926,31 @@
     "Material": "85% Cotton,15%polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "320 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Regular"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "320 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -1291,6 +1989,31 @@
     "Material": "56.44% Cotton43.56% Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "430 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "430 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -1324,6 +2047,25 @@
     "Material": "Outer: 48.8% Cotton, 51.2% Polyester, 5% Spandex / Lining: 95% Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "280 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "280 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Kids"
+    ],
+    "occasion": []
    }
   },
   {
@@ -1358,6 +2100,30 @@
     "Material": "42% Cotton,58%polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "350 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "350 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -1398,6 +2164,25 @@
     "Material": "80% Cotton, 20%Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "440 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "440 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -1437,6 +2222,25 @@
     "Material": "42% Cotton, 53%Polyester,5%other",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "345 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "345 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -1475,6 +2279,29 @@
     "Material": "42% Cotton,58%polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "350 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Regular"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "350 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Women"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -1511,6 +2338,32 @@
     "Material": "32% Cotton,68%polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "330 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Boxy",
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "330 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -1547,6 +2400,31 @@
     "Material": "42% Cotton 53% Polyester 5%other fiber",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "345 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Boxy",
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "345 GSM"
+    ],
+    "look": [
+     "Color Block",
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": []
    }
   },
   {
@@ -1584,6 +2462,24 @@
     "Material": "100% Cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "420 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "420 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -1622,6 +2518,30 @@
     "Material": "100% Cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "400 GSM+"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "400 GSM+"
+    ],
+    "look": [
+     "Washed"
+    ],
+    "for": [
+     "Men",
+     "Unisex"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -1660,6 +2580,30 @@
     "Material": "100% Cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "420 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "420 GSM"
+    ],
+    "look": [
+     "Washed"
+    ],
+    "for": [
+     "Men",
+     "Unisex"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -1699,6 +2643,32 @@
     "Material": "56.44% Cotton,43.56%polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "450 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "450 GSM"
+    ],
+    "look": [
+     "Color Block",
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -1735,6 +2705,25 @@
     "Material": "42% Cotton 53% Polyester 5%other fiber",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "345 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "345 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -1774,6 +2763,25 @@
     "Material": "58% Cotton+42%polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "430 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "430 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -1813,6 +2821,25 @@
     "Material": "42% Cotton 53% Polyester 5%other fiber",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "350 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "350 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -1849,6 +2876,24 @@
     "Material": "42% Cotton+53%polyester+5%other",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "360 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "360 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -1883,6 +2928,27 @@
     "Material": "80% Cotton,20% Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "400 GSM+"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "400 GSM+"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Unisex"
+    ],
+    "occasion": []
    }
   },
   {
@@ -1926,6 +2992,25 @@
     "Material": "52% Cotton, 48%Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "350 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "350 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -1960,6 +3045,24 @@
     "Material": "58% Cotton+42%polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "450 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "450 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -1998,6 +3101,24 @@
     "Material": "58% Cotton 42% Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "450 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "450 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -2035,6 +3156,26 @@
     "Material": "58% Cotton 42% Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "450 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "450 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -2074,6 +3215,25 @@
     "Material": "52% Cotton, 48%Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "400 GSM+"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "400 GSM+"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -2108,6 +3268,23 @@
    ],
    "intro": {
     "Weight": "345 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "345 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -2144,6 +3321,25 @@
     "Material": "50%Cotton,50%% Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "500 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Boxy"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "500 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -2185,6 +3381,24 @@
     "Material": "100% Cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "420 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "420 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -2219,6 +3433,24 @@
     "Material": "100% Cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "420 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "420 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -2252,6 +3484,29 @@
     "Material": "42% Cotton 58% Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "350 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Boxy",
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "350 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex"
+    ],
+    "occasion": []
    }
   },
   {
@@ -2289,6 +3544,29 @@
     "Material": "100% Cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "520 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "520 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": []
    }
   },
   {
@@ -2327,6 +3605,33 @@
     "Material": "100% Cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "360 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Boxy",
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "360 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -2363,6 +3668,32 @@
     "Material": "87% Cotton,13%polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "360 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Boxy",
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "360 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -2401,6 +3732,31 @@
     "Material": "87% Cotton,13%polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "360 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Boxy"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "360 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -2432,6 +3788,26 @@
     "Material": "42% Cotton 58% Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "350 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Boxy",
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "350 GSM"
+    ],
+    "look": [
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -2471,6 +3847,25 @@
     "Material": "42% Cotton, 53%Polyester,5%other",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "350 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "350 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -2509,6 +3904,31 @@
     "Material": "56.44% Cotton43.56% Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "430 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "430 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -2546,6 +3966,29 @@
     "Material": "42% Cotton 58% Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "350 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Boxy",
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "350 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex"
+    ],
+    "occasion": []
    }
   },
   {
@@ -2580,6 +4023,29 @@
     "Material": "42% Cotton 58% Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "350 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "350 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": []
    }
   },
   {
@@ -2613,6 +4079,31 @@
     "Material": "65% Cotton,35%polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "280 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Regular"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "280 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -2642,6 +4133,23 @@
     "Size": "S, M, L, XL, 2XL",
     "Material": "100% Cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -2678,6 +4186,25 @@
     "Material": "42% Cotton 58% Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "350 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "350 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -2715,6 +4242,32 @@
     "Material": "32% Cotton,68%polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "330 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Boxy",
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "330 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -2749,6 +4302,31 @@
     "Material": "84.9% Cotton,15.1%polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "300 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Regular"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "300 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -2786,6 +4364,25 @@
     "Material": "42% Cotton 53% Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "345 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Crop"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "345 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -2827,6 +4424,25 @@
     "Material": "65% Cotton, 35%Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "440 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "440 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -2858,6 +4474,23 @@
     "Size": "S, M, L, XL, 2XL",
     "Material": "100% Cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -2891,6 +4524,31 @@
     "Material": "100% Cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "280 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Regular"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "280 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -2928,6 +4586,31 @@
     "Material": "42% Cotton 53% Polyester,5%other fiber",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "360 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "360 GSM"
+    ],
+    "look": [
+     "Washed"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -2965,6 +4648,31 @@
     "Material": "56.44% Cotton43.56% Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "430 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "430 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -3003,6 +4711,31 @@
     "Material": "100% Cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "420 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "420 GSM"
+    ],
+    "look": [
+     "Washed"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -3041,6 +4774,25 @@
     "Material": "65.39% Cotton 34.61% Polyester5",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "445 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "445 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -3077,6 +4829,25 @@
     "Material": "42% Cotton 53% Polyester 5%other fiber",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "345 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "345 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -3116,6 +4887,25 @@
     "Material": "42% Cotton 53% Polyester 5%other fiber",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "350 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "350 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -3154,6 +4944,25 @@
     "Material": "42% Cotton 58% polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "350 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "350 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -3192,6 +5001,25 @@
     "Material": "42% Cotton, 53%Polyester,5%other",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "350 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "350 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -3231,6 +5059,24 @@
     "Material": "58% Cotton,42%polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "360 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "360 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -3270,6 +5116,24 @@
     "Material": "58% Cotton,42%polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "360 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "360 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -3304,6 +5168,31 @@
     "Material": "42% Cotton 58% Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "350 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Boxy",
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "350 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -3341,6 +5230,31 @@
     "Material": "87% Cotton 13% Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "360 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Boxy"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "360 GSM"
+    ],
+    "look": [
+     "Print"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -3379,6 +5293,31 @@
     "Material": "87% Cotton,13%polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "360 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Boxy"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "360 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -3417,6 +5356,31 @@
     "Material": "56.44% Cotton,43.56%polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "450 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "450 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -3450,6 +5414,25 @@
     "Material": "42% Cotton 58% Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "350 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "350 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -3486,6 +5469,26 @@
     "Logo customization": "MOQ 50 Pieces Change private label, Printing logo.",
     "Clothing Customize": "MOQ 50 Pieces per Style per Color 5 Sizes, Cut and sew customize the sizes, print, colors, and material all according to your request",
     "Weight": "220 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Polyester"
+    ],
+    "fabric": [
+     "Jersey",
+     "Mesh"
+    ],
+    "weight": [
+     "220 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -3514,6 +5517,24 @@
     "Material": "100% polyester",
     "Logo customization": "MOQ 50 Pieces Change private label, Printing logo.",
     "Clothing Customize": "MOQ 50 Pieces per Style per Color 5 Sizes, Cut and sew customize the sizes, print, colors, and material all according to your request"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Polyester"
+    ],
+    "fabric": [
+     "Jersey",
+     "Mesh"
+    ],
+    "weight": [],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -3548,6 +5569,21 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "230 GSM"
+    ],
+    "look": [],
+    "for": [
+     "Kids"
+    ],
+    "occasion": []
    }
   },
   {
@@ -3583,6 +5619,21 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Sorona"
+    ],
+    "fabric": [],
+    "weight": [
+     "230 GSM"
+    ],
+    "look": [],
+    "for": [
+     "Kids"
+    ],
+    "occasion": []
    }
   },
   {
@@ -3616,6 +5667,21 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "200 GSM"
+    ],
+    "look": [],
+    "for": [
+     "Kids"
+    ],
+    "occasion": []
    }
   },
   {
@@ -3649,6 +5715,23 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "240 GSM"
+    ],
+    "look": [],
+    "for": [
+     "Kids"
+    ],
+    "occasion": []
    }
   },
   {
@@ -3682,6 +5765,23 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "240 GSM"
+    ],
+    "look": [],
+    "for": [
+     "Kids"
+    ],
+    "occasion": []
    }
   },
   {
@@ -3715,6 +5815,21 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "275 GSM"
+    ],
+    "look": [],
+    "for": [
+     "Kids"
+    ],
+    "occasion": []
    }
   },
   {
@@ -3752,6 +5867,31 @@
     "Material": "100% Cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "360 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "360 GSM"
+    ],
+    "look": [
+     "Washed"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -3788,6 +5928,32 @@
     "Material": "100% Cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "420 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "420 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -3826,6 +5992,32 @@
     "Material": "100% Cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "420 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "420 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -3865,6 +6057,23 @@
     "Material": "79.71% Cotton 20.29% Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "390 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "390 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -3902,6 +6111,32 @@
     "Material": "100% Cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "360 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "360 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -3939,6 +6174,23 @@
     "Material": "58% Cotton+42%polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "430 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "430 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -3980,6 +6232,31 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "360 GSM"
+    ],
+    "look": [
+     "Washed"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -4018,6 +6295,31 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Waffle"
+    ],
+    "weight": [
+     "290 GSM"
+    ],
+    "look": [
+     "Washed"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -4049,6 +6351,21 @@
     "Size": "S, M, L, XL",
     "Material": "Main fabric :92% nylon, 8% spandex.",
     "MOQ": "This product has a minimum quantity of 50 Pieces"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Nylon"
+    ],
+    "fabric": [],
+    "weight": [],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": [
+     "Sports & Gym"
+    ]
    }
   },
   {
@@ -4083,6 +6400,23 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Nylon"
+    ],
+    "fabric": [],
+    "weight": [],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Kids"
+    ],
+    "occasion": [
+     "Sports & Gym"
+    ]
    }
   },
   {
@@ -4120,6 +6454,23 @@
     "Material": "100% Cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "425 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "425 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -4152,6 +6503,25 @@
     "Weight": "100Gsm",
     "MOQ": "This product has a minimum quantity of 100 Pieces",
     "Customize": "Printing, Embroidery, Private Label, Ship worldwide"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Polyester"
+    ],
+    "fabric": [],
+    "weight": [
+     "100 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Women"
+    ],
+    "occasion": [
+     "Loungewear"
+    ]
    }
   },
   {
@@ -4186,6 +6556,23 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "450 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -4223,6 +6610,23 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "290 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -4260,6 +6664,25 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Mesh"
+    ],
+    "weight": [
+     "240 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": [
+     "Outdoor"
+    ]
    }
   },
   {
@@ -4299,6 +6722,30 @@
     "Material": "100% Cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "330 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "330 GSM"
+    ],
+    "look": [
+     "Washed"
+    ],
+    "for": [
+     "Men",
+     "Unisex"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -4332,6 +6779,24 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Waffle"
+    ],
+    "weight": [
+     "270 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -4368,6 +6833,24 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Denim"
+    ],
+    "weight": [
+     "385 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -4402,6 +6885,24 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Spandex"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "320 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -4443,6 +6944,24 @@
     "Material": "100% Cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "430 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "430 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -4486,6 +7005,24 @@
     "Material": "100% Cotton Terry",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "420 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "420 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -4523,6 +7060,24 @@
     "Material": "100% Cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "420 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "420 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -4555,6 +7110,21 @@
     "Size": "S, M, L, XL，2XL",
     "Material": "Outer fabric: 95% polyester 5% spandex",
     "MOQ": "This product has a minimum quantity of 50 Pieces"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Polyester"
+    ],
+    "fabric": [],
+    "weight": [],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": [
+     "Sports & Gym"
+    ]
    }
   },
   {
@@ -4589,6 +7159,23 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Spandex"
+    ],
+    "fabric": [],
+    "weight": [
+     "135 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Kids"
+    ],
+    "occasion": []
    }
   },
   {
@@ -4628,6 +7215,27 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [
+     "Slim"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "350 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Women"
+    ],
+    "occasion": []
    }
   },
   {
@@ -4663,6 +7271,27 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "250 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Kids"
+    ],
+    "occasion": [
+     "Sports & Gym"
+    ]
    }
   },
   {
@@ -4698,6 +7327,27 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "200 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Kids"
+    ],
+    "occasion": [
+     "Outdoor"
+    ]
    }
   },
   {
@@ -4732,6 +7382,23 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Nylon"
+    ],
+    "fabric": [],
+    "weight": [
+     "110 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Kids"
+    ],
+    "occasion": []
    }
   },
   {
@@ -4770,6 +7437,31 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "350 GSM"
+    ],
+    "look": [
+     "Washed"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -4810,6 +7502,23 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [],
+    "weight": [
+     "160 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": [
+     "Beach & Swim"
+    ]
    }
   },
   {
@@ -4846,6 +7555,23 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Polyester"
+    ],
+    "fabric": [],
+    "weight": [
+     "160 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": [
+     "Beach & Swim"
+    ]
    }
   },
   {
@@ -4885,6 +7611,24 @@
     "Material": "100% Cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "385 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "385 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -4922,6 +7666,23 @@
     "Material": "80% Cotton20%Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "440 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Polyester"
+    ],
+    "fabric": [],
+    "weight": [
+     "440 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Unisex"
+    ],
+    "occasion": []
    }
   },
   {
@@ -4956,6 +7717,23 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Spandex"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "240 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -4990,6 +7768,26 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "260 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex"
+    ],
+    "occasion": []
    }
   },
   {
@@ -5024,6 +7822,23 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "420 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -5062,6 +7877,30 @@
     "Material": "80% Cotton 20% Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "390 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "390 GSM"
+    ],
+    "look": [
+     "Color Block"
+    ],
+    "for": [
+     "Men",
+     "Unisex"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -5099,6 +7938,31 @@
     "Material": "42% Cotton 53% Polyester 5%other fiber",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "360 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "360 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -5136,6 +8000,31 @@
     "Material": "56.44% Cotton 43.56% Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "430 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "430 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -5174,6 +8063,24 @@
     "Material": "42% Cotton 53% Polyester 5%other",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "365 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "365 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -5213,6 +8120,23 @@
     "Material": "65.39% Cotton 34.61% Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "445 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "445 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -5251,6 +8175,30 @@
     "Material": "100% Cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "420 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "420 GSM"
+    ],
+    "look": [
+     "Washed"
+    ],
+    "for": [
+     "Men",
+     "Unisex"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -5289,6 +8237,23 @@
     "Material": "30.99% Cotton 69.01% Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "365 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "365 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -5331,6 +8296,23 @@
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request",
     "Weight": "345 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "345 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -5366,6 +8348,23 @@
     "Material": "65% Cotton 35%Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "445 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "445 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -5404,6 +8403,23 @@
     "Material": "42% Cotton 53% Polyester 5%other",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "350 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "350 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -5441,6 +8457,25 @@
     "Material": "42% Cotton 53% Polyester 5%other",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "350 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "350 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -5476,6 +8511,28 @@
     "Material": "80% Cotton 20% Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "400 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Regular"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "400 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex"
+    ],
+    "occasion": []
    }
   },
   {
@@ -5515,6 +8572,30 @@
     "Material": "42% Cotton 53% Polyester,5%other fiber",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "345 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "345 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -5553,6 +8634,31 @@
     "Material": "87% Cotton 13% Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "360 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "360 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -5592,6 +8698,23 @@
     "Material": "80% Cotton+20%polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "440 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "440 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -5631,6 +8754,25 @@
     "Material": "42% Cotton 53% Polyester 5%other",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "350 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "350 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -5675,6 +8817,23 @@
     "Material": "52% Cotton,48%polyester.",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "350 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "350 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -5713,6 +8872,24 @@
     "Material": "100% Cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "420 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "420 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -5748,6 +8925,24 @@
     "Material": "58% Cotton+42%polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "360 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "360 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -5785,6 +8980,24 @@
     "Material": "58% Cotton 42% Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "450 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "450 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -5824,6 +9037,23 @@
     "Material": "87% Cotton+13%polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "400 GSM+"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "400 GSM+"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -5859,6 +9089,23 @@
     "Material": "87% Cotton+13%polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "365 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "365 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -5893,6 +9140,25 @@
     "Material": "42% Cotton 58% Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "350 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "350 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -5929,6 +9195,31 @@
     "Material": "56.44% Cotton 43.56% Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "450 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "450 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -5965,6 +9256,23 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Spandex"
+    ],
+    "fabric": [],
+    "weight": [
+     "135 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Kids"
+    ],
+    "occasion": []
    }
   },
   {
@@ -5999,6 +9307,25 @@
     "Material": "42% Cotton 58% Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "350 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "350 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -6033,6 +9360,25 @@
     "Material": "42% Cotton 58% Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "350 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "350 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -6069,6 +9415,25 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Spandex"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "280 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Kids"
+    ],
+    "occasion": []
    }
   },
   {
@@ -6106,6 +9471,24 @@
     "Material": "100% Cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "380 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "380 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -6144,6 +9527,23 @@
     "Material": "81% Cotton+19%polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "440 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "440 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -6180,6 +9580,24 @@
     "Material": "57% Cotton 38%Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "332 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Fleece"
+    ],
+    "weight": [
+     "332 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -6212,6 +9630,21 @@
     "Material": "50% Cotton,50polyester",
     "Weight": "165Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [],
+    "weight": [
+     "165 GSM"
+    ],
+    "look": [
+     "Print"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -6242,6 +9675,19 @@
     "Size": "S.M, L, XL",
     "Material": "100% cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [],
+    "look": [
+     "Print"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -6273,6 +9719,21 @@
     "Material": "59% Polyester, 38% Viscose, 3% Spandex",
     "Weight": "260Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Polyester"
+    ],
+    "fabric": [],
+    "weight": [
+     "260 GSM"
+    ],
+    "look": [
+     "Print"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -6305,6 +9766,23 @@
     "Weight": "180Gsm",
     "MOQ": "This product has a minimum quantity of 100 Pieces",
     "Customize": "Printing, Embroidery, Private Label, Ship worldwide"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Modal"
+    ],
+    "fabric": [],
+    "weight": [
+     "120 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": [
+     "Loungewear"
+    ]
    }
   },
   {
@@ -6326,6 +9804,25 @@
    "intro": {
     "Size": "S, M, L Customized",
     "Material": "Cotton/Spandex"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Spandex"
+    ],
+    "fabric": [
+     "Jersey"
+    ],
+    "weight": [],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Women"
+    ],
+    "occasion": [
+     "Loungewear"
+    ]
    }
   },
   {
@@ -6355,6 +9852,23 @@
     "Weight": "100Gsm",
     "MOQ": "This product has a minimum quantity of 100 Pieces",
     "Customize": "Printing, Embroidery, Private Label, Ship worldwide"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Polyester"
+    ],
+    "fabric": [],
+    "weight": [
+     "100 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": [
+     "Loungewear"
+    ]
    }
   },
   {
@@ -6388,6 +9902,19 @@
     "Size": "S, M, L, XL",
     "Material": "42% acrylic 30% polyester 28%nylon",
     "MOQ": "This product has a minimum quantity of 50 Pieces"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Polyester"
+    ],
+    "fabric": [],
+    "weight": [],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -6419,6 +9946,19 @@
     "Size": "S.M, L, XL",
     "Material": "7% Wool, 82% Polyester, 8% Acrylic, 3% Spandex",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Polyester"
+    ],
+    "fabric": [],
+    "weight": [],
+    "look": [],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -6450,6 +9990,19 @@
     "Size": "M, L, XL,2XL",
     "Material": "77% Polyester, 23% Acrylic",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Polyester"
+    ],
+    "fabric": [],
+    "weight": [],
+    "look": [],
+    "for": [
+     "Unisex"
+    ],
+    "occasion": []
    }
   },
   {
@@ -6480,6 +10033,19 @@
     "Size": "M, L, XL",
     "Material": "42% Acrylic, 28% Nylon, 30% Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Boxy"
+    ],
+    "composition": [],
+    "fabric": [],
+    "weight": [],
+    "look": [],
+    "for": [
+     "Unisex"
+    ],
+    "occasion": []
    }
   },
   {
@@ -6511,6 +10077,15 @@
     "Size": "M, L, XL",
     "Material": "42% Acrylic, 28% Nylon, 30% Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [],
+    "fabric": [],
+    "weight": [],
+    "look": [],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -6538,6 +10113,21 @@
     "Size": "S, M, L and customize",
     "Material": "Polyester/Spandex",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Polyester"
+    ],
+    "fabric": [],
+    "weight": [],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": [
+     "Beach & Swim"
+    ]
    }
   },
   {
@@ -6562,6 +10152,21 @@
     "Size": "S, M, L",
     "Material": "Polyester/Spandex",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Polyester"
+    ],
+    "fabric": [],
+    "weight": [],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": [
+     "Beach & Swim"
+    ]
    }
   },
   {
@@ -6587,6 +10192,21 @@
     "Size": "S, M, L",
     "Material": "Polyester/Spandex",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Polyester"
+    ],
+    "fabric": [],
+    "weight": [],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": [
+     "Beach & Swim"
+    ]
    }
   },
   {
@@ -6620,6 +10240,21 @@
     "Material": "100% Cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "230 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "230 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -6657,6 +10292,26 @@
     "Material": "100% Cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "290 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "290 GSM"
+    ],
+    "look": [
+     "Color Block"
+    ],
+    "for": [
+     "Men",
+     "Unisex"
+    ],
+    "occasion": []
    }
   },
   {
@@ -6697,6 +10352,24 @@
     "Material": "100% Cotton",
     "Weight": "250Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "250 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -6730,6 +10403,23 @@
     "Size": "S,M, L, XL，2XL",
     "Material": "100%Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Polyester"
+    ],
+    "fabric": [],
+    "weight": [],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men"
+    ],
+    "occasion": [
+     "Sports & Gym"
+    ]
    }
   },
   {
@@ -6764,6 +10454,31 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized",
+     "Regular"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "Jersey"
+    ],
+    "weight": [
+     "240 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Kids"
+    ],
+    "occasion": [
+     "Casual",
+     "Streetwear"
+    ]
    }
   },
   {
@@ -6799,6 +10514,23 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [],
+    "weight": [
+     "175 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Kids"
+    ],
+    "occasion": []
    }
   },
   {
@@ -6835,6 +10567,26 @@
     "Material": "100% Cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "305 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "305 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex"
+    ],
+    "occasion": []
    }
   },
   {
@@ -6872,6 +10624,28 @@
     "Material": "100% Cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "275 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "275 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": []
    }
   },
   {
@@ -6905,6 +10679,23 @@
     "Material": "100% Cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "305 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "305 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -6939,6 +10730,22 @@
     "Material": "100% Cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "270 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "270 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -6974,6 +10781,21 @@
     "Material": "100% Cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "425 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "425 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -7012,6 +10834,27 @@
     "Material": "63% combed cotton+37% polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size",
     "Weight": "220 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Slim"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Pique"
+    ],
+    "weight": [
+     "220 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men"
+    ],
+    "occasion": []
    }
   },
   {
@@ -7053,6 +10896,27 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [
+     "Slim"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Pique"
+    ],
+    "weight": [
+     "200 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Unisex"
+    ],
+    "occasion": []
    }
   },
   {
@@ -7089,6 +10953,27 @@
     "Material": "87.8% nylon+12.2% spandex",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size",
     "Weight": "170 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Slim"
+    ],
+    "composition": [
+     "Nylon"
+    ],
+    "fabric": [
+     "Pique"
+    ],
+    "weight": [
+     "170 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Unisex"
+    ],
+    "occasion": []
    }
   },
   {
@@ -7128,6 +11013,27 @@
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request",
     "Weight": "220 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Slim"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "Pique"
+    ],
+    "weight": [
+     "220 GSM"
+    ],
+    "look": [
+     "Color Block"
+    ],
+    "for": [
+     "Unisex"
+    ],
+    "occasion": []
    }
   },
   {
@@ -7165,6 +11071,25 @@
     "Material": "71.7%sorona+28.3%polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size",
     "Weight": "220 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Polyester"
+    ],
+    "fabric": [
+     "Pique"
+    ],
+    "weight": [
+     "220 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Unisex"
+    ],
+    "occasion": []
    }
   },
   {
@@ -7200,6 +11125,25 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Nylon"
+    ],
+    "fabric": [
+     "Pique"
+    ],
+    "weight": [
+     "160 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Kids"
+    ],
+    "occasion": []
    }
   },
   {
@@ -7237,6 +11181,25 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Polyester"
+    ],
+    "fabric": [
+     "Pique"
+    ],
+    "weight": [
+     "150 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Kids"
+    ],
+    "occasion": []
    }
   },
   {
@@ -7275,6 +11238,30 @@
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request",
     "Weight": "240 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Boxy",
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Jersey"
+    ],
+    "weight": [
+     "240 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": [
+     "Casual",
+     "Outdoor",
+     "Streetwear"
+    ]
    }
   },
   {
@@ -7313,6 +11300,30 @@
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request",
     "Weight": "240 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Boxy",
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Jersey"
+    ],
+    "weight": [
+     "240 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": [
+     "Casual",
+     "Outdoor",
+     "Streetwear"
+    ]
    }
   },
   {
@@ -7348,6 +11359,33 @@
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request",
     "Weight": "290 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Boxy",
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Waffle"
+    ],
+    "weight": [
+     "290 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Casual",
+     "Streetwear"
+    ]
    }
   },
   {
@@ -7385,6 +11423,23 @@
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request",
     "Weight": "210 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Pique"
+    ],
+    "weight": [
+     "210 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -7422,6 +11477,23 @@
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request",
     "Weight": "220 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Pique"
+    ],
+    "weight": [
+     "220 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -7459,6 +11531,23 @@
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request",
     "Weight": "210 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Pique"
+    ],
+    "weight": [
+     "210 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -7496,6 +11585,23 @@
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request",
     "Weight": "200 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Pique"
+    ],
+    "weight": [
+     "200 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -7533,6 +11639,21 @@
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request",
     "Weight": "190 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Polyester"
+    ],
+    "fabric": [],
+    "weight": [
+     "190 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -7571,6 +11692,21 @@
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request",
     "Weight": "220 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [],
+    "weight": [
+     "220 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -7609,6 +11745,23 @@
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request",
     "Weight": "220 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Pique"
+    ],
+    "weight": [
+     "220 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -7644,6 +11797,21 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Polyester"
+    ],
+    "fabric": [
+     "Pique"
+    ],
+    "weight": [],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -7683,6 +11851,23 @@
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request",
     "Weight": "220 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Polyester"
+    ],
+    "fabric": [
+     "Pique"
+    ],
+    "weight": [
+     "220 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -7719,6 +11904,23 @@
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request",
     "Weight": "170 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Nylon"
+    ],
+    "fabric": [
+     "Pique"
+    ],
+    "weight": [
+     "170 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -7756,6 +11958,19 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [],
+    "weight": [],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -7789,6 +12004,27 @@
     "Material": "68.5% Sorona Cotton +31.5% Polyester， 32s Plain Weave Cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size",
     "Weight": "210 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Pique"
+    ],
+    "weight": [
+     "210 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Unisex"
+    ],
+    "occasion": []
    }
   },
   {
@@ -7828,6 +12064,23 @@
     "Material": "100% Cotton, 20-count ring-spun yarn",
     "Weight": "230Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Regular"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "230 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -7861,6 +12114,25 @@
     "Size": "S,M, L, XL, 2XL",
     "Material": "91.5% cotton+8.5%Spandex",
     "MOQ": "This product has a minimum quantity of 50 Pieces"
+   },
+   "attrs": {
+    "fit": [
+     "Slim"
+    ],
+    "composition": [
+     "Cotton & Spandex"
+    ],
+    "fabric": [],
+    "weight": [],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Women"
+    ],
+    "occasion": [
+     "Y2K"
+    ]
    }
   },
   {
@@ -7900,6 +12172,33 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [
+     "Boxy",
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "Jersey"
+    ],
+    "weight": [
+     "400 GSM+"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Casual",
+     "Streetwear"
+    ]
    }
   },
   {
@@ -7940,6 +12239,26 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Spandex"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "425 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -7976,6 +12295,31 @@
     "Material": "100% Cotton",
     "Weight": "200Gsm, Exceptional breathability, moisture-wicking power",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "Jersey"
+    ],
+    "weight": [
+     "200 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -8011,6 +12355,24 @@
     "Material": "100% Cotton",
     "Weight": "200Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "200 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -8050,6 +12412,33 @@
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request",
     "Weight": "280 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Boxy",
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "Jersey"
+    ],
+    "weight": [
+     "280 GSM"
+    ],
+    "look": [
+     "Washed"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Casual",
+     "Streetwear"
+    ]
    }
   },
   {
@@ -8085,6 +12474,34 @@
     "Material": "55% Cotton, 31% Polyester, 14% Lyocell",
     "Weight": "150Gsm, Exceptional breathability, moisture-wicking power",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized",
+     "Regular"
+    ],
+    "composition": [
+     "Cotton & Polyester",
+     "Lyocell"
+    ],
+    "fabric": [
+     "Jersey"
+    ],
+    "weight": [
+     "150 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Outdoor",
+     "Sports & Gym"
+    ]
    }
   },
   {
@@ -8120,6 +12537,31 @@
     "Material": "100% Cotton",
     "Weight": "230Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized",
+     "Regular"
+    ],
+    "composition": [
+     "Cotton & Spandex"
+    ],
+    "fabric": [
+     "Jersey"
+    ],
+    "weight": [
+     "230 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": []
    }
   },
   {
@@ -8157,6 +12599,28 @@
     "Material": "65% cotton,35%sorona",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "210 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Slim"
+    ],
+    "composition": [
+     "Cotton & Sorona"
+    ],
+    "fabric": [],
+    "weight": [
+     "210 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Women"
+    ],
+    "occasion": [
+     "Outdoor",
+     "Sports & Gym"
+    ]
    }
   },
   {
@@ -8194,6 +12658,33 @@
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request",
     "Weight": "290 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Boxy",
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "Waffle"
+    ],
+    "weight": [
+     "290 GSM"
+    ],
+    "look": [
+     "Washed"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Casual",
+     "Streetwear"
+    ]
    }
   },
   {
@@ -8226,6 +12717,24 @@
     "Material": "100% Cotton",
     "Weight": "250Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "250 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -8258,6 +12767,24 @@
     "Material": "100% Cotton",
     "Weight": "275Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "275 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -8290,6 +12817,24 @@
     "Material": "100% Cotton Terry",
     "Weight": "330Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "330 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -8329,6 +12874,23 @@
     "Material": "100% Cotton",
     "Weight": "190Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "190 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -8366,6 +12928,23 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Spandex"
+    ],
+    "fabric": [],
+    "weight": [
+     "190 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -8397,6 +12976,23 @@
     "Material": "100% Long-Staple Cotton | 30s Ring-Spun Yarn",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "300 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "300 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -8430,6 +13026,23 @@
     "Material": "100% Cotton",
     "Weight": "305Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "305 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -8467,6 +13080,23 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Spandex"
+    ],
+    "fabric": [],
+    "weight": [
+     "160 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -8506,6 +13136,25 @@
     "Material": "59.75% Cotton,40.25%polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "240 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [],
+    "weight": [
+     "240 GSM"
+    ],
+    "look": [
+     "Color Block"
+    ],
+    "for": [],
+    "occasion": [
+     "Outdoor"
+    ]
    }
   },
   {
@@ -8538,6 +13187,32 @@
     "Material": "100% Cotton",
     "Weight": "240Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Boxy",
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "Jersey"
+    ],
+    "weight": [
+     "240 GSM"
+    ],
+    "look": [
+     "Print"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -8578,6 +13253,23 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "240 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -8613,6 +13305,28 @@
     "Material": "100% Cotton",
     "Weight": "280Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "280 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -8651,6 +13365,23 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "300 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -8686,6 +13417,23 @@
     "Material": "100% Cotton",
     "Weight": "230Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "230 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -8723,6 +13471,23 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Spandex"
+    ],
+    "fabric": [],
+    "weight": [
+     "425 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -8755,6 +13520,25 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Spandex"
+    ],
+    "fabric": [],
+    "weight": [
+     "305 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Kids"
+    ],
+    "occasion": []
    }
   },
   {
@@ -8789,6 +13573,23 @@
     "Material": "68.5%cotton 31.5%polyester",
     "Weight": "210Gsm Sorona Cloth",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [],
+    "weight": [
+     "220 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -8824,6 +13625,29 @@
     "Material": "100% Cotton",
     "Weight": "305Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "Jersey"
+    ],
+    "weight": [
+     "305 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": []
    }
   },
   {
@@ -8859,6 +13683,23 @@
     "Material": "100% Cotton",
     "Weight": "230Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Regular"
+    ],
+    "composition": [
+     "Cotton & Spandex"
+    ],
+    "fabric": [],
+    "weight": [
+     "230 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -8896,6 +13737,23 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "240 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -8926,6 +13784,23 @@
     "Material": "100% Cotton",
     "Weight": "145Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "145 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -8961,6 +13836,29 @@
     "Material": "57.3%Polyester,36.9%Cotton,5.8%Spandex",
     "Weight": "220Gsm, Exceptional breathability, moisture-wicking power",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester",
+     "Cotton & Spandex"
+    ],
+    "fabric": [],
+    "weight": [
+     "220 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -9004,6 +13902,23 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Spandex"
+    ],
+    "fabric": [],
+    "weight": [
+     "190 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -9041,6 +13956,26 @@
     "Material": "100% Cotton",
     "Weight": "250Gsm Vintage Fade Wash",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "250 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -9075,6 +14010,23 @@
     "Material": "100% Cotton",
     "Weight": "310Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "310 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -9112,6 +14064,22 @@
     "Material": "100% Cotton",
     "Weight": "250Gsm Vintage Dyed",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "250 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -9150,6 +14118,22 @@
     "Material": "100% Cotton",
     "Weight": "250Gsm Vintage Fade Wash",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "250 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -9187,6 +14171,25 @@
     "Material": "100% Cotton Siro-Spun 210g",
     "Weight": "210Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "210 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Unisex"
+    ],
+    "occasion": []
    }
   },
   {
@@ -9224,6 +14227,23 @@
     "Material": "Siro-Spun 20S 210g 100% Cotton",
     "Weight": "210Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Regular"
+    ],
+    "composition": [
+     "Cotton & Spandex"
+    ],
+    "fabric": [],
+    "weight": [
+     "210 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -9265,6 +14285,23 @@
     "Material": "100% Cotton",
     "Weight": "230Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "230 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -9299,6 +14336,23 @@
     "Material": "100% Cotton",
     "Weight": "275Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "275 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -9336,6 +14390,25 @@
     "Material": "100% Cotton",
     "Weight": "305Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "305 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Unisex"
+    ],
+    "occasion": []
    }
   },
   {
@@ -9372,6 +14445,25 @@
     "Material": "100% Cotton",
     "Weight": "385Gsm",
     "MOQ": "50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "385 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Unisex"
+    ],
+    "occasion": []
    }
   },
   {
@@ -9409,6 +14501,26 @@
     "Material": "100% Cotton",
     "Weight": "250Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "250 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -9444,6 +14556,23 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "240 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -9479,6 +14608,25 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [],
+    "weight": [
+     "185 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Kids"
+    ],
+    "occasion": [
+     "Sports & Gym"
+    ]
    }
   },
   {
@@ -9511,6 +14659,29 @@
     "Material": "100% Cotton",
     "Weight": "250Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Regular"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "250 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -9550,6 +14721,30 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton",
+     "Cotton & Sorona"
+    ],
+    "fabric": [],
+    "weight": [
+     "240 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex"
+    ],
+    "occasion": [
+     "Casual",
+     "Streetwear"
+    ]
    }
   },
   {
@@ -9581,6 +14776,24 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "750 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -9616,6 +14829,23 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [],
+    "weight": [
+     "230 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Kids"
+    ],
+    "occasion": []
    }
   },
   {
@@ -9651,6 +14881,23 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Spandex"
+    ],
+    "fabric": [],
+    "weight": [
+     "175 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Kids"
+    ],
+    "occasion": []
    }
   },
   {
@@ -9690,6 +14937,25 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Spandex"
+    ],
+    "fabric": [],
+    "weight": [
+     "305 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men"
+    ],
+    "occasion": []
    }
   },
   {
@@ -9730,6 +14996,24 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Spandex"
+    ],
+    "fabric": [],
+    "weight": [
+     "305 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -9769,6 +15053,23 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [],
+    "weight": [
+     "220 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -9807,6 +15108,30 @@
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request",
     "Weight": "200 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "200 GSM"
+    ],
+    "look": [
+     "Color Block"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Casual",
+     "Streetwear"
+    ]
    }
   },
   {
@@ -9843,6 +15168,33 @@
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request",
     "Weight": "240 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Boxy"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "Jersey"
+    ],
+    "weight": [
+     "240 GSM"
+    ],
+    "look": [
+     "Color Block"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Casual",
+     "Outdoor",
+     "Streetwear"
+    ]
    }
   },
   {
@@ -9877,6 +15229,31 @@
     "Material": "100% Cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "230 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "Jersey"
+    ],
+    "weight": [
+     "230 GSM"
+    ],
+    "look": [
+     "Washed"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -9906,6 +15283,21 @@
     "Size": "S, M, L, XL，2XL,3XL",
     "Material": "100%cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -9936,6 +15328,25 @@
     "Material": "Main fabric：100%Cotton.",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "240 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [],
+    "weight": [
+     "240 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": [
+     "Workwear"
+    ]
    }
   },
   {
@@ -9967,6 +15378,21 @@
     "Size": "S, M, L, XL，2XL,3XL，4XL",
     "Material": "100%polyester.",
     "MOQ": "This product has a minimum quantity of 50 Pieces"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Polyester"
+    ],
+    "fabric": [],
+    "weight": [],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": [
+     "Sports & Gym"
+    ]
    }
   },
   {
@@ -9997,6 +15423,21 @@
     "Size": "S,M, L, XL, 2XL,3XL,4XL",
     "Material": "88%polyester+12%spandex",
     "MOQ": "This product has a minimum quantity of 50 Pieces"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Polyester"
+    ],
+    "fabric": [],
+    "weight": [],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": [
+     "Sports & Gym"
+    ]
    }
   },
   {
@@ -10028,6 +15469,23 @@
     "Material": "100% Cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "240 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "240 GSM"
+    ],
+    "look": [
+     "Color Block"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -10059,6 +15517,23 @@
     "Material": "100% Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "200 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Polyester"
+    ],
+    "fabric": [],
+    "weight": [
+     "200 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": [
+     "Outdoor"
+    ]
    }
   },
   {
@@ -10093,6 +15568,27 @@
     "Material": "93% cotton+7%Spandex",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "270 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Slim"
+    ],
+    "composition": [
+     "Cotton & Spandex"
+    ],
+    "fabric": [],
+    "weight": [
+     "270 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Women"
+    ],
+    "occasion": [
+     "Y2K"
+    ]
    }
   },
   {
@@ -10127,6 +15623,27 @@
     "Material": "93% cotton+7%Spandex",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "220 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Slim"
+    ],
+    "composition": [
+     "Cotton & Spandex"
+    ],
+    "fabric": [],
+    "weight": [
+     "220 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Women"
+    ],
+    "occasion": [
+     "Y2K"
+    ]
    }
   },
   {
@@ -10160,6 +15677,27 @@
     "Material": "96.5% cotton+3.5%Spandex",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "220 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Slim"
+    ],
+    "composition": [
+     "Cotton & Spandex"
+    ],
+    "fabric": [],
+    "weight": [
+     "220 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Women"
+    ],
+    "occasion": [
+     "Y2K"
+    ]
    }
   },
   {
@@ -10192,6 +15730,29 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [
+     "Regular"
+    ],
+    "composition": [
+     "100% Cotton",
+     "Cotton & Spandex"
+    ],
+    "fabric": [],
+    "weight": [
+     "210 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Kids"
+    ],
+    "occasion": [
+     "Casual",
+     "Streetwear"
+    ]
    }
   },
   {
@@ -10227,6 +15788,25 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Spandex"
+    ],
+    "fabric": [],
+    "weight": [
+     "240 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Kids"
+    ],
+    "occasion": []
    }
   },
   {
@@ -10262,6 +15842,26 @@
     "Material": "100% Cotton",
     "Weight": "330Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "330 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -10296,6 +15896,25 @@
     "Material": "100% Cotton",
     "Weight": "305Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "305 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": [
+     "Streetwear"
+    ]
    }
   },
   {
@@ -10332,6 +15951,24 @@
     "Material": "100% Cotton",
     "Weight": "270Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "270 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -10369,6 +16006,23 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Spandex"
+    ],
+    "fabric": [],
+    "weight": [
+     "425 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -10402,6 +16056,25 @@
     "Size": "XS, S, M, L, XL, 2XL, Unisex Loose fit",
     "Weight": "230 GSM",
     "Material": "Cotton & Polyester"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [
+     "French Terry"
+    ],
+    "weight": [
+     "230 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -10435,6 +16108,23 @@
     "Material": "Double Yarn 100% Cotton",
     "Weight": "345Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "345 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -10469,6 +16159,22 @@
     "Material": "100% Cotton",
     "Weight": "310Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "310 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -10499,6 +16205,23 @@
     "Material": "73.31%cotton 26.69%Solona",
     "Weight": "230Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "230 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -10539,6 +16262,23 @@
     "Material": "100% Premium Cotton Plain Weave",
     "Weight": "180Gsm, Exceptional breathability, moisture-wicking power",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "180 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -10579,6 +16319,24 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Spandex"
+    ],
+    "fabric": [],
+    "weight": [
+     "270 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -10619,6 +16377,24 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Spandex"
+    ],
+    "fabric": [],
+    "weight": [
+     "285 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -10657,6 +16433,29 @@
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request",
     "Weight": "275 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Boxy"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "275 GSM"
+    ],
+    "look": [
+     "Washed"
+    ],
+    "for": [
+     "Men",
+     "Unisex"
+    ],
+    "occasion": [
+     "Casual",
+     "Streetwear"
+    ]
    }
   },
   {
@@ -10690,6 +16489,26 @@
     "Material": "100% Cotton",
     "Weight": "280Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized",
+     "Raglan"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "280 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Unisex"
+    ],
+    "occasion": []
    }
   },
   {
@@ -10724,6 +16543,25 @@
     "Material": "100%polyester",
     "Weight": "180Gsm, Exceptional breathability, moisture-wicking power",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Regular"
+    ],
+    "composition": [
+     "Polyester"
+    ],
+    "fabric": [],
+    "weight": [
+     "180 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": [
+     "Sports & Gym"
+    ]
    }
   },
   {
@@ -10755,6 +16593,27 @@
     "Material": "75% Sorona Cotton 25%Polyester",
     "Weight": "180Gsm, Exceptional breathability, moisture-wicking power",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [],
+    "weight": [
+     "180 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": []
    }
   },
   {
@@ -10793,6 +16652,23 @@
     "Material": "70%cotton 30%polyester",
     "Weight": "220Gsm Sorona Cloth",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [],
+    "weight": [
+     "220 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -10831,6 +16707,23 @@
     "Material": "100% Cotton",
     "Weight": "280Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "280 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -10868,6 +16761,23 @@
     "Material": "100% Cotton",
     "Weight": "320Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "320 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -10904,6 +16814,25 @@
     "Material": "16s 100% Cotton",
     "Weight": "240Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Regular"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "240 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Unisex"
+    ],
+    "occasion": []
    }
   },
   {
@@ -10940,6 +16869,23 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "240 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -10981,6 +16927,23 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Spandex"
+    ],
+    "fabric": [],
+    "weight": [
+     "230 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Kids"
+    ],
+    "occasion": []
    }
   },
   {
@@ -11012,6 +16975,25 @@
     "Size": "S,M, L, XL",
     "Material": "92% cotton+8%Spandex",
     "MOQ": "This product has a minimum quantity of 50 Pieces"
+   },
+   "attrs": {
+    "fit": [
+     "Slim"
+    ],
+    "composition": [
+     "Cotton & Spandex"
+    ],
+    "fabric": [],
+    "weight": [],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Women"
+    ],
+    "occasion": [
+     "Y2K"
+    ]
    }
   },
   {
@@ -11046,6 +17028,27 @@
     "Material": "92% cotton+8%Spandex",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "230 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Slim"
+    ],
+    "composition": [
+     "Cotton & Spandex"
+    ],
+    "fabric": [],
+    "weight": [
+     "230 GSM"
+    ],
+    "look": [
+     "Color Block"
+    ],
+    "for": [
+     "Women"
+    ],
+    "occasion": [
+     "Y2K"
+    ]
    }
   },
   {
@@ -11080,6 +17083,27 @@
     "Material": "92% cotton+8%Spandex",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "230 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Slim"
+    ],
+    "composition": [
+     "Cotton & Spandex"
+    ],
+    "fabric": [],
+    "weight": [
+     "230 GSM"
+    ],
+    "look": [
+     "Color Block"
+    ],
+    "for": [
+     "Women"
+    ],
+    "occasion": [
+     "Y2K"
+    ]
    }
   },
   {
@@ -11116,6 +17140,27 @@
     "Material": "92% cotton+8%Spandex",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "230 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Slim"
+    ],
+    "composition": [
+     "Cotton & Spandex"
+    ],
+    "fabric": [],
+    "weight": [
+     "230 GSM"
+    ],
+    "look": [
+     "Color Block"
+    ],
+    "for": [
+     "Women"
+    ],
+    "occasion": [
+     "Y2K"
+    ]
    }
   },
   {
@@ -11151,6 +17196,27 @@
     "Material": "92% cotton+8%Spandex",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "230 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Slim"
+    ],
+    "composition": [
+     "Cotton & Spandex"
+    ],
+    "fabric": [],
+    "weight": [
+     "230 GSM"
+    ],
+    "look": [
+     "Color Block"
+    ],
+    "for": [
+     "Women"
+    ],
+    "occasion": [
+     "Y2K"
+    ]
    }
   },
   {
@@ -11189,6 +17255,25 @@
     "Material": "47% silk Cotton 39.9% nylon 13.1% spandex",
     "Weight": "200Gsm",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [
+     "Slim"
+    ],
+    "composition": [
+     "Cotton & Spandex"
+    ],
+    "fabric": [],
+    "weight": [
+     "200 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": [
+     "Sports & Gym"
+    ]
    }
   },
   {
@@ -11223,6 +17308,29 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [
+     "Jersey"
+    ],
+    "weight": [
+     "250 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men",
+     "Unisex",
+     "Women"
+    ],
+    "occasion": []
    }
   },
   {
@@ -11258,6 +17366,23 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "240 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -11295,6 +17420,23 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "240 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -11332,6 +17474,23 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "240 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -11371,6 +17530,23 @@
     "Blank": "MOQ 50 Pieces mix Style Color and Sizes",
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request"
+   },
+   "attrs": {
+    "fit": [
+     "Regular"
+    ],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [],
+    "weight": [
+     "180 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -11405,6 +17581,21 @@
     "Material": "100% Cotton",
     "Weight": "305G",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "305 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -11441,6 +17632,21 @@
     "Material": "100% Cotton",
     "Weight": "305G",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "305 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -11476,6 +17682,23 @@
     "Material": "100% Cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "230 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "230 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -11513,6 +17736,25 @@
     "Material": "58% Cotton，42%polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "315 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [],
+    "weight": [
+     "315 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men"
+    ],
+    "occasion": [
+     "Sports & Gym"
+    ]
    }
   },
   {
@@ -11552,6 +17794,24 @@
     "Material": "100% Cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "275 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "275 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [
+     "Unisex"
+    ],
+    "occasion": []
    }
   },
   {
@@ -11588,6 +17848,23 @@
     "Material": "56% Cotton 44%Polyester",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "190 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Polyester"
+    ],
+    "fabric": [],
+    "weight": [
+     "190 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [],
+    "occasion": [
+     "Sports & Gym"
+    ]
    }
   },
   {
@@ -11622,6 +17899,23 @@
     "Logo customization": "MOQ 50 Pieces mix Style Color and Sizes, Change private label, Printing logo.",
     "Clothing Customize": "MOQ 100 Pieces per Style per Color 4 Sizes, Cut and sew customize the sizes colors material all according to your request",
     "Weight": "220 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "Cotton & Spandex"
+    ],
+    "fabric": [],
+    "weight": [
+     "220 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Men"
+    ],
+    "occasion": []
    }
   },
   {
@@ -11660,6 +17954,23 @@
     "Material": "100% Cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "240 GSM"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "240 GSM"
+    ],
+    "look": [
+     "Solid"
+    ],
+    "for": [
+     "Unisex"
+    ],
+    "occasion": []
    }
   },
   {
@@ -11693,6 +18004,24 @@
     "Material": "100% Cotton",
     "MOQ": "This product has a minimum quantity of 50 Pieces",
     "Weight": "250 GSM"
+   },
+   "attrs": {
+    "fit": [
+     "Oversized"
+    ],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "250 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -11728,6 +18057,22 @@
     "Material": "100% Cotton",
     "Weight": "270G",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "270 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   },
   {
@@ -11758,6 +18103,22 @@
     "Material": "100% Cotton",
     "Weight": "285GSM",
     "MOQ": "This product has a minimum quantity of 50 Pieces, mix color and size"
+   },
+   "attrs": {
+    "fit": [],
+    "composition": [
+     "100% Cotton"
+    ],
+    "fabric": [],
+    "weight": [
+     "285 GSM"
+    ],
+    "look": [
+     "Solid",
+     "Washed"
+    ],
+    "for": [],
+    "occasion": []
    }
   }
  ]

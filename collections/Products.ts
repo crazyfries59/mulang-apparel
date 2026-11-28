@@ -197,6 +197,14 @@ export const Products: CollectionConfig = {
       ],
     },
     {
+      name: "attributes",
+      type: "json",
+      label: "多维筛选属性",
+      admin: {
+        description: "从鸿宇产品属性同步：fit / composition / fabric / weight / look / for / occasion，每项为字符串数组。用于官网产品页筛选。",
+      },
+    },
+    {
       name: "seo",
       type: "group",
       label: "搜索引擎优化（SEO）",
