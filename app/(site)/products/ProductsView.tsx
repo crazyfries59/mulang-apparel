@@ -154,10 +154,14 @@ export default function ProductsView({ products }: { products: Product[] }) {
     }
     for (const field of FILTER_FIELDS) {
       const chosen = selectedAttrs[field.key];
-      if (chosen) list = list.filter(p => valueOf(p, field.key).includes(chosen));
+      /* Ignore a choice the new category does not offer: switching category
+         must never land on an empty grid for one frame before the reset runs. */
+      if (chosen && attrOptions[field.key].includes(chosen)) {
+        list = list.filter(p => valueOf(p, field.key).includes(chosen));
+      }
     }
     return list;
-  }, [catProducts, search, selectedAttrs]);
+  }, [catProducts, search, selectedAttrs, attrOptions]);
 
   const toggleAttr = (key: FilterKey, value: string) =>
     setSelectedAttrs(prev => {
@@ -166,7 +170,12 @@ export default function ProductsView({ products }: { products: Product[] }) {
       else next[key] = value;
       return next;
     });
-  const activeAttrCount = Object.keys(selectedAttrs).length;
+  /* Only count choices the current category actually offers, so the badge never
+     claims an active filter the grid is not applying. */
+  const activeAttrCount = FILTER_FIELDS.filter(field => {
+    const chosen = selectedAttrs[field.key];
+    return Boolean(chosen && attrOptions[field.key].includes(chosen));
+  }).length;
 
   /* A spec chosen in one category rarely applies to another; reset on category change. */
   useEffect(() => {
@@ -313,6 +322,8 @@ export default function ProductsView({ products }: { products: Product[] }) {
                   {FILTER_FIELDS.map(field => {
                     const options = attrOptions[field.key];
                     if (!options.length) return null;
+                    const chosen = selectedAttrs[field.key];
+                    const isAll = !chosen || !options.includes(chosen);
                     return (
                       <div key={field.key} className="flex gap-3 px-4 py-2.5 items-start">
                         <span className="w-24 flex-shrink-0 pt-1.5 text-[0.62rem] tracking-widest uppercase text-white/45">{field.label}</span>
@@ -320,7 +331,7 @@ export default function ProductsView({ products }: { products: Product[] }) {
                           <button
                             type="button"
                             onClick={() => setSelectedAttrs(prev => { const n = { ...prev }; delete n[field.key]; return n; })}
-                            className={`px-2.5 py-1 rounded-full border text-[0.74rem] transition-colors ${!selectedAttrs[field.key] ? "border-violet-500/50 bg-violet-500/15 text-violet-300" : "border-white/10 text-white/50 hover:text-white hover:border-white/30"}`}
+                            className={`px-2.5 py-1 rounded-full border text-[0.74rem] transition-colors ${isAll ? "border-violet-500/50 bg-violet-500/15 text-violet-300" : "border-white/10 text-white/50 hover:text-white hover:border-white/30"}`}
                           >
                             All
                           </button>
@@ -329,7 +340,7 @@ export default function ProductsView({ products }: { products: Product[] }) {
                               key={option}
                               type="button"
                               onClick={() => toggleAttr(field.key, option)}
-                              className={`px-2.5 py-1 rounded-full border text-[0.74rem] transition-colors ${selectedAttrs[field.key] === option ? "border-violet-500/50 bg-violet-500/15 text-violet-300" : "border-white/10 text-white/60 hover:text-white hover:border-white/30"}`}
+                              className={`px-2.5 py-1 rounded-full border text-[0.74rem] transition-colors ${chosen === option ? "border-violet-500/50 bg-violet-500/15 text-violet-300" : "border-white/10 text-white/60 hover:text-white hover:border-white/30"}`}
                             >
                               {option}
                             </button>
