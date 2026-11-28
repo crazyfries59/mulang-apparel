@@ -126,8 +126,15 @@ export default function ProductDetailPage({ product: p, relatedProducts }: {
 
         {/* title box */}
         <div className="border border-white/10 rounded-xl px-6 py-5 mb-8">
+          {/* The style number used to sit inside the h1, so every one of the 331
+              product pages opened with a number before the product name. It is a
+              reference code, not a keyword: keep it visible, take it out of the
+              heading so the h1 is the thing people actually searched for. */}
+          <p className="text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-violet-400/80 mb-1.5">
+            Style {p.id}
+          </p>
           <h1 className="font-display-serif text-white text-[clamp(1.3rem,2.4vw,2rem)] leading-tight">
-            <span className="text-violet-400">{p.id}</span> {p.name}
+            {p.name}
           </h1>
         </div>
 
