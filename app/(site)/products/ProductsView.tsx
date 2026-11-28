@@ -125,23 +125,28 @@ export default function ProductsView({ products }: { products: Product[] }) {
   /* Multi-dimensional filters are client-side only (option A): they never
      touch the URL, so no new indexable paths, no canonical/sitemap changes. */
   const [selectedAttrs, setSelectedAttrs] = useState<Partial<Record<FilterKey, string>>>({});
-  const [filtersOpen, setFiltersOpen] = useState(false);
+  const [filtersOpen, setFiltersOpen] = useState(true);
+
+  /* Options are scoped to the active category, so each category shows only the
+     specs that actually exist in it (e.g. Hoodies -> Fleece / French Terry). */
+  const catProducts = useMemo(
+    () => activeCat === "all" ? products : products.filter(p => p.cat === activeCat || p.sub === activeCat),
+    [activeCat, products],
+  );
 
   const attrOptions = useMemo(() => {
     const out: Record<FilterKey, string[]> = { fit: [], composition: [], fabric: [], weight: [], look: [], for: [], occasion: [] };
     for (const field of FILTER_FIELDS) {
       const seen = new Set<string>();
-      for (const p of products) for (const v of valueOf(p, field.key)) seen.add(v);
+      for (const p of catProducts) for (const v of valueOf(p, field.key)) seen.add(v);
       const priority = PRIORITY[field.key].filter(v => seen.has(v));
       out[field.key] = [...priority, ...[...seen].filter(v => !priority.includes(v)).sort()];
     }
     return out;
-  }, [products]);
+  }, [catProducts]);
 
   const filtered = useMemo(() => {
-    let list = activeCat === "all"
-      ? products
-      : products.filter(p => p.cat === activeCat || p.sub === activeCat);
+    let list = catProducts;
     const q = search.trim().toLowerCase();
     if (q) {
       const nq = normalize(q);
@@ -152,7 +157,7 @@ export default function ProductsView({ products }: { products: Product[] }) {
       if (chosen) list = list.filter(p => valueOf(p, field.key).includes(chosen));
     }
     return list;
-  }, [activeCat, products, search, selectedAttrs]);
+  }, [catProducts, search, selectedAttrs]);
 
   const toggleAttr = (key: FilterKey, value: string) =>
     setSelectedAttrs(prev => {
@@ -162,6 +167,11 @@ export default function ProductsView({ products }: { products: Product[] }) {
       return next;
     });
   const activeAttrCount = Object.keys(selectedAttrs).length;
+
+  /* A spec chosen in one category rarely applies to another; reset on category change. */
+  useEffect(() => {
+    setSelectedAttrs({});
+  }, [activeCat]);
 
   const catRow = (slug: string, label: string, n: number) => {
     const active = activeCat === slug;
@@ -272,14 +282,17 @@ export default function ProductsView({ products }: { products: Product[] }) {
             </div>
 
             {/* attribute filters — client-side only, no URL changes */}
-            <div className="border border-white/8 rounded-xl mb-6 overflow-hidden bg-white/[0.02]">
+            <div className="border border-white/10 rounded-xl mb-6 overflow-hidden bg-white/[0.03]">
               <button
                 type="button"
                 onClick={() => setFiltersOpen(o => !o)}
                 aria-expanded={filtersOpen}
-                className="w-full flex items-center justify-between px-4 py-3 text-xs tracking-widest uppercase text-white/50 hover:text-white/80 transition-colors"
+                className="w-full flex items-center justify-between px-4 py-3 text-xs tracking-widest uppercase text-white/80 hover:text-white transition-colors"
               >
-                <span>Filter by specs{activeAttrCount ? ` · ${activeAttrCount} active` : ""}</span>
+                <span className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-violet-400" />
+                  Filter by specs{activeAttrCount ? ` · ${activeAttrCount} active` : ""}
+                </span>
                 <span className="flex items-center gap-3">
                   {activeAttrCount > 0 && (
                     <span
@@ -296,18 +309,18 @@ export default function ProductsView({ products }: { products: Product[] }) {
                 </span>
               </button>
               {filtersOpen && (
-                <div className="border-t border-white/8 divide-y divide-white/6">
+                <div className="border-t border-white/10 divide-y divide-white/[0.06]">
                   {FILTER_FIELDS.map(field => {
                     const options = attrOptions[field.key];
                     if (!options.length) return null;
                     return (
                       <div key={field.key} className="flex gap-3 px-4 py-2.5 items-start">
-                        <span className="w-24 flex-shrink-0 pt-1 text-[0.62rem] tracking-widest uppercase text-white/30">{field.label}</span>
-                        <div className="flex flex-wrap gap-x-4 gap-y-1.5">
+                        <span className="w-24 flex-shrink-0 pt-1.5 text-[0.62rem] tracking-widest uppercase text-white/45">{field.label}</span>
+                        <div className="flex flex-wrap gap-1.5">
                           <button
                             type="button"
                             onClick={() => setSelectedAttrs(prev => { const n = { ...prev }; delete n[field.key]; return n; })}
-                            className={`text-[0.78rem] transition-colors ${!selectedAttrs[field.key] ? "text-violet-400 font-semibold" : "text-white/45 hover:text-white"}`}
+                            className={`px-2.5 py-1 rounded-full border text-[0.74rem] transition-colors ${!selectedAttrs[field.key] ? "border-violet-500/50 bg-violet-500/15 text-violet-300" : "border-white/10 text-white/50 hover:text-white hover:border-white/30"}`}
                           >
                             All
                           </button>
@@ -316,7 +329,7 @@ export default function ProductsView({ products }: { products: Product[] }) {
                               key={option}
                               type="button"
                               onClick={() => toggleAttr(field.key, option)}
-                              className={`text-[0.78rem] transition-colors ${selectedAttrs[field.key] === option ? "text-violet-400 font-semibold" : "text-white/45 hover:text-white"}`}
+                              className={`px-2.5 py-1 rounded-full border text-[0.74rem] transition-colors ${selectedAttrs[field.key] === option ? "border-violet-500/50 bg-violet-500/15 text-violet-300" : "border-white/10 text-white/60 hover:text-white hover:border-white/30"}`}
                             >
                               {option}
                             </button>
