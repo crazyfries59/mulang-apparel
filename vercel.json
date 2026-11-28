@@ -5,5 +5,6 @@
       "path": "/api/cron/db-backup",
       "schedule": "30 12 * * *"
     }
-  ]
+  ],
+  "ignoreCommand": "case \"$VERCEL_GIT_COMMIT_REF\" in codex/*|docs/*|cloudflare/*) echo \"skip preview build for $VERCEL_GIT_COMMIT_REF\"; exit 0 ;; *) exit 1 ;; esac"
 }
