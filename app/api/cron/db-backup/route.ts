@@ -3,13 +3,18 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import pg from "pg";
 
-/* 每日把整个 CRM 数据库导出成一份压缩快照，提交到 GitHub 私有仓库。
-   跑在 Vercel 的定时任务上，不经过香港那台服务器：
-   数据源是 Supabase，触发方是 Vercel —— 服务器只是 WhatsApp 网关，随时可以换掉。
+/* 每日把整个 CRM 数据库导出成一份压缩快照，送到不依赖香港服务器的地方。
+   跑在 Vercel 的定时任务上：数据源是 Supabase，触发方是 Vercel ——
+   服务器只是 WhatsApp 网关，随时可以换掉。
+
+   出口有两条，按配置自动选：
+   1. 有 GITHUB_BACKUP_TOKEN → 推到 crazyfries59/mulang-crm-backups 私有仓库
+   2. 没有令牌但有 GMAIL 凭据 → 作为附件寄到自己的邮箱
 
    需要的环境变量：
    - DATABASE_URL        Supabase 连接串（Payload 本来就在用）
-   - GITHUB_BACKUP_TOKEN 对 crazyfries59/mulang-crm-backups 有 contents 写权限的 PAT
+   - GITHUB_BACKUP_TOKEN 可选，对备份私有仓库有 contents 写权限的 PAT
+   - GMAIL_USER / GMAIL_APP_PASSWORD  可选，没有 GitHub 令牌时的退路
    - CRON_SECRET         （建议）Vercel 会自动以 Bearer 形式带上，防止被外人乱触发
    - GH_BACKUP_REPO      可选，默认 crazyfries59/mulang-crm-backups
 
@@ -33,6 +38,47 @@ const dbUrl = () =>
   ) ?? "";
 
 const token = () => process.env.GITHUB_BACKUP_TOKEN ?? "";
+
+/* 没有 GitHub 令牌时的退路：把快照当附件寄到自己的邮箱。
+   Gmail 的可靠性和异地程度都比一台服务器高，而且不用再申请任何凭据。 */
+const mailUser = () => process.env.GMAIL_USER ?? "";
+const mailPass = () => process.env.GMAIL_APP_PASSWORD ?? "";
+const canMail = () => Boolean(mailUser() && mailPass());
+
+async function mailSnapshot(gz: Buffer, stamp: string, counts: Record<string, number>) {
+  const nodemailer = (await import("nodemailer")).default;
+  const rows = Object.values(counts).reduce((a, b) => a + b, 0);
+  const top = Object.entries(counts)
+    .filter(([, n]) => n > 0)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 12)
+    .map(([k, n]) => `  ${String(n).padStart(6)}  ${k}`)
+    .join("\n");
+
+  const transport = nodemailer.createTransport({
+    service: "gmail",
+    auth: { user: mailUser(), pass: mailPass() },
+  });
+
+  await transport.sendMail({
+    from: `"Mulang 自动备份" <${mailUser()}>`,
+    to: process.env.BACKUP_MAIL_TO || mailUser(),
+    subject: `[CRM 备份] ${stamp} · ${Object.keys(counts).length} 表 ${rows} 行`,
+    text: [
+      `数据库快照：${stamp}`,
+      `表数 ${Object.keys(counts).length}，总行数 ${rows}，附件 ${(gz.length / 1024).toFixed(0)} KB`,
+      "",
+      "行数最多的表：",
+      top,
+      "",
+      "附件是 gzip 压缩的 JSON，改名去掉 .gz 后可用任何 JSON 工具打开。",
+      "这条备份由 Vercel 定时任务生成，不依赖香港那台服务器。",
+    ].join("\n"),
+    attachments: [{ filename: `crm-${stamp}.json.gz`, content: gz }],
+  });
+
+  return mailUser();
+}
 
 function ghHeaders() {
   return {
@@ -132,7 +178,12 @@ async function prune() {
 export async function GET(request: NextRequest) {
   // 先看配置齐不齐：缺东西时直接把缺哪个摆出来，方便在浏览器里自检
   if (!dbUrl()) return NextResponse.json({ error: "缺少 DATABASE_URL" }, { status: 503 });
-  if (!token()) return NextResponse.json({ error: "缺少 GITHUB_BACKUP_TOKEN" }, { status: 503 });
+  if (!token() && !canMail()) {
+    return NextResponse.json(
+      { error: "缺少 GITHUB_BACKUP_TOKEN，也没有 GMAIL 凭据可以退而发邮件" },
+      { status: 503 }
+    );
+  }
 
   const secret = process.env.CRON_SECRET ?? "";
   if (secret) {
@@ -158,30 +209,41 @@ export async function GET(request: NextRequest) {
     });
 
     const gz = zlib.gzipSync(Buffer.from(payload, "utf8"), { level: 9 });
-    const path = `auto/${stamp}.json.gz`;
-    const commit = await putFile(
-      path,
-      gz.toString("base64"),
-      `backup ${stamp} (${Object.keys(counts).length} tables)`
-    );
+    const tables = Object.keys(counts).length;
+    const rows = Object.values(counts).reduce((a, b) => a + b, 0);
+
+    let path: string | null = null;
+    let commit: string | undefined;
+    let mailedTo: string | null = null;
+
+    if (token()) {
+      path = `auto/${stamp}.json.gz`;
+      const res = await putFile(path, gz.toString("base64"), `backup ${stamp} (${tables} tables)`);
+      commit = res.commit?.sha?.slice(0, 7);
+    } else {
+      mailedTo = await mailSnapshot(gz, stamp, counts);
+    }
 
     let pruned = 0;
-    try {
-      pruned = await prune();
-    } catch {
-      /* 清理失败不影响当天备份 */
+    if (token()) {
+      try {
+        pruned = await prune();
+      } catch {
+        /* 清理失败不影响当天备份 */
+      }
     }
 
     return NextResponse.json({
       ok: true,
+      destination: mailedTo ? `mail:${mailedTo}` : `github:${path}`,
       path,
-      tables: Object.keys(counts).length,
-      rows: Object.values(counts).reduce((a, b) => a + b, 0),
+      tables,
+      rows,
       rawBytes: Buffer.byteLength(payload),
       gzBytes: gz.length,
       truncated,
       pruned,
-      commit: commit.commit?.sha?.slice(0, 7),
+      commit,
       seconds: Math.round((Date.now() - started) / 100) / 10,
     });
   } catch (err) {
