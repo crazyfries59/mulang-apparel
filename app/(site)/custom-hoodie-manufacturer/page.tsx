@@ -173,6 +173,7 @@ const config: LandingConfig = {
     { href: "/blog/custom-streetwear-manufacturer-guide", label: "How to choose a custom streetwear manufacturer" },
     { href: "/t-shirt-manufacturer", label: "T-shirt manufacturer" },
     { href: "/custom-streetwear-manufacturer", label: "Custom streetwear manufacturer" },
+    { href: "/custom-caps-manufacturer", label: "Custom cap and hat manufacturer" },
     { href: "/manufacturing", label: "Our production process" },
     { href: "/solutions", label: "All manufacturing solutions" },
   ],

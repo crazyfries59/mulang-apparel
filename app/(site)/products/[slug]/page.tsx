@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getPublicProduct, getPublicProducts } from "@/lib/content/products";
 import ProductDetailClient from "./ProductDetailClient";
+import CapEditorial from "@/components/CapEditorial";
+import { capCopyFor } from "@/lib/content/cap-copy";
 import { SITE_URL } from "@/lib/site";
 import { buildProductDescription, buildProductSpecLine, buildProductTitle } from "@/lib/seo/product-copy";
 
@@ -25,8 +27,12 @@ export async function generateMetadata(
   const p = await getPublicProduct(slug);
   if (!p) notFound();
 
-  const title = buildProductTitle(p);
-  const description = buildProductDescription(p);
+  /* The four headwear pages are category pages wearing a product URL: buyers
+     search "custom baseball cap manufacturer", not a style number. They carry
+     their own title, description and body copy in lib/content/cap-copy.ts. */
+  const capCopy = capCopyFor(slug);
+  const title = capCopy?.title ?? buildProductTitle(p);
+  const description = capCopy?.description ?? buildProductDescription(p);
   return {
     // `absolute` bypasses the layout's "%s | Mulang Apparel" template so the brand
     // suffix cannot push a product title past the SERP truncation point.
@@ -69,14 +75,40 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
   };
 
   const relatedProducts = products.filter((product) => product.cat === p.cat && product.slug !== p.slug).slice(0, 4);
+  const capCopy = capCopyFor(slug);
+
+  const structuredData: Record<string, unknown>[] = [productJsonLd];
+  if (capCopy) {
+    structuredData.push(
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: capCopy.faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.q,
+          acceptedAnswer: { "@type": "Answer", text: faq.a },
+        })),
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+          { "@type": "ListItem", position: 2, name: "Products", item: `${SITE_URL}/products` },
+          { "@type": "ListItem", position: 3, name: p.name, item: `${SITE_URL}/products/${p.slug}` },
+        ],
+      },
+    );
+  }
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
       <ProductDetailClient product={p} relatedProducts={relatedProducts} />
+      {capCopy && <CapEditorial copy={capCopy} />}
     </>
   );
 }

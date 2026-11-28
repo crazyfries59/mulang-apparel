@@ -114,6 +114,11 @@ const SPECIALTIES = [
     title: "Custom Streetwear Manufacturing",
     desc: "Full cut & sew from your tech pack: tees, hoodies, tracksuits, cargo and denim, with wash, print and embroidery handled under one roof in Guangzhou.",
   },
+  {
+    href: "/custom-caps-manufacturer",
+    title: "Custom Cap Manufacturing",
+    desc: "Baseball caps, snapbacks, bucket hats and beanies from 50 pcs, with 3D puff embroidery, woven patches and private label on the same floor as the garments.",
+  },
 ];
 
 /* ─── PAGE ─── */
@@ -257,15 +262,15 @@ export default function HomeClient({ categories }: { categories: Category[] }) {
           <AnimatedSection className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
               <p className="label mb-4">What We Specialise In</p>
-              <h2 className="heading-xl">Tees, Hoodies,<br />Streetwear.</h2>
+              <h2 className="heading-xl">Tees, Hoodies,<br />Streetwear, Caps.</h2>
             </div>
             <p className="text-white/40 text-sm leading-relaxed max-w-xs">
-              One factory, three lines. Each one has its own team, its own machines and its own
+              One factory, four lines. Each one has its own team, its own machines and its own
               page — so you can go straight to the process you need.
             </p>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {SPECIALTIES.map(({ href, title, desc }, i) => (
               <AnimatedSection key={href} delay={i * 0.07} className="h-full">
                 <Link href={href} className="glass-card p-7 h-full flex flex-col group">

@@ -171,6 +171,7 @@ const config: LandingConfig = {
   related: [
     { href: "/t-shirt-manufacturer", label: "T-shirt manufacturer in China" },
     { href: "/custom-hoodie-manufacturer", label: "Custom hoodie manufacturer" },
+    { href: "/custom-caps-manufacturer", label: "Custom cap and hat manufacturer" },
     { href: "/blog/custom-streetwear-manufacturer-guide", label: "How to choose a custom streetwear manufacturer" },
     { href: "/blog/heavyweight-t-shirt-manufacturer-guide", label: "Heavyweight t-shirt manufacturing" },
     { href: "/blog/oversized-hoodie-manufacturer-guide", label: "Oversized hoodie manufacturing" },

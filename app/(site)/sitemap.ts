@@ -9,6 +9,7 @@ const STATIC_ROUTES = [
   { path: "/t-shirt-manufacturer", priority: 0.9, changeFrequency: "weekly" as const },
   { path: "/custom-hoodie-manufacturer", priority: 0.9, changeFrequency: "weekly" as const },
   { path: "/custom-streetwear-manufacturer", priority: 0.9, changeFrequency: "weekly" as const },
+  { path: "/custom-caps-manufacturer", priority: 0.9, changeFrequency: "weekly" as const },
   { path: "/about", priority: 0.7, changeFrequency: "monthly" as const },
   { path: "/services", priority: 0.8, changeFrequency: "monthly" as const },
   { path: "/global-shipping", priority: 0.6, changeFrequency: "monthly" as const },
@@ -40,6 +41,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
      no longer queued ahead of the money pages. Re-add selected styles once the
      domain has authority and the pages carry unique copy. */
 
+  /* The four headwear pages are the exception: they are category pages behind a
+     product URL, each with its own long-form copy in lib/content/cap-copy.ts and
+     a link from /custom-caps-manufacturer. Listing them is what moves headwear
+     from "discovered through a client-rendered grid" to "queued". */
+  const headwearEntries: MetadataRoute.Sitemap = [
+    "custom-baseball-cap-manufacturer",
+    "custom-snapback-manufacturer",
+    "custom-bucket-hat-manufacturer",
+    "custom-beanie-manufacturer",
+  ].map((slug) => ({
+    url: `${SITE_URL}/products/${slug}`,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
   const cmsPosts = await getCmsPosts();
   const publishedPosts = [
     ...(cmsPosts ?? []).map((post) => ({ slug: post.slug, date: post.publishedAt })),
@@ -53,5 +69,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
-  return [...staticEntries, ...blogEntries];
+  return [...staticEntries, ...headwearEntries, ...blogEntries];
 }
